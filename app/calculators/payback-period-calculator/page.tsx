@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription} from "@/comp
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PaybackPeriodCalculatorPage() {
   const [initialInvestment, setInitialInvestment] = useState<string>("");
@@ -272,33 +274,33 @@ export default function PaybackPeriodCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good payback period?</h4>
-                <p>It depends on the industry and risk tolerance. Many companies target 2-4 years for most projects. High-risk ventures may require under 2 years. Infrastructure projects might accept 10+ years. Compare against your cost of capital and alternative investments.</p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How is payback period different from ROI?</h4>
-                <p>Payback period measures time to recover investment. ROI (Return on Investment) measures total profitability as a percentage. A project can have a quick payback but low total return, or slow payback with high long-term returns.</p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does payback period consider the time value of money?</h4>
-                <p>No, the simple payback period doesn't account for the time value of money. For that, use discounted payback period, which discounts future cash flows to present value before calculating payback time.</p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if cash flows are irregular?</h4>
-                <p>Add cash flows year by year until you reach the initial investment. If payback occurs partway through a year, divide the remaining amount needed by that year's cash flow to get the fraction.</p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can payback period be negative?</h4>
-                <p>No. Payback period is always zero or positive. If cumulative cash flows never reach the initial investment, the payback period is undefined — the investment never pays back.</p>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good payback period?",
+    answer: "It depends on the industry and risk tolerance. Many companies target 2-4 years for most projects. High-risk ventures may require under 2 years. Infrastructure projects might accept 10+ years. Compare against your cost of capital and alternative investments.",
+  },
+{
+    question: "How is payback period different from ROI?",
+    answer: "Payback period measures time to recover investment. ROI (Return on Investment) measures total profitability as a percentage. A project can have a quick payback but low total return, or slow payback with high long-term returns.",
+  },
+{
+    question: "Does payback period consider the time value of money?",
+    answer: "No, the simple payback period doesn't account for the time value of money. For that, use discounted payback period, which discounts future cash flows to present value before calculating payback time.",
+  },
+{
+    question: "What if cash flows are irregular?",
+    answer: "Add cash flows year by year until you reach the initial investment. If payback occurs partway through a year, divide the remaining amount needed by that year's cash flow to get the fraction.",
+  },
+{
+    question: "Can payback period be negative?",
+    answer: "No. Payback period is always zero or positive. If cumulative cash flows never reach the initial investment, the payback period is undefined — the investment never pays back.",
+  }
+  ]} />
+</section>
         </div>
       </div>
     </div>

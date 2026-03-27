@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BodyFatCalculator() {
   const [gender, setGender] = useState<"male" | "female">("male");
@@ -350,55 +352,33 @@ export default function BodyFatCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is this body fat calculator?</h4>
-                <p>
-                  The Navy method provides a reasonable estimate with about 3-4% margin of error compared to DEXA
-                  scans. It is more accurate than BMI but less precise than professional methods like hydrostatic
-                  weighing or DEXA. Use it to track trends rather than absolute values.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do women have higher body fat than men?</h4>
-                <p>
-                  Women naturally carry more body fat due to hormonal differences and reproductive needs. Estrogen
-                  promotes fat storage, particularly in hips and thighs. Women need higher essential fat levels for
-                  menstruation, pregnancy, and breastfeeding.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I have too little body fat?</h4>
-                <p>
-                  Yes. Body fat below essential levels (under 5% for men, 10% for women) can cause health problems
-                  including hormone disruption, weakened immune function, and organ damage. Extremely low body fat
-                  is not sustainable or healthy for most people.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How can I reduce my body fat percentage?</h4>
-                <p>
-                  Create a moderate calorie deficit through diet and exercise. Combine strength training to preserve
-                  muscle with cardio for calorie burn. Aim for 0.5-1% body weight loss per week. Rapid weight loss
-                  often results in muscle loss along with fat.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is body fat percentage better than BMI?</h4>
-                <p>
-                  Yes, for most people. BMI does not distinguish between muscle and fat, so muscular individuals may
-                  be classified as overweight despite having low body fat. Body fat percentage gives a more accurate
-                  picture of body composition and health risk.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate is this body fat calculator?",
+    answer: "The Navy method provides a reasonable estimate with about 3-4% margin of error compared to DEXA scans. It is more accurate than BMI but less precise than professional methods like hydrostatic weighing or DEXA. Use it to track trends rather than absolute values.",
+  },
+{
+    question: "Why do women have higher body fat than men?",
+    answer: "Women naturally carry more body fat due to hormonal differences and reproductive needs. Estrogen promotes fat storage, particularly in hips and thighs. Women need higher essential fat levels for menstruation, pregnancy, and breastfeeding.",
+  },
+{
+    question: "Can I have too little body fat?",
+    answer: "Yes. Body fat below essential levels (under 5% for men, 10% for women) can cause health problems including hormone disruption, weakened immune function, and organ damage. Extremely low body fat is not sustainable or healthy for most people.",
+  },
+{
+    question: "How can I reduce my body fat percentage?",
+    answer: "Create a moderate calorie deficit through diet and exercise. Combine strength training to preserve muscle with cardio for calorie burn. Aim for 0.5-1% body weight loss per week. Rapid weight loss often results in muscle loss along with fat.",
+  },
+{
+    question: "Is body fat percentage better than BMI?",
+    answer: "Yes, for most people. BMI does not distinguish between muscle and fat, so muscular individuals may be classified as overweight despite having low body fat. Body fat percentage gives a more accurate picture of body composition and health risk.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

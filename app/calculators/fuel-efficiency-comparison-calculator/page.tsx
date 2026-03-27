@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface FuelComparisonResult {
   car1: { name: string; mpg: number; annualCost: number };
@@ -443,56 +445,33 @@ export default function FuelEfficiencyComparisonCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much can I save with a more fuel-efficient car?</h4>
-                  <p>
-                    Savings depend on your driving and fuel prices. Upgrading from 20 MPG to 30 MPG saves
-                    about $700/year at 12,000 miles and $3.50/gallon. Going from 15 MPG to 25 MPG saves
-                    about $930/year. Over 5 years, these savings add up to $3,500-4,650.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is a hybrid worth the extra cost?</h4>
-                  <p>
-                    Hybrids typically cost $2,000-4,000 more than equivalent gas models. With fuel savings
-                    of $400-800/year, payback takes 4-7 years. If you keep the car longer, the hybrid wins.
-                    Hybrids also have better city MPG and lower emissions. Consider your expected ownership period.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I buy an electric vehicle?</h4>
-                  <p>
-                    EVs make sense if you can charge at home, drive under 200 miles daily, and live where
-                    electricity is cheap. Fuel costs drop 70-80% compared to gas. However, purchase prices
-                    remain higher, and public charging can be slow and expensive. Calculate total cost of
-                    ownership including any tax credits in your area.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does premium gas improve fuel economy?</h4>
-                  <p>
-                    Only if your car requires it. Most vehicles run fine on regular 87-octane. Using premium
-                    in a regular car provides zero benefit. If your car requires premium, the higher cost
-                    per gallon may offset any small efficiency gains. Check your owner's manual.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate are EPA fuel economy ratings?</h4>
-                  <p>
-                    EPA ratings are standardized but real-world results vary. Most drivers achieve 10-20%
-                    lower MPG than EPA combined ratings. Aggressive driving, cold weather, and heavy loads
-                    reduce economy further. Use EPA numbers for comparison, but expect slightly worse results.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much can I save with a more fuel-efficient car?",
+    answer: "Savings depend on your driving and fuel prices. Upgrading from 20 MPG to 30 MPG saves about $700/year at 12,000 miles and $3.50/gallon. Going from 15 MPG to 25 MPG saves about $930/year. Over 5 years, these savings add up to $3,500-4,650.",
+  },
+{
+    question: "Is a hybrid worth the extra cost?",
+    answer: "Hybrids typically cost $2,000-4,000 more than equivalent gas models. With fuel savings of $400-800/year, payback takes 4-7 years. If you keep the car longer, the hybrid wins. Hybrids also have better city MPG and lower emissions. Consider your expected ownership period.",
+  },
+{
+    question: "Should I buy an electric vehicle?",
+    answer: "EVs make sense if you can charge at home, drive under 200 miles daily, and live where electricity is cheap. Fuel costs drop 70-80% compared to gas. However, purchase prices remain higher, and public charging can be slow and expensive. Calculate total cost of ownership including any tax credits in your area.",
+  },
+{
+    question: "Does premium gas improve fuel economy?",
+    answer: "Only if your car requires it. Most vehicles run fine on regular 87-octane. Using premium in a regular car provides zero benefit. If your car requires premium, the higher cost per gallon may offset any small efficiency gains. Check your owner's manual.",
+  },
+{
+    question: "How accurate are EPA fuel economy ratings?",
+    answer: "EPA ratings are standardized but real-world results vary. Most drivers achieve 10-20% lower MPG than EPA combined ratings. Aggressive driving, cold weather, and heavy loads reduce economy further. Use EPA numbers for comparison, but expect slightly worse results.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -211,43 +213,33 @@ export default function LinearEquationSolver() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a linear equation?</h4>
-            <p className="text-xs text-muted-foreground">
-              A linear equation is an algebraic equation where the variable has exponent 1. The standard form is ax + b = 0. When graphed, it produces a straight line – hence the name "linear."
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you solve a linear equation?</h4>
-            <p className="text-xs text-muted-foreground">
-              Isolate the variable by performing the same operations on both sides. First move constants to one side, then divide by the coefficient. The goal is to get x alone on one side.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What if a = 0 in ax + b = 0?</h4>
-            <p className="text-xs text-muted-foreground">
-              If a = 0 and b ≠ 0, there is no solution (e.g., 0x + 5 = 0 is impossible). If a = 0 and b = 0, every number is a solution (0x + 0 = 0 is always true).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can linear equations have fractions as solutions?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, solutions can be any real number: integers, fractions, decimals, or irrational numbers. For example, 3x = 1 gives x = 1/3, and √2x = 2 gives x = √2.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How is this different from quadratic equations?</h4>
-            <p className="text-xs text-muted-foreground">
-              Linear equations have x to the first power and always have one solution. Quadratic equations have x² and can have 0, 1, or 2 solutions. Linear graphs are lines; quadratic graphs are parabolas.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a linear equation?",
+    answer: "A linear equation is an algebraic equation where the variable has exponent 1. The standard form is ax + b = 0. When graphed, it produces a straight line – hence the name \"linear.\"",
+  },
+{
+    question: "How do you solve a linear equation?",
+    answer: "Isolate the variable by performing the same operations on both sides. First move constants to one side, then divide by the coefficient. The goal is to get x alone on one side.",
+  },
+{
+    question: "What if a = 0 in ax + b = 0?",
+    answer: "If a = 0 and b ≠ 0, there is no solution (e.g., 0x + 5 = 0 is impossible). If a = 0 and b = 0, every number is a solution (0x + 0 = 0 is always true).",
+  },
+{
+    question: "Can linear equations have fractions as solutions?",
+    answer: "Yes, solutions can be any real number: integers, fractions, decimals, or irrational numbers. For example, 3x = 1 gives x = 1/3, and √2x = 2 gives x = √2.",
+  },
+{
+    question: "How is this different from quadratic equations?",
+    answer: "Linear equations have x to the first power and always have one solution. Quadratic equations have x² and can have 0, 1, or 2 solutions. Linear graphs are lines; quadratic graphs are parabolas.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

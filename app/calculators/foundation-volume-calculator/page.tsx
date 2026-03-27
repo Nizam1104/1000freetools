@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FoundationVolumeCalculator() {
   const [length, setLength] = useState<string>("");
@@ -255,55 +257,33 @@ export default function FoundationVolumeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate concrete for footings?</h4>
-                <p>
-                  Multiply length × width × depth for one footing, then multiply by the number of footings.
-                  Add 10% for waste. For example, a footing 10m × 0.6m × 0.3m has a volume of 1.8 m³.
-                  Ten identical footings need 18 m³, or about 20 m³ with waste included.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the standard waste allowance for concrete?</h4>
-                <p>
-                  The industry standard is 10% for simple rectangular footings and slab work. Increase
-                  to 15% for complex foundations with many corners, thick rebar, or difficult access.
-                  It is better to have a small amount left over than to run short.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many cubic meters are in a concrete truck?</h4>
-                <p>
-                  Standard ready-mix trucks carry 8-10 cubic meters. Mini trucks for tight access sites
-                  carry 4-6 cubic meters. If you need more than one truckload, suppliers often require
-                  a minimum gap between deliveries to allow for proper pouring and finishing.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What concrete strength do I need for footings?</h4>
-                <p>
-                  Most residential footings use 25-30 MPa (3500-4000 psi) concrete. Heavy commercial
-                  foundations may require 35-40 MPa. Your structural engineer or local building code
-                  will specify the minimum strength. Do not substitute lower strength concrete.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I use this calculator for slab foundations?</h4>
-                <p>
-                  Yes. A slab is simply a wide, shallow footing. Enter the slab length, width, and
-                  thickness. For a 10m × 8m slab at 100mm thick, enter length 10, width 8, depth 0.1.
-                  The result is 8 m³, or about 9 m³ with waste allowance.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate concrete for footings?",
+    answer: "Multiply length × width × depth for one footing, then multiply by the number of footings. Add 10% for waste. For example, a footing 10m × 0.6m × 0.3m has a volume of 1.8 m³. Ten identical footings need 18 m³, or about 20 m³ with waste included.",
+  },
+{
+    question: "What is the standard waste allowance for concrete?",
+    answer: "The industry standard is 10% for simple rectangular footings and slab work. Increase to 15% for complex foundations with many corners, thick rebar, or difficult access. It is better to have a small amount left over than to run short.",
+  },
+{
+    question: "How many cubic meters are in a concrete truck?",
+    answer: "Standard ready-mix trucks carry 8-10 cubic meters. Mini trucks for tight access sites carry 4-6 cubic meters. If you need more than one truckload, suppliers often require a minimum gap between deliveries to allow for proper pouring and finishing.",
+  },
+{
+    question: "What concrete strength do I need for footings?",
+    answer: "Most residential footings use 25-30 MPa (3500-4000 psi) concrete. Heavy commercial foundations may require 35-40 MPa. Your structural engineer or local building code will specify the minimum strength. Do not substitute lower strength concrete.",
+  },
+{
+    question: "Can I use this calculator for slab foundations?",
+    answer: "Yes. A slab is simply a wide, shallow footing. Enter the slab length, width, and thickness. For a 10m × 8m slab at 100mm thick, enter length 10, width 8, depth 0.1. The result is 8 m³, or about 9 m³ with waste allowance.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

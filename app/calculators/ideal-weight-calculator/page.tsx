@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function IdealWeightCalculator() {
   const [gender, setGender] = useState<"male" | "female">("male");
@@ -371,45 +373,33 @@ export default function IdealWeightCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Which ideal weight formula is most accurate?</h4>
-                <p>
-                  No single formula is best for everyone. Devine is most cited in medical literature. Robinson and Miller may be more accurate for modern populations. Using the average of all four gives a reasonable range. For individual advice, consult a healthcare provider.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does ideal weight account for age?</h4>
-                <p>
-                  No, these formulas do not include age. Some research suggests slightly higher weights may be healthy for older adults. Body composition changes with age — muscle decreases and fat increases even at stable weight.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if I am very muscular?</h4>
-                <p>
-                  Ideal weight formulas will underestimate your healthy weight if you have high muscle mass. Athletes and bodybuilders often exceed IBW while being very lean. Body fat percentage or waist circumference may be better health indicators for muscular individuals.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I know my frame size?</h4>
-                <p>
-                  Wrap your thumb and middle finger around your wrist. If they overlap, you have a small frame. If they touch, medium frame. If they do not touch, large frame. Large frames may healthily weigh 10% more than IBW; small frames 10% less.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I use ideal weight or BMI?</h4>
-                <p>
-                  Both have uses. BMI screens for weight categories linked to health risks. IBW gives a specific target. For most people, a weight within the normal BMI range (18.5-24.9) that feels sustainable is appropriate. Discuss personal targets with a doctor or dietitian.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Which ideal weight formula is most accurate?",
+    answer: "No single formula is best for everyone. Devine is most cited in medical literature. Robinson and Miller may be more accurate for modern populations. Using the average of all four gives a reasonable range. For individual advice, consult a healthcare provider.",
+  },
+{
+    question: "Does ideal weight account for age?",
+    answer: "No, these formulas do not include age. Some research suggests slightly higher weights may be healthy for older adults. Body composition changes with age — muscle decreases and fat increases even at stable weight.",
+  },
+{
+    question: "What if I am very muscular?",
+    answer: "Ideal weight formulas will underestimate your healthy weight if you have high muscle mass. Athletes and bodybuilders often exceed IBW while being very lean. Body fat percentage or waist circumference may be better health indicators for muscular individuals.",
+  },
+{
+    question: "How do I know my frame size?",
+    answer: "Wrap your thumb and middle finger around your wrist. If they overlap, you have a small frame. If they touch, medium frame. If they do not touch, large frame. Large frames may healthily weigh 10% more than IBW; small frames 10% less.",
+  },
+{
+    question: "Should I use ideal weight or BMI?",
+    answer: "Both have uses. BMI screens for weight categories linked to health risks. IBW gives a specific target. For most people, a weight within the normal BMI range (18.5-24.9) that feels sustainable is appropriate. Discuss personal targets with a doctor or dietitian.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

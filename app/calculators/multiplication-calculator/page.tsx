@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MultiplicationCalculator() {
   const [numbers, setNumbers] = useState<string>("");
@@ -231,55 +233,33 @@ export default function MultiplicationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I multiply numbers with decimals?</h4>
-                <p>
-                  Multiply as if they were whole numbers, then count total decimal places in both factors.
-                  Place the decimal point in the product so it has the same number of decimal places.
-                  For example: 2.5 × 0.4 → 25 × 4 = 100 → 2 decimal places → 1.00 = 1.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does negative times negative equal positive?</h4>
-                <p>
-                  Think of it as reversing a reversal. If positive means forward, negative means backward.
-                  Going backward (negative) while facing backward (negative) actually moves you forward (positive).
-                  Mathematically, this rule maintains consistency across all arithmetic operations.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the product of any number and zero?</h4>
-                <p>
-                  Any number multiplied by zero equals zero. This is the zero property of multiplication.
-                  No matter how large the other factor is, if one factor is zero, the product is zero.
-                  Think of it as having zero groups of something — you have nothing.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I multiply large numbers without a calculator?</h4>
-                <p>
-                  Use long multiplication or break numbers into parts. For 23 × 47, calculate (20 × 47) + (3 × 47) =
-                  940 + 141 = 1,081. Alternatively, use the lattice method or Russian peasant multiplication
-                  for different approaches that may suit your thinking style.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between product and sum?</h4>
-                <p>
-                  Product is the result of multiplication. Sum is the result of addition. For 3 and 4:
-                  the product is 3 × 4 = 12, while the sum is 3 + 4 = 7. Products grow much faster than
-                  sums as numbers increase, which is why exponential growth is so powerful.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I multiply numbers with decimals?",
+    answer: "Multiply as if they were whole numbers, then count total decimal places in both factors. Place the decimal point in the product so it has the same number of decimal places. For example: 2.5 × 0.4 → 25 × 4 = 100 → 2 decimal places → 1.00 = 1.",
+  },
+{
+    question: "Why does negative times negative equal positive?",
+    answer: "Think of it as reversing a reversal. If positive means forward, negative means backward. Going backward (negative) while facing backward (negative) actually moves you forward (positive). Mathematically, this rule maintains consistency across all arithmetic operations.",
+  },
+{
+    question: "What is the product of any number and zero?",
+    answer: "Any number multiplied by zero equals zero. This is the zero property of multiplication. No matter how large the other factor is, if one factor is zero, the product is zero. Think of it as having zero groups of something — you have nothing.",
+  },
+{
+    question: "How do I multiply large numbers without a calculator?",
+    answer: "Use long multiplication or break numbers into parts. For 23 × 47, calculate (20 × 47) + (3 × 47) = 940 + 141 = 1,081. Alternatively, use the lattice method or Russian peasant multiplication for different approaches that may suit your thinking style.",
+  },
+{
+    question: "What is the difference between product and sum?",
+    answer: "Product is the result of multiplication. Sum is the result of addition. For 3 and 4: the product is 3 × 4 = 12, while the sum is 3 + 4 = 7. Products grow much faster than sums as numbers increase, which is why exponential growth is so powerful.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

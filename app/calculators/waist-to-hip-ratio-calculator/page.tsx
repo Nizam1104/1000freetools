@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -277,43 +279,33 @@ export default function WaistToHipRatioCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a healthy waist-to-hip ratio?</h4>
-            <p className="text-xs text-muted-foreground">
-              For men, below 0.90 is considered low risk. For women, below 0.85. These thresholds come from WHO research linking WHR to cardiovascular disease risk across multiple populations.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can WHR be high even with normal BMI?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, and this is common. Someone can have a normal BMI but carry excess fat around their middle – the so-called "TOFI" (thin outside, fat inside) phenotype. These individuals still face elevated metabolic risk despite appearing slim.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why do women have different WHR thresholds than men?</h4>
-            <p className="text-xs text-muted-foreground">
-              Women naturally store more fat in hips and thighs due to estrogen – an evolutionary adaptation for childbearing. After menopause, as estrogen drops, women tend to shift toward abdominal fat storage and their WHR increases.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How often should I measure my WHR?</h4>
-            <p className="text-xs text-muted-foreground">
-              Once a month is sufficient for tracking progress. Measure at the same time of day, ideally in the morning before eating. Small day-to-day fluctuations from food and water weight aren't meaningful – look for trends over weeks.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does spot reduction work for belly fat?</h4>
-            <p className="text-xs text-muted-foreground">
-              No. Crunches and planks strengthen abdominal muscles but don't specifically burn the fat covering them. Visceral fat responds to overall calorie deficit and aerobic exercise, not targeted ab workouts.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a healthy waist-to-hip ratio?",
+    answer: "For men, below 0.90 is considered low risk. For women, below 0.85. These thresholds come from WHO research linking WHR to cardiovascular disease risk across multiple populations.",
+  },
+{
+    question: "Can WHR be high even with normal BMI?",
+    answer: "Yes, and this is common. Someone can have a normal BMI but carry excess fat around their middle – the so-called \"TOFI\" (thin outside, fat inside) phenotype. These individuals still face elevated metabolic risk despite appearing slim.",
+  },
+{
+    question: "Why do women have different WHR thresholds than men?",
+    answer: "Women naturally store more fat in hips and thighs due to estrogen – an evolutionary adaptation for childbearing. After menopause, as estrogen drops, women tend to shift toward abdominal fat storage and their WHR increases.",
+  },
+{
+    question: "How often should I measure my WHR?",
+    answer: "Once a month is sufficient for tracking progress. Measure at the same time of day, ideally in the morning before eating. Small day-to-day fluctuations from food and water weight aren't meaningful – look for trends over weeks.",
+  },
+{
+    question: "Does spot reduction work for belly fat?",
+    answer: "No. Crunches and planks strengthen abdominal muscles but don't specifically burn the fat covering them. Visceral fat responds to overall calorie deficit and aerobic exercise, not targeted ab workouts.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

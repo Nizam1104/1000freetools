@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function CyclingCalorieCalculator() {
   const [weight, setWeight] = useState<string>("");
@@ -316,45 +318,33 @@ export default function CyclingCalorieCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many calories does cycling burn per hour?</h4>
-                <p>
-                  It depends on intensity and your weight. A 70kg person burns about 280 calories/hour at leisure pace, 560 at moderate pace, and 840+ at racing intensity. Heavier riders burn proportionally more.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is cycling good for weight loss?</h4>
-                <p>
-                  Yes. Cycling is sustainable cardio that burns significant calories without high joint impact. Combine regular rides with a modest calorie deficit for steady weight loss. Aim for 150-300 minutes of moderate cycling per week.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does stationary cycling burn the same calories?</h4>
-                <p>
-                  Roughly yes, if intensity matches. Stationary bikes eliminate wind resistance and coasting, which can make effort more consistent. However, outdoor riding engages more stabilizer muscles and varies terrain naturally.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is this cycling calorie calculator?</h4>
-                <p>
-                  It provides estimates based on established MET values. Actual burn varies by fitness level, bike type, terrain, wind, and riding efficiency. Use it as a guideline, not an exact measurement. Heart rate monitors provide more personalized estimates.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I eat back the calories I burn cycling?</h4>
-                <p>
-                  For weight loss, generally no — most people overestimate calories burned. For rides under 90 minutes, normal meals are sufficient. For longer rides, replace 50-75% of burned calories to maintain energy without negating the deficit.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many calories does cycling burn per hour?",
+    answer: "It depends on intensity and your weight. A 70kg person burns about 280 calories/hour at leisure pace, 560 at moderate pace, and 840+ at racing intensity. Heavier riders burn proportionally more.",
+  },
+{
+    question: "Is cycling good for weight loss?",
+    answer: "Yes. Cycling is sustainable cardio that burns significant calories without high joint impact. Combine regular rides with a modest calorie deficit for steady weight loss. Aim for 150-300 minutes of moderate cycling per week.",
+  },
+{
+    question: "Does stationary cycling burn the same calories?",
+    answer: "Roughly yes, if intensity matches. Stationary bikes eliminate wind resistance and coasting, which can make effort more consistent. However, outdoor riding engages more stabilizer muscles and varies terrain naturally.",
+  },
+{
+    question: "How accurate is this cycling calorie calculator?",
+    answer: "It provides estimates based on established MET values. Actual burn varies by fitness level, bike type, terrain, wind, and riding efficiency. Use it as a guideline, not an exact measurement. Heart rate monitors provide more personalized estimates.",
+  },
+{
+    question: "Should I eat back the calories I burn cycling?",
+    answer: "For weight loss, generally no — most people overestimate calories burned. For rides under 90 minutes, normal meals are sufficient. For longer rides, replace 50-75% of burned calories to maintain energy without negating the deficit.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

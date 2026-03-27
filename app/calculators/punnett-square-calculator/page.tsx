@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend, BarChart, Bar } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PunnettSquareCalculator() {
   const [crossType, setCrossType] = useState<"monohybrid" | "dihybrid">("monohybrid");
@@ -415,45 +417,33 @@ export default function PunnettSquareCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a Punnett square used for?</h4>
-                <p>
-                  A Punnett square predicts the probability of offspring inheriting specific genetic traits. It shows all possible combinations of parental alleles and calculates the likelihood of each genotype and phenotype in the next generation.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between genotype and phenotype?</h4>
-                <p>
-                  Genotype is the genetic makeup (like BB, Bb, or bb). Phenotype is the physical trait you can observe (like brown eyes or blue eyes). Two organisms can have different genotypes but the same phenotype if one allele is dominant.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do dihybrid crosses work?</h4>
-                <p>
-                  Dihybrid crosses track two genes simultaneously. Each parent produces four types of gametes (AB, Ab, aB, ab), creating a 4x4 grid with 16 possible offspring. The classic ratio is 9:3:3:1 for two heterozygous parents.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does capital vs lowercase mean?</h4>
-                <p>
-                  Capital letters represent dominant alleles that express their trait even when paired with a different allele. Lowercase letters are recessive alleles that only show their trait when two copies are present (homozygous recessive).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Are Punnett squares always accurate?</h4>
-                <p>
-                  Punnett squares show probabilities, not certainties. They assume independent assortment and complete dominance. Real inheritance can involve linked genes, incomplete dominance, codominance, and environmental factors that complicate predictions.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a Punnett square used for?",
+    answer: "A Punnett square predicts the probability of offspring inheriting specific genetic traits. It shows all possible combinations of parental alleles and calculates the likelihood of each genotype and phenotype in the next generation.",
+  },
+{
+    question: "What is the difference between genotype and phenotype?",
+    answer: "Genotype is the genetic makeup (like BB, Bb, or bb). Phenotype is the physical trait you can observe (like brown eyes or blue eyes). Two organisms can have different genotypes but the same phenotype if one allele is dominant.",
+  },
+{
+    question: "How do dihybrid crosses work?",
+    answer: "Dihybrid crosses track two genes simultaneously. Each parent produces four types of gametes (AB, Ab, aB, ab), creating a 4x4 grid with 16 possible offspring. The classic ratio is 9:3:3:1 for two heterozygous parents.",
+  },
+{
+    question: "What does capital vs lowercase mean?",
+    answer: "Capital letters represent dominant alleles that express their trait even when paired with a different allele. Lowercase letters are recessive alleles that only show their trait when two copies are present (homozygous recessive).",
+  },
+{
+    question: "Are Punnett squares always accurate?",
+    answer: "Punnett squares show probabilities, not certainties. They assume independent assortment and complete dominance. Real inheritance can involve linked genes, incomplete dominance, codominance, and environmental factors that complicate predictions.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

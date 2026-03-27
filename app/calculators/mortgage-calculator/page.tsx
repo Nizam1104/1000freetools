@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MortgageCalculatorPage() {
   const [homePrice, setHomePrice] = useState<string>("");
@@ -393,43 +395,33 @@ export default function MortgageCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How much house can I afford?</h4>
-            <p className="text-xs text-muted-foreground">
-              The 28/36 rule: housing costs shouldn't exceed 28% of gross monthly income, total debt (including housing) shouldn't exceed 36%. On $5,000/month income, that's $1,400 for housing, $1,800 total debt. Lenders may allow up to 43-50% but that's risky.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's a good mortgage rate?</h4>
-            <p className="text-xs text-muted-foreground">
-              "Good" depends on market conditions. As of recent years, anything under 6% is excellent, 6-7% is average, above 7% is high. Your rate depends on credit score, down payment, debt-to-income ratio, and loan type. Shop multiple lenders – rates can vary by 0.5% or more.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I pay points to lower my rate?</h4>
-            <p className="text-xs text-muted-foreground">
-              Points are prepaid interest – 1 point costs 1% of loan amount and typically reduces rate by 0.25%. Break-even is usually 4-7 years. If you'll keep the loan longer, points save money. If you'll refinance or sell sooner, skip points.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between APR and interest rate?</h4>
-            <p className="text-xs text-muted-foreground">
-              Interest rate is what you pay on the loan balance. APR includes interest plus fees (origination, points, etc.) spread over the loan term. APR is always higher and shows the true cost. Compare APRs when shopping lenders, not just interest rates.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">When does PMI go away?</h4>
-            <p className="text-xs text-muted-foreground">
-              PMI automatically terminates at 78% loan-to-value (22% equity) based on original value. You can request removal at 80% LTV (20% equity) with an appraisal. FHA loans have MIP for the life of the loan if down payment was under 10%.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much house can I afford?",
+    answer: "The 28/36 rule: housing costs shouldn't exceed 28% of gross monthly income, total debt (including housing) shouldn't exceed 36%. On $5,000/month income, that's $1,400 for housing, $1,800 total debt. Lenders may allow up to 43-50% but that's risky.",
+  },
+{
+    question: "What's a good mortgage rate?",
+    answer: "\"Good\" depends on market conditions. As of recent years, anything under 6% is excellent, 6-7% is average, above 7% is high. Your rate depends on credit score, down payment, debt-to-income ratio, and loan type. Shop multiple lenders – rates can vary by 0.5% or more.",
+  },
+{
+    question: "Should I pay points to lower my rate?",
+    answer: "Points are prepaid interest – 1 point costs 1% of loan amount and typically reduces rate by 0.25%. Break-even is usually 4-7 years. If you'll keep the loan longer, points save money. If you'll refinance or sell sooner, skip points.",
+  },
+{
+    question: "What's the difference between APR and interest rate?",
+    answer: "Interest rate is what you pay on the loan balance. APR includes interest plus fees (origination, points, etc.) spread over the loan term. APR is always higher and shows the true cost. Compare APRs when shopping lenders, not just interest rates.",
+  },
+{
+    question: "When does PMI go away?",
+    answer: "PMI automatically terminates at 78% loan-to-value (22% equity) based on original value. You can request removal at 80% LTV (20% equity) with an appraisal. FHA loans have MIP for the life of the loan if down payment was under 10%.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

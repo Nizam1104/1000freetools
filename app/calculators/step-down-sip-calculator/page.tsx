@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function StepDownSIPCalculatorPage() {
   const [monthlySIP, setMonthlySIP] = useState<string>("");
@@ -243,33 +245,33 @@ export default function StepDownSIPCalculatorPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is a step-down SIP?</h4>
-                  <p className="text-sm text-muted-foreground">A step-down SIP is a systematic investment plan where your monthly contribution decreases by a fixed percentage each year, opposite to a step-up SIP where contributions increase.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">When should I use step-down vs step-up SIP?</h4>
-                  <p className="text-sm text-muted-foreground">Use step-up when income is growing. Use step-down when planning for reduced future income, nearing retirement, or shifting from accumulation to distribution phase.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is a typical step-down percentage?</h4>
-                  <p className="text-sm text-muted-foreground">Common step-down rates range from 5-15% annually. A 10% step-down means your contribution reduces by 10% each year.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Can I modify my step-down SIP?</h4>
-                  <p className="text-sm text-muted-foreground">Yes, most mutual funds allow you to change or stop the step-down feature. Check with your fund house for specific policies.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What happens if step-down reaches zero?</h4>
-                  <p className="text-sm text-muted-foreground">The calculator stops contributions when they reach zero. In practice, you may want to maintain a minimum SIP amount.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a step-down SIP?",
+    answer: "A step-down SIP is a systematic investment plan where your monthly contribution decreases by a fixed percentage each year, opposite to a step-up SIP where contributions increase.",
+  },
+{
+    question: "When should I use step-down vs step-up SIP?",
+    answer: "Use step-up when income is growing. Use step-down when planning for reduced future income, nearing retirement, or shifting from accumulation to distribution phase.",
+  },
+{
+    question: "What is a typical step-down percentage?",
+    answer: "Common step-down rates range from 5-15% annually. A 10% step-down means your contribution reduces by 10% each year.",
+  },
+{
+    question: "Can I modify my step-down SIP?",
+    answer: "Yes, most mutual funds allow you to change or stop the step-down feature. Check with your fund house for specific policies.",
+  },
+{
+    question: "What happens if step-down reaches zero?",
+    answer: "The calculator stops contributions when they reach zero. In practice, you may want to maintain a minimum SIP amount.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

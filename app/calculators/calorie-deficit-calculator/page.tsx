@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LineChart, Line } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function CalorieDeficitCalculator() {
   const [weightToLose, setWeightToLose] = useState<string>("");
@@ -289,43 +291,33 @@ export default function CalorieDeficitCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is the 3,500 calories per pound rule accurate?</h4>
-            <p className="text-xs text-muted-foreground">
-              It's a useful approximation but not perfect. Research shows actual weight loss is often 20-30% slower than predicted, especially over longer periods. Your body adapts – metabolism slows as you lose weight. Use 3,500 as a starting point, then adjust based on real results.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I lose weight with just diet, no exercise?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Weight loss is primarily about calories in vs calories out. Diet has a bigger impact than exercise for most people. That said, exercise preserves muscle during weight loss, improves health markers, and helps maintain loss long-term.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why isn't the scale moving despite my deficit?</h4>
-            <p className="text-xs text-muted-foreground">
-              Common reasons: water retention (especially when starting exercise or changing diet), underestimating intake (people typically undercount by 30-50%), or your actual TDEE is lower than calculated. Give it 2-3 weeks before adjusting.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I track calories accurately?</h4>
-            <p className="text-xs text-muted-foreground">
-              Use a food scale, not measuring cups. Log everything – condiments, cooking oil, bites and sips add up. Read labels carefully. Restaurant portions are often 2-3× standard servings. Track for at least 2 weeks to establish baseline accuracy.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I adjust my deficit as I lose weight?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. As you lose weight, your TDEE drops – smaller bodies need fewer calories. Recalculate your deficit every 10-15 lbs lost. Also, metabolic adaptation can reduce TDEE by an extra 5-15% beyond what weight loss alone predicts.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is the 3,500 calories per pound rule accurate?",
+    answer: "It's a useful approximation but not perfect. Research shows actual weight loss is often 20-30% slower than predicted, especially over longer periods. Your body adapts – metabolism slows as you lose weight. Use 3,500 as a starting point, then adjust based on real results.",
+  },
+{
+    question: "Can I lose weight with just diet, no exercise?",
+    answer: "Yes. Weight loss is primarily about calories in vs calories out. Diet has a bigger impact than exercise for most people. That said, exercise preserves muscle during weight loss, improves health markers, and helps maintain loss long-term.",
+  },
+{
+    question: "Why isn't the scale moving despite my deficit?",
+    answer: "Common reasons: water retention (especially when starting exercise or changing diet), underestimating intake (people typically undercount by 30-50%), or your actual TDEE is lower than calculated. Give it 2-3 weeks before adjusting.",
+  },
+{
+    question: "How do I track calories accurately?",
+    answer: "Use a food scale, not measuring cups. Log everything – condiments, cooking oil, bites and sips add up. Read labels carefully. Restaurant portions are often 2-3× standard servings. Track for at least 2 weeks to establish baseline accuracy.",
+  },
+{
+    question: "Should I adjust my deficit as I lose weight?",
+    answer: "Yes. As you lose weight, your TDEE drops – smaller bodies need fewer calories. Recalculate your deficit every 10-15 lbs lost. Also, metabolic adaptation can reduce TDEE by an extra 5-15% beyond what weight loss alone predicts.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MobileChargingTimeCalculatorPage() {
   const [batteryCapacity, setBatteryCapacity] = useState<string>("");
@@ -236,45 +238,33 @@ export default function MobileChargingTimeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much does it cost to charge a phone for a year?</h4>
-                  <p>
-                    About $0.50-1.00 for most smartphones. Even with daily full charges, phone batteries are so small that annual charging costs are negligible compared to other household electricity use.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does fast charging cost more?</h4>
-                  <p>
-                    No. Fast charging uses more power per minute but for less time. Total energy delivered to the battery is the same. However, fast chargers may be slightly less efficient, adding a tiny amount to costs.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I convert mAh to kWh?</h4>
-                  <p>
-                    Multiply mAh by voltage (usually 3.7V for lithium), then divide by 1,000,000. Example: 4000 mAh × 3.7V = 14,800 mWh = 0.0148 kWh. Phone specs often list Wh directly.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it cheaper to charge at home or use public chargers?</h4>
-                  <p>
-                    Home charging is almost always cheaper. Public USB ports are often free but may charge slowly. Some airports and cafes charge for fast charging stations. Home rates are typically $0.10-0.30/kWh.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does leaving my phone plugged in overnight waste energy?</h4>
-                  <p>
-                    Modern phones stop drawing significant power once fully charged. The charger may use a tiny amount of standby power, but it's minimal—pennies per year. The bigger concern is battery health, not cost.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much does it cost to charge a phone for a year?",
+    answer: "About $0.50-1.00 for most smartphones. Even with daily full charges, phone batteries are so small that annual charging costs are negligible compared to other household electricity use.",
+  },
+{
+    question: "Does fast charging cost more?",
+    answer: "No. Fast charging uses more power per minute but for less time. Total energy delivered to the battery is the same. However, fast chargers may be slightly less efficient, adding a tiny amount to costs.",
+  },
+{
+    question: "How do I convert mAh to kWh?",
+    answer: "Multiply mAh by voltage (usually 3.7V for lithium), then divide by 1,000,000. Example: 4000 mAh × 3.7V = 14,800 mWh = 0.0148 kWh. Phone specs often list Wh directly.",
+  },
+{
+    question: "Is it cheaper to charge at home or use public chargers?",
+    answer: "Home charging is almost always cheaper. Public USB ports are often free but may charge slowly. Some airports and cafes charge for fast charging stations. Home rates are typically $0.10-0.30/kWh.",
+  },
+{
+    question: "Does leaving my phone plugged in overnight waste energy?",
+    answer: "Modern phones stop drawing significant power once fully charged. The charger may use a tiny amount of standby power, but it's minimal—pennies per year. The bigger concern is battery health, not cost.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FutureValueCalculatorPage() {
   const [presentValue, setPresentValue] = useState<string>("");
@@ -304,58 +306,33 @@ export default function FutureValueCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a realistic rate of return for investments?</h4>
-                  <p>
-                    The S&P 500 has averaged about 10% annually before inflation (7% after inflation) over
-                    the long term. However, returns vary significantly year to year. Conservative portfolios
-                    with bonds might target 4-6%. High-growth stock portfolios might aim for 8-12% with
-                    higher volatility. Never assume guaranteed returns.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does inflation affect future value?</h4>
-                  <p>
-                    Inflation reduces purchasing power over time. At 3% inflation, $100,000 today buys only
-                    $74,000 worth of goods in 10 years. To calculate real (inflation-adjusted) future value,
-                    subtract inflation from your nominal return. A 7% return with 3% inflation gives 4% real growth.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I use this calculator for retirement planning?</h4>
-                  <p>
-                    This calculator works for single lump-sum investments. For retirement planning with
-                    regular contributions, use a future value with contributions calculator. Most retirement
-                    planning involves both an existing balance and ongoing monthly or annual contributions.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the difference between simple and compound interest?</h4>
-                  <p>
-                    Simple interest pays only on the original principal. $10,000 at 5% simple interest earns
-                    $500 every year regardless of time. Compound interest pays on principal plus accumulated
-                    interest. The same $10,000 at 5% compound earns $500 year one, $525 year two, $551 year
-                    three, and so on. Compound growth accelerates over time.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate are future value projections?</h4>
-                  <p>
-                    Future value calculations are mathematically precise but based on assumptions that may
-                    not hold. Markets do not return steady annual rates. Actual returns fluctuate widely.
-                    Use these projections as planning guides, not guarantees. Plan conservatively and
-                    adjust expectations as circumstances change.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a realistic rate of return for investments?",
+    answer: "The S&P 500 has averaged about 10% annually before inflation (7% after inflation) over the long term. However, returns vary significantly year to year. Conservative portfolios with bonds might target 4-6%. High-growth stock portfolios might aim for 8-12% with higher volatility. Never assume guaranteed returns.",
+  },
+{
+    question: "How does inflation affect future value?",
+    answer: "Inflation reduces purchasing power over time. At 3% inflation, $100,000 today buys only $74,000 worth of goods in 10 years. To calculate real (inflation-adjusted) future value, subtract inflation from your nominal return. A 7% return with 3% inflation gives 4% real growth.",
+  },
+{
+    question: "Should I use this calculator for retirement planning?",
+    answer: "This calculator works for single lump-sum investments. For retirement planning with regular contributions, use a future value with contributions calculator. Most retirement planning involves both an existing balance and ongoing monthly or annual contributions.",
+  },
+{
+    question: "What is the difference between simple and compound interest?",
+    answer: "Simple interest pays only on the original principal. $10,000 at 5% simple interest earns $500 every year regardless of time. Compound interest pays on principal plus accumulated interest. The same $10,000 at 5% compound earns $500 year one, $525 year two, $551 year three, and so on. Compound growth accelerates over time.",
+  },
+{
+    question: "How accurate are future value projections?",
+    answer: "Future value calculations are mathematically precise but based on assumptions that may not hold. Markets do not return steady annual rates. Actual returns fluctuate widely. Use these projections as planning guides, not guarantees. Plan conservatively and adjust expectations as circumstances change.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

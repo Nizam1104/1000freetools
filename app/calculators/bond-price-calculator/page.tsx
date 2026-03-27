@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BondPriceCalculatorPage() {
   const [faceValue, setFaceValue] = useState<string>("");
@@ -346,45 +348,33 @@ export default function BondPriceCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is my bond trading below face value?</h4>
-                  <p>
-                    Your bond trades at a discount when market interest rates have risen above its coupon rate. Buyers demand a lower price to compensate for the below-market coupon. The bond will still pay face value at maturity, giving you a capital gain if you hold to term.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What happens to bond prices when interest rates rise?</h4>
-                  <p>
-                    Bond prices fall when interest rates rise. Existing bonds with lower coupons become less attractive, so their prices drop until their effective yield matches new bonds. The longer the bond's duration, the more its price will fall for a given rate increase.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it better to buy bonds at a premium or discount?</h4>
-                  <p>
-                    Neither is inherently better — both can offer fair value. Premium bonds provide higher current income but a capital loss at maturity. Discount bonds provide lower income but a capital gain. The total return depends on the yield to maturity, not the price relative to par.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate is this bond price calculation?</h4>
-                  <p>
-                    This calculator provides a theoretical fair value based on the inputs. Actual market prices may differ due to factors like credit spreads, liquidity, call features, and supply-demand dynamics. Use it as a reference point, not a guaranteed market price.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does the coupon frequency affect bond price?</h4>
-                  <p>
-                    Yes. Bonds that pay more frequently (monthly vs. annually) have slightly different prices because you receive cash sooner. More frequent payments mean each coupon can be reinvested earlier, which affects the present value calculation.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is my bond trading below face value?",
+    answer: "Your bond trades at a discount when market interest rates have risen above its coupon rate. Buyers demand a lower price to compensate for the below-market coupon. The bond will still pay face value at maturity, giving you a capital gain if you hold to term.",
+  },
+{
+    question: "What happens to bond prices when interest rates rise?",
+    answer: "Bond prices fall when interest rates rise. Existing bonds with lower coupons become less attractive, so their prices drop until their effective yield matches new bonds. The longer the bond's duration, the more its price will fall for a given rate increase.",
+  },
+{
+    question: "Is it better to buy bonds at a premium or discount?",
+    answer: "Neither is inherently better — both can offer fair value. Premium bonds provide higher current income but a capital loss at maturity. Discount bonds provide lower income but a capital gain. The total return depends on the yield to maturity, not the price relative to par.",
+  },
+{
+    question: "How accurate is this bond price calculation?",
+    answer: "This calculator provides a theoretical fair value based on the inputs. Actual market prices may differ due to factors like credit spreads, liquidity, call features, and supply-demand dynamics. Use it as a reference point, not a guaranteed market price.",
+  },
+{
+    question: "Does the coupon frequency affect bond price?",
+    answer: "Yes. Bonds that pay more frequently (monthly vs. annually) have slightly different prices because you receive cash sooner. More frequent payments mean each coupon can be reinvested earlier, which affects the present value calculation.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

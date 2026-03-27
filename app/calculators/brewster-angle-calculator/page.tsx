@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BrewsterAngleCalculator() {
   const [n1, setN1] = useState<string>("1.0003");
@@ -264,45 +266,33 @@ export default function BrewsterAngleCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What happens if light travels from glass to air instead?</h4>
-                <p>
-                  The formula still applies but n1 and n2 swap. For glass (n = 1.52) to air (n = 1.0003), Brewster's angle is arctan(1.0003/1.52) = 33.3 degrees. This is the complement of the air-to-glass angle (90 - 56.7 = 33.3 degrees).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does Brewster's angle work for all wavelengths of light?</h4>
-                <p>
-                  The principle applies to all wavelengths, but the exact angle varies slightly because refractive index depends on wavelength (dispersion). Blue light has a slightly different Brewster angle than red light for the same material.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why is reflected light polarized at Brewster's angle?</h4>
-                <p>
-                  At Brewster's angle, the reflected ray direction aligns with where the electric field of one polarization component would need to oscillate to radiate in that direction. Since electromagnetic waves cannot oscillate along their propagation direction, that component cannot be reflected.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can Brewster's angle be greater than 45 degrees?</h4>
-                <p>
-                  Yes, whenever n2 is greater than n1. For most materials viewed from air, Brewster's angle ranges from about 53 degrees (water) to 74 degrees (silicon). It only drops below 45 degrees when light travels from a higher-index to lower-index medium.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is Brewster's angle the same as the critical angle?</h4>
-                <p>
-                  No. The critical angle is for total internal reflection when light travels from high to low index. Brewster's angle is for polarization and exists for light traveling in either direction. They are different phenomena with different formulas.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What happens if light travels from glass to air instead?",
+    answer: "The formula still applies but n1 and n2 swap. For glass (n = 1.52) to air (n = 1.0003), Brewster's angle is arctan(1.0003/1.52) = 33.3 degrees. This is the complement of the air-to-glass angle (90 - 56.7 = 33.3 degrees).",
+  },
+{
+    question: "Does Brewster's angle work for all wavelengths of light?",
+    answer: "The principle applies to all wavelengths, but the exact angle varies slightly because refractive index depends on wavelength (dispersion). Blue light has a slightly different Brewster angle than red light for the same material.",
+  },
+{
+    question: "Why is reflected light polarized at Brewster's angle?",
+    answer: "At Brewster's angle, the reflected ray direction aligns with where the electric field of one polarization component would need to oscillate to radiate in that direction. Since electromagnetic waves cannot oscillate along their propagation direction, that component cannot be reflected.",
+  },
+{
+    question: "Can Brewster's angle be greater than 45 degrees?",
+    answer: "Yes, whenever n2 is greater than n1. For most materials viewed from air, Brewster's angle ranges from about 53 degrees (water) to 74 degrees (silicon). It only drops below 45 degrees when light travels from a higher-index to lower-index medium.",
+  },
+{
+    question: "Is Brewster's angle the same as the critical angle?",
+    answer: "No. The critical angle is for total internal reflection when light travels from high to low index. Brewster's angle is for polarization and exists for light traveling in either direction. They are different phenomena with different formulas.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

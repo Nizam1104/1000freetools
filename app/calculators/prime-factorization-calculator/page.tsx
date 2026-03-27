@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -222,43 +224,33 @@ export default function PrimeFactorizationCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is prime factorization?</h4>
-            <p className="text-xs text-muted-foreground">
-              Prime factorization breaks a number down into its prime number building blocks. For example, 12 = 2 × 2 × 3. Every composite number has exactly one prime factorization.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you write prime factorization in exponential form?</h4>
-            <p className="text-xs text-muted-foreground">
-              Count how many times each prime appears. Write the prime with that count as an exponent. For 72 = 2×2×2×3×3, write as 2³ × 3². This is more compact and useful for calculations.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a factor tree?</h4>
-            <p className="text-xs text-muted-foreground">
-              A factor tree is a visual method for prime factorization. Start with the number, branch into any two factors, then keep branching until all endpoints are prime. The leaves give the factorization.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why stop at √n when finding factors?</h4>
-            <p className="text-xs text-muted-foreground">
-              If n has a factor larger than √n, it must also have a corresponding factor smaller than √n. So checking up to √n finds all factor pairs. This optimization makes factorization much faster.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can prime factorization help with fractions?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes! Use prime factorization to find the LCD (least common denominator) for adding fractions. Factor each denominator, then LCM uses highest power of each prime that appears.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is prime factorization?",
+    answer: "Prime factorization breaks a number down into its prime number building blocks. For example, 12 = 2 × 2 × 3. Every composite number has exactly one prime factorization.",
+  },
+{
+    question: "How do you write prime factorization in exponential form?",
+    answer: "Count how many times each prime appears. Write the prime with that count as an exponent. For 72 = 2×2×2×3×3, write as 2³ × 3². This is more compact and useful for calculations.",
+  },
+{
+    question: "What is a factor tree?",
+    answer: "A factor tree is a visual method for prime factorization. Start with the number, branch into any two factors, then keep branching until all endpoints are prime. The leaves give the factorization.",
+  },
+{
+    question: "Why stop at √n when finding factors?",
+    answer: "If n has a factor larger than √n, it must also have a corresponding factor smaller than √n. So checking up to √n finds all factor pairs. This optimization makes factorization much faster.",
+  },
+{
+    question: "Can prime factorization help with fractions?",
+    answer: "Yes! Use prime factorization to find the LCD (least common denominator) for adding fractions. Factor each denominator, then LCM uses highest power of each prime that appears.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

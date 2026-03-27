@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BrickBondCalculatorPage() {
   const [wallLength, setWallLength] = useState<string>("");
@@ -407,45 +409,33 @@ export default function BrickBondCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate bricks per square meter?</h4>
-                  <p>
-                    For standard bricks (230 x 75mm) with 10mm mortar: divide 1 square meter by the area of one brick plus mortar. That's 1000000 / (240 x 85) = about 49 bricks per square meter for running bond. Adjust for your brick size and bond pattern.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I deduct mortar thickness from wall dimensions?</h4>
-                  <p>
-                    No need to deduct manually. The calculator accounts for mortar by using effective brick dimensions (brick size + mortar thickness). This gives accurate brick counts including the space mortar occupies.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much waste should I allow?</h4>
-                  <p>
-                    For simple rectangular walls, 5% waste is usually enough. For walls with many corners, openings, or complex patterns, use 10%. Herringbone and other decorative bonds may need 15% waste due to extra cutting.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does this calculator work for pavers?</h4>
-                  <p>
-                    The basic calculation works for pavers, but adjust the bond pattern. Pavers often use herringbone, basketweave, or running bond. Enter paver dimensions as brick size and set appropriate waste allowance for cutting.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the difference between single and double brick walls?</h4>
-                  <p>
-                    Single brick walls are one brick thick (about 230mm). Double brick walls are two bricks thick (about 460mm) with headers tying them together. Double walls need roughly twice as many bricks and are used for load-bearing construction.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate bricks per square meter?",
+    answer: "For standard bricks (230 x 75mm) with 10mm mortar: divide 1 square meter by the area of one brick plus mortar. That's 1000000 / (240 x 85) = about 49 bricks per square meter for running bond. Adjust for your brick size and bond pattern.",
+  },
+{
+    question: "Should I deduct mortar thickness from wall dimensions?",
+    answer: "No need to deduct manually. The calculator accounts for mortar by using effective brick dimensions (brick size + mortar thickness). This gives accurate brick counts including the space mortar occupies.",
+  },
+{
+    question: "How much waste should I allow?",
+    answer: "For simple rectangular walls, 5% waste is usually enough. For walls with many corners, openings, or complex patterns, use 10%. Herringbone and other decorative bonds may need 15% waste due to extra cutting.",
+  },
+{
+    question: "Does this calculator work for pavers?",
+    answer: "The basic calculation works for pavers, but adjust the bond pattern. Pavers often use herringbone, basketweave, or running bond. Enter paver dimensions as brick size and set appropriate waste allowance for cutting.",
+  },
+{
+    question: "What's the difference between single and double brick walls?",
+    answer: "Single brick walls are one brick thick (about 230mm). Double brick walls are two bricks thick (about 460mm) with headers tying them together. Double walls need roughly twice as many bricks and are used for load-bearing construction.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

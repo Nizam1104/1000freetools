@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function NPSScoreCalculatorPage() {
   const [promoters, setPromoters] = useState<string>("");
@@ -387,55 +389,33 @@ export default function NPSScoreCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good NPS score?</h4>
-                  <p>
-                    Scores above 0 are positive (more Promoters than Detractors). 30-50 is good, 50-70 is
-                    excellent, and above 70 is world-class. However, context matters — compare to your
-                    industry average. Some industries naturally have lower NPS due to customer expectations.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How often should I measure NPS?</h4>
-                  <p>
-                    Survey quarterly for trend tracking. Some companies survey continuously and report
-                    rolling averages. Avoid surveying the same customers too frequently — wait at least
-                    90 days between surveys to the same person to prevent survey fatigue.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I track NPS by customer segment?</h4>
-                  <p>
-                    Yes. Overall NPS can hide important differences. Segment by product line, customer
-                    tenure, geography, or account size. You might discover that new customers love you
-                    while long-term customers are becoming Detractors — critical insight for retention.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the difference between NPS and CSAT?</h4>
-                  <p>
-                    CSAT (Customer Satisfaction) measures satisfaction with a specific interaction. NPS
-                    measures overall loyalty and likelihood to recommend. CSAT is transactional; NPS is
-                    relational. Both are useful — CSAT for operational improvements, NPS for strategic health.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can NPS be negative?</h4>
-                  <p>
-                    Yes. Negative NPS means you have more Detractors than Promoters. This is a warning sign
-                    that requires immediate attention. Focus on understanding why customers are unhappy and
-                    fixing root causes before trying to acquire new customers.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good NPS score?",
+    answer: "Scores above 0 are positive (more Promoters than Detractors). 30-50 is good, 50-70 is excellent, and above 70 is world-class. However, context matters — compare to your industry average. Some industries naturally have lower NPS due to customer expectations.",
+  },
+{
+    question: "How often should I measure NPS?",
+    answer: "Survey quarterly for trend tracking. Some companies survey continuously and report rolling averages. Avoid surveying the same customers too frequently — wait at least 90 days between surveys to the same person to prevent survey fatigue.",
+  },
+{
+    question: "Should I track NPS by customer segment?",
+    answer: "Yes. Overall NPS can hide important differences. Segment by product line, customer tenure, geography, or account size. You might discover that new customers love you while long-term customers are becoming Detractors — critical insight for retention.",
+  },
+{
+    question: "What is the difference between NPS and CSAT?",
+    answer: "CSAT (Customer Satisfaction) measures satisfaction with a specific interaction. NPS measures overall loyalty and likelihood to recommend. CSAT is transactional; NPS is relational. Both are useful — CSAT for operational improvements, NPS for strategic health.",
+  },
+{
+    question: "Can NPS be negative?",
+    answer: "Yes. Negative NPS means you have more Detractors than Promoters. This is a warning sign that requires immediate attention. Focus on understanding why customers are unhappy and fixing root causes before trying to acquire new customers.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

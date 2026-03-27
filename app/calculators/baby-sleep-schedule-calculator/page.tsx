@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -513,59 +515,33 @@ export default function BabySleepScheduleCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much should my baby sleep?</h4>
-                  <p>
-                    It depends on age. Newborns (0-3 months) need 14-17 hours total. Infants (4-11 months)
-                    need 12-15 hours. Toddlers (1-2 years) need 11-14 hours. These include both nighttime
-                    sleep and naps. Some babies naturally need slightly more or less — watch for overtired
-                    cues like fussiness and rubbing eyes.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">When do babies sleep through the night?</h4>
-                  <p>
-                    &quot;Sleeping through the night&quot; usually means a 6-8 hour stretch. Some babies manage this
-                    by 3-4 months, but many don&apos;t until 6-9 months. Even then, occasional night wakings are
-                    normal, especially during teething, illness, or developmental leaps.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is sleep regression?</h4>
-                  <p>
-                    Sleep regression is when a baby who was sleeping well suddenly starts waking frequently
-                    or fighting naps. The most common happen around 4 months (permanent sleep cycle changes),
-                    8-10 months (crawling, standing, separation anxiety), and 18 months (toddler independence).
-                    Regressions typically last 2-6 weeks.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should my baby nap during the day?</h4>
-                  <p>
-                    Yes. Naps are essential for babies and toddlers. Overtired babies actually sleep worse
-                    at night. Newborns nap 4-5 times per day. By 6-9 months, most babies take 2-3 naps. By
-                    15-18 months, most transition to one afternoon nap. Don&apos;t skip naps hoping for better
-                    nighttime sleep — it usually backfires.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I establish a bedtime routine?</h4>
-                  <p>
-                    Start simple and consistent. Pick 3-4 calming activities and do them in the same order
-                    every night. Example: bath, pajamas, book, feed, bed. Keep it under 30 minutes. Start
-                    around 6-8 weeks. The goal is to create associations that signal &quot;sleep time is coming.&quot;
-                    Consistency matters more than the specific activities.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much should my baby sleep?",
+    answer: "It depends on age. Newborns (0-3 months) need 14-17 hours total. Infants (4-11 months) need 12-15 hours. Toddlers (1-2 years) need 11-14 hours. These include both nighttime sleep and naps. Some babies naturally need slightly more or less — watch for overtired cues like fussiness and rubbing eyes.",
+  },
+{
+    question: "When do babies sleep through the night?",
+    answer: "&quot;Sleeping through the night&quot; usually means a 6-8 hour stretch. Some babies manage this by 3-4 months, but many don&apos;t until 6-9 months. Even then, occasional night wakings are normal, especially during teething, illness, or developmental leaps.",
+  },
+{
+    question: "What is sleep regression?",
+    answer: "Sleep regression is when a baby who was sleeping well suddenly starts waking frequently or fighting naps. The most common happen around 4 months (permanent sleep cycle changes), 8-10 months (crawling, standing, separation anxiety), and 18 months (toddler independence). Regressions typically last 2-6 weeks.",
+  },
+{
+    question: "Should my baby nap during the day?",
+    answer: "Yes. Naps are essential for babies and toddlers. Overtired babies actually sleep worse at night. Newborns nap 4-5 times per day. By 6-9 months, most babies take 2-3 naps. By 15-18 months, most transition to one afternoon nap. Don&apos;t skip naps hoping for better nighttime sleep — it usually backfires.",
+  },
+{
+    question: "How do I establish a bedtime routine?",
+    answer: "Start simple and consistent. Pick 3-4 calming activities and do them in the same order every night. Example: bath, pajamas, book, feed, bed. Keep it under 30 minutes. Start around 6-8 weeks. The goal is to create associations that signal &quot;sleep time is coming.&quot; Consistency matters more than the specific activities.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

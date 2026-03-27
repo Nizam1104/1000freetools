@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DollarCostAveragingCalculatorPage() {
   const [investmentAmount, setInvestmentAmount] = useState<string>("");
@@ -376,45 +378,33 @@ export default function DollarCostAveragingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is dollar-cost averaging better than lump sum investing?</h4>
-                  <p>
-                    Statistically, lump sum investing outperforms DCA about two-thirds of the time because markets tend to rise over time. However, DCA reduces regret risk and emotional stress. For investors who worry about timing the market or would panic if their lump sum dropped 20% immediately, DCA provides psychological benefits that may be worth the slight expected return trade-off.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How often should I invest with DCA?</h4>
-                  <p>
-                    Monthly investing aligns well with most paychecks and is common for 401(k) contributions. Weekly or biweekly investing can smooth out volatility slightly more but may incur more transaction fees depending on your broker. The exact frequency matters less than consistency. Pick a schedule you can maintain.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does DCA work for cryptocurrency?</h4>
-                  <p>
-                    Yes, DCA is particularly well-suited for cryptocurrency given its extreme volatility. Buying a fixed dollar amount of Bitcoin or Ethereum weekly or monthly reduces the risk of buying at a peak. Many crypto investors use DCA as their primary strategy rather than trying to time volatile markets.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the average cost per unit in DCA?</h4>
-                  <p>
-                    The average cost per unit is your total amount invested divided by the total number of units purchased. With DCA, this average cost is typically lower than the average market price over the same period because you automatically buy more units when prices are low and fewer when prices are high.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I stop DCA during a bear market?</h4>
-                  <p>
-                    No, continuing DCA during a bear market is when the strategy provides the most value. Your fixed contributions buy more shares at depressed prices. Investors who maintain DCA through downturns are often rewarded with strong returns when markets eventually recover. Stopping contributions locks in losses and misses the recovery.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is dollar-cost averaging better than lump sum investing?",
+    answer: "Statistically, lump sum investing outperforms DCA about two-thirds of the time because markets tend to rise over time. However, DCA reduces regret risk and emotional stress. For investors who worry about timing the market or would panic if their lump sum dropped 20% immediately, DCA provides psychological benefits that may be worth the slight expected return trade-off.",
+  },
+{
+    question: "How often should I invest with DCA?",
+    answer: "Monthly investing aligns well with most paychecks and is common for 401(k) contributions. Weekly or biweekly investing can smooth out volatility slightly more but may incur more transaction fees depending on your broker. The exact frequency matters less than consistency. Pick a schedule you can maintain.",
+  },
+{
+    question: "Does DCA work for cryptocurrency?",
+    answer: "Yes, DCA is particularly well-suited for cryptocurrency given its extreme volatility. Buying a fixed dollar amount of Bitcoin or Ethereum weekly or monthly reduces the risk of buying at a peak. Many crypto investors use DCA as their primary strategy rather than trying to time volatile markets.",
+  },
+{
+    question: "What is the average cost per unit in DCA?",
+    answer: "The average cost per unit is your total amount invested divided by the total number of units purchased. With DCA, this average cost is typically lower than the average market price over the same period because you automatically buy more units when prices are low and fewer when prices are high.",
+  },
+{
+    question: "Should I stop DCA during a bear market?",
+    answer: "No, continuing DCA during a bear market is when the strategy provides the most value. Your fixed contributions buy more shares at depressed prices. Investors who maintain DCA through downturns are often rewarded with strong returns when markets eventually recover. Stopping contributions locks in losses and misses the recovery.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

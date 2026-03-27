@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function NoiseLevelCalculator() {
   const [sources, setSources] = useState<{ name: string; db: string }[]>([{ name: "", db: "" }]);
@@ -270,55 +272,33 @@ export default function NoiseLevelCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do you add decibels from multiple sources?</h4>
-                <p>
-                  Convert each dB to intensity: I = 10^(dB/10). Add all intensities. Convert back:
-                  dB = 10 × log10(total intensity). For two equal sources, simply add 3 dB to the single
-                  source level. For unequal sources, the louder source dominates the total.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a safe noise level for extended exposure?</h4>
-                <p>
-                  Below 70 dB is safe for unlimited exposure. 85 dB is the threshold where hearing protection
-                  becomes necessary for 8-hour exposure. Every 3 dB increase halves safe exposure time:
-                  88 dB = 4 hours, 91 dB = 2 hours, 94 dB = 1 hour, 100 dB = 15 minutes.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does sound decrease with distance?</h4>
-                <p>
-                  Sound spreads out as it travels, distributing energy over a larger area. For a point source
-                  in free space, intensity follows the inverse square law. Doubling distance quarters the
-                  intensity, which equals a 6 dB reduction. Real environments have reflections that modify this.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I compare dB levels directly?</h4>
-                <p>
-                  Only if they use the same weighting. dBA (A-weighted) approximates human hearing and is
-                  used for noise regulations. dBC measures low frequencies better. Unweighted dB is rare.
-                  Always compare like with like — dBA to dBA, not dBA to dBC.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How loud is too loud for children?</h4>
-                <p>
-                  Children's ears are more sensitive. Keep toy noises below 80 dB at the child's ear.
-                  Limit exposure to sounds above 85 dB. Use hearing protection at sporting events, fireworks,
-                  and concerts. Monitor volume on headphones — many exceed safe levels.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you add decibels from multiple sources?",
+    answer: "Convert each dB to intensity: I = 10^(dB/10). Add all intensities. Convert back: dB = 10 × log10(total intensity). For two equal sources, simply add 3 dB to the single source level. For unequal sources, the louder source dominates the total.",
+  },
+{
+    question: "What is a safe noise level for extended exposure?",
+    answer: "Below 70 dB is safe for unlimited exposure. 85 dB is the threshold where hearing protection becomes necessary for 8-hour exposure. Every 3 dB increase halves safe exposure time: 88 dB = 4 hours, 91 dB = 2 hours, 94 dB = 1 hour, 100 dB = 15 minutes.",
+  },
+{
+    question: "Why does sound decrease with distance?",
+    answer: "Sound spreads out as it travels, distributing energy over a larger area. For a point source in free space, intensity follows the inverse square law. Doubling distance quarters the intensity, which equals a 6 dB reduction. Real environments have reflections that modify this.",
+  },
+{
+    question: "Can I compare dB levels directly?",
+    answer: "Only if they use the same weighting. dBA (A-weighted) approximates human hearing and is used for noise regulations. dBC measures low frequencies better. Unweighted dB is rare. Always compare like with like — dBA to dBA, not dBA to dBC.",
+  },
+{
+    question: "How loud is too loud for children?",
+    answer: "Children's ears are more sensitive. Keep toy noises below 80 dB at the child's ear. Limit exposure to sounds above 85 dB. Use hearing protection at sporting events, fireworks, and concerts. Monitor volume on headphones — many exceed safe levels.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

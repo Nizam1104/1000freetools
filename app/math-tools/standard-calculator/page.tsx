@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function StandardCalculator() {
   const [display, setDisplay] = useState<string>("0");
@@ -329,43 +331,33 @@ export default function StandardCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I clear the calculator?</h4>
-            <p className="text-xs text-muted-foreground">
-              Click AC (All Clear) to reset everything, or CE (Clear Entry) to clear just the current number. You can also press Escape on your keyboard for a full reset.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I chain multiple operations?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Enter 5 + 3 × 2 − 1 and the calculator processes each operation in sequence. Just keep entering operations and numbers – press = when you want the final result.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does this calculator follow order of operations?</h4>
-            <p className="text-xs text-muted-foreground">
-              This is a basic calculator that processes operations in the order you enter them (left to right). For order of operations (PEMDAS), use our Scientific Calculator instead.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the maximum number I can enter?</h4>
-            <p className="text-xs text-muted-foreground">
-              The calculator handles numbers up to JavaScript's safe integer limit (about 9 quadrillion). For most everyday calculations, you won't hit any limits.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I use this offline?</h4>
-            <p className="text-xs text-muted-foreground">
-              Once the page loads, the calculator works without an internet connection. It runs entirely in your browser – no server calls needed for calculations.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I clear the calculator?",
+    answer: "Click AC (All Clear) to reset everything, or CE (Clear Entry) to clear just the current number. You can also press Escape on your keyboard for a full reset.",
+  },
+{
+    question: "Can I chain multiple operations?",
+    answer: "Yes. Enter 5 + 3 × 2 − 1 and the calculator processes each operation in sequence. Just keep entering operations and numbers – press = when you want the final result.",
+  },
+{
+    question: "Does this calculator follow order of operations?",
+    answer: "This is a basic calculator that processes operations in the order you enter them (left to right). For order of operations (PEMDAS), use our Scientific Calculator instead.",
+  },
+{
+    question: "What's the maximum number I can enter?",
+    answer: "The calculator handles numbers up to JavaScript's safe integer limit (about 9 quadrillion). For most everyday calculations, you won't hit any limits.",
+  },
+{
+    question: "Can I use this offline?",
+    answer: "Once the page loads, the calculator works without an internet connection. It runs entirely in your browser – no server calls needed for calculations.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

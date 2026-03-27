@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -417,45 +419,33 @@ export default function DecibelToPowerConverterPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What does 0 dB mean?</h4>
-                  <p>
-                    0 dB doesn&apos;t mean no sound — it means the sound is at the reference level (threshold of human hearing). Negative dB values are sounds quieter than we can typically hear.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is the decibel scale logarithmic?</h4>
-                  <p>
-                    Human hearing perceives loudness logarithmically, not linearly. A sound must be 10× more powerful to seem twice as loud. The dB scale matches how we actually hear.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How loud is too loud?</h4>
-                  <p>
-                    Sounds above 85 dB can cause hearing damage with prolonged exposure. Above 120 dB causes immediate discomfort. Above 140 dB can cause instant, permanent damage.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is sound intensity?</h4>
-                  <p>
-                    Sound intensity is power per unit area, measured in watts per square meter (W/m²). It represents how much acoustic energy passes through a given area each second.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I convert dB to watts?</h4>
-                  <p>
-                    For power: Watts = Reference × 10^(dB/10). For dBm (reference = 1 mW): Watts = 0.001 × 10^(dBm/10). Example: 30 dBm = 0.001 × 10^3 = 1 watt.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does 0 dB mean?",
+    answer: "0 dB doesn&apos;t mean no sound — it means the sound is at the reference level (threshold of human hearing). Negative dB values are sounds quieter than we can typically hear.",
+  },
+{
+    question: "Why is the decibel scale logarithmic?",
+    answer: "Human hearing perceives loudness logarithmically, not linearly. A sound must be 10× more powerful to seem twice as loud. The dB scale matches how we actually hear.",
+  },
+{
+    question: "How loud is too loud?",
+    answer: "Sounds above 85 dB can cause hearing damage with prolonged exposure. Above 120 dB causes immediate discomfort. Above 140 dB can cause instant, permanent damage.",
+  },
+{
+    question: "What is sound intensity?",
+    answer: "Sound intensity is power per unit area, measured in watts per square meter (W/m²). It represents how much acoustic energy passes through a given area each second.",
+  },
+{
+    question: "How do I convert dB to watts?",
+    answer: "For power: Watts = Reference × 10^(dB/10). For dBm (reference = 1 mW): Watts = 0.001 × 10^(dBm/10). Example: 30 dBm = 0.001 × 10^3 = 1 watt.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function IdealGasLawCalculator() {
   const [solveFor, setSolveFor] = useState<"P" | "V" | "n" | "T">("P");
@@ -301,45 +303,33 @@ export default function IdealGasLawCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the ideal gas law used for?</h4>
-                <p>
-                  The ideal gas law predicts how gases behave when conditions change. Chemists use it to calculate reactant volumes in gas reactions. Engineers apply it to design pneumatic systems. Meteorologists use it to model atmospheric behavior.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the value of R in the ideal gas law?</h4>
-                <p>
-                  R equals 8.314 J/(mol·K) in SI units. This is the most common value for physics and chemistry calculations. In other unit systems: 0.0821 L·atm/(mol·K), 62.36 L·torr/(mol·K), or 1.987 cal/(mol·K).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">When does the ideal gas law not work?</h4>
-                <p>
-                  The ideal gas law fails at very high pressures (molecules are crowded) or very low temperatures (molecules attract strongly). Near the condensation point, real gases deviate significantly. The van der Waals equation handles these cases better.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert between pressure units?</h4>
-                <p>
-                  1 atm = 101,325 Pa = 101.325 kPa = 760 mmHg = 760 torr = 14.7 psi. To convert, multiply by the appropriate factor. For example, 2 atm × 101,325 = 202,650 Pa.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is molar volume at STP?</h4>
-                <p>
-                  At standard temperature and pressure (0°C, 1 atm), one mole of any ideal gas occupies 22.4 liters. This is useful for quick estimates. At SATP (25°C, 1 bar), molar volume is about 24.8 L/mol.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the ideal gas law used for?",
+    answer: "The ideal gas law predicts how gases behave when conditions change. Chemists use it to calculate reactant volumes in gas reactions. Engineers apply it to design pneumatic systems. Meteorologists use it to model atmospheric behavior.",
+  },
+{
+    question: "What is the value of R in the ideal gas law?",
+    answer: "R equals 8.314 J/(mol·K) in SI units. This is the most common value for physics and chemistry calculations. In other unit systems: 0.0821 L·atm/(mol·K), 62.36 L·torr/(mol·K), or 1.987 cal/(mol·K).",
+  },
+{
+    question: "When does the ideal gas law not work?",
+    answer: "The ideal gas law fails at very high pressures (molecules are crowded) or very low temperatures (molecules attract strongly). Near the condensation point, real gases deviate significantly. The van der Waals equation handles these cases better.",
+  },
+{
+    question: "How do I convert between pressure units?",
+    answer: "1 atm = 101,325 Pa = 101.325 kPa = 760 mmHg = 760 torr = 14.7 psi. To convert, multiply by the appropriate factor. For example, 2 atm × 101,325 = 202,650 Pa.",
+  },
+{
+    question: "What is molar volume at STP?",
+    answer: "At standard temperature and pressure (0°C, 1 atm), one mole of any ideal gas occupies 22.4 liters. This is useful for quick estimates. At SATP (25°C, 1 bar), molar volume is about 24.8 L/mol.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

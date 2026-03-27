@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -480,59 +482,33 @@ export default function GachaPullProbabilityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How many pulls do I need for a 50% chance?</h4>
-                  <p>
-                    Use the formula: pulls = ln(0.5) / ln(1-p). At 1% rate, you need about 69 pulls for
-                    50% chance. At 0.6% (Genshin 5-star), you need about 116 pulls. This is why pity
-                    systems are important - without them, half of players would fail even at expected
-                    pull counts.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is soft pity?</h4>
-                  <p>
-                    Soft pity is a hidden mechanic that increases your pull rate after a certain number
-                    of pulls. In Genshin Impact, the 0.6% rate starts increasing around pull 74, reaching
-                    nearly 100% by pull 90. This means most players get their 5-star between pulls 75-85,
-                    not at the full 90 pity.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it worth pulling on rate-up banners?</h4>
-                  <p>
-                    Rate-up banners typically have 50% chance to get the featured character when you pull
-                    a 5-star. If you lose the 50/50, the next 5-star is guaranteed featured. Consider
-                    whether you have enough pulls to guarantee the character (worst case: lose 50/50,
-                    then hit pity again). If not, skipping may be wiser.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much should I spend on gacha games?</h4>
-                  <p>
-                    Only spend money you can afford to lose completely. A common guideline is to treat
-                    gacha like entertainment: set a monthly budget similar to what you might spend on
-                    movies or dining out. Never spend rent money, emergency funds, or borrowed money
-                    on gacha pulls.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I calculate exact costs for guaranteed pulls?</h4>
-                  <p>
-                    Yes. Multiply the pity count by cost per pull. In Genshin, 90 pulls at $2.50 each
-                    equals $225 for hard pity. However, soft pity means most players spend less - around
-                    $175-200 on average for a guaranteed 5-star. Always budget for worst case though.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many pulls do I need for a 50% chance?",
+    answer: "Use the formula: pulls = ln(0.5) / ln(1-p). At 1% rate, you need about 69 pulls for 50% chance. At 0.6% (Genshin 5-star), you need about 116 pulls. This is why pity systems are important - without them, half of players would fail even at expected pull counts.",
+  },
+{
+    question: "What is soft pity?",
+    answer: "Soft pity is a hidden mechanic that increases your pull rate after a certain number of pulls. In Genshin Impact, the 0.6% rate starts increasing around pull 74, reaching nearly 100% by pull 90. This means most players get their 5-star between pulls 75-85, not at the full 90 pity.",
+  },
+{
+    question: "Is it worth pulling on rate-up banners?",
+    answer: "Rate-up banners typically have 50% chance to get the featured character when you pull a 5-star. If you lose the 50/50, the next 5-star is guaranteed featured. Consider whether you have enough pulls to guarantee the character (worst case: lose 50/50, then hit pity again). If not, skipping may be wiser.",
+  },
+{
+    question: "How much should I spend on gacha games?",
+    answer: "Only spend money you can afford to lose completely. A common guideline is to treat gacha like entertainment: set a monthly budget similar to what you might spend on movies or dining out. Never spend rent money, emergency funds, or borrowed money on gacha pulls.",
+  },
+{
+    question: "Can I calculate exact costs for guaranteed pulls?",
+    answer: "Yes. Multiply the pity count by cost per pull. In Genshin, 90 pulls at $2.50 each equals $225 for hard pity. However, soft pity means most players spend less - around $175-200 on average for a guaranteed 5-star. Always budget for worst case though.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

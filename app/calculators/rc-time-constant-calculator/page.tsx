@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RcTimeConstantCalculator() {
   const [resistance, setResistance] = useState<string>("");
@@ -197,50 +199,33 @@ export default function RcTimeConstantCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the RC time constant?</h4>
-                <p>
-                  The RC time constant (τ) is the time it takes for a capacitor to charge to 63.2% of
-                  its final voltage through a resistor. It equals R × C, measured in seconds.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why is 5τ considered full charge?</h4>
-                <p>
-                  At 5τ, the capacitor reaches 99.3% of full charge. The remaining 0.7% takes
-                  disproportionately long to add. For practical purposes, 5τ is considered fully charged.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert µF to farads?</h4>
-                <p>
-                  1 µF (microfarad) = 0.000001 F = 1×10⁻⁶ F. For example, 100 µF = 0.0001 F.
-                  Enter 0.0001 or 1e-4 in the calculator.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does the time constant change with voltage?</h4>
-                <p>
-                  No. The time constant depends only on R and C values, not the applied voltage.
-                  Higher voltage means higher final charge, but the timing stays the same.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What happens if I increase resistance?</h4>
-                <p>
-                  Higher resistance means slower charging. Doubling R doubles the time constant.
-                  The capacitor takes twice as long to reach the same charge percentage.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the RC time constant?",
+    answer: "The RC time constant (τ) is the time it takes for a capacitor to charge to 63.2% of its final voltage through a resistor. It equals R × C, measured in seconds.",
+  },
+{
+    question: "Why is 5τ considered full charge?",
+    answer: "At 5τ, the capacitor reaches 99.3% of full charge. The remaining 0.7% takes disproportionately long to add. For practical purposes, 5τ is considered fully charged.",
+  },
+{
+    question: "How do I convert µF to farads?",
+    answer: "1 µF (microfarad) = 0.000001 F = 1×10⁻⁶ F. For example, 100 µF = 0.0001 F. Enter 0.0001 or 1e-4 in the calculator.",
+  },
+{
+    question: "Does the time constant change with voltage?",
+    answer: "No. The time constant depends only on R and C values, not the applied voltage. Higher voltage means higher final charge, but the timing stays the same.",
+  },
+{
+    question: "What happens if I increase resistance?",
+    answer: "Higher resistance means slower charging. Doubling R doubles the time constant. The capacitor takes twice as long to reach the same charge percentage.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

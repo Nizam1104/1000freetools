@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -368,45 +370,33 @@ export default function RSAKeyStrengthCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is 2048-bit RSA still secure in 2026?</h4>
-                  <p>
-                    Yes, 2048-bit RSA remains secure for most applications through 2030 according to NIST. No practical attacks exist against properly implemented 2048-bit keys. However, new systems should use 3072 bits for long-term security beyond 2030.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long would it take to crack a 2048-bit RSA key?</h4>
-                  <p>
-                    With current technology, factoring a 2048-bit RSA modulus would take millions of years using the best known classical algorithms. The record is 829 bits (factored in 2020). Even with massive computing clusters, 2048 bits remains out of reach.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What RSA key size does NIST recommend?</h4>
-                  <p>
-                    NIST SP 800-57 recommends 2048 bits as the minimum through 2030, and 3072 bits or higher for security beyond 2030. Federal agencies must follow these guidelines, and they're widely adopted in regulated industries.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I use RSA or ECC for new projects?</h4>
-                  <p>
-                    ECC (Elliptic Curve Cryptography) offers equivalent security with smaller keys – a 256-bit ECC key matches 3072-bit RSA. ECC is faster and uses less bandwidth. However, RSA has broader legacy support. For new systems, ECC or Ed25519 is often the better choice.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Will quantum computers break my RSA keys?</h4>
-                  <p>
-                    Eventually, yes – but not soon. Shor's algorithm can factor RSA efficiently on a quantum computer, but we'd need thousands of error-corrected qubits. Current quantum computers have a few hundred noisy qubits. If you need data to stay secret for 30+ years, consider post-quantum cryptography now.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is 2048-bit RSA still secure in 2026?",
+    answer: "Yes, 2048-bit RSA remains secure for most applications through 2030 according to NIST. No practical attacks exist against properly implemented 2048-bit keys. However, new systems should use 3072 bits for long-term security beyond 2030.",
+  },
+{
+    question: "How long would it take to crack a 2048-bit RSA key?",
+    answer: "With current technology, factoring a 2048-bit RSA modulus would take millions of years using the best known classical algorithms. The record is 829 bits (factored in 2020). Even with massive computing clusters, 2048 bits remains out of reach.",
+  },
+{
+    question: "What RSA key size does NIST recommend?",
+    answer: "NIST SP 800-57 recommends 2048 bits as the minimum through 2030, and 3072 bits or higher for security beyond 2030. Federal agencies must follow these guidelines, and they're widely adopted in regulated industries.",
+  },
+{
+    question: "Should I use RSA or ECC for new projects?",
+    answer: "ECC (Elliptic Curve Cryptography) offers equivalent security with smaller keys – a 256-bit ECC key matches 3072-bit RSA. ECC is faster and uses less bandwidth. However, RSA has broader legacy support. For new systems, ECC or Ed25519 is often the better choice.",
+  },
+{
+    question: "Will quantum computers break my RSA keys?",
+    answer: "Eventually, yes – but not soon. Shor's algorithm can factor RSA efficiently on a quantum computer, but we'd need thousands of error-corrected qubits. Current quantum computers have a few hundred noisy qubits. If you need data to stay secret for 30+ years, consider post-quantum cryptography now.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

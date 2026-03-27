@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FreelanceEffectiveHourlyRateCalculatorPage() {
   const [hourlyRate, setHourlyRate] = useState<string>("");
@@ -335,60 +337,33 @@ export default function FreelanceEffectiveHourlyRateCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good effective hourly rate for freelancers?</h4>
-                  <p>
-                    It depends on your field and location, but $40-75/hour effective rate is common for
-                    skilled freelancers in developed countries. Junior freelancers may start at $20-35/hour.
-                    Specialized consultants in high-demand fields can reach $100-200/hour effective rate.
-                    Compare against local employee salaries plus 30% for benefits and overhead.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How many billable hours should I expect per week?</h4>
-                  <p>
-                    Most independent freelancers bill 20-25 hours per week in a 40-hour work week. The
-                    rest goes to marketing, admin, client communication, and skill development. If you
-                    consistently bill under 15 hours, either raise rates significantly or investigate why
-                    client work is scarce. Over 35 billable hours weekly suggests you are undercharging.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What expenses can freelancers deduct?</h4>
-                  <p>
-                    Common deductions include home office (portion of rent/utilities), software subscriptions,
-                    equipment and supplies, professional development, marketing costs, business insurance,
-                    and a portion of phone/internet. Self-employment tax and health insurance premiums
-                    may also be deductible. Consult a tax professional for your situation.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I charge hourly or project-based?</h4>
-                  <p>
-                    Project pricing often yields higher effective rates because you capture value rather
-                    than time. However, hourly works well for ongoing support or uncertain scopes. Many
-                    freelancers use both: project pricing for defined deliverables, hourly for maintenance
-                    or discovery work. Always calculate the implied hourly rate before accepting fixed-price work.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How often should I raise my freelance rates?</h4>
-                  <p>
-                    Annual increases of 5-10% keep pace with inflation and growing experience. Raise rates
-                    more aggressively (15-25%) when changing specialties, adding certifications, or if you
-                    are consistently booked solid. New clients should always get current rates; grandfather
-                    existing clients only if strategically valuable.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good effective hourly rate for freelancers?",
+    answer: "It depends on your field and location, but $40-75/hour effective rate is common for skilled freelancers in developed countries. Junior freelancers may start at $20-35/hour. Specialized consultants in high-demand fields can reach $100-200/hour effective rate. Compare against local employee salaries plus 30% for benefits and overhead.",
+  },
+{
+    question: "How many billable hours should I expect per week?",
+    answer: "Most independent freelancers bill 20-25 hours per week in a 40-hour work week. The rest goes to marketing, admin, client communication, and skill development. If you consistently bill under 15 hours, either raise rates significantly or investigate why client work is scarce. Over 35 billable hours weekly suggests you are undercharging.",
+  },
+{
+    question: "What expenses can freelancers deduct?",
+    answer: "Common deductions include home office (portion of rent/utilities), software subscriptions, equipment and supplies, professional development, marketing costs, business insurance, and a portion of phone/internet. Self-employment tax and health insurance premiums may also be deductible. Consult a tax professional for your situation.",
+  },
+{
+    question: "Should I charge hourly or project-based?",
+    answer: "Project pricing often yields higher effective rates because you capture value rather than time. However, hourly works well for ongoing support or uncertain scopes. Many freelancers use both: project pricing for defined deliverables, hourly for maintenance or discovery work. Always calculate the implied hourly rate before accepting fixed-price work.",
+  },
+{
+    question: "How often should I raise my freelance rates?",
+    answer: "Annual increases of 5-10% keep pace with inflation and growing experience. Raise rates more aggressively (15-25%) when changing specialties, adding certifications, or if you are consistently booked solid. New clients should always get current rates; grandfather existing clients only if strategically valuable.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

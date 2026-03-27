@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RoofingSheetsCalculator() {
   const [roofLength, setRoofLength] = useState<string>("");
@@ -306,43 +308,33 @@ export default function RoofingSheetsCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I measure my roof for sheets?</h4>
-            <p className="text-xs text-muted-foreground">
-              Measure the roof surface, not the building footprint. For a gable roof, multiply the rafter length by the building length, then double it for both sides. Add 10% for waste on simple roofs, 15% for complex roofs with valleys and dormers.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the minimum roof pitch for metal roofing?</h4>
-            <p className="text-xs text-muted-foreground">
-              Corrugated and ribbed profiles: 3:12 minimum (14°). Standing seam: can go as low as 1:4:12 (3°) with special sealing. Below minimum pitch, you need a built-up roof or membrane underneath. Local building codes may have stricter requirements.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How many screws do I need per roofing sheet?</h4>
-            <p className="text-xs text-muted-foreground">
-              Standard placement: screws every 300mm along laps, every 500mm in the field. A typical 3m sheet needs 18-24 screws. Order 10% extra for mistakes. Use color-matched screws with EPDM washers for weatherproofing.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I use long or short roofing sheets?</h4>
-            <p className="text-xs text-muted-foreground">
-              Longer sheets mean fewer end laps (potential leak points) but are harder to handle. Sheets over 6m require special equipment. For DIY, 3-4m lengths are manageable. Custom-length sheets cost more but reduce waste and installation time.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between galvanized and Galvalume?</h4>
-            <p className="text-xs text-muted-foreground">
-              Galvanized steel has a zinc coating. Galvalume has aluminum-zinc alloy coating (55% Al, 45% Zn). Galvalume lasts 2-4× longer in coastal areas, resists heat better, but costs 10-20% more. Both need paint systems for color and additional protection.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I measure my roof for sheets?",
+    answer: "Measure the roof surface, not the building footprint. For a gable roof, multiply the rafter length by the building length, then double it for both sides. Add 10% for waste on simple roofs, 15% for complex roofs with valleys and dormers.",
+  },
+{
+    question: "What's the minimum roof pitch for metal roofing?",
+    answer: "Corrugated and ribbed profiles: 3:12 minimum (14°). Standing seam: can go as low as 1:4:12 (3°) with special sealing. Below minimum pitch, you need a built-up roof or membrane underneath. Local building codes may have stricter requirements.",
+  },
+{
+    question: "How many screws do I need per roofing sheet?",
+    answer: "Standard placement: screws every 300mm along laps, every 500mm in the field. A typical 3m sheet needs 18-24 screws. Order 10% extra for mistakes. Use color-matched screws with EPDM washers for weatherproofing.",
+  },
+{
+    question: "Should I use long or short roofing sheets?",
+    answer: "Longer sheets mean fewer end laps (potential leak points) but are harder to handle. Sheets over 6m require special equipment. For DIY, 3-4m lengths are manageable. Custom-length sheets cost more but reduce waste and installation time.",
+  },
+{
+    question: "What's the difference between galvanized and Galvalume?",
+    answer: "Galvanized steel has a zinc coating. Galvalume has aluminum-zinc alloy coating (55% Al, 45% Zn). Galvalume lasts 2-4× longer in coastal areas, resists heat better, but costs 10-20% more. Both need paint systems for color and additional protection.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RentalYieldCalculatorPage() {
   const [purchasePrice, setPurchasePrice] = useState<string>("");
@@ -238,53 +240,33 @@ export default function RentalYieldCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good rental yield?</h4>
-                <p>
-                  A good gross rental yield is 6% or higher. Net yields of 4-5% are solid after
-                  expenses. Prime locations often have lower yields (3-4%) but better appreciation.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I focus on yield or appreciation?</h4>
-                <p>
-                  It depends on your strategy. High yield provides cash flow now. High appreciation
-                  builds wealth long-term. Many investors seek a balance — decent yield with moderate
-                  appreciation potential.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate net yield accurately?</h4>
-                <p>
-                  Include all annual expenses: property tax, insurance, maintenance, management fees,
-                  HOA fees, and vacancy allowance. Subtract from annual rent, then divide by purchase price.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does rental yield include mortgage payments?</h4>
-                <p>
-                  No. Rental yield is based on the property price, not your financing. Mortgage
-                  payments affect cash flow but not yield. This allows comparing properties regardless
-                  of how they are financed.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What affects rental yield?</h4>
-                <p>
-                  Location, property type, local rental demand, purchase price, and operating costs
-                  all affect yield. Properties in high-demand rental areas with reasonable prices
-                  typically offer better yields.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good rental yield?",
+    answer: "A good gross rental yield is 6% or higher. Net yields of 4-5% are solid after expenses. Prime locations often have lower yields (3-4%) but better appreciation.",
+  },
+{
+    question: "Should I focus on yield or appreciation?",
+    answer: "It depends on your strategy. High yield provides cash flow now. High appreciation builds wealth long-term. Many investors seek a balance — decent yield with moderate appreciation potential.",
+  },
+{
+    question: "How do I calculate net yield accurately?",
+    answer: "Include all annual expenses: property tax, insurance, maintenance, management fees, HOA fees, and vacancy allowance. Subtract from annual rent, then divide by purchase price.",
+  },
+{
+    question: "Does rental yield include mortgage payments?",
+    answer: "No. Rental yield is based on the property price, not your financing. Mortgage payments affect cash flow but not yield. This allows comparing properties regardless of how they are financed.",
+  },
+{
+    question: "What affects rental yield?",
+    answer: "Location, property type, local rental demand, purchase price, and operating costs all affect yield. Properties in high-demand rental areas with reasonable prices typically offer better yields.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

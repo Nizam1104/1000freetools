@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -474,45 +476,33 @@ export default function DogCalorieCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How many calories should my dog eat per day?</h4>
-                  <p>
-                    It depends on weight, age, and activity level. A typical adult dog needs about 30 calories per pound of body weight per day. So a 50-pound dog would need roughly 1,500 calories daily. Puppies need more, senior dogs need less. Use this calculator for a personalized number.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate my dog calorie needs?</h4>
-                  <p>
-                    Start with RER = 70 × (weight in kg)^0.75. Then multiply by a factor based on life stage: 3.0 for young puppies, 2.0 for older puppies, 1.6 for adults, 1.4 for mature dogs, and 1.2 for seniors. Adjust up for activity and down for neutering.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I feed my dog based on the bag recommendations?</h4>
-                  <p>
-                    Bag recommendations are starting points, not rules. They are often higher than necessary because well-fed dogs look healthier to owners. Use the calculator result as your baseline, then adjust based on your dog body condition and weight trends.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much should I feed my puppy?</h4>
-                  <p>
-                    Puppies under 4 months need about 3 times their RER, divided into 4 meals per day. From 4 to 12 months, they need about 2 times RER in 3 meals. Large breed puppies should be fed a large-breed puppy formula to prevent rapid growth that can cause joint problems.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why did my dog gain weight after being neutered?</h4>
-                  <p>
-                    Neutering reduces metabolic rate by about 10 to 20 percent. Many dogs also become less active after the procedure. If you keep feeding the same amount, weight gain is likely. Reduce calories by about 10% after neutering and monitor weight closely for the first few months.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many calories should my dog eat per day?",
+    answer: "It depends on weight, age, and activity level. A typical adult dog needs about 30 calories per pound of body weight per day. So a 50-pound dog would need roughly 1,500 calories daily. Puppies need more, senior dogs need less. Use this calculator for a personalized number.",
+  },
+{
+    question: "How do I calculate my dog calorie needs?",
+    answer: "Start with RER = 70 × (weight in kg)^0.75. Then multiply by a factor based on life stage: 3.0 for young puppies, 2.0 for older puppies, 1.6 for adults, 1.4 for mature dogs, and 1.2 for seniors. Adjust up for activity and down for neutering.",
+  },
+{
+    question: "Should I feed my dog based on the bag recommendations?",
+    answer: "Bag recommendations are starting points, not rules. They are often higher than necessary because well-fed dogs look healthier to owners. Use the calculator result as your baseline, then adjust based on your dog body condition and weight trends.",
+  },
+{
+    question: "How much should I feed my puppy?",
+    answer: "Puppies under 4 months need about 3 times their RER, divided into 4 meals per day. From 4 to 12 months, they need about 2 times RER in 3 meals. Large breed puppies should be fed a large-breed puppy formula to prevent rapid growth that can cause joint problems.",
+  },
+{
+    question: "Why did my dog gain weight after being neutered?",
+    answer: "Neutering reduces metabolic rate by about 10 to 20 percent. Many dogs also become less active after the procedure. If you keep feeding the same amount, weight gain is likely. Reduce calories by about 10% after neutering and monitor weight closely for the first few months.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

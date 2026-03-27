@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -206,43 +208,33 @@ export default function VolumeOfCubeCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the formula for volume of a cube?</h4>
-            <p className="text-xs text-muted-foreground">
-              Volume = s³ (side length cubed). Multiply the side by itself three times. For a cube with 4 cm sides: 4 × 4 × 4 = 64 cm³. All three dimensions are equal in a cube.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you find the side length from volume?</h4>
-            <p className="text-xs text-muted-foreground">
-              Take the cube root of the volume: s = ∛V. If volume is 27 cm³, the side is ∛27 = 3 cm. Most calculators have a cube root function, or use V^(1/3).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the difference between a cube and a cuboid?</h4>
-            <p className="text-xs text-muted-foreground">
-              A cube has all sides equal. A cuboid (rectangular prism) has different length, width, and height. Cube formulas are simpler because there is only one dimension to measure.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is the space diagonal s√3?</h4>
-            <p className="text-xs text-muted-foreground">
-              Using 3D Pythagorean theorem: diagonal² = length² + width² + height². For a cube, all three equal s, so d² = s² + s² + s² = 3s². Therefore d = s√3.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How does doubling the side affect volume?</h4>
-            <p className="text-xs text-muted-foreground">
-              Doubling the side multiplies volume by 8 (2³ = 8). Tripling multiplies by 27 (3³ = 27). This cubic relationship means small size changes create large volume differences.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the formula for volume of a cube?",
+    answer: "Volume = s³ (side length cubed). Multiply the side by itself three times. For a cube with 4 cm sides: 4 × 4 × 4 = 64 cm³. All three dimensions are equal in a cube.",
+  },
+{
+    question: "How do you find the side length from volume?",
+    answer: "Take the cube root of the volume: s = ∛V. If volume is 27 cm³, the side is ∛27 = 3 cm. Most calculators have a cube root function, or use V^(1/3).",
+  },
+{
+    question: "What is the difference between a cube and a cuboid?",
+    answer: "A cube has all sides equal. A cuboid (rectangular prism) has different length, width, and height. Cube formulas are simpler because there is only one dimension to measure.",
+  },
+{
+    question: "Why is the space diagonal s√3?",
+    answer: "Using 3D Pythagorean theorem: diagonal² = length² + width² + height². For a cube, all three equal s, so d² = s² + s² + s² = 3s². Therefore d = s√3.",
+  },
+{
+    question: "How does doubling the side affect volume?",
+    answer: "Doubling the side multiplies volume by 8 (2³ = 8). Tripling multiplies by 27 (3³ = 27). This cubic relationship means small size changes create large volume differences.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function LogarithmCalculator() {
   const [number, setNumber] = useState<string>("");
@@ -229,45 +231,33 @@ export default function LogarithmCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between log and ln?</h4>
-                <p>
-                  "log" without a specified base usually means log base 10 (common logarithm). "ln" means log base e (natural logarithm), where e ≈ 2.718. Common logs are used in engineering and science applications like decibels and pH. Natural logs appear in calculus, population growth models, and continuous compounding interest.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can logarithms be negative?</h4>
-                <p>
-                  The result of a logarithm can be negative. For example, log10(0.1) = -1 because 10^(-1) = 0.1. However, you cannot take the logarithm of a negative number or zero in the real number system. There's no real power of 10 that gives you -100 or 0.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why are logarithms useful?</h4>
-                <p>
-                  Logarithms compress huge ranges of values into manageable numbers. The Richter scale uses logs so an earthquake of magnitude 8 is 10 times stronger than magnitude 7. Decibels use logs to represent sound intensity. pH measures acidity on a log scale. Without logs, we'd need unwieldy numbers to describe these phenomena.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is log base 2 used for?</h4>
-                <p>
-                  Binary logarithms (base 2) are fundamental in computer science. They tell you how many bits are needed to represent a number. For example, log2(256) = 8, meaning you need 8 bits to represent 256 different values. Binary logs also appear in algorithm analysis, data compression, and information theory.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate logarithms without a calculator?</h4>
-                <p>
-                  Memorize key values like log10(2) ≈ 0.301 and log10(3) ≈ 0.477. Use logarithm properties to break down complex numbers. For example, log10(6) = log10(2 × 3) = log10(2) + log10(3) ≈ 0.301 + 0.477 = 0.778. Log tables were the standard tool before electronic calculators.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the difference between log and ln?",
+    answer: "\"log\" without a specified base usually means log base 10 (common logarithm). \"ln\" means log base e (natural logarithm), where e ≈ 2.718. Common logs are used in engineering and science applications like decibels and pH. Natural logs appear in calculus, population growth models, and continuous compounding interest.",
+  },
+{
+    question: "Can logarithms be negative?",
+    answer: "The result of a logarithm can be negative. For example, log10(0.1) = -1 because 10^(-1) = 0.1. However, you cannot take the logarithm of a negative number or zero in the real number system. There's no real power of 10 that gives you -100 or 0.",
+  },
+{
+    question: "Why are logarithms useful?",
+    answer: "Logarithms compress huge ranges of values into manageable numbers. The Richter scale uses logs so an earthquake of magnitude 8 is 10 times stronger than magnitude 7. Decibels use logs to represent sound intensity. pH measures acidity on a log scale. Without logs, we'd need unwieldy numbers to describe these phenomena.",
+  },
+{
+    question: "What is log base 2 used for?",
+    answer: "Binary logarithms (base 2) are fundamental in computer science. They tell you how many bits are needed to represent a number. For example, log2(256) = 8, meaning you need 8 bits to represent 256 different values. Binary logs also appear in algorithm analysis, data compression, and information theory.",
+  },
+{
+    question: "How do I calculate logarithms without a calculator?",
+    answer: "Memorize key values like log10(2) ≈ 0.301 and log10(3) ≈ 0.477. Use logarithm properties to break down complex numbers. For example, log10(6) = log10(2 × 3) = log10(2) + log10(3) ≈ 0.301 + 0.477 = 0.778. Log tables were the standard tool before electronic calculators.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -249,43 +251,33 @@ export default function DistanceFormulaCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the distance formula?</h4>
-            <p className="text-xs text-muted-foreground">
-              The distance formula calculates the straight-line distance between two points on a coordinate plane: d = √[(x₂-x₁)² + (y₂-y₁)²]. It's derived from the Pythagorean theorem (a² + b² = c²).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can the distance be negative?</h4>
-            <p className="text-xs text-muted-foreground">
-              No. Distance is always positive or zero. The formula squares the differences, which makes negative values positive. The square root of a positive number is always positive.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you find the midpoint?</h4>
-            <p className="text-xs text-muted-foreground">
-              The midpoint formula is M = ((x₁+x₂)/2, (y₁+y₂)/2). You average the x-coordinates to get the x-coordinate of the midpoint, and average the y-coordinates to get the y-coordinate.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does this work in 3D space?</h4>
-            <p className="text-xs text-muted-foreground">
-              This calculator handles 2D coordinates. For 3D, add the z-term: d = √[(x₂-x₁)² + (y₂-y₁)² + (z₂-z₁)²]. The midpoint formula also extends to three dimensions.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is the distance formula useful?</h4>
-            <p className="text-xs text-muted-foreground">
-              It's fundamental to geometry, physics, computer graphics, GPS navigation, and game development. Any time you need to measure how far apart two things are on a plane, this is the formula.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the distance formula?",
+    answer: "The distance formula calculates the straight-line distance between two points on a coordinate plane: d = √[(x₂-x₁)² + (y₂-y₁)²]. It's derived from the Pythagorean theorem (a² + b² = c²).",
+  },
+{
+    question: "Can the distance be negative?",
+    answer: "No. Distance is always positive or zero. The formula squares the differences, which makes negative values positive. The square root of a positive number is always positive.",
+  },
+{
+    question: "How do you find the midpoint?",
+    answer: "The midpoint formula is M = ((x₁+x₂)/2, (y₁+y₂)/2). You average the x-coordinates to get the x-coordinate of the midpoint, and average the y-coordinates to get the y-coordinate.",
+  },
+{
+    question: "Does this work in 3D space?",
+    answer: "This calculator handles 2D coordinates. For 3D, add the z-term: d = √[(x₂-x₁)² + (y₂-y₁)² + (z₂-z₁)²]. The midpoint formula also extends to three dimensions.",
+  },
+{
+    question: "Why is the distance formula useful?",
+    answer: "It's fundamental to geometry, physics, computer graphics, GPS navigation, and game development. Any time you need to measure how far apart two things are on a plane, this is the formula.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, ReferenceLine } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function AverageCalculator() {
   const [numbers, setNumbers] = useState<string>("");
@@ -267,43 +269,33 @@ export default function AverageCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between mean and average?</h4>
-            <p className="text-xs text-muted-foreground">
-              They're the same thing in everyday usage. "Mean" is the technical term; "average" is colloquial. Technically, there are multiple types of averages (mean, median, mode), but when someone says "average" they almost always mean the arithmetic mean.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">When should I use median instead of mean?</h4>
-            <p className="text-xs text-muted-foreground">
-              Use median when your data has outliers or is skewed. Home prices, salaries, and wealth distributions are typically right-skewed – a few very high values pull the mean up. Median gives you the "typical" value better in these cases.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can the average be a number that's not in my data?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, frequently. The average of 1, 2, and 6 is 3 – which isn't in the original set. The average of 1 and 2 is 1.5. The mean doesn't have to be an actual data point; it's a calculated center.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do outliers affect the average?</h4>
-            <p className="text-xs text-muted-foreground">
-              Outliers pull the mean toward them. One very high value increases the mean; one very low value decreases it. The effect depends on how extreme the outlier is and how many data points you have. With 100 values, one outlier has less impact than with 5 values.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a weighted average?</h4>
-            <p className="text-xs text-muted-foreground">
-              A weighted average gives different importance to different values. Your GPA is a weighted average: an A in a 4-credit class counts more than an A in a 1-credit class. Formula: sum of (value × weight) ÷ sum of weights.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What's the difference between mean and average?",
+    answer: "They're the same thing in everyday usage. \"Mean\" is the technical term; \"average\" is colloquial. Technically, there are multiple types of averages (mean, median, mode), but when someone says \"average\" they almost always mean the arithmetic mean.",
+  },
+{
+    question: "When should I use median instead of mean?",
+    answer: "Use median when your data has outliers or is skewed. Home prices, salaries, and wealth distributions are typically right-skewed – a few very high values pull the mean up. Median gives you the \"typical\" value better in these cases.",
+  },
+{
+    question: "Can the average be a number that's not in my data?",
+    answer: "Yes, frequently. The average of 1, 2, and 6 is 3 – which isn't in the original set. The average of 1 and 2 is 1.5. The mean doesn't have to be an actual data point; it's a calculated center.",
+  },
+{
+    question: "How do outliers affect the average?",
+    answer: "Outliers pull the mean toward them. One very high value increases the mean; one very low value decreases it. The effect depends on how extreme the outlier is and how many data points you have. With 100 values, one outlier has less impact than with 5 values.",
+  },
+{
+    question: "What is a weighted average?",
+    answer: "A weighted average gives different importance to different values. Your GPA is a weighted average: an A in a 4-credit class counts more than an A in a 1-credit class. Formula: sum of (value × weight) ÷ sum of weights.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

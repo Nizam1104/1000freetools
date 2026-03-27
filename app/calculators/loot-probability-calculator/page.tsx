@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function LootProbabilityCalculatorPage() {
   const [dropRate, setDropRate] = useState<string>("");
@@ -327,45 +329,33 @@ export default function LootProbabilityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why haven't I gotten the item after X attempts?</h4>
-                  <p>
-                    Bad luck is real in random systems. Even at 1% drop rate, about 37% of players will go 100+ attempts without a drop. The probability never reaches 100% — there's always a chance (however tiny) you could farm forever and never get it. That's the nature of independent random events.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do drop rates increase after failures?</h4>
-                  <p>
-                    Usually no. Most games use true random with fixed rates. Some implement "pity timers" or "bad luck protection" that increase rates after many failures, but this is explicitly stated when it exists. Don't assume your game has this unless the developer confirms it.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it better to farm in groups or solo?</h4>
-                  <p>
-                    Groups often kill faster but split loot rolls. If a group of 4 kills 3x faster than solo, each player gets 0.75x the rolls per hour. However, groups can tackle harder content with better drop tables. Calculate expected drops per hour, not per kill.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What does "expected drops" mean?</h4>
-                  <p>
-                    Expected value is the average result over many trials. At 1% over 100 attempts, expected drops = 1. But you might get 0, 1, 2, or more. The expected value tells you what would happen on average across thousands of players, not what will happen to you specifically.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I find drop rates for my game?</h4>
-                  <p>
-                    Check the game's official wiki, community Discords, Reddit subs, or fan sites. Some games display rates directly (required by law in some countries for loot boxes). For MMOs, players often datamine or crowdsource rates from thousands of kills.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why haven't I gotten the item after X attempts?",
+    answer: "Bad luck is real in random systems. Even at 1% drop rate, about 37% of players will go 100+ attempts without a drop. The probability never reaches 100% — there's always a chance (however tiny) you could farm forever and never get it. That's the nature of independent random events.",
+  },
+{
+    question: "Do drop rates increase after failures?",
+    answer: "Usually no. Most games use true random with fixed rates. Some implement \"pity timers\" or \"bad luck protection\" that increase rates after many failures, but this is explicitly stated when it exists. Don't assume your game has this unless the developer confirms it.",
+  },
+{
+    question: "Is it better to farm in groups or solo?",
+    answer: "Groups often kill faster but split loot rolls. If a group of 4 kills 3x faster than solo, each player gets 0.75x the rolls per hour. However, groups can tackle harder content with better drop tables. Calculate expected drops per hour, not per kill.",
+  },
+{
+    question: "What does \"expected drops\" mean?",
+    answer: "Expected value is the average result over many trials. At 1% over 100 attempts, expected drops = 1. But you might get 0, 1, 2, or more. The expected value tells you what would happen on average across thousands of players, not what will happen to you specifically.",
+  },
+{
+    question: "How do I find drop rates for my game?",
+    answer: "Check the game's official wiki, community Discords, Reddit subs, or fan sites. Some games display rates directly (required by law in some countries for loot boxes). For MMOs, players often datamine or crowdsource rates from thousands of kills.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

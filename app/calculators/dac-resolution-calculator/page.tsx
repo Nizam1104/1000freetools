@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DacResolutionCalculator() {
   const [bits, setBits] = useState<string>("");
@@ -271,45 +273,33 @@ export default function DacResolutionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does DAC resolution mean?</h4>
-                <p>
-                  DAC resolution is the smallest voltage change the converter can produce, determined by bit depth. A 12-bit DAC divides its reference voltage into 4,096 steps. Higher resolution means finer control and lower quantization noise.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate DAC resolution?</h4>
-                <p>
-                  Resolution = Vref / (2^n - 1), where Vref is the reference voltage and n is the bit depth. For a 12-bit DAC with 5V reference: 5 / 4095 = 1.22 mV per step.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is higher bit depth always better?</h4>
-                <p>
-                  Not necessarily. Higher resolution increases cost, reduces update speed, and may exceed your system&apos;s noise floor. Match bit depth to your actual requirements. Audio benefits from 16+ bits; LED dimming works fine with 8-10 bits.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is LSB in a DAC?</h4>
-                <p>
-                  LSB stands for Least Significant Bit. It represents one step of the DAC output — the smallest possible voltage change. LSB voltage equals the resolution. A change of 1 in the digital code changes the output by exactly 1 LSB.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why is my DAC output noisy?</h4>
-                <p>
-                  Common causes include noisy reference voltage, inadequate power supply decoupling, digital switching noise coupling into analog traces, or ground loops. Use separate analog and digital grounds, add bypass capacitors, and keep analog traces short.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does DAC resolution mean?",
+    answer: "DAC resolution is the smallest voltage change the converter can produce, determined by bit depth. A 12-bit DAC divides its reference voltage into 4,096 steps. Higher resolution means finer control and lower quantization noise.",
+  },
+{
+    question: "How do I calculate DAC resolution?",
+    answer: "Resolution = Vref / (2^n - 1), where Vref is the reference voltage and n is the bit depth. For a 12-bit DAC with 5V reference: 5 / 4095 = 1.22 mV per step.",
+  },
+{
+    question: "Is higher bit depth always better?",
+    answer: "Not necessarily. Higher resolution increases cost, reduces update speed, and may exceed your system&apos;s noise floor. Match bit depth to your actual requirements. Audio benefits from 16+ bits; LED dimming works fine with 8-10 bits.",
+  },
+{
+    question: "What is LSB in a DAC?",
+    answer: "LSB stands for Least Significant Bit. It represents one step of the DAC output — the smallest possible voltage change. LSB voltage equals the resolution. A change of 1 in the digital code changes the output by exactly 1 LSB.",
+  },
+{
+    question: "Why is my DAC output noisy?",
+    answer: "Common causes include noisy reference voltage, inadequate power supply decoupling, digital switching noise coupling into analog traces, or ground loops. Use separate analog and digital grounds, add bypass capacitors, and keep analog traces short.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

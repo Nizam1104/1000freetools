@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function QuadraticEquationSolver() {
   const [a, setA] = useState<string>("");
@@ -280,53 +282,33 @@ export default function QuadraticEquationSolver() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the quadratic formula?</h4>
-                <p>
-                  The quadratic formula is x = (-b ± √(b² - 4ac)) / 2a. It solves any quadratic equation
-                  ax² + bx + c = 0. The formula comes from completing the square on the general quadratic equation.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does the discriminant tell me?</h4>
-                <p>
-                  The discriminant (b² - 4ac) reveals the nature of the roots. Positive means two real roots,
-                  zero means one repeated root, and negative means two complex roots. You can check this before
-                  solving to know what to expect.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can a be zero in a quadratic equation?</h4>
-                <p>
-                  No. If a = 0, the equation becomes linear (bx + c = 0), not quadratic. The quadratic formula
-                  would also fail because it divides by 2a. Make sure your equation has an x² term.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the vertex of a parabola?</h4>
-                <p>
-                  The vertex is the turning point of the parabola — its highest or lowest point. The x-coordinate
-                  is -b/2a, and you find the y-coordinate by plugging this back into the equation. The vertex
-                  tells you the maximum or minimum value of the quadratic function.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">When do quadratic equations have complex roots?</h4>
-                <p>
-                  Complex roots occur when the discriminant is negative (b² - 4ac &lt; 0). This happens when the
-                  parabola does not cross the x-axis. The roots come in conjugate pairs: a + bi and a - bi,
-                  where i is the imaginary unit (√-1).
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the quadratic formula?",
+    answer: "The quadratic formula is x = (-b ± √(b² - 4ac)) / 2a. It solves any quadratic equation ax² + bx + c = 0. The formula comes from completing the square on the general quadratic equation.",
+  },
+{
+    question: "What does the discriminant tell me?",
+    answer: "The discriminant (b² - 4ac) reveals the nature of the roots. Positive means two real roots, zero means one repeated root, and negative means two complex roots. You can check this before solving to know what to expect.",
+  },
+{
+    question: "Can a be zero in a quadratic equation?",
+    answer: "No. If a = 0, the equation becomes linear (bx + c = 0), not quadratic. The quadratic formula would also fail because it divides by 2a. Make sure your equation has an x² term.",
+  },
+{
+    question: "What is the vertex of a parabola?",
+    answer: "The vertex is the turning point of the parabola — its highest or lowest point. The x-coordinate is -b/2a, and you find the y-coordinate by plugging this back into the equation. The vertex tells you the maximum or minimum value of the quadratic function.",
+  },
+{
+    question: "When do quadratic equations have complex roots?",
+    answer: "Complex roots occur when the discriminant is negative (b² - 4ac &lt; 0). This happens when the parabola does not cross the x-axis. The roots come in conjugate pairs: a + bi and a - bi, where i is the imaginary unit (√-1).",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

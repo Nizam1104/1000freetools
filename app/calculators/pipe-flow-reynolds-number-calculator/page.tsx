@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ReynoldsNumberCalculator() {
   const [velocity, setVelocity] = useState<string>("");
@@ -216,33 +218,33 @@ export default function ReynoldsNumberCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is Reynolds number important?</h4>
-              <p>Reynolds number determines flow regime, which affects pressure drop, heat transfer, and mixing. Laminar and turbulent flows require different calculation methods. Engineers use Re to select appropriate formulas and predict system behavior.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is the critical Reynolds number?</h4>
-              <p>For pipe flow, the critical Reynolds number is approximately 2300. Below this, flow is typically laminar. Above 4000, flow is typically turbulent. The exact transition point depends on pipe roughness and inlet conditions.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How does temperature affect Reynolds number?</h4>
-              <p>Temperature changes fluid viscosity. For liquids, higher temperature means lower viscosity, which increases Re. For gases, higher temperature increases viscosity, which decreases Re. Density also changes with temperature.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Can Reynolds number be used for non-circular pipes?</h4>
-              <p>Yes, use hydraulic diameter instead of actual diameter. Hydraulic diameter = 4 × cross-sectional area / wetted perimeter. For a square duct, hydraulic diameter equals the side length.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the difference between dynamic and kinematic viscosity?</h4>
-              <p>Dynamic viscosity (μ) measures internal resistance to flow. Kinematic viscosity (ν) equals dynamic viscosity divided by density (ν = μ/ρ). Reynolds number can use either: Re = ρvD/μ or Re = vD/ν.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is Reynolds number important?",
+    answer: "Reynolds number determines flow regime, which affects pressure drop, heat transfer, and mixing. Laminar and turbulent flows require different calculation methods. Engineers use Re to select appropriate formulas and predict system behavior.",
+  },
+{
+    question: "What is the critical Reynolds number?",
+    answer: "For pipe flow, the critical Reynolds number is approximately 2300. Below this, flow is typically laminar. Above 4000, flow is typically turbulent. The exact transition point depends on pipe roughness and inlet conditions.",
+  },
+{
+    question: "How does temperature affect Reynolds number?",
+    answer: "Temperature changes fluid viscosity. For liquids, higher temperature means lower viscosity, which increases Re. For gases, higher temperature increases viscosity, which decreases Re. Density also changes with temperature.",
+  },
+{
+    question: "Can Reynolds number be used for non-circular pipes?",
+    answer: "Yes, use hydraulic diameter instead of actual diameter. Hydraulic diameter = 4 × cross-sectional area / wetted perimeter. For a square duct, hydraulic diameter equals the side length.",
+  },
+{
+    question: "What's the difference between dynamic and kinematic viscosity?",
+    answer: "Dynamic viscosity (μ) measures internal resistance to flow. Kinematic viscosity (ν) equals dynamic viscosity divided by density (ν = μ/ρ). Reynolds number can use either: Re = ρvD/μ or Re = vD/ν.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DateAddSubtractCalculator() {
   const [startDate, setStartDate] = useState<string>(new Date().toISOString().split("T")[0]);
@@ -296,45 +298,33 @@ export default function DateAddSubtractCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do you add months to a date?</h4>
-                <p>
-                  Add the number of months to the month component, keeping the same day number. If the resulting month doesn&apos;t have that day (like February 31), use the last day of that month instead.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does this calculator account for leap years?</h4>
-                <p>
-                  Yes. When adding years or calculating across February, the calculator correctly handles leap years. February 29, 2024 plus 1 year equals February 28, 2025 (no Feb 29 in 2025).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What&apos;s the difference between adding 30 days vs 1 month?</h4>
-                <p>
-                  Adding 30 days always moves forward exactly 30 calendar days. Adding 1 month moves to the same day number next month, which could be 28, 29, 30, or 31 days depending on the months involved.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I calculate dates in the past?</h4>
-                <p>
-                  Yes. Use the &quot;Subtract&quot; operation to go backward in time. This is useful for finding historical dates, calculating birth dates from ages, or determining when something started.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is this for business planning?</h4>
-                <p>
-                  For calendar-based planning, it&apos;s exact. For business-day planning (excluding weekends/holidays), use a dedicated business day calculator. Bank processing, shipping estimates, and project timelines often need business days, not calendar days.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you add months to a date?",
+    answer: "Add the number of months to the month component, keeping the same day number. If the resulting month doesn&apos;t have that day (like February 31), use the last day of that month instead.",
+  },
+{
+    question: "Does this calculator account for leap years?",
+    answer: "Yes. When adding years or calculating across February, the calculator correctly handles leap years. February 29, 2024 plus 1 year equals February 28, 2025 (no Feb 29 in 2025).",
+  },
+{
+    question: "What&apos;s the difference between adding 30 days vs 1 month?",
+    answer: "Adding 30 days always moves forward exactly 30 calendar days. Adding 1 month moves to the same day number next month, which could be 28, 29, 30, or 31 days depending on the months involved.",
+  },
+{
+    question: "Can I calculate dates in the past?",
+    answer: "Yes. Use the &quot;Subtract&quot; operation to go backward in time. This is useful for finding historical dates, calculating birth dates from ages, or determining when something started.",
+  },
+{
+    question: "How accurate is this for business planning?",
+    answer: "For calendar-based planning, it&apos;s exact. For business-day planning (excluding weekends/holidays), use a dedicated business day calculator. Bank processing, shipping estimates, and project timelines often need business days, not calendar days.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

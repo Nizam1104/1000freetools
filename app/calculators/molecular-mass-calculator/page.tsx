@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 const ELEMENTS: Record<string, number> = {
   H: 1.008, He: 4.003, Li: 6.941, Be: 9.012, B: 10.81, C: 12.01, N: 14.01, O: 15.999,
@@ -311,43 +313,33 @@ export default function MolecularMassCalculator() {
         </CardContent>
       </Card>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-medium text-sm mb-2">How do I calculate molar mass manually?</h4>
-            <p className="text-xs text-muted-foreground">
-              List each element in the formula. Find its atomic mass on the periodic table. Multiply by the number of atoms (subscript). Add all the masses. For H₂O: (2 × 1.008) + (1 × 15.999) = 18.015 g/mol.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">What's the difference between molecular mass and molar mass?</h4>
-            <p className="text-xs text-muted-foreground">
-              Molecular mass is the mass of one molecule (in atomic mass units, amu). Molar mass is the mass of one mole of molecules (in g/mol). Numerically they're the same, but units differ.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">How do I handle parentheses in formulas?</h4>
-            <p className="text-xs text-muted-foreground">
-              Multiply everything inside parentheses by the subscript outside. For Ca(OH)₂: Ca = 40.08, O = 2 × 16.00 = 32.00, H = 2 × 1.008 = 2.016. Total = 74.10 g/mol.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Why aren't atomic masses whole numbers?</h4>
-            <p className="text-xs text-muted-foreground">
-              Atomic masses are weighted averages of all naturally occurring isotopes. Carbon is 12.01 because it's mostly C-12 with about 1% C-13. The average reflects natural abundance.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Can this calculator handle complex formulas?</h4>
-            <p className="text-xs text-muted-foreground">
-              It handles standard formulas like H2SO4, C6H12O6, and Ca(OH)2. For very complex formulas with nested parentheses or hydrates (like CuSO4·5H2O), calculate each part separately.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate molar mass manually?",
+    answer: "List each element in the formula. Find its atomic mass on the periodic table. Multiply by the number of atoms (subscript). Add all the masses. For H₂O: (2 × 1.008) + (1 × 15.999) = 18.015 g/mol.",
+  },
+{
+    question: "What's the difference between molecular mass and molar mass?",
+    answer: "Molecular mass is the mass of one molecule (in atomic mass units, amu). Molar mass is the mass of one mole of molecules (in g/mol). Numerically they're the same, but units differ.",
+  },
+{
+    question: "How do I handle parentheses in formulas?",
+    answer: "Multiply everything inside parentheses by the subscript outside. For Ca(OH)₂: Ca = 40.08, O = 2 × 16.00 = 32.00, H = 2 × 1.008 = 2.016. Total = 74.10 g/mol.",
+  },
+{
+    question: "Why aren't atomic masses whole numbers?",
+    answer: "Atomic masses are weighted averages of all naturally occurring isotopes. Carbon is 12.01 because it's mostly C-12 with about 1% C-13. The average reflects natural abundance.",
+  },
+{
+    question: "Can this calculator handle complex formulas?",
+    answer: "It handles standard formulas like H2SO4, C6H12O6, and Ca(OH)2. For very complex formulas with nested parentheses or hydrates (like CuSO4·5H2O), calculate each part separately.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BusinessLoanEMICalculatorPage() {
   const [loanAmount, setLoanAmount] = useState<string>("");
@@ -363,45 +365,33 @@ export default function BusinessLoanEMICalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good EMI to income ratio for business loans?</h4>
-                  <p>
-                    Lenders typically want your total debt payments (including this loan) to be no more than 40-50% of your monthly business income. Lower is better — 30% or less gives you comfortable cash flow for operations and emergencies.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does a moratorium period save money?</h4>
-                  <p>
-                    No, a moratorium increases total cost. Interest accrues during the moratorium and gets added to your principal, so you pay interest on that interest. It helps cash flow short-term but costs more overall.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I choose a shorter or longer loan tenure?</h4>
-                  <p>
-                    Shorter tenure means higher EMI but less total interest. Longer tenure means lower EMI but more interest paid. Choose based on cash flow — if you can afford higher payments, go shorter to save on interest.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does processing fee affect the loan?</h4>
-                  <p>
-                    Processing fees are upfront costs that don't affect your EMI but increase the effective interest rate. A 2% fee on a 5-year loan adds roughly 0.5% to the effective annual rate. Factor this into lender comparisons.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I change my EMI amount during the loan?</h4>
-                  <p>
-                    Some lenders allow step-up or step-down EMIs. Step-up starts lower and increases yearly (good for growing businesses). Step-down starts higher and decreases. Ask about these options when applying.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good EMI to income ratio for business loans?",
+    answer: "Lenders typically want your total debt payments (including this loan) to be no more than 40-50% of your monthly business income. Lower is better — 30% or less gives you comfortable cash flow for operations and emergencies.",
+  },
+{
+    question: "Does a moratorium period save money?",
+    answer: "No, a moratorium increases total cost. Interest accrues during the moratorium and gets added to your principal, so you pay interest on that interest. It helps cash flow short-term but costs more overall.",
+  },
+{
+    question: "Should I choose a shorter or longer loan tenure?",
+    answer: "Shorter tenure means higher EMI but less total interest. Longer tenure means lower EMI but more interest paid. Choose based on cash flow — if you can afford higher payments, go shorter to save on interest.",
+  },
+{
+    question: "How does processing fee affect the loan?",
+    answer: "Processing fees are upfront costs that don't affect your EMI but increase the effective interest rate. A 2% fee on a 5-year loan adds roughly 0.5% to the effective annual rate. Factor this into lender comparisons.",
+  },
+{
+    question: "Can I change my EMI amount during the loan?",
+    answer: "Some lenders allow step-up or step-down EMIs. Step-up starts lower and increases yearly (good for growing businesses). Step-down starts higher and decreases. Ask about these options when applying.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

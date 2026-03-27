@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RentalROICalculator() {
   const [purchasePrice, setPurchasePrice] = useState<string>("");
@@ -295,52 +297,33 @@ export default function RentalROICalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardContent className="p-6">
-          <h3 className="text-lg font-semibold mb-4">
-            Frequently Asked Questions
-          </h3>
-          <div className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is a good ROI for rental property?</h4>
-              <p>
-                A good cash-on-cash ROI is 8-12% or higher. Total ROI including appreciation of
-                10-15% is excellent. Below 5% may not justify the investment risk and effort.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How is rental ROI different from cap rate?</h4>
-              <p>
-                Cap rate uses the full property price. ROI uses your actual cash invested (down
-                payment). ROI is higher when using leverage because you control a large asset with
-                less cash.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Should I include appreciation in ROI?</h4>
-              <p>
-                It depends on your analysis. Cash ROI shows current income. Total ROI includes
-                appreciation for long-term wealth building. Both metrics are useful for different
-                decisions.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What expenses should I include?</h4>
-              <p>
-                Include property tax, insurance, maintenance (1% of value/year), property management
-                (8-12% of rent), HOA fees, and vacancy allowance (5-10% of rent).
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How much should I put down on a rental?</h4>
-              <p>
-                Investment properties typically require 20-25% down. More down payment reduces
-                monthly costs but lowers cash-on-cash ROI. Balance leverage benefits against risk.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good ROI for rental property?",
+    answer: "A good cash-on-cash ROI is 8-12% or higher. Total ROI including appreciation of 10-15% is excellent. Below 5% may not justify the investment risk and effort.",
+  },
+{
+    question: "How is rental ROI different from cap rate?",
+    answer: "Cap rate uses the full property price. ROI uses your actual cash invested (down payment). ROI is higher when using leverage because you control a large asset with less cash.",
+  },
+{
+    question: "Should I include appreciation in ROI?",
+    answer: "It depends on your analysis. Cash ROI shows current income. Total ROI includes appreciation for long-term wealth building. Both metrics are useful for different decisions.",
+  },
+{
+    question: "What expenses should I include?",
+    answer: "Include property tax, insurance, maintenance (1% of value/year), property management (8-12% of rent), HOA fees, and vacancy allowance (5-10% of rent).",
+  },
+{
+    question: "How much should I put down on a rental?",
+    answer: "Investment properties typically require 20-25% down. More down payment reduces monthly costs but lowers cash-on-cash ROI. Balance leverage benefits against risk.",
+  }
+  ]} />
+</section>
 
     </div>
   );

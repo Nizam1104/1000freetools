@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -196,43 +198,33 @@ export default function PwmFrequencyCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a good PWM frequency for motors?</h4>
-            <p className="text-xs text-muted-foreground">
-              For DC motors, 8-20 kHz works well. Below 8 kHz causes audible noise; above 20 kHz increases switching losses without benefit. Brushless motors often use 16-32 kHz. Stepper motors benefit from 20-40 kHz for smooth microstepping.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How does PWM resolution affect frequency?</h4>
-            <p className="text-xs text-muted-foreground">
-              Higher resolution means more steps per cycle, which lowers maximum frequency. Doubling resolution (e.g., 8 to 9 bits) halves the max frequency. Choose resolution based on control precision needs, not just maximum frequency.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What does the prescaler do in PWM?</h4>
-            <p className="text-xs text-muted-foreground">
-              The prescaler divides the clock before it reaches the PWM timer. Common values are 1, 8, 64, 256. It lets you achieve lower frequencies without changing resolution, useful when your clock is too fast for your application.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is my PWM making noise?</h4>
-            <p className="text-xs text-muted-foreground">
-              Audible noise means your PWM frequency is below 20 kHz. Motors and inductors physically vibrate at the PWM frequency. Increase frequency above 20 kHz or add mechanical damping. Check for loose components resonating at your PWM frequency.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I change PWM frequency on Arduino?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, by modifying timer prescalers and registers. Arduino Uno defaults to ~490 Hz (pins 5,6: ~980 Hz). You can reconfigure timers for frequencies from a few Hz to 62.5 kHz, but it requires direct register manipulation.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good PWM frequency for motors?",
+    answer: "For DC motors, 8-20 kHz works well. Below 8 kHz causes audible noise; above 20 kHz increases switching losses without benefit. Brushless motors often use 16-32 kHz. Stepper motors benefit from 20-40 kHz for smooth microstepping.",
+  },
+{
+    question: "How does PWM resolution affect frequency?",
+    answer: "Higher resolution means more steps per cycle, which lowers maximum frequency. Doubling resolution (e.g., 8 to 9 bits) halves the max frequency. Choose resolution based on control precision needs, not just maximum frequency.",
+  },
+{
+    question: "What does the prescaler do in PWM?",
+    answer: "The prescaler divides the clock before it reaches the PWM timer. Common values are 1, 8, 64, 256. It lets you achieve lower frequencies without changing resolution, useful when your clock is too fast for your application.",
+  },
+{
+    question: "Why is my PWM making noise?",
+    answer: "Audible noise means your PWM frequency is below 20 kHz. Motors and inductors physically vibrate at the PWM frequency. Increase frequency above 20 kHz or add mechanical damping. Check for loose components resonating at your PWM frequency.",
+  },
+{
+    question: "Can I change PWM frequency on Arduino?",
+    answer: "Yes, by modifying timer prescalers and registers. Arduino Uno defaults to ~490 Hz (pins 5,6: ~980 Hz). You can reconfigure timers for frequencies from a few Hz to 62.5 kHz, but it requires direct register manipulation.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

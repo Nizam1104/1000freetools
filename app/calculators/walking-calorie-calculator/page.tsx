@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -305,43 +307,33 @@ export default function WalkingCalorieCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How many calories does a 30-minute walk burn?</h4>
-            <p className="text-xs text-muted-foreground">
-              A 70 kg person burns about 120-160 calories walking at a moderate pace for 30 minutes. Heavier people burn more – around 200 calories for a 90 kg person. Speed matters: brisk walking can push this to 180+ calories.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is walking enough for weight loss?</h4>
-            <p className="text-xs text-muted-foreground">
-              Walking alone can produce modest weight loss – studies show about 1-2 kg over 6 months with daily walking. Combine it with dietary changes for better results. A 500-calorie daily deficit (250 from walking, 250 from diet) produces about 0.5 kg weekly loss.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How many steps equal 10,000 steps for calorie burn?</h4>
-            <p className="text-xs text-muted-foreground">
-              10,000 steps burns roughly 300-500 calories depending on your weight and pace. That's about 8 km or 1.5-2 hours of walking. Don't obsess over the number – consistent daily movement matters more than hitting an arbitrary target.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does walking speed affect calorie burn?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, significantly. Walking at 6 km/h burns about 30% more calories than walking at 4 km/h. But here's the thing: a slow 60-minute walk burns more than a fast 20-minute walk. Duration and consistency beat intensity for total calorie burn.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I walk before or after eating?</h4>
-            <p className="text-xs text-muted-foreground">
-              Walking after meals helps blunt blood sugar spikes and aids digestion. A 10-15 minute post-meal walk is particularly effective for people with insulin resistance. For pure fat burn, fasted morning walks may have a slight edge.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many calories does a 30-minute walk burn?",
+    answer: "A 70 kg person burns about 120-160 calories walking at a moderate pace for 30 minutes. Heavier people burn more – around 200 calories for a 90 kg person. Speed matters: brisk walking can push this to 180+ calories.",
+  },
+{
+    question: "Is walking enough for weight loss?",
+    answer: "Walking alone can produce modest weight loss – studies show about 1-2 kg over 6 months with daily walking. Combine it with dietary changes for better results. A 500-calorie daily deficit (250 from walking, 250 from diet) produces about 0.5 kg weekly loss.",
+  },
+{
+    question: "How many steps equal 10,000 steps for calorie burn?",
+    answer: "10,000 steps burns roughly 300-500 calories depending on your weight and pace. That's about 8 km or 1.5-2 hours of walking. Don't obsess over the number – consistent daily movement matters more than hitting an arbitrary target.",
+  },
+{
+    question: "Does walking speed affect calorie burn?",
+    answer: "Yes, significantly. Walking at 6 km/h burns about 30% more calories than walking at 4 km/h. But here's the thing: a slow 60-minute walk burns more than a fast 20-minute walk. Duration and consistency beat intensity for total calorie burn.",
+  },
+{
+    question: "Should I walk before or after eating?",
+    answer: "Walking after meals helps blunt blood sugar spikes and aids digestion. A 10-15 minute post-meal walk is particularly effective for people with insulin resistance. For pure fat burn, fasted morning walks may have a slight edge.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -5,7 +5,6 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function LensEquationCalculator() {
   const [solveFor, setSolveFor] = useState<"f" | "u" | "v">("f");
@@ -50,7 +49,12 @@ export default function LensEquationCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <Card>
-        
+        <CardHeader>
+          <CardTitle>Lens Equation Calculator – Thin Lens Formula Calculator</CardTitle>
+          <CardDescription>
+            Calculate focal length, object distance, or image distance using the thin lens equation. Our calculator also determines magnification.
+          </CardDescription>
+        </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-muted-foreground">1/f = 1/u + 1/v</p>

@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, ReferenceLine, Cell } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BMICalculator() {
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -330,43 +332,33 @@ export default function BMICalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a healthy BMI?</h4>
-            <p className="text-xs text-muted-foreground">
-              For most adults, a BMI between 18.5 and 24.9 is considered healthy. However, "healthy" depends on individual factors. Some research suggests the lowest mortality risk is actually in the 22-27 range, especially for older adults.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is BMI accurate for athletes?</h4>
-            <p className="text-xs text-muted-foreground">
-              No. Athletes with high muscle mass often have BMIs in the overweight or obese range despite having low body fat. NFL linemen average BMI of 30+ but many are under 15% body fat. Athletes should use body fat percentage, not BMI.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What BMI is considered obese?</h4>
-            <p className="text-xs text-muted-foreground">
-              BMI of 30 or higher is classified as obese. This is further divided into Class I (30-34.9), Class II (35-39.9), and Class III (40+), sometimes called "morbid obesity." Each class carries progressively higher health risks.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does BMI apply to children?</h4>
-            <p className="text-xs text-muted-foreground">
-              Children use BMI-for-age percentiles, not adult cutoffs. A child's BMI is compared to others of the same age and sex. Underweight is &lt;5th percentile, healthy is 5th-85th, overweight is 85th-95th, obese is ≥95th percentile.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I lose weight if my BMI is high?</h4>
-            <p className="text-xs text-muted-foreground">
-              Not necessarily. If you're muscular, your high BMI isn't a concern. If you have excess body fat, weight loss may improve health. But focus on behaviors (diet quality, activity, sleep) rather than the number. Small, sustainable changes beat crash diets.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a healthy BMI?",
+    answer: "For most adults, a BMI between 18.5 and 24.9 is considered healthy. However, \"healthy\" depends on individual factors. Some research suggests the lowest mortality risk is actually in the 22-27 range, especially for older adults.",
+  },
+{
+    question: "Is BMI accurate for athletes?",
+    answer: "No. Athletes with high muscle mass often have BMIs in the overweight or obese range despite having low body fat. NFL linemen average BMI of 30+ but many are under 15% body fat. Athletes should use body fat percentage, not BMI.",
+  },
+{
+    question: "What BMI is considered obese?",
+    answer: "BMI of 30 or higher is classified as obese. This is further divided into Class I (30-34.9), Class II (35-39.9), and Class III (40+), sometimes called \"morbid obesity.\" Each class carries progressively higher health risks.",
+  },
+{
+    question: "Does BMI apply to children?",
+    answer: "Children use BMI-for-age percentiles, not adult cutoffs. A child's BMI is compared to others of the same age and sex. Underweight is &lt;5th percentile, healthy is 5th-85th, overweight is 85th-95th, obese is ≥95th percentile.",
+  },
+{
+    question: "Should I lose weight if my BMI is high?",
+    answer: "Not necessarily. If you're muscular, your high BMI isn't a concern. If you have excess body fat, weight loss may improve health. But focus on behaviors (diet quality, activity, sleep) rather than the number. Small, sustainable changes beat crash diets.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

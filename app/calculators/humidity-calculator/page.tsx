@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Droplets, Info } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface HumidityResult {
   relativeHumidity: number;
@@ -468,45 +470,33 @@ export default function HumidityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a comfortable indoor humidity level?</h4>
-                  <p>
-                    Most people feel comfortable between 40% and 60% relative humidity. Below 30%, you may notice dry skin and static electricity. Above 60%, the air feels sticky and mold can grow. The EPA recommends keeping indoor humidity between 30% and 50% for health and comfort.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate relative humidity from dew point?</h4>
-                  <p>
-                    Use the Magnus formula: first calculate saturation vapor pressure at both the air temperature and dew point. Then divide the actual vapor pressure (from dew point) by the saturation vapor pressure (from air temperature) and multiply by 100. This calculator does it automatically.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why does humidity matter for HVAC systems?</h4>
-                  <p>
-                    Humidity affects how warm or cool air feels. High humidity makes cooling less efficient because sweat does not evaporate well. Low humidity makes heating feel less effective because dry air conducts heat away from skin faster. Proper humidity control improves comfort and reduces energy costs.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What causes high indoor humidity?</h4>
-                  <p>
-                    Common sources include cooking, showering, breathing, houseplants, and drying clothes indoors. Poor ventilation traps moisture. Basements and crawl spaces often have high humidity from ground moisture. Leaky pipes or roof leaks add significant water vapor.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can humidity be too low?</h4>
-                  <p>
-                    Yes. Humidity below 30% causes dry skin, irritated eyes, and nosebleeds. It increases susceptibility to colds and flu. Low humidity damages wood furniture and musical instruments. Static electricity becomes a problem. Winter air often needs humidification to stay healthy.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a comfortable indoor humidity level?",
+    answer: "Most people feel comfortable between 40% and 60% relative humidity. Below 30%, you may notice dry skin and static electricity. Above 60%, the air feels sticky and mold can grow. The EPA recommends keeping indoor humidity between 30% and 50% for health and comfort.",
+  },
+{
+    question: "How do I calculate relative humidity from dew point?",
+    answer: "Use the Magnus formula: first calculate saturation vapor pressure at both the air temperature and dew point. Then divide the actual vapor pressure (from dew point) by the saturation vapor pressure (from air temperature) and multiply by 100. This calculator does it automatically.",
+  },
+{
+    question: "Why does humidity matter for HVAC systems?",
+    answer: "Humidity affects how warm or cool air feels. High humidity makes cooling less efficient because sweat does not evaporate well. Low humidity makes heating feel less effective because dry air conducts heat away from skin faster. Proper humidity control improves comfort and reduces energy costs.",
+  },
+{
+    question: "What causes high indoor humidity?",
+    answer: "Common sources include cooking, showering, breathing, houseplants, and drying clothes indoors. Poor ventilation traps moisture. Basements and crawl spaces often have high humidity from ground moisture. Leaky pipes or roof leaks add significant water vapor.",
+  },
+{
+    question: "Can humidity be too low?",
+    answer: "Yes. Humidity below 30% causes dry skin, irritated eyes, and nosebleeds. It increases susceptibility to colds and flu. Low humidity damages wood furniture and musical instruments. Static electricity becomes a problem. Winter air often needs humidification to stay healthy.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

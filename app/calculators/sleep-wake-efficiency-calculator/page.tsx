@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface SleepEfficiencyResult {
   timeInBed: number;
@@ -331,33 +333,33 @@ export default function SleepWakeEfficiencyCalculatorPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is a good sleep efficiency score?</h4>
-                  <p className="text-sm text-muted-foreground">85% or higher is considered good sleep efficiency. 90%+ is excellent. Below 80% may indicate a sleep problem worth discussing with a healthcare provider.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How is sleep efficiency calculated?</h4>
-                  <p className="text-sm text-muted-foreground">Sleep efficiency = (Time Asleep ÷ Time in Bed) × 100. Time asleep excludes the time it takes to fall asleep and any wake periods during the night.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What causes low sleep efficiency?</h4>
-                  <p className="text-sm text-muted-foreground">Common causes include stress, irregular sleep schedules, sleep apnea, restless leg syndrome, caffeine/alcohol before bed, and poor sleep environment (noise, light, temperature).</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How can I improve my sleep efficiency?</h4>
-                  <p className="text-sm text-muted-foreground">Keep consistent sleep/wake times, create a dark and cool bedroom, avoid screens before bed, limit caffeine after noon, and only use your bed for sleep and intimacy.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Is sleep tracking accurate?</h4>
-                  <p className="text-sm text-muted-foreground">Consumer sleep trackers provide estimates. For clinical accuracy, a sleep study (polysomnography) is the gold standard. Use this calculator with your best estimates for useful insights.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good sleep efficiency score?",
+    answer: "85% or higher is considered good sleep efficiency. 90%+ is excellent. Below 80% may indicate a sleep problem worth discussing with a healthcare provider.",
+  },
+{
+    question: "How is sleep efficiency calculated?",
+    answer: "Sleep efficiency = (Time Asleep ÷ Time in Bed) × 100. Time asleep excludes the time it takes to fall asleep and any wake periods during the night.",
+  },
+{
+    question: "What causes low sleep efficiency?",
+    answer: "Common causes include stress, irregular sleep schedules, sleep apnea, restless leg syndrome, caffeine/alcohol before bed, and poor sleep environment (noise, light, temperature).",
+  },
+{
+    question: "How can I improve my sleep efficiency?",
+    answer: "Keep consistent sleep/wake times, create a dark and cool bedroom, avoid screens before bed, limit caffeine after noon, and only use your bed for sleep and intimacy.",
+  },
+{
+    question: "Is sleep tracking accurate?",
+    answer: "Consumer sleep trackers provide estimates. For clinical accuracy, a sleep study (polysomnography) is the gold standard. Use this calculator with your best estimates for useful insights.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

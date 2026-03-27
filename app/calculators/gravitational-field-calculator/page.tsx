@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -161,47 +163,33 @@ export default function GravitationalFieldCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the formula for gravitational field strength?</h4>
-            <p className="text-sm text-muted-foreground">
-              g = GM/r². G is the gravitational constant, M is the mass creating the field, r is distance from the center. For Earth, this gives 9.81 N/kg at the surface.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is gravitational field strength the same as acceleration?</h4>
-            <p className="text-sm text-muted-foreground">
-              Because F = ma and F = mg both describe gravitational force. Set them equal: ma = mg, so a = g. A falling object accelerates at exactly the field strength. That's why g is measured in both N/kg and m/s².
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does gravitational field strength change with altitude?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes. At 10 km altitude (cruising altitude for jets), g drops to about 9.77 N/kg - a 0.4% decrease. At the ISS altitude of 400 km, it's about 8.7 N/kg. You'd need to go much higher to see dramatic changes.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is gravity weaker on the Moon?</h4>
-            <p className="text-sm text-muted-foreground">
-              The Moon is much less massive than Earth - about 1.2% of Earth's mass. Even though it's also smaller (which would increase surface gravity), the mass effect dominates. Result: 1.62 N/kg vs Earth's 9.81 N/kg.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can gravitational field strength be negative?</h4>
-            <p className="text-sm text-muted-foreground">
-              No. Field strength is always positive - it's the magnitude of the field. The direction is always toward the mass creating the field. We sometimes use negative signs in calculations to indicate direction, but the strength itself is positive.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the formula for gravitational field strength?",
+    answer: "g = GM/r². G is the gravitational constant, M is the mass creating the field, r is distance from the center. For Earth, this gives 9.81 N/kg at the surface.",
+  },
+{
+    question: "Why is gravitational field strength the same as acceleration?",
+    answer: "Because F = ma and F = mg both describe gravitational force. Set them equal: ma = mg, so a = g. A falling object accelerates at exactly the field strength. That's why g is measured in both N/kg and m/s².",
+  },
+{
+    question: "Does gravitational field strength change with altitude?",
+    answer: "Yes. At 10 km altitude (cruising altitude for jets), g drops to about 9.77 N/kg - a 0.4% decrease. At the ISS altitude of 400 km, it's about 8.7 N/kg. You'd need to go much higher to see dramatic changes.",
+  },
+{
+    question: "Why is gravity weaker on the Moon?",
+    answer: "The Moon is much less massive than Earth - about 1.2% of Earth's mass. Even though it's also smaller (which would increase surface gravity), the mass effect dominates. Result: 1.62 N/kg vs Earth's 9.81 N/kg.",
+  },
+{
+    question: "Can gravitational field strength be negative?",
+    answer: "No. Field strength is always positive - it's the magnitude of the field. The direction is always toward the mass creating the field. We sometimes use negative signs in calculations to indicate direction, but the strength itself is positive.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

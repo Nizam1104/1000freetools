@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PercentageChangeCalculator() {
   const [oldValue, setOldValue] = useState<string>("");
@@ -218,33 +220,33 @@ export default function PercentageChangeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How do I calculate percentage increase?</h4>
-              <p>Subtract the original from the new value, divide by the original, multiply by 100. Example: from 80 to 100 is (100-80)/80 × 100 = 25% increase.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How do I calculate percentage decrease?</h4>
-              <p>Use the same formula. A decrease gives a negative result. From 100 to 80: (80-100)/100 × 100 = -20%. Report as 20% decrease.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the difference between percentage change and percentage points?</h4>
-              <p>Percentage change is relative. Percentage points are absolute differences between percentages. If unemployment goes from 5% to 7%, that's a 2 percentage point increase but a 40% increase ((7-5)/5 × 100).</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Can percentage change be more than 100%?</h4>
-              <p>Yes. If something doubles, that's a 100% increase. If it triples, that's a 200% increase. Going from 50 to 200 is a 300% increase.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is my percentage change negative?</h4>
-              <p>A negative percentage change means the new value is smaller than the original — it's a decrease. The formula naturally produces negative numbers when new is less than original.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate percentage increase?",
+    answer: "Subtract the original from the new value, divide by the original, multiply by 100. Example: from 80 to 100 is (100-80)/80 × 100 = 25% increase.",
+  },
+{
+    question: "How do I calculate percentage decrease?",
+    answer: "Use the same formula. A decrease gives a negative result. From 100 to 80: (80-100)/100 × 100 = -20%. Report as 20% decrease.",
+  },
+{
+    question: "What's the difference between percentage change and percentage points?",
+    answer: "Percentage change is relative. Percentage points are absolute differences between percentages. If unemployment goes from 5% to 7%, that's a 2 percentage point increase but a 40% increase ((7-5)/5 × 100).",
+  },
+{
+    question: "Can percentage change be more than 100%?",
+    answer: "Yes. If something doubles, that's a 100% increase. If it triples, that's a 200% increase. Going from 50 to 200 is a 300% increase.",
+  },
+{
+    question: "Why is my percentage change negative?",
+    answer: "A negative percentage change means the new value is smaller than the original — it's a decrease. The formula naturally produces negative numbers when new is less than original.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

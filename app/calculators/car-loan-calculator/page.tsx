@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function CarLoanCalculatorPage() {
   const [vehiclePrice, setVehiclePrice] = useState<string>("");
@@ -392,43 +394,33 @@ export default function CarLoanCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's a good interest rate for a car loan?</h4>
-            <p className="text-xs text-muted-foreground">
-              With excellent credit (720+), 4-6% is typical for new cars, 5-7% for used. Average credit (680-719) sees 7-10%. Poor credit can mean 15%+. Credit unions often beat dealer rates. Manufacturer 0-2.9% deals are great if you qualify.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I lease or buy?</h4>
-            <p className="text-xs text-muted-foreground">
-              Lease if you want lower payments, drive under 12k miles/year, and like new cars every 3 years. Buy if you keep cars long-term, drive a lot, or want to build equity. Leasing long-term costs more than buying and keeping for 6+ years.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How much car can I afford?</h4>
-            <p className="text-xs text-muted-foreground">
-              The 20/4/10 rule: 20% down, 4-year loan max, total car costs (payment + insurance + gas) under 10% of gross income. On $5,000/month income, that's $500/month total, or ~$350 payment. Most people buy too much car.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is it better to finance through the dealer or bank?</h4>
-            <p className="text-xs text-muted-foreground">
-              Compare both. Dealer financing can be convenient and sometimes has manufacturer subsidies (0-2.9%). Banks and credit unions often have better rates for average credit. Get pre-approved elsewhere, then let the dealer try to beat it.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I pay off my car loan early?</h4>
-            <p className="text-xs text-muted-foreground">
-              Most car loans have no prepayment penalty. Paying extra goes directly to principal, reducing total interest. Some lenders apply extra payments to future months by default – specify "apply to principal" in writing.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What's a good interest rate for a car loan?",
+    answer: "With excellent credit (720+), 4-6% is typical for new cars, 5-7% for used. Average credit (680-719) sees 7-10%. Poor credit can mean 15%+. Credit unions often beat dealer rates. Manufacturer 0-2.9% deals are great if you qualify.",
+  },
+{
+    question: "Should I lease or buy?",
+    answer: "Lease if you want lower payments, drive under 12k miles/year, and like new cars every 3 years. Buy if you keep cars long-term, drive a lot, or want to build equity. Leasing long-term costs more than buying and keeping for 6+ years.",
+  },
+{
+    question: "How much car can I afford?",
+    answer: "The 20/4/10 rule: 20% down, 4-year loan max, total car costs (payment + insurance + gas) under 10% of gross income. On $5,000/month income, that's $500/month total, or ~$350 payment. Most people buy too much car.",
+  },
+{
+    question: "Is it better to finance through the dealer or bank?",
+    answer: "Compare both. Dealer financing can be convenient and sometimes has manufacturer subsidies (0-2.9%). Banks and credit unions often have better rates for average credit. Get pre-approved elsewhere, then let the dealer try to beat it.",
+  },
+{
+    question: "Can I pay off my car loan early?",
+    answer: "Most car loans have no prepayment penalty. Paying extra goes directly to principal, reducing total interest. Some lenders apply extra payments to future months by default – specify \"apply to principal\" in writing.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

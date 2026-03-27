@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MinimumPaymentCalculatorPage() {
   const [balance, setBalance] = useState<string>("");
@@ -319,45 +321,33 @@ export default function MinimumPaymentCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What happens if I only pay the minimum?</h4>
-                  <p>
-                    You'll stay in debt for years or decades. Most of your payment goes to interest, barely touching the principal. A $5,000 balance at 18% could take 30+ years to pay off, costing more than $10,000 in interest alone.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is paying minimum better than skipping payment?</h4>
-                  <p>
-                    Yes. Minimum payments keep your account current and avoid late fees and credit score damage. But it's the bare minimum—treat it as a temporary floor, not a long-term strategy.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How can I calculate my own payoff timeline?</h4>
-                  <p>
-                    Use this calculator with your actual balance and APR. Then experiment with higher monthly payments to see how much time and interest you can save. Even small increases make a big difference.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I use savings to pay off credit cards?</h4>
-                  <p>
-                    Usually yes, if your card APR exceeds your savings interest rate. Credit card debt at 18-25% costs far more than savings earns at 4-5%. Keep a small emergency fund ($1,000-2,000) while paying down debt.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Will paying more than minimum hurt my credit?</h4>
-                  <p>
-                    No, it helps. Lower balances improve your credit utilization ratio, which is 30% of your FICO score. Paying down debt is one of the fastest ways to boost your credit score.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What happens if I only pay the minimum?",
+    answer: "You'll stay in debt for years or decades. Most of your payment goes to interest, barely touching the principal. A $5,000 balance at 18% could take 30+ years to pay off, costing more than $10,000 in interest alone.",
+  },
+{
+    question: "Is paying minimum better than skipping payment?",
+    answer: "Yes. Minimum payments keep your account current and avoid late fees and credit score damage. But it's the bare minimum—treat it as a temporary floor, not a long-term strategy.",
+  },
+{
+    question: "How can I calculate my own payoff timeline?",
+    answer: "Use this calculator with your actual balance and APR. Then experiment with higher monthly payments to see how much time and interest you can save. Even small increases make a big difference.",
+  },
+{
+    question: "Should I use savings to pay off credit cards?",
+    answer: "Usually yes, if your card APR exceeds your savings interest rate. Credit card debt at 18-25% costs far more than savings earns at 4-5%. Keep a small emergency fund ($1,000-2,000) while paying down debt.",
+  },
+{
+    question: "Will paying more than minimum hurt my credit?",
+    answer: "No, it helps. Lower balances improve your credit utilization ratio, which is 30% of your FICO score. Paying down debt is one of the fastest ways to boost your credit score.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

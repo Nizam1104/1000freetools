@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Coffee, Info, Droplets } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface CoffeeResult {
   coffeeGrams: number;
@@ -496,45 +498,33 @@ export default function CoffeeToWaterRatioCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much coffee per cup?</h4>
-                  <p>
-                    For a standard 6 oz (180 ml) cup at 1:16 ratio, use 11 grams of coffee. For a 12 oz (355 ml) mug, use 22 grams. A typical 10 cup drip maker holds 60 oz and needs about 60 grams of coffee at 1:16 ratio.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I measure coffee by volume or weight?</h4>
-                  <p>
-                    Weight is more accurate. One tablespoon of fine espresso grind weighs more than one tablespoon of coarse French press grind. If you must use volume, 1 tablespoon of medium ground coffee equals about 5 grams.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why does my coffee taste bitter?</h4>
-                  <p>
-                    Bitter coffee usually means over extraction. Try a coarser grind, shorter brew time, or lower water temperature. You can also use a higher ratio like 1:17 or 1:18 to dilute the strength slightly.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why does my coffee taste sour?</h4>
-                  <p>
-                    Sour coffee indicates under extraction. Use a finer grind, longer brew time, or hotter water. A lower ratio like 1:14 or 1:15 will also increase strength and mask some sourness.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does cold brew use the same ratios?</h4>
-                  <p>
-                    Cold brew concentrate uses 1:8 ratio, then gets diluted 1:1 with water or milk for drinking. This equals 1:16 when served. Cold extraction is less efficient, so the higher initial concentration compensates.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much coffee per cup?",
+    answer: "For a standard 6 oz (180 ml) cup at 1:16 ratio, use 11 grams of coffee. For a 12 oz (355 ml) mug, use 22 grams. A typical 10 cup drip maker holds 60 oz and needs about 60 grams of coffee at 1:16 ratio.",
+  },
+{
+    question: "Should I measure coffee by volume or weight?",
+    answer: "Weight is more accurate. One tablespoon of fine espresso grind weighs more than one tablespoon of coarse French press grind. If you must use volume, 1 tablespoon of medium ground coffee equals about 5 grams.",
+  },
+{
+    question: "Why does my coffee taste bitter?",
+    answer: "Bitter coffee usually means over extraction. Try a coarser grind, shorter brew time, or lower water temperature. You can also use a higher ratio like 1:17 or 1:18 to dilute the strength slightly.",
+  },
+{
+    question: "Why does my coffee taste sour?",
+    answer: "Sour coffee indicates under extraction. Use a finer grind, longer brew time, or hotter water. A lower ratio like 1:14 or 1:15 will also increase strength and mask some sourness.",
+  },
+{
+    question: "Does cold brew use the same ratios?",
+    answer: "Cold brew concentrate uses 1:8 ratio, then gets diluted 1:1 with water or milk for drinking. This equals 1:16 when served. Cold extraction is less efficient, so the higher initial concentration compensates.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BreakEvenDiscountCalculatorPage() {
   const [costPrice, setCostPrice] = useState<string>("");
@@ -303,45 +305,33 @@ export default function BreakEvenDiscountCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate break-even discount percentage?</h4>
-                  <p>
-                    Subtract your cost from your selling price to get profit. Divide profit by selling price and multiply by 100. For example: $80 cost, $100 price = $20 profit. $20 / $100 = 20% maximum discount.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it ever smart to sell below break-even?</h4>
-                  <p>
-                    Sometimes, but only with a clear strategy. Loss leaders can draw customers who buy other items. Clearance sales free up cash and space. The key is limiting the loss and having a specific goal beyond just moving inventory.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What costs should I include in cost price?</h4>
-                  <p>
-                    Include all direct costs: purchase price or materials, direct labor, shipping to you, and any customization costs. Don't include overhead like rent or utilities — those are covered by your profit margin.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does VAT or sales tax affect break-even?</h4>
-                  <p>
-                    Sales tax is collected from customers and remitted to the government — it's not your revenue. Calculate break-even using pre-tax prices. The tax doesn't affect your profit margin calculation.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is my break-even discount lower than competitors?</h4>
-                  <p>
-                    Competitors may have lower costs from bulk purchasing, vertical integration, or different overhead structures. They might also be willing to accept lower margins. Focus on your own numbers, not theirs.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate break-even discount percentage?",
+    answer: "Subtract your cost from your selling price to get profit. Divide profit by selling price and multiply by 100. For example: $80 cost, $100 price = $20 profit. $20 / $100 = 20% maximum discount.",
+  },
+{
+    question: "Is it ever smart to sell below break-even?",
+    answer: "Sometimes, but only with a clear strategy. Loss leaders can draw customers who buy other items. Clearance sales free up cash and space. The key is limiting the loss and having a specific goal beyond just moving inventory.",
+  },
+{
+    question: "What costs should I include in cost price?",
+    answer: "Include all direct costs: purchase price or materials, direct labor, shipping to you, and any customization costs. Don't include overhead like rent or utilities — those are covered by your profit margin.",
+  },
+{
+    question: "How does VAT or sales tax affect break-even?",
+    answer: "Sales tax is collected from customers and remitted to the government — it's not your revenue. Calculate break-even using pre-tax prices. The tax doesn't affect your profit margin calculation.",
+  },
+{
+    question: "Why is my break-even discount lower than competitors?",
+    answer: "Competitors may have lower costs from bulk purchasing, vertical integration, or different overhead structures. They might also be willing to accept lower margins. Focus on your own numbers, not theirs.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

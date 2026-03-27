@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BacterialGrowthCalculator() {
   const [initialCount, setInitialCount] = useState<string>("");
@@ -391,43 +393,33 @@ export default function BacterialGrowthCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is bacterial doubling time?</h4>
-            <p>
-              Doubling time is how long it takes for a bacterial population to double in size. E. coli doubles every 20 minutes under ideal lab conditions. Other bacteria take hours or even days. Temperature, nutrients, and oxygen all affect the rate.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do you calculate bacterial population growth?</h4>
-            <p>
-              Use the formula N = N₀ × 2^(t/g), where N is the final population, N₀ is the starting population, t is time elapsed, and g is the generation time (doubling time). This calculator does the math for you and shows the growth curve.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Why doesn't bacterial growth stay exponential forever?</h4>
-            <p>
-              Resources run out. Bacteria need food, space, and the right conditions. As the population grows, waste products build up and nutrients deplete. Eventually the growth rate slows and the population stabilizes or crashes. This is called carrying capacity.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is CFU and why is it used?</h4>
-            <p>
-              CFU stands for colony-forming units. It counts viable bacteria that can form visible colonies on a plate. One CFU might be a single cell or a small clump. CFU is more useful than total cell count because it measures bacteria that are actually alive and capable of reproducing.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Can I use this for yeast or other microorganisms?</h4>
-            <p>
-              Yes, the exponential growth formula works for any organism that reproduces by binary fission or similar mechanisms. Yeast, some protozoa, and even cancer cells follow similar growth patterns. Just use the appropriate doubling time for your organism.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is bacterial doubling time?",
+    answer: "Doubling time is how long it takes for a bacterial population to double in size. E. coli doubles every 20 minutes under ideal lab conditions. Other bacteria take hours or even days. Temperature, nutrients, and oxygen all affect the rate.",
+  },
+{
+    question: "How do you calculate bacterial population growth?",
+    answer: "Use the formula N = N₀ × 2^(t/g), where N is the final population, N₀ is the starting population, t is time elapsed, and g is the generation time (doubling time). This calculator does the math for you and shows the growth curve.",
+  },
+{
+    question: "Why doesn't bacterial growth stay exponential forever?",
+    answer: "Resources run out. Bacteria need food, space, and the right conditions. As the population grows, waste products build up and nutrients deplete. Eventually the growth rate slows and the population stabilizes or crashes. This is called carrying capacity.",
+  },
+{
+    question: "What is CFU and why is it used?",
+    answer: "CFU stands for colony-forming units. It counts viable bacteria that can form visible colonies on a plate. One CFU might be a single cell or a small clump. CFU is more useful than total cell count because it measures bacteria that are actually alive and capable of reproducing.",
+  },
+{
+    question: "Can I use this for yeast or other microorganisms?",
+    answer: "Yes, the exponential growth formula works for any organism that reproduces by binary fission or similar mechanisms. Yeast, some protozoa, and even cancer cells follow similar growth patterns. Just use the appropriate doubling time for your organism.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

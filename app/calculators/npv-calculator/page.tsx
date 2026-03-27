@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function NPVCalculatorPage() {
   const [initialInvestment, setInitialInvestment] = useState<string>("");
@@ -305,56 +307,33 @@ export default function NPVCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good NPV value?</h4>
-                  <p>
-                    Any positive NPV is good — it means the investment creates value. Higher is better.
-                    However, compare NPV relative to investment size. A $10,000 NPV on a $50,000 investment
-                    is better than $10,000 NPV on a $500,000 investment. Consider profitability index for
-                    size-adjusted comparison.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I choose the right discount rate?</h4>
-                  <p>
-                    Use your weighted average cost of capital (WACC) for company investments. For personal
-                    investments, use your expected return from similar-risk alternatives. Add a risk premium
-                    for uncertain projects. Typical rates: 8-10% for stable businesses, 15-25% for startups.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can NPV be negative and still be a good investment?</h4>
-                  <p>
-                    Generally no — negative NPV destroys shareholder value. Exceptions exist for strategic
-                    investments that enable future opportunities, regulatory requirements, or projects with
-                    significant intangible benefits not captured in cash flow projections.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What are the limitations of NPV?</h4>
-                  <p>
-                    NPV assumes cash flows can be reinvested at the discount rate, which may not be realistic.
-                    It requires accurate cash flow estimates, which are often uncertain. NPV also does not
-                    account for project size differences or timing flexibility (real options).
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does inflation affect NPV calculations?</h4>
-                  <p>
-                    Be consistent: use nominal cash flows with nominal discount rates (including inflation),
-                    or real cash flows with real discount rates (excluding inflation). Mixing them gives
-                    incorrect results. Most analysts use nominal values since they are easier to estimate.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good NPV value?",
+    answer: "Any positive NPV is good — it means the investment creates value. Higher is better. However, compare NPV relative to investment size. A $10,000 NPV on a $50,000 investment is better than $10,000 NPV on a $500,000 investment. Consider profitability index for size-adjusted comparison.",
+  },
+{
+    question: "How do I choose the right discount rate?",
+    answer: "Use your weighted average cost of capital (WACC) for company investments. For personal investments, use your expected return from similar-risk alternatives. Add a risk premium for uncertain projects. Typical rates: 8-10% for stable businesses, 15-25% for startups.",
+  },
+{
+    question: "Can NPV be negative and still be a good investment?",
+    answer: "Generally no — negative NPV destroys shareholder value. Exceptions exist for strategic investments that enable future opportunities, regulatory requirements, or projects with significant intangible benefits not captured in cash flow projections.",
+  },
+{
+    question: "What are the limitations of NPV?",
+    answer: "NPV assumes cash flows can be reinvested at the discount rate, which may not be realistic. It requires accurate cash flow estimates, which are often uncertain. NPV also does not account for project size differences or timing flexibility (real options).",
+  },
+{
+    question: "How does inflation affect NPV calculations?",
+    answer: "Be consistent: use nominal cash flows with nominal discount rates (including inflation), or real cash flows with real discount rates (excluding inflation). Mixing them gives incorrect results. Most analysts use nominal values since they are easier to estimate.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface HabitStreakResult {
   currentStreak: number;
@@ -442,45 +444,33 @@ export default function DailyHabitStreakCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long does it take to form a habit?</h4>
-                  <p>
-                    On average, 66 days according to research from University College London. But the real range is 18 to 254 days depending on the person and the habit&apos;s complexity. Simple habits form faster; difficult ones take longer.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What happens if I miss a day?</h4>
-                  <p>
-                    Nothing catastrophic. Research shows missing one day doesn&apos;t significantly impact habit formation. The key is getting back on track immediately. Don&apos;t let one miss become two, then three, then quitting.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I track multiple habits at once?</h4>
-                  <p>
-                    Start with one. Habit formation requires mental energy and attention. Once the first habit feels automatic (around 2-3 months), add another. Trying to change everything at once usually leads to changing nothing.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What&apos;s a good success rate?</h4>
-                  <p>
-                    80% or higher is excellent. That means you&apos;re consistent but not perfectionist. A 50% success rate suggests the habit is too ambitious — make it smaller. Even 30% consistency is better than zero.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I recover from a broken streak?</h4>
-                  <p>
-                    Reset to zero and start again. Don&apos;t dwell on the broken chain — that&apos;s sunk cost thinking. Focus on building a new streak. Many people find their second attempt succeeds because they&apos;ve learned what went wrong the first time.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How long does it take to form a habit?",
+    answer: "On average, 66 days according to research from University College London. But the real range is 18 to 254 days depending on the person and the habit&apos;s complexity. Simple habits form faster; difficult ones take longer.",
+  },
+{
+    question: "What happens if I miss a day?",
+    answer: "Nothing catastrophic. Research shows missing one day doesn&apos;t significantly impact habit formation. The key is getting back on track immediately. Don&apos;t let one miss become two, then three, then quitting.",
+  },
+{
+    question: "Should I track multiple habits at once?",
+    answer: "Start with one. Habit formation requires mental energy and attention. Once the first habit feels automatic (around 2-3 months), add another. Trying to change everything at once usually leads to changing nothing.",
+  },
+{
+    question: "What&apos;s a good success rate?",
+    answer: "80% or higher is excellent. That means you&apos;re consistent but not perfectionist. A 50% success rate suggests the habit is too ambitious — make it smaller. Even 30% consistency is better than zero.",
+  },
+{
+    question: "How do I recover from a broken streak?",
+    answer: "Reset to zero and start again. Don&apos;t dwell on the broken chain — that&apos;s sunk cost thinking. Focus on building a new streak. Many people find their second attempt succeeds because they&apos;ve learned what went wrong the first time.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

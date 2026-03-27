@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function HvacAirflowCalculator() {
   const [roomVolume, setRoomVolume] = useState<string>("");
@@ -249,45 +251,33 @@ export default function HvacAirflowCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate room volume?</h4>
-                <p>
-                  Multiply length × width × height. For a room that is 5m long, 4m wide, and 2.5m high: 5 × 4 × 2.5 = 50 m³. For irregular rooms, break them into rectangular sections and add the volumes together.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What ACH should I use for my home?</h4>
-                <p>
-                  Most homes target 0.35 to 0.5 ACH for whole-house ventilation under modern energy codes. Individual rooms need higher rates: bathrooms 8-10 ACH, kitchens 15-20 ACH, living spaces 4-6 ACH.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is higher airflow always better?</h4>
-                <p>
-                  No. Excessive airflow wastes energy, creates drafts, and can make HVAC systems noisy. It may also prevent proper dehumidification because air moves too fast over cooling coils. Match airflow to the room's actual needs.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I measure actual airflow?</h4>
-                <p>
-                  Use an anemometer to measure air velocity at vents, then multiply by vent area. Or use a flow hood that captures all air from a diffuser. Professional HVAC techs have specialized equipment for accurate measurements.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What affects required ventilation rates?</h4>
-                <p>
-                  Occupancy is the biggest factor — more people need more fresh air. Cooking, cleaning chemicals, pets, and smoking all increase ventilation needs. Local building codes set minimum rates that must be followed.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate room volume?",
+    answer: "Multiply length × width × height. For a room that is 5m long, 4m wide, and 2.5m high: 5 × 4 × 2.5 = 50 m³. For irregular rooms, break them into rectangular sections and add the volumes together.",
+  },
+{
+    question: "What ACH should I use for my home?",
+    answer: "Most homes target 0.35 to 0.5 ACH for whole-house ventilation under modern energy codes. Individual rooms need higher rates: bathrooms 8-10 ACH, kitchens 15-20 ACH, living spaces 4-6 ACH.",
+  },
+{
+    question: "Is higher airflow always better?",
+    answer: "No. Excessive airflow wastes energy, creates drafts, and can make HVAC systems noisy. It may also prevent proper dehumidification because air moves too fast over cooling coils. Match airflow to the room's actual needs.",
+  },
+{
+    question: "How do I measure actual airflow?",
+    answer: "Use an anemometer to measure air velocity at vents, then multiply by vent area. Or use a flow hood that captures all air from a diffuser. Professional HVAC techs have specialized equipment for accurate measurements.",
+  },
+{
+    question: "What affects required ventilation rates?",
+    answer: "Occupancy is the biggest factor — more people need more fresh air. Cooking, cleaning chemicals, pets, and smoking all increase ventilation needs. Local building codes set minimum rates that must be followed.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

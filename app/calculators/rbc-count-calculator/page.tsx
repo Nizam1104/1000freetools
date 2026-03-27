@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Activity, Droplets } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface RBCResult {
   rbcCount: number;
@@ -216,33 +218,33 @@ export default function RbcCountCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is a normal RBC count?</h3>
-                <p className="text-sm text-muted-foreground">Normal RBC count is 4.5-5.5 million cells/μL for men and 4.0-5.0 million cells/μL for women. Values vary by age, altitude, and health status.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What does low RBC count mean?</h3>
-                <p className="text-sm text-muted-foreground">Low RBC count indicates anemia, which can be caused by iron deficiency, vitamin B12/folate deficiency, blood loss, or bone marrow problems.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What does high RBC count mean?</h3>
-                <p className="text-sm text-muted-foreground">High RBC count (polycythemia) can result from dehydration, living at high altitude, lung disease, or bone marrow disorders. It increases blood viscosity.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How is RBC count performed?</h3>
-                <p className="text-sm text-muted-foreground">Blood is diluted (typically 1:200), loaded into a hemocytometer, and cells are counted under a microscope in designated squares. The count is then calculated using the dilution factor.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is the formula for RBC count?</h3>
-                <p className="text-sm text-muted-foreground">RBC/μL = (Cells counted × Dilution factor) / (Number of squares × Volume per square). For standard RBC count: (Cells × 200) / (5 × 0.004).</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a normal RBC count?",
+    answer: "Normal RBC count is 4.5-5.5 million cells/μL for men and 4.0-5.0 million cells/μL for women. Values vary by age, altitude, and health status.",
+  },
+{
+    question: "What does low RBC count mean?",
+    answer: "Low RBC count indicates anemia, which can be caused by iron deficiency, vitamin B12/folate deficiency, blood loss, or bone marrow problems.",
+  },
+{
+    question: "What does high RBC count mean?",
+    answer: "High RBC count (polycythemia) can result from dehydration, living at high altitude, lung disease, or bone marrow disorders. It increases blood viscosity.",
+  },
+{
+    question: "How is RBC count performed?",
+    answer: "Blood is diluted (typically 1:200), loaded into a hemocytometer, and cells are counted under a microscope in designated squares. The count is then calculated using the dilution factor.",
+  },
+{
+    question: "What is the formula for RBC count?",
+    answer: "RBC/μL = (Cells counted × Dilution factor) / (Number of squares × Volume per square). For standard RBC count: (Cells × 200) / (5 × 0.004).",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

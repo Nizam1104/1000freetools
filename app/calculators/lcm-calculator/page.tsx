@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -208,43 +210,33 @@ export default function LCMCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the least common multiple?</h4>
-            <p className="text-xs text-muted-foreground">
-              The LCM is the smallest positive number that is divisible by both (or all) given numbers. For example, LCM(4,6) = 12 because 12 is the smallest number both 4 and 6 divide evenly.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you find LCM using prime factorization?</h4>
-            <p className="text-xs text-muted-foreground">
-              Break each number into prime factors. For each prime, take the highest power that appears in any factorization. Multiply these together. Example: 12=2²×3, 18=2×3², so LCM=2²×3²=36.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the relationship between LCM and GCD?</h4>
-            <p className="text-xs text-muted-foreground">
-              For any two numbers: LCM(a,b) × GCD(a,b) = |a × b|. This means LCM = |a×b| / GCD. This relationship makes LCM calculation efficient once you know the GCD.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can LCM be calculated for more than two numbers?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, find LCM iteratively: LCM(a,b,c) = LCM(LCM(a,b), c). For example, LCM(4,6,8) = LCM(LCM(4,6),8) = LCM(12,8) = 24. This extends to any number of inputs.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is LCM used for in real life?</h4>
-            <p className="text-xs text-muted-foreground">
-              LCM appears in scheduling (when do repeating events coincide?), cooking (scaling recipes with different serving sizes), music (polyrhythms), and engineering (gear synchronization, signal processing).
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the least common multiple?",
+    answer: "The LCM is the smallest positive number that is divisible by both (or all) given numbers. For example, LCM(4,6) = 12 because 12 is the smallest number both 4 and 6 divide evenly.",
+  },
+{
+    question: "How do you find LCM using prime factorization?",
+    answer: "Break each number into prime factors. For each prime, take the highest power that appears in any factorization. Multiply these together. Example: 12=2²×3, 18=2×3², so LCM=2²×3²=36.",
+  },
+{
+    question: "What is the relationship between LCM and GCD?",
+    answer: "For any two numbers: LCM(a,b) × GCD(a,b) = |a × b|. This means LCM = |a×b| / GCD. This relationship makes LCM calculation efficient once you know the GCD.",
+  },
+{
+    question: "Can LCM be calculated for more than two numbers?",
+    answer: "Yes, find LCM iteratively: LCM(a,b,c) = LCM(LCM(a,b), c). For example, LCM(4,6,8) = LCM(LCM(4,6),8) = LCM(12,8) = 24. This extends to any number of inputs.",
+  },
+{
+    question: "What is LCM used for in real life?",
+    answer: "LCM appears in scheduling (when do repeating events coincide?), cooking (scaling recipes with different serving sizes), music (polyrhythms), and engineering (gear synchronization, signal processing).",
+  }
+  ]} />
+</section>
     </div>
   );
 }

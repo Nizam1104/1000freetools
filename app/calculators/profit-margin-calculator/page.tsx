@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { TrendingUp, DollarSign, Percent, Info, Calculator } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface ProfitMarginResult {
   grossProfit: number;
@@ -403,45 +405,33 @@ export default function ProfitMarginCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good profit margin?</h4>
-                  <p>
-                    It depends on your industry. A 10% net margin is average across all businesses. Software companies often achieve 20%+, while grocery stores operate on 1-3%. Focus on your industry benchmark and improving your own margins over time.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I increase my profit margin?</h4>
-                  <p>
-                    Raise prices (if the market allows), negotiate better supplier costs, reduce waste, improve operational efficiency, or shift to higher-margin products. Small price increases often have the biggest impact since they flow directly to profit.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is markup higher than margin?</h4>
-                  <p>
-                    Markup is calculated from cost (the smaller number), while margin is calculated from price (the larger number). A 50% markup on a $50 cost gives a $75 price, but that's only a 33% margin because $25 profit divided by $75 price equals 33%.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I use margin or markup for pricing?</h4>
-                  <p>
-                    Use margin for financial analysis and reporting — it's the standard metric investors and lenders expect. Use markup for quick pricing decisions and when communicating with sales teams who think in terms of "adding X% to cost."
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the difference between gross and net margin?</h4>
-                  <p>
-                    Gross margin only considers cost of goods sold. Net margin accounts for all expenses — rent, salaries, marketing, taxes, everything. Gross margin shows product profitability; net margin shows overall business profitability.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good profit margin?",
+    answer: "It depends on your industry. A 10% net margin is average across all businesses. Software companies often achieve 20%+, while grocery stores operate on 1-3%. Focus on your industry benchmark and improving your own margins over time.",
+  },
+{
+    question: "How do I increase my profit margin?",
+    answer: "Raise prices (if the market allows), negotiate better supplier costs, reduce waste, improve operational efficiency, or shift to higher-margin products. Small price increases often have the biggest impact since they flow directly to profit.",
+  },
+{
+    question: "Why is markup higher than margin?",
+    answer: "Markup is calculated from cost (the smaller number), while margin is calculated from price (the larger number). A 50% markup on a $50 cost gives a $75 price, but that's only a 33% margin because $25 profit divided by $75 price equals 33%.",
+  },
+{
+    question: "Should I use margin or markup for pricing?",
+    answer: "Use margin for financial analysis and reporting — it's the standard metric investors and lenders expect. Use markup for quick pricing decisions and when communicating with sales teams who think in terms of \"adding X% to cost.\"",
+  },
+{
+    question: "What's the difference between gross and net margin?",
+    answer: "Gross margin only considers cost of goods sold. Net margin accounts for all expenses — rent, salaries, marketing, taxes, everything. Gross margin shows product profitability; net margin shows overall business profitability.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

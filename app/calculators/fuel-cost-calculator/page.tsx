@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FuelCostCalculatorPage() {
   const [distance, setDistance] = useState<string>("");
@@ -386,55 +388,33 @@ export default function FuelCostCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate fuel cost for a trip?</h4>
-                  <p>
-                    Divide your trip distance by your vehicle's fuel economy to get fuel needed, then multiply
-                    by fuel price. For a 500-mile trip in a 25 MPG car with gas at $3.50/gallon: 500 / 25 = 20
-                    gallons, then 20 x $3.50 = $70. This is the estimated fuel cost for the trip.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good MPG for a car?</h4>
-                  <p>
-                    For new cars, 25-30 MPG combined is average for non-hybrid sedans. Compact cars achieve
-                    30-35 MPG. Hybrids reach 45-55 MPG. SUVs typically get 20-28 MPG. Trucks range from
-                    15-22 MPG. Electric vehicles are rated in MPGe (miles per gallon equivalent).
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much should I budget for gas per month?</h4>
-                  <p>
-                    Multiply your monthly miles by cost per mile. For 1,000 miles/month in a 25 MPG car with
-                    $3.50/gallon gas: 1,000 / 25 = 40 gallons, 40 x $3.50 = $140/month. Commuters driving
-                    1,500 miles monthly might budget $200-250 depending on their vehicle.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does using premium gas improve fuel economy?</h4>
-                  <p>
-                    Only if your car requires it. Most cars run fine on regular 87-octane gas. Premium in a
-                    regular car provides no benefit. If your car requires premium, using regular can reduce
-                    fuel economy and potentially damage the engine. Check your owner's manual.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate is this fuel cost estimate?</h4>
-                  <p>
-                    The calculation is mathematically exact for the inputs provided. However, real-world fuel
-                    economy varies from EPA ratings by 10-20%. Traffic, weather, driving style, and vehicle
-                    condition all affect actual consumption. Use this as a planning estimate, not a guarantee.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate fuel cost for a trip?",
+    answer: "Divide your trip distance by your vehicle's fuel economy to get fuel needed, then multiply by fuel price. For a 500-mile trip in a 25 MPG car with gas at $3.50/gallon: 500 / 25 = 20 gallons, then 20 x $3.50 = $70. This is the estimated fuel cost for the trip.",
+  },
+{
+    question: "What is a good MPG for a car?",
+    answer: "For new cars, 25-30 MPG combined is average for non-hybrid sedans. Compact cars achieve 30-35 MPG. Hybrids reach 45-55 MPG. SUVs typically get 20-28 MPG. Trucks range from 15-22 MPG. Electric vehicles are rated in MPGe (miles per gallon equivalent).",
+  },
+{
+    question: "How much should I budget for gas per month?",
+    answer: "Multiply your monthly miles by cost per mile. For 1,000 miles/month in a 25 MPG car with $3.50/gallon gas: 1,000 / 25 = 40 gallons, 40 x $3.50 = $140/month. Commuters driving 1,500 miles monthly might budget $200-250 depending on their vehicle.",
+  },
+{
+    question: "Does using premium gas improve fuel economy?",
+    answer: "Only if your car requires it. Most cars run fine on regular 87-octane gas. Premium in a regular car provides no benefit. If your car requires premium, using regular can reduce fuel economy and potentially damage the engine. Check your owner's manual.",
+  },
+{
+    question: "How accurate is this fuel cost estimate?",
+    answer: "The calculation is mathematically exact for the inputs provided. However, real-world fuel economy varies from EPA ratings by 10-20%. Traffic, weather, driving style, and vehicle condition all affect actual consumption. Use this as a planning estimate, not a guarantee.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

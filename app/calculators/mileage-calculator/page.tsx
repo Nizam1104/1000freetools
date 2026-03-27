@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MileageCalculatorPage() {
   const [distance, setDistance] = useState<string>("");
@@ -346,45 +348,33 @@ export default function MileageCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is my actual MPG lower than the EPA rating?</h4>
-                  <p>
-                    EPA tests are conducted in controlled conditions. Real-world driving includes traffic, hills, AC use, and varying speeds—all of which reduce mileage. Cold weather can reduce MPG by 10-20%. Aggressive driving has an even bigger impact.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate is my car's displayed MPG?</h4>
-                  <p>
-                    Most cars overestimate by 2-5 MPG. The display calculates from fuel injector data, not actual consumption. For accurate numbers, use the fill-up method: track miles driven between full tanks and divide by gallons pumped.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does premium fuel improve mileage?</h4>
-                  <p>
-                    Only if your car requires it. High-compression engines designed for premium will run poorly on regular. For cars that recommend regular, premium provides no benefit—the engine can't take advantage of the higher octane.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much does idling affect fuel economy?</h4>
-                  <p>
-                    Idling gets 0 MPG. Modern engines use less fuel restarting than idling for more than 10 seconds. If you'll be stopped longer than a minute (train crossings, long waits), turn off the engine.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the most fuel-efficient speed?</h4>
-                  <p>
-                    Most cars achieve peak MPG between 45-55 mph (72-88 km/h). Fuel economy drops about 1% for every mph over 55. At 75 mph, you might use 25% more fuel than at 55 mph.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is my actual MPG lower than the EPA rating?",
+    answer: "EPA tests are conducted in controlled conditions. Real-world driving includes traffic, hills, AC use, and varying speeds—all of which reduce mileage. Cold weather can reduce MPG by 10-20%. Aggressive driving has an even bigger impact.",
+  },
+{
+    question: "How accurate is my car's displayed MPG?",
+    answer: "Most cars overestimate by 2-5 MPG. The display calculates from fuel injector data, not actual consumption. For accurate numbers, use the fill-up method: track miles driven between full tanks and divide by gallons pumped.",
+  },
+{
+    question: "Does premium fuel improve mileage?",
+    answer: "Only if your car requires it. High-compression engines designed for premium will run poorly on regular. For cars that recommend regular, premium provides no benefit—the engine can't take advantage of the higher octane.",
+  },
+{
+    question: "How much does idling affect fuel economy?",
+    answer: "Idling gets 0 MPG. Modern engines use less fuel restarting than idling for more than 10 seconds. If you'll be stopped longer than a minute (train crossings, long waits), turn off the engine.",
+  },
+{
+    question: "What's the most fuel-efficient speed?",
+    answer: "Most cars achieve peak MPG between 45-55 mph (72-88 km/h). Fuel economy drops about 1% for every mph over 55. At 75 mph, you might use 25% more fuel than at 55 mph.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

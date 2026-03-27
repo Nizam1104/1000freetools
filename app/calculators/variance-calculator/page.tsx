@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -193,43 +195,33 @@ export default function VarianceCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the difference between population and sample variance?</h4>
-            <p className="text-xs text-muted-foreground">
-              Population variance divides by n (total count), used when you have all data. Sample variance divides by (n-1), called Bessel correction, which gives an unbiased estimate when working with a sample of the population.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why do we square the deviations in variance?</h4>
-            <p className="text-xs text-muted-foreground">
-              Squaring ensures all deviations are positive (otherwise they sum to zero). It also gives more weight to outliers – a value 10 units from the mean contributes 100 to variance, not just 10.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What does a variance of 0 mean?</h4>
-            <p className="text-xs text-muted-foreground">
-              Zero variance means all values are identical – there is no spread at all. Every data point equals the mean exactly. This rarely happens in real-world data except in controlled conditions.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How is variance used in standard deviation?</h4>
-            <p className="text-xs text-muted-foreground">
-              Standard deviation is simply the square root of variance. While variance is in squared units (hard to interpret), standard deviation is in the original units, making it more intuitive for describing spread.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can variance be negative?</h4>
-            <p className="text-xs text-muted-foreground">
-              No, variance is always zero or positive. Since we square each deviation before averaging, the result cannot be negative. If you get negative variance, there is a calculation error.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the difference between population and sample variance?",
+    answer: "Population variance divides by n (total count), used when you have all data. Sample variance divides by (n-1), called Bessel correction, which gives an unbiased estimate when working with a sample of the population.",
+  },
+{
+    question: "Why do we square the deviations in variance?",
+    answer: "Squaring ensures all deviations are positive (otherwise they sum to zero). It also gives more weight to outliers – a value 10 units from the mean contributes 100 to variance, not just 10.",
+  },
+{
+    question: "What does a variance of 0 mean?",
+    answer: "Zero variance means all values are identical – there is no spread at all. Every data point equals the mean exactly. This rarely happens in real-world data except in controlled conditions.",
+  },
+{
+    question: "How is variance used in standard deviation?",
+    answer: "Standard deviation is simply the square root of variance. While variance is in squared units (hard to interpret), standard deviation is in the original units, making it more intuitive for describing spread.",
+  },
+{
+    question: "Can variance be negative?",
+    answer: "No, variance is always zero or positive. Since we square each deviation before averaging, the result cannot be negative. If you get negative variance, there is a calculation error.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

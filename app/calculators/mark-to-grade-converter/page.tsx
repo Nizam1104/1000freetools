@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MarkToGradeConverterPage() {
   const [marks, setMarks] = useState<string>("");
@@ -430,45 +432,33 @@ export default function MarkToGradeConverterPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I convert my percentage to a letter grade?</h4>
-                  <p>
-                    Enter your marks and the maximum possible marks in this calculator. Select your grading scale (Standard, IB, Cambridge, or CBSE). The tool calculates your percentage and shows the corresponding letter grade, grade point, and performance status.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a passing grade in the US system?</h4>
-                  <p>
-                    In most US schools, a D (60-69%) is the minimum passing grade, though some programs require a C (70%+) to pass. Graduate programs often require a B (80%+) average. Check your specific program requirements, as policies vary.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does GPA conversion work?</h4>
-                  <p>
-                    Each letter grade corresponds to a grade point on a 4.0 scale. A = 4.0, B = 3.0, C = 2.0, D = 1.0, F = 0.0. Plus grades add 0.3, minus grades subtract 0.3. Your GPA is the average of all your grade points, weighted by course credits.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What grade do I need for an A?</h4>
-                  <p>
-                    In the standard US system, you need 93% or higher for an A. Some schools use 90% as the A threshold. For an A-, you typically need 90-92%. Check your syllabus for your school's specific grade boundaries.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I use this for weighted grades?</h4>
-                  <p>
-                    This calculator converts raw marks to grades. For weighted grades, first calculate your weighted percentage. For example, if a test worth 60% of your grade scored 85%, that contributes 0.6 × 85 = 51 percentage points to your final grade.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I convert my percentage to a letter grade?",
+    answer: "Enter your marks and the maximum possible marks in this calculator. Select your grading scale (Standard, IB, Cambridge, or CBSE). The tool calculates your percentage and shows the corresponding letter grade, grade point, and performance status.",
+  },
+{
+    question: "What is a passing grade in the US system?",
+    answer: "In most US schools, a D (60-69%) is the minimum passing grade, though some programs require a C (70%+) to pass. Graduate programs often require a B (80%+) average. Check your specific program requirements, as policies vary.",
+  },
+{
+    question: "How does GPA conversion work?",
+    answer: "Each letter grade corresponds to a grade point on a 4.0 scale. A = 4.0, B = 3.0, C = 2.0, D = 1.0, F = 0.0. Plus grades add 0.3, minus grades subtract 0.3. Your GPA is the average of all your grade points, weighted by course credits.",
+  },
+{
+    question: "What grade do I need for an A?",
+    answer: "In the standard US system, you need 93% or higher for an A. Some schools use 90% as the A threshold. For an A-, you typically need 90-92%. Check your syllabus for your school's specific grade boundaries.",
+  },
+{
+    question: "Can I use this for weighted grades?",
+    answer: "This calculator converts raw marks to grades. For weighted grades, first calculate your weighted percentage. For example, if a test worth 60% of your grade scored 85%, that contributes 0.6 × 85 = 51 percentage points to your final grade.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

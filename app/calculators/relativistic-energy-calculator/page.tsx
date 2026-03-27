@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RelativisticEnergyCalculator() {
   const [mass, setMass] = useState<string>("");
@@ -230,52 +232,33 @@ export default function RelativisticEnergyCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why can't objects reach light speed?</h4>
-                <p>
-                  As velocity approaches c, the Lorentz factor approaches infinity. This means infinite
-                  energy would be needed to reach light speed. Only massless particles like photons
-                  can travel at c.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is rest energy?</h4>
-                <p>
-                  Rest energy (E₀ = mc²) is the energy an object has just from having mass, even when
-                  not moving. This is the famous mass-energy equivalence from Einstein.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">When do relativistic effects matter?</h4>
-                <p>
-                  For everyday speeds (cars, planes, even rockets), relativistic effects are negligible.
-                  They become important above about 10% of light speed, relevant for particle
-                  accelerators and cosmic rays.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is relativistic mass?</h4>
-                <p>
-                  Relativistic mass is γ × rest mass. Modern physicists prefer to use invariant mass
-                  and treat the γ factor as part of momentum and energy equations instead.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How does this relate to nuclear energy?</h4>
-                <p>
-                  Nuclear reactions convert small amounts of mass into large amounts of energy via
-                  E = mc². In fission, about 0.1% of mass becomes energy. In fusion, about 0.7% converts.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why can't objects reach light speed?",
+    answer: "As velocity approaches c, the Lorentz factor approaches infinity. This means infinite energy would be needed to reach light speed. Only massless particles like photons can travel at c.",
+  },
+{
+    question: "What is rest energy?",
+    answer: "Rest energy (E₀ = mc²) is the energy an object has just from having mass, even when not moving. This is the famous mass-energy equivalence from Einstein.",
+  },
+{
+    question: "When do relativistic effects matter?",
+    answer: "For everyday speeds (cars, planes, even rockets), relativistic effects are negligible. They become important above about 10% of light speed, relevant for particle accelerators and cosmic rays.",
+  },
+{
+    question: "What is relativistic mass?",
+    answer: "Relativistic mass is γ × rest mass. Modern physicists prefer to use invariant mass and treat the γ factor as part of momentum and energy equations instead.",
+  },
+{
+    question: "How does this relate to nuclear energy?",
+    answer: "Nuclear reactions convert small amounts of mass into large amounts of energy via E = mc². In fission, about 0.1% of mass becomes energy. In fusion, about 0.7% converts.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

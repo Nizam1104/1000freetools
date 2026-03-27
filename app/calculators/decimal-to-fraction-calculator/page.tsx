@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DecimalToFractionCalculator() {
   const [decimal, setDecimal] = useState<string>("");
@@ -284,45 +286,33 @@ export default function DecimalToFractionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert a decimal to a fraction?</h4>
-                <p>
-                  Count digits after the decimal point. Write the number over 10, 100, 1000, etc. (one zero per digit). Simplify by dividing both by their GCD. Example: 0.75 = 75/100 = 3/4.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is 0.333 as a fraction?</h4>
-                <p>
-                  0.333 (terminating) = 333/1000. But 0.333... (repeating) = 1/3 exactly. The ellipsis matters — repeating decimals have exact fraction forms.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert a repeating decimal?</h4>
-                <p>
-                  Use algebra: if x = 0.333..., then 10x = 3.333.... Subtract: 10x - x = 3.333... - 0.333..., so 9x = 3, and x = 1/3. For 0.1666..., use 100x - 10x to isolate the repeating part.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can all decimals be converted to fractions?</h4>
-                <p>
-                  Terminating and repeating decimals can be converted to exact fractions. Irrational numbers like π or √2 cannot — their decimals never repeat or terminate.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is 2.5 as a fraction?</h4>
-                <p>
-                  2.5 = 25/10 = 5/2 as an improper fraction, or 2 and 1/2 as a mixed number. Both are correct — use improper fractions for calculations, mixed numbers for everyday use.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I convert a decimal to a fraction?",
+    answer: "Count digits after the decimal point. Write the number over 10, 100, 1000, etc. (one zero per digit). Simplify by dividing both by their GCD. Example: 0.75 = 75/100 = 3/4.",
+  },
+{
+    question: "What is 0.333 as a fraction?",
+    answer: "0.333 (terminating) = 333/1000. But 0.333... (repeating) = 1/3 exactly. The ellipsis matters — repeating decimals have exact fraction forms.",
+  },
+{
+    question: "How do I convert a repeating decimal?",
+    answer: "Use algebra: if x = 0.333..., then 10x = 3.333.... Subtract: 10x - x = 3.333... - 0.333..., so 9x = 3, and x = 1/3. For 0.1666..., use 100x - 10x to isolate the repeating part.",
+  },
+{
+    question: "Can all decimals be converted to fractions?",
+    answer: "Terminating and repeating decimals can be converted to exact fractions. Irrational numbers like π or √2 cannot — their decimals never repeat or terminate.",
+  },
+{
+    question: "What is 2.5 as a fraction?",
+    answer: "2.5 = 25/10 = 5/2 as an improper fraction, or 2 and 1/2 as a mixed number. Both are correct — use improper fractions for calculations, mixed numbers for everyday use.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

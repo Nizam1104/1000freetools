@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -229,47 +231,33 @@ export default function GeometricSequenceCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the formula for geometric sequences?</h4>
-            <p className="text-sm text-muted-foreground">
-              The n-th term is aₙ = a × r^(n-1), where a is the first term and r is the common ratio. The sum of n terms is Sₙ = a(1-rⁿ)/(1-r) when r ≠ 1.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you find the common ratio?</h4>
-            <p className="text-sm text-muted-foreground">
-              Divide any term by the previous term. For 2, 6, 18, 54: ratio = 6/2 = 3, or 18/6 = 3, or 54/18 = 3. The ratio is constant throughout the sequence.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between geometric and arithmetic sequences?</h4>
-            <p className="text-sm text-muted-foreground">
-              Arithmetic sequences add a constant (2, 5, 8, 11... adds 3 each time). Geometric sequences multiply by a constant (2, 6, 18, 54... multiplies by 3). Geometric growth is much faster than arithmetic growth.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can the common ratio be negative?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes. A negative ratio creates an alternating sequence where signs flip each term. For a=1, r=-2: 1, -2, 4, -8, 16, -32... The absolute values still follow the geometric pattern.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What happens when the ratio is less than 1?</h4>
-            <p className="text-sm text-muted-foreground">
-              The sequence decays toward zero. For a=100, r=0.5: 100, 50, 25, 12.5, 6.25... This models radioactive decay, depreciation, and diminishing returns. The sum converges to a finite value as n approaches infinity.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the formula for geometric sequences?",
+    answer: "The n-th term is aₙ = a × r^(n-1), where a is the first term and r is the common ratio. The sum of n terms is Sₙ = a(1-rⁿ)/(1-r) when r ≠ 1.",
+  },
+{
+    question: "How do you find the common ratio?",
+    answer: "Divide any term by the previous term. For 2, 6, 18, 54: ratio = 6/2 = 3, or 18/6 = 3, or 54/18 = 3. The ratio is constant throughout the sequence.",
+  },
+{
+    question: "What's the difference between geometric and arithmetic sequences?",
+    answer: "Arithmetic sequences add a constant (2, 5, 8, 11... adds 3 each time). Geometric sequences multiply by a constant (2, 6, 18, 54... multiplies by 3). Geometric growth is much faster than arithmetic growth.",
+  },
+{
+    question: "Can the common ratio be negative?",
+    answer: "Yes. A negative ratio creates an alternating sequence where signs flip each term. For a=1, r=-2: 1, -2, 4, -8, 16, -32... The absolute values still follow the geometric pattern.",
+  },
+{
+    question: "What happens when the ratio is less than 1?",
+    answer: "The sequence decays toward zero. For a=100, r=0.5: 100, 50, 25, 12.5, 6.25... This models radioactive decay, depreciation, and diminishing returns. The sum converges to a finite value as n approaches infinity.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

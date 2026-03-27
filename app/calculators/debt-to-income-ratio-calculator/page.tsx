@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DebtToIncomeRatioCalculatorPage() {
   const [grossMonthlyIncome, setGrossMonthlyIncome] = useState<string>("");
@@ -306,45 +308,33 @@ export default function DebtToIncomeRatioCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good debt-to-income ratio?</h4>
-                  <p>
-                    Below 36% is considered good. Most lenders prefer DTI under 43% for mortgage approval. The lower your DTI, the better your loan terms and the more financial flexibility you have.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate DTI manually?</h4>
-                  <p>
-                    Add up all monthly debt payments. Divide by gross monthly income. Multiply by 100 for percentage. Example: $2,000 debt / $6,000 income = 33.3% DTI.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does DTI include rent?</h4>
-                  <p>
-                    If you own a home and apply for a mortgage, your current rent isn&apos;t included — the new mortgage payment replaces it. If you&apos;re renting and keeping your lease, include rent as a debt payment.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What DTI do I need for a mortgage?</h4>
-                  <p>
-                    Conventional loans typically want DTI below 43%, ideally below 36%. FHA loans may allow up to 50% with strong credit and reserves. VA loans have more flexibility but generally prefer under 41%.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does DTI affect credit score?</h4>
-                  <p>
-                    No, DTI isn&apos;t part of your credit score calculation. Credit scores measure payment history and credit utilization. However, lenders consider both DTI and credit score when approving loans.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good debt-to-income ratio?",
+    answer: "Below 36% is considered good. Most lenders prefer DTI under 43% for mortgage approval. The lower your DTI, the better your loan terms and the more financial flexibility you have.",
+  },
+{
+    question: "How do I calculate DTI manually?",
+    answer: "Add up all monthly debt payments. Divide by gross monthly income. Multiply by 100 for percentage. Example: $2,000 debt / $6,000 income = 33.3% DTI.",
+  },
+{
+    question: "Does DTI include rent?",
+    answer: "If you own a home and apply for a mortgage, your current rent isn&apos;t included — the new mortgage payment replaces it. If you&apos;re renting and keeping your lease, include rent as a debt payment.",
+  },
+{
+    question: "What DTI do I need for a mortgage?",
+    answer: "Conventional loans typically want DTI below 43%, ideally below 36%. FHA loans may allow up to 50% with strong credit and reserves. VA loans have more flexibility but generally prefer under 41%.",
+  },
+{
+    question: "Does DTI affect credit score?",
+    answer: "No, DTI isn&apos;t part of your credit score calculation. Credit scores measure payment history and credit utilization. However, lenders consider both DTI and credit score when approving loans.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -422,43 +424,33 @@ export default function BakingTimeAdjustmentCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I use a 9x13 pan instead of two 9-inch rounds?</h4>
-                <p>
-                  Yes. A 9x13 pan has roughly the same area as two 9-inch round pans. The cake will be slightly thinner and may bake 5-10 minutes faster. This works well for sheet cakes but won't give you layer cake height.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do I need to lower the temperature for dark pans?</h4>
-                <p>
-                  Dark metal absorbs more radiant heat than light aluminum. This causes the edges and bottom to brown faster, sometimes burning before the center is done. Lowering the temperature by 25°F slows the exterior browning so the interior can catch up.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if my batter overflows the pan?</h4>
-                <p>
-                  Pans should only be filled 2/3 full to allow for rising. If you overflowed, the pan was too small. Next time, use a larger pan or divide the batter. You can bake the extra in a muffin tin for bonus cupcakes.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I know when a cake is done?</h4>
-                <p>
-                  Use three tests together. The toothpick should come out clean or with moist crumbs. The edges should pull slightly away from the pan. The center should spring back when gently pressed. If it leaves an indent, it needs more time.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I convert between round and square pans?</h4>
-                <p>
-                  Yes, but expect different results. An 8-inch square pan has more area than an 8-inch round. A 9-inch square is closer to a 10-inch round. Square cakes have more edge (great for brownies) and may bake unevenly at the corners.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Can I use a 9x13 pan instead of two 9-inch rounds?",
+    answer: "Yes. A 9x13 pan has roughly the same area as two 9-inch round pans. The cake will be slightly thinner and may bake 5-10 minutes faster. This works well for sheet cakes but won't give you layer cake height.",
+  },
+{
+    question: "Why do I need to lower the temperature for dark pans?",
+    answer: "Dark metal absorbs more radiant heat than light aluminum. This causes the edges and bottom to brown faster, sometimes burning before the center is done. Lowering the temperature by 25°F slows the exterior browning so the interior can catch up.",
+  },
+{
+    question: "What if my batter overflows the pan?",
+    answer: "Pans should only be filled 2/3 full to allow for rising. If you overflowed, the pan was too small. Next time, use a larger pan or divide the batter. You can bake the extra in a muffin tin for bonus cupcakes.",
+  },
+{
+    question: "How do I know when a cake is done?",
+    answer: "Use three tests together. The toothpick should come out clean or with moist crumbs. The edges should pull slightly away from the pan. The center should spring back when gently pressed. If it leaves an indent, it needs more time.",
+  },
+{
+    question: "Can I convert between round and square pans?",
+    answer: "Yes, but expect different results. An 8-inch square pan has more area than an 8-inch round. A 9-inch square is closer to a 10-inch round. Square cakes have more edge (great for brownies) and may bake unevenly at the corners.",
+  }
+  ]} />
+</section>
         </div>
       </div>
     </div>

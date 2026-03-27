@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -374,43 +376,33 @@ export default function ActivityCalorieCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How accurate are calorie burn estimates?</h4>
-            <p className="text-xs text-muted-foreground">
-              MET-based calculations are estimates, not exact measurements. They're typically accurate within 10-20% for most people. The actual number depends on your individual metabolism, body composition, and how efficiently your body performs the activity. For most practical purposes – tracking fitness, planning weight loss – this level of accuracy is perfectly adequate.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why do different activities burn different calories?</h4>
-            <p className="text-xs text-muted-foreground">
-              Different activities recruit different muscle groups and require varying levels of effort. Running uses large leg muscles continuously and requires significant cardiovascular output – that's why it burns so many calories. Sitting uses minimal muscle activity, so calorie burn stays near baseline. Activities that engage more muscle mass at higher intensity always burn more.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does fitness level affect calorie burn?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, but not in the way most people think. Fitter people are more efficient – their bodies have adapted to perform activities with less wasted energy. This means a trained runner might burn slightly fewer calories than a beginner running the same distance. However, fit people can also sustain higher intensities longer, which can offset this efficiency advantage.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the best exercise for burning calories?</h4>
-            <p className="text-xs text-muted-foreground">
-              The best exercise is the one you'll actually do consistently. That said, running, swimming, and cycling at vigorous intensities top the calorie-burn charts. High-intensity interval training (HIIT) also delivers excellent calorie burn in less time. But don't overlook walking – it's sustainable, low-impact, and the calories add up over time.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Do I burn calories after exercise?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, this is called EPOC (Excess Post-exercise Oxygen Consumption) or the "afterburn effect." After intense exercise, your body continues burning extra calories as it returns to baseline – repairing muscle, restoring oxygen levels, and clearing metabolic waste. The effect is modest for moderate exercise but can add 6-15% to total calorie burn after vigorous workouts.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate are calorie burn estimates?",
+    answer: "MET-based calculations are estimates, not exact measurements. They're typically accurate within 10-20% for most people. The actual number depends on your individual metabolism, body composition, and how efficiently your body performs the activity. For most practical purposes – tracking fitness, planning weight loss – this level of accuracy is perfectly adequate.",
+  },
+{
+    question: "Why do different activities burn different calories?",
+    answer: "Different activities recruit different muscle groups and require varying levels of effort. Running uses large leg muscles continuously and requires significant cardiovascular output – that's why it burns so many calories. Sitting uses minimal muscle activity, so calorie burn stays near baseline. Activities that engage more muscle mass at higher intensity always burn more.",
+  },
+{
+    question: "Does fitness level affect calorie burn?",
+    answer: "Yes, but not in the way most people think. Fitter people are more efficient – their bodies have adapted to perform activities with less wasted energy. This means a trained runner might burn slightly fewer calories than a beginner running the same distance. However, fit people can also sustain higher intensities longer, which can offset this efficiency advantage.",
+  },
+{
+    question: "What is the best exercise for burning calories?",
+    answer: "The best exercise is the one you'll actually do consistently. That said, running, swimming, and cycling at vigorous intensities top the calorie-burn charts. High-intensity interval training (HIIT) also delivers excellent calorie burn in less time. But don't overlook walking – it's sustainable, low-impact, and the calories add up over time.",
+  },
+{
+    question: "Do I burn calories after exercise?",
+    answer: "Yes, this is called EPOC (Excess Post-exercise Oxygen Consumption) or the \"afterburn effect.\" After intense exercise, your body continues burning extra calories as it returns to baseline – repairing muscle, restoring oxygen levels, and clearing metabolic waste. The effect is modest for moderate exercise but can add 6-15% to total calorie burn after vigorous workouts.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

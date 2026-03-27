@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -258,43 +260,33 @@ export default function WeightLossTimeCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How long does it take to lose 10 pounds?</h4>
-            <p className="text-xs text-muted-foreground">
-              With a 500-calorie daily deficit, expect 10-12 weeks. Faster deficits (750-1000 calories) can get you there in 5-7 weeks, but that's harder to sustain. The first 2-3 pounds often come off faster due to water loss.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is losing 2 pounds per week safe?</h4>
-            <p className="text-xs text-muted-foreground">
-              For most people, yes – especially if you have significant weight to lose. The CDC recommends 1-2 pounds per week as safe. Faster than that increases risks of gallstones, muscle loss, and nutrient deficiencies.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why am I not losing weight on a 500 calorie deficit?</h4>
-            <p className="text-xs text-muted-foreground">
-              Either your actual deficit is smaller than you think (common – people underestimate food by 30-50%), or your metabolism has adapted. Try tracking intake precisely for two weeks. If still no loss, recalculate your TDEE – it may have dropped.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I adjust my deficit as I lose weight?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Recalculate every 10-15 pounds lost. Your TDEE drops as you get lighter. Someone who needed 2,000 calories at 200 lbs might need only 1,700 at 170 lbs. Keep the same deficit, just adjust your maintenance level.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How accurate is the 3,500 calories per pound rule?</h4>
-            <p className="text-xs text-muted-foreground">
-              It's a useful approximation but not perfect. Research shows actual weight loss is often 20-30% slower than the 3,500 rule predicts, especially over longer periods. Use it as a starting point, then adjust based on real-world results.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How long does it take to lose 10 pounds?",
+    answer: "With a 500-calorie daily deficit, expect 10-12 weeks. Faster deficits (750-1000 calories) can get you there in 5-7 weeks, but that's harder to sustain. The first 2-3 pounds often come off faster due to water loss.",
+  },
+{
+    question: "Is losing 2 pounds per week safe?",
+    answer: "For most people, yes – especially if you have significant weight to lose. The CDC recommends 1-2 pounds per week as safe. Faster than that increases risks of gallstones, muscle loss, and nutrient deficiencies.",
+  },
+{
+    question: "Why am I not losing weight on a 500 calorie deficit?",
+    answer: "Either your actual deficit is smaller than you think (common – people underestimate food by 30-50%), or your metabolism has adapted. Try tracking intake precisely for two weeks. If still no loss, recalculate your TDEE – it may have dropped.",
+  },
+{
+    question: "Should I adjust my deficit as I lose weight?",
+    answer: "Yes. Recalculate every 10-15 pounds lost. Your TDEE drops as you get lighter. Someone who needed 2,000 calories at 200 lbs might need only 1,700 at 170 lbs. Keep the same deficit, just adjust your maintenance level.",
+  },
+{
+    question: "How accurate is the 3,500 calories per pound rule?",
+    answer: "It's a useful approximation but not perfect. Research shows actual weight loss is often 20-30% slower than the 3,500 rule predicts, especially over longer periods. Use it as a starting point, then adjust based on real-world results.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

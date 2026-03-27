@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface StairResult {
   totalRise: number;
@@ -499,43 +501,33 @@ export default function StaircaseRiseRunCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I measure total rise for stairs?</h4>
-            <p className="text-xs text-muted-foreground">
-              Measure from finished floor to finished floor – not to the subfloor. Include any flooring that will be installed (tile, hardwood, carpet). For exterior stairs, measure from grade to deck surface. Be precise – a 1/2" error gets multiplied across all steps.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the ideal number of steps?</h4>
-            <p className="text-xs text-muted-foreground">
-              There's no maximum, but stairs with more than 16 risers require a landing. Fewer than 3 risers is a trip hazard – use a ramp instead. For comfort, aim for risers between 6.5-7.5 inches, which typically gives 12-16 steps for a standard 8-foot ceiling.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I have different riser heights?</h4>
-            <p className="text-xs text-muted-foreground">
-              No – not if you want safe stairs. The IRC allows maximum 3/8" variation between the tallest and shortest riser. People develop muscle memory for step height. Even 1/2" difference can cause trips and falls, especially going down.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Do I need a handrail?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, if you have 4 or more risers. Handrails must be 34-38" high, graspable, and continuous for the full stair length. Both sides need handrails in commercial buildings. Residential stairs wider than 44" also need handrails on both sides.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between rise and run?</h4>
-            <p className="text-xs text-muted-foreground">
-              Rise is the vertical height of each step. Run (or tread depth) is the horizontal depth you step on. Total rise is floor-to-floor height. Total run is the horizontal space the staircase occupies. A steeper stair has more rise, less run per step.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I measure total rise for stairs?",
+    answer: "Measure from finished floor to finished floor – not to the subfloor. Include any flooring that will be installed (tile, hardwood, carpet). For exterior stairs, measure from grade to deck surface. Be precise – a 1/2\" error gets multiplied across all steps.",
+  },
+{
+    question: "What's the ideal number of steps?",
+    answer: "There's no maximum, but stairs with more than 16 risers require a landing. Fewer than 3 risers is a trip hazard – use a ramp instead. For comfort, aim for risers between 6.5-7.5 inches, which typically gives 12-16 steps for a standard 8-foot ceiling.",
+  },
+{
+    question: "Can I have different riser heights?",
+    answer: "No – not if you want safe stairs. The IRC allows maximum 3/8\" variation between the tallest and shortest riser. People develop muscle memory for step height. Even 1/2\" difference can cause trips and falls, especially going down.",
+  },
+{
+    question: "Do I need a handrail?",
+    answer: "Yes, if you have 4 or more risers. Handrails must be 34-38\" high, graspable, and continuous for the full stair length. Both sides need handrails in commercial buildings. Residential stairs wider than 44\" also need handrails on both sides.",
+  },
+{
+    question: "What's the difference between rise and run?",
+    answer: "Rise is the vertical height of each step. Run (or tread depth) is the horizontal depth you step on. Total rise is floor-to-floor height. Total run is the horizontal space the staircase occupies. A steeper stair has more rise, less run per step.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

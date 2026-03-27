@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PeakToPeakVoltageCalculator() {
   const [mode, setMode] = useState<"peak" | "rms" | "avg">("peak");
@@ -233,33 +235,33 @@ export default function PeakToPeakVoltageCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is RMS voltage used for AC power ratings?</h4>
-              <p>RMS voltage gives the same heating effect as an equivalent DC voltage. A 120V RMS AC source delivers the same power to a resistor as 120V DC. This makes RMS the practical choice for power calculations and equipment ratings.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the difference between Vpp and Vp?</h4>
-              <p>Peak voltage (Vp) measures from zero to the maximum. Peak-to-peak (Vpp) measures from the negative peak to the positive peak. For symmetric waveforms, Vpp = 2 × Vp.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Do these conversions work for all waveforms?</h4>
-              <p>No. These formulas apply only to pure sine waves. Square waves, triangle waves, and complex waveforms have different relationships between peak, RMS, and average values.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is average voltage calculated from half-cycle?</h4>
-              <p>A full sine wave averages to zero because positive and negative halves cancel. For practical purposes (like rectified power supplies), we use the average of the absolute value over a half-cycle.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What does √2 equal in the RMS formula?</h4>
-              <p>√2 ≈ 1.414. So Vrms = Vp / 1.414 ≈ 0.707 × Vp. Conversely, Vp = 1.414 × Vrms. For 120V RMS: Vp = 1.414 × 120 = 170V.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is RMS voltage used for AC power ratings?",
+    answer: "RMS voltage gives the same heating effect as an equivalent DC voltage. A 120V RMS AC source delivers the same power to a resistor as 120V DC. This makes RMS the practical choice for power calculations and equipment ratings.",
+  },
+{
+    question: "What's the difference between Vpp and Vp?",
+    answer: "Peak voltage (Vp) measures from zero to the maximum. Peak-to-peak (Vpp) measures from the negative peak to the positive peak. For symmetric waveforms, Vpp = 2 × Vp.",
+  },
+{
+    question: "Do these conversions work for all waveforms?",
+    answer: "No. These formulas apply only to pure sine waves. Square waves, triangle waves, and complex waveforms have different relationships between peak, RMS, and average values.",
+  },
+{
+    question: "Why is average voltage calculated from half-cycle?",
+    answer: "A full sine wave averages to zero because positive and negative halves cancel. For practical purposes (like rectified power supplies), we use the average of the absolute value over a half-cycle.",
+  },
+{
+    question: "What does √2 equal in the RMS formula?",
+    answer: "√2 ≈ 1.414. So Vrms = Vp / 1.414 ≈ 0.707 × Vp. Conversely, Vp = 1.414 × Vrms. For 120V RMS: Vp = 1.414 × 120 = 170V.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

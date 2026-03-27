@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BodySurfaceAreaCalculator() {
   const [height, setHeight] = useState<string>("");
@@ -317,55 +319,33 @@ export default function BodySurfaceAreaCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a normal BSA value?</h4>
-                <p>
-                  Average BSA for adult men is approximately 1.9 m², and for adult women about 1.6 m². Values
-                  typically range from 1.5 to 2.2 m² for most adults. Children have lower BSA values that increase
-                  with growth.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Which BSA formula is most accurate?</h4>
-                <p>
-                  Studies show all major formulas produce similar results for average-sized adults. Mosteller is
-                  preferred clinically because it is easy to calculate and remember. Haycock may be more accurate
-                  for children and infants.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is BSA used for all medication dosing?</h4>
-                <p>
-                  No. Most medications use weight-based or fixed dosing. BSA-based dosing is reserved for drugs
-                  with narrow therapeutic indices where small dosing errors could cause serious harm, such as
-                  chemotherapy and some immunosuppressants.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How is BSA measured directly?</h4>
-                <p>
-                  Direct measurement uses 3D scanning or the DuBois method with paper cutouts, but these are
-                  impractical for routine use. Formulas based on height and weight provide estimates accurate
-                  enough for clinical purposes.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does obesity affect BSA accuracy?</h4>
-                <p>
-                  BSA formulas may overestimate metabolic mass in obese patients because adipose tissue has lower
-                  metabolic activity than lean tissue. Some clinicians use adjusted body weight or ideal body
-                  weight for BSA calculations in obese patients.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a normal BSA value?",
+    answer: "Average BSA for adult men is approximately 1.9 m², and for adult women about 1.6 m². Values typically range from 1.5 to 2.2 m² for most adults. Children have lower BSA values that increase with growth.",
+  },
+{
+    question: "Which BSA formula is most accurate?",
+    answer: "Studies show all major formulas produce similar results for average-sized adults. Mosteller is preferred clinically because it is easy to calculate and remember. Haycock may be more accurate for children and infants.",
+  },
+{
+    question: "Is BSA used for all medication dosing?",
+    answer: "No. Most medications use weight-based or fixed dosing. BSA-based dosing is reserved for drugs with narrow therapeutic indices where small dosing errors could cause serious harm, such as chemotherapy and some immunosuppressants.",
+  },
+{
+    question: "How is BSA measured directly?",
+    answer: "Direct measurement uses 3D scanning or the DuBois method with paper cutouts, but these are impractical for routine use. Formulas based on height and weight provide estimates accurate enough for clinical purposes.",
+  },
+{
+    question: "Does obesity affect BSA accuracy?",
+    answer: "BSA formulas may overestimate metabolic mass in obese patients because adipose tissue has lower metabolic activity than lean tissue. Some clinicians use adjusted body weight or ideal body weight for BSA calculations in obese patients.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

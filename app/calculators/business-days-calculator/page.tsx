@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BusinessDaysCalculator() {
   const [startDate, setStartDate] = useState<string>("");
@@ -280,45 +282,33 @@ export default function BusinessDaysCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does this calculator include holidays?</h4>
-                <p>
-                  No, this calculator only excludes weekends (Saturday and Sunday). Public holidays vary by country, state, and even city. For accurate planning, manually subtract holidays that fall within your date range.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Are both start and end dates included?</h4>
-                <p>
-                  Yes, the calculator includes both the start date and end date in the count. If you start on Monday and end on Friday of the same week, that's 5 business days, not 4.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many business days are in a year?</h4>
-                <p>
-                  A typical year has 260-261 business days (52 weeks x 5 days). Leap years and the day of the week January 1st falls on can shift this by one day. Subtract holidays for actual working days.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if my weekend is different?</h4>
-                <p>
-                  This calculator uses the standard Monday-Friday workweek. If your region uses a different weekend (like Friday-Saturday in some Middle Eastern countries), you'll need to adjust the results accordingly.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I calculate business days in the past?</h4>
-                <p>
-                  Yes, the calculator works for any date range, past or future. This is useful for calculating how many business days elapsed between two historical dates or for timesheet purposes.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Does this calculator include holidays?",
+    answer: "No, this calculator only excludes weekends (Saturday and Sunday). Public holidays vary by country, state, and even city. For accurate planning, manually subtract holidays that fall within your date range.",
+  },
+{
+    question: "Are both start and end dates included?",
+    answer: "Yes, the calculator includes both the start date and end date in the count. If you start on Monday and end on Friday of the same week, that's 5 business days, not 4.",
+  },
+{
+    question: "How many business days are in a year?",
+    answer: "A typical year has 260-261 business days (52 weeks x 5 days). Leap years and the day of the week January 1st falls on can shift this by one day. Subtract holidays for actual working days.",
+  },
+{
+    question: "What if my weekend is different?",
+    answer: "This calculator uses the standard Monday-Friday workweek. If your region uses a different weekend (like Friday-Saturday in some Middle Eastern countries), you'll need to adjust the results accordingly.",
+  },
+{
+    question: "Can I calculate business days in the past?",
+    answer: "Yes, the calculator works for any date range, past or future. This is useful for calculating how many business days elapsed between two historical dates or for timesheet purposes.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

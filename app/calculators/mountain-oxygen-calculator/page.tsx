@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MountainOxygenCalculatorPage() {
   const [altitude, setAltitude] = useState<string>("");
@@ -367,58 +369,33 @@ export default function MountainOxygenCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">At what altitude does oxygen become dangerous?</h4>
-                  <p>
-                    Most people start feeling effects above 2,500m (8,200ft). Serious risk begins around 3,500m
-                    (11,500ft). Above 5,500m (18,000ft), the body cannot fully acclimatize and will deteriorate
-                    over time. The death zone above 8,000m (26,000ft) has insufficient oxygen to sustain human
-                    life for extended periods without supplemental oxygen.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does fitness protect against altitude sickness?</h4>
-                  <p>
-                    No. Fitness does not prevent altitude sickness. Some studies suggest fit people may be at
-                    higher risk because they push harder and ascend faster. Altitude sickness affects everyone
-                    regardless of age, fitness, or previous high-altitude experience. The only prevention is
-                    gradual ascent and proper acclimatization.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long does it take to acclimatize?</h4>
-                  <p>
-                    Initial adaptation takes 2-5 days at a given altitude. Full acclimatization to 4,000m can
-                    take 2-3 weeks. Above 5,000m, complete acclimatization is not possible — the body will
-                    eventually deteriorate even with proper acclimatization. Plan rest days and gradual ascent.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can you sleep at high altitude safely?</h4>
-                  <p>
-                    Yes, with proper precautions. Sleep altitude should not exceed 300-500m above your previous
-                    night's elevation. Many climbers use the climb high, sleep low strategy — ascending during
-                    the day but returning to lower elevation to sleep. This aids acclimatization while reducing risk.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What are the signs of severe altitude sickness?</h4>
-                  <p>
-                    Warning signs include severe headache unrelieved by medication, persistent vomiting,
-                    difficulty walking (ataxia), confusion, cough with pink frothy sputum (HAPE), or altered
-                    consciousness (HACE). These are medical emergencies requiring immediate descent of at
-                    least 500-1,000m and evacuation if possible.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "At what altitude does oxygen become dangerous?",
+    answer: "Most people start feeling effects above 2,500m (8,200ft). Serious risk begins around 3,500m (11,500ft). Above 5,500m (18,000ft), the body cannot fully acclimatize and will deteriorate over time. The death zone above 8,000m (26,000ft) has insufficient oxygen to sustain human life for extended periods without supplemental oxygen.",
+  },
+{
+    question: "Does fitness protect against altitude sickness?",
+    answer: "No. Fitness does not prevent altitude sickness. Some studies suggest fit people may be at higher risk because they push harder and ascend faster. Altitude sickness affects everyone regardless of age, fitness, or previous high-altitude experience. The only prevention is gradual ascent and proper acclimatization.",
+  },
+{
+    question: "How long does it take to acclimatize?",
+    answer: "Initial adaptation takes 2-5 days at a given altitude. Full acclimatization to 4,000m can take 2-3 weeks. Above 5,000m, complete acclimatization is not possible — the body will eventually deteriorate even with proper acclimatization. Plan rest days and gradual ascent.",
+  },
+{
+    question: "Can you sleep at high altitude safely?",
+    answer: "Yes, with proper precautions. Sleep altitude should not exceed 300-500m above your previous night's elevation. Many climbers use the climb high, sleep low strategy — ascending during the day but returning to lower elevation to sleep. This aids acclimatization while reducing risk.",
+  },
+{
+    question: "What are the signs of severe altitude sickness?",
+    answer: "Warning signs include severe headache unrelieved by medication, persistent vomiting, difficulty walking (ataxia), confusion, cough with pink frothy sputum (HAPE), or altered consciousness (HACE). These are medical emergencies requiring immediate descent of at least 500-1,000m and evacuation if possible.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

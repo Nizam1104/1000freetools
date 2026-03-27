@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, BarChart, Bar } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function KineticEnergyCalculator() {
   const [mass, setMass] = useState<string>("");
@@ -370,43 +372,33 @@ export default function KineticEnergyCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why does kinetic energy depend on velocity squared?</h4>
-            <p className="text-xs text-muted-foreground">
-              Because work equals force times distance, and stopping distance increases with the square of velocity. A car at 60 mph needs 4× the braking distance of a car at 30 mph, meaning it has 4× the energy to dissipate. The v² comes from integrating force over distance.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">When do I need relativistic calculations?</h4>
-            <p className="text-xs text-muted-foreground">
-              For particles in accelerators, cosmic rays, or anything above about 10% of light speed (30,000 km/s). For everyday objects – even bullets and spacecraft – classical physics is accurate to many decimal places. An orbital spacecraft at 8 km/s is only 0.003% of light speed.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can kinetic energy be negative?</h4>
-            <p className="text-xs text-muted-foreground">
-              No. Mass is always positive, and velocity squared is always positive (even for negative velocity). Kinetic energy is a scalar, not a vector – it has magnitude but no direction. An object moving left has the same KE as one moving right at the same speed.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What happens to kinetic energy when an object stops?</h4>
-            <p className="text-xs text-muted-foreground">
-              Energy is conserved, so it goes somewhere. Brakes convert it to heat. A collision converts it to deformation, sound, and heat. A pendulum converts it to potential energy as it swings upward. The kinetic energy doesn't disappear – it transforms.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How does kinetic energy relate to momentum?</h4>
-            <p className="text-xs text-muted-foreground">
-              Momentum p = mv, kinetic energy KE = ½mv². They're related by KE = p²/(2m). Momentum is a vector (has direction), kinetic energy is a scalar. In collisions, momentum is always conserved. Kinetic energy is only conserved in elastic collisions.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why does kinetic energy depend on velocity squared?",
+    answer: "Because work equals force times distance, and stopping distance increases with the square of velocity. A car at 60 mph needs 4× the braking distance of a car at 30 mph, meaning it has 4× the energy to dissipate. The v² comes from integrating force over distance.",
+  },
+{
+    question: "When do I need relativistic calculations?",
+    answer: "For particles in accelerators, cosmic rays, or anything above about 10% of light speed (30,000 km/s). For everyday objects – even bullets and spacecraft – classical physics is accurate to many decimal places. An orbital spacecraft at 8 km/s is only 0.003% of light speed.",
+  },
+{
+    question: "Can kinetic energy be negative?",
+    answer: "No. Mass is always positive, and velocity squared is always positive (even for negative velocity). Kinetic energy is a scalar, not a vector – it has magnitude but no direction. An object moving left has the same KE as one moving right at the same speed.",
+  },
+{
+    question: "What happens to kinetic energy when an object stops?",
+    answer: "Energy is conserved, so it goes somewhere. Brakes convert it to heat. A collision converts it to deformation, sound, and heat. A pendulum converts it to potential energy as it swings upward. The kinetic energy doesn't disappear – it transforms.",
+  },
+{
+    question: "How does kinetic energy relate to momentum?",
+    answer: "Momentum p = mv, kinetic energy KE = ½mv². They're related by KE = p²/(2m). Momentum is a vector (has direction), kinetic energy is a scalar. In collisions, momentum is always conserved. Kinetic energy is only conserved in elastic collisions.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

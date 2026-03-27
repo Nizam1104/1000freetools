@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function StockCAGRCalculatorPage() {
   const [beginningValue, setBeginningValue] = useState<string>("");
@@ -203,33 +205,33 @@ export default function StockCAGRCalculatorPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is a good CAGR for stocks?</h4>
-                  <p className="text-sm text-muted-foreground">The S&P 500 has historically returned about 10% CAGR over long periods. 12-15%+ is considered excellent for individual stocks, while 7-10% is solid for diversified portfolios.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What are CAGR limitations?</h4>
-                  <p className="text-sm text-muted-foreground">CAGR ignores volatility and risk. It assumes steady growth, which rarely happens. Two investments with same CAGR can have very different risk profiles.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How is CAGR different from average return?</h4>
-                  <p className="text-sm text-muted-foreground">Average return is arithmetic mean of yearly returns. CAGR is the geometric mean that accounts for compounding. CAGR is always lower or equal to arithmetic average.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Can CAGR be negative?</h4>
-                  <p className="text-sm text-muted-foreground">Yes, if the ending value is less than the beginning value, CAGR will be negative, indicating a loss over the investment period.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What time period should I use for CAGR?</h4>
-                  <p className="text-sm text-muted-foreground">Longer periods (5+ years) provide more meaningful CAGR figures. Short-term CAGR can be misleading due to market volatility.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good CAGR for stocks?",
+    answer: "The S&P 500 has historically returned about 10% CAGR over long periods. 12-15%+ is considered excellent for individual stocks, while 7-10% is solid for diversified portfolios.",
+  },
+{
+    question: "What are CAGR limitations?",
+    answer: "CAGR ignores volatility and risk. It assumes steady growth, which rarely happens. Two investments with same CAGR can have very different risk profiles.",
+  },
+{
+    question: "How is CAGR different from average return?",
+    answer: "Average return is arithmetic mean of yearly returns. CAGR is the geometric mean that accounts for compounding. CAGR is always lower or equal to arithmetic average.",
+  },
+{
+    question: "Can CAGR be negative?",
+    answer: "Yes, if the ending value is less than the beginning value, CAGR will be negative, indicating a loss over the investment period.",
+  },
+{
+    question: "What time period should I use for CAGR?",
+    answer: "Longer periods (5+ years) provide more meaningful CAGR figures. Short-term CAGR can be misleading due to market volatility.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

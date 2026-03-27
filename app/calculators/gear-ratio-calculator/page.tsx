@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -214,47 +216,33 @@ export default function GearRatioCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you calculate gear ratio?</h4>
-            <p className="text-sm text-muted-foreground">
-              Divide driven gear teeth by driver gear teeth. A 40-tooth driven gear with a 10-tooth driver gives 40/10 = 4:1 ratio. The output turns once for every 4 input turns, with 4x the torque.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does gear ratio affect horsepower?</h4>
-            <p className="text-sm text-muted-foreground">
-              No. Gears change torque and speed, but power (horsepower) stays the same (minus small friction losses). Power = Torque × Speed. If torque goes up 4x and speed goes down 4x, power is unchanged.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a 1:1 gear ratio?</h4>
-            <p className="text-sm text-muted-foreground">
-              A 1:1 ratio means input and output turn at the same speed with the same torque. This is called "direct drive." Many transmissions have 1:1 as one gear, usually 4th or 5th in manual transmissions.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I choose the right gear ratio?</h4>
-            <p className="text-sm text-muted-foreground">
-              Match the ratio to your needs. Need more torque? Use a higher ratio (like 4:1). Need more speed? Use a lower ratio or overdrive (like 0.8:1). For vehicles, consider engine power band, vehicle weight, and intended use.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the difference between gear ratio and final drive ratio?</h4>
-            <p className="text-sm text-muted-foreground">
-              Gear ratio is for one gear pair. Final drive ratio is the differential ratio in a car. Total ratio = transmission gear ratio × final drive ratio. A 3:1 gear in a car with 4:1 final drive gives 12:1 total reduction.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you calculate gear ratio?",
+    answer: "Divide driven gear teeth by driver gear teeth. A 40-tooth driven gear with a 10-tooth driver gives 40/10 = 4:1 ratio. The output turns once for every 4 input turns, with 4x the torque.",
+  },
+{
+    question: "Does gear ratio affect horsepower?",
+    answer: "No. Gears change torque and speed, but power (horsepower) stays the same (minus small friction losses). Power = Torque × Speed. If torque goes up 4x and speed goes down 4x, power is unchanged.",
+  },
+{
+    question: "What is a 1:1 gear ratio?",
+    answer: "A 1:1 ratio means input and output turn at the same speed with the same torque. This is called \"direct drive.\" Many transmissions have 1:1 as one gear, usually 4th or 5th in manual transmissions.",
+  },
+{
+    question: "How do I choose the right gear ratio?",
+    answer: "Match the ratio to your needs. Need more torque? Use a higher ratio (like 4:1). Need more speed? Use a lower ratio or overdrive (like 0.8:1). For vehicles, consider engine power band, vehicle weight, and intended use.",
+  },
+{
+    question: "What is the difference between gear ratio and final drive ratio?",
+    answer: "Gear ratio is for one gear pair. Final drive ratio is the differential ratio in a car. Total ratio = transmission gear ratio × final drive ratio. A 3:1 gear in a car with 4:1 final drive gives 12:1 total reduction.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

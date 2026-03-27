@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MolarityCalculator() {
   const [mode, setMode] = useState<"find-molarity" | "find-moles" | "find-volume">("find-molarity");
@@ -360,43 +362,33 @@ export default function MolarityCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I convert grams to moles for molarity?</h4>
-            <p className="text-xs text-muted-foreground">
-              Divide grams by molar mass. For NaCl: molar mass = 58.44 g/mol. So 29.22 g NaCl = 29.22 / 58.44 = 0.5 mol. Then use M = n/V. If dissolved in 500 mL: M = 0.5 mol / 0.5 L = 1.0 M.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between 1 M and 1 m?</h4>
-            <p className="text-xs text-muted-foreground">
-              1 M (molar) = 1 mole per liter of solution. 1 m (molal) = 1 mole per kilogram of solvent. For dilute aqueous solutions, they're nearly equal. For concentrated solutions or non-aqueous solvents, they differ significantly.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I prepare a molar solution?</h4>
-            <p className="text-xs text-muted-foreground">
-              Weigh the required moles of solute. Add to a volumetric flask. Add solvent to about 3/4 full and swirl to dissolve. Then add solvent to the calibration mark. Never add solute directly to a full-volume flask – it won't dissolve properly.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can molarity be greater than 10 M?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Concentrated HCl is about 12 M. Concentrated H₂SO₄ is about 18 M. Concentrated NaOH can reach 19 M. These are limited by solubility – eventually, no more solute will dissolve regardless of how much you add.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I dilute a solution to a specific molarity?</h4>
-            <p className="text-xs text-muted-foreground">
-              Use M₁V₁ = M₂V₂. Want 500 mL of 0.1 M from 1.0 M stock? (1.0)(V₁) = (0.1)(500), so V₁ = 50 mL. Take 50 mL of stock, add water to 500 mL total. Always add acid to water, never water to acid.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I convert grams to moles for molarity?",
+    answer: "Divide grams by molar mass. For NaCl: molar mass = 58.44 g/mol. So 29.22 g NaCl = 29.22 / 58.44 = 0.5 mol. Then use M = n/V. If dissolved in 500 mL: M = 0.5 mol / 0.5 L = 1.0 M.",
+  },
+{
+    question: "What's the difference between 1 M and 1 m?",
+    answer: "1 M (molar) = 1 mole per liter of solution. 1 m (molal) = 1 mole per kilogram of solvent. For dilute aqueous solutions, they're nearly equal. For concentrated solutions or non-aqueous solvents, they differ significantly.",
+  },
+{
+    question: "How do I prepare a molar solution?",
+    answer: "Weigh the required moles of solute. Add to a volumetric flask. Add solvent to about 3/4 full and swirl to dissolve. Then add solvent to the calibration mark. Never add solute directly to a full-volume flask – it won't dissolve properly.",
+  },
+{
+    question: "Can molarity be greater than 10 M?",
+    answer: "Yes. Concentrated HCl is about 12 M. Concentrated H₂SO₄ is about 18 M. Concentrated NaOH can reach 19 M. These are limited by solubility – eventually, no more solute will dissolve regardless of how much you add.",
+  },
+{
+    question: "How do I dilute a solution to a specific molarity?",
+    answer: "Use M₁V₁ = M₂V₂. Want 500 mL of 0.1 M from 1.0 M stock? (1.0)(V₁) = (0.1)(500), so V₁ = 50 mL. Take 50 mL of stock, add water to 500 mL total. Always add acid to water, never water to acid.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

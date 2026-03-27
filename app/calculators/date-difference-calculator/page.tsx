@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DateDifferenceCalculator() {
   const [startDate, setStartDate] = useState<string>("");
@@ -283,45 +285,33 @@ export default function DateDifferenceCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does this count weekends and holidays?</h4>
-                <p>
-                  Yes, this counts all calendar days including weekends and holidays. For business days only (excluding weekends), use a business day calculator instead.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I find the difference between dates in different years?</h4>
-                <p>
-                  Yes. The calculator works across any date range — days, months, years, or decades. It correctly handles leap years and varying month lengths.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if I enter the end date before the start date?</h4>
-                <p>
-                  The calculator uses absolute difference, so order doesn&apos;t matter. January 1 to December 31 gives the same result as December 31 to January 1.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate my age in days?</h4>
-                <p>
-                  Enter your birth date as the start date and today&apos;s date as the end date. The result shows your exact age in days, plus conversions to weeks, months, and years.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why are month and year values decimal?</h4>
-                <p>
-                  Months and years are calculated from days using averages (30.44 days/month, 365.25 days/year). This gives precise fractional values rather than rounding to whole numbers.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Does this count weekends and holidays?",
+    answer: "Yes, this counts all calendar days including weekends and holidays. For business days only (excluding weekends), use a business day calculator instead.",
+  },
+{
+    question: "Can I find the difference between dates in different years?",
+    answer: "Yes. The calculator works across any date range — days, months, years, or decades. It correctly handles leap years and varying month lengths.",
+  },
+{
+    question: "What if I enter the end date before the start date?",
+    answer: "The calculator uses absolute difference, so order doesn&apos;t matter. January 1 to December 31 gives the same result as December 31 to January 1.",
+  },
+{
+    question: "How do I calculate my age in days?",
+    answer: "Enter your birth date as the start date and today&apos;s date as the end date. The result shows your exact age in days, plus conversions to weeks, months, and years.",
+  },
+{
+    question: "Why are month and year values decimal?",
+    answer: "Months and years are calculated from days using averages (30.44 days/month, 365.25 days/year). This gives precise fractional values rather than rounding to whole numbers.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

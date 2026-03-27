@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DopplerEffectCalculator() {
   const [sourceFreq, setSourceFreq] = useState<string>("");
@@ -278,45 +280,33 @@ export default function DopplerEffectCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What causes the Doppler effect?</h4>
-                <p>
-                  The Doppler effect occurs because wave fronts get compressed when the source moves toward the observer and stretched when it moves away. This compression or stretching changes the wavelength, which changes the frequency. The effect depends only on relative motion between source and observer.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does a siren change pitch as it passes?</h4>
-                <p>
-                  As the ambulance approaches, each sound wave is emitted from a position closer to you than the previous wave. This compresses the waves, raising the pitch. After it passes, each wave is emitted from a position farther away, stretching the waves and lowering the pitch.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is redshift in astronomy?</h4>
-                <p>
-                  Redshift is the Doppler effect for light from objects moving away from Earth. The light wavelength stretches, shifting toward the red end of the spectrum. Astronomers measure redshift to determine how fast galaxies are receding and how far away they are. Greater redshift means greater distance and velocity.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does the Doppler effect apply to light?</h4>
-                <p>
-                  Yes, the Doppler effect applies to all waves including light. For light, frequency changes appear as color shifts. However, at very high speeds approaching the speed of light, relativistic effects must be considered. The basic principle remains the same: approaching sources appear bluer, receding sources appear redder.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How is the Doppler effect used in radar?</h4>
-                <p>
-                  Radar systems emit radio waves that bounce off objects and return. If the object is moving, the reflected waves have a different frequency due to the Doppler effect. By measuring this frequency shift, radar can calculate the object speed. This works for vehicles, aircraft, weather systems, and even sports balls.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What causes the Doppler effect?",
+    answer: "The Doppler effect occurs because wave fronts get compressed when the source moves toward the observer and stretched when it moves away. This compression or stretching changes the wavelength, which changes the frequency. The effect depends only on relative motion between source and observer.",
+  },
+{
+    question: "Why does a siren change pitch as it passes?",
+    answer: "As the ambulance approaches, each sound wave is emitted from a position closer to you than the previous wave. This compresses the waves, raising the pitch. After it passes, each wave is emitted from a position farther away, stretching the waves and lowering the pitch.",
+  },
+{
+    question: "What is redshift in astronomy?",
+    answer: "Redshift is the Doppler effect for light from objects moving away from Earth. The light wavelength stretches, shifting toward the red end of the spectrum. Astronomers measure redshift to determine how fast galaxies are receding and how far away they are. Greater redshift means greater distance and velocity.",
+  },
+{
+    question: "Does the Doppler effect apply to light?",
+    answer: "Yes, the Doppler effect applies to all waves including light. For light, frequency changes appear as color shifts. However, at very high speeds approaching the speed of light, relativistic effects must be considered. The basic principle remains the same: approaching sources appear bluer, receding sources appear redder.",
+  },
+{
+    question: "How is the Doppler effect used in radar?",
+    answer: "Radar systems emit radio waves that bounce off objects and return. If the object is moving, the reflected waves have a different frequency due to the Doppler effect. By measuring this frequency shift, radar can calculate the object speed. This works for vehicles, aircraft, weather systems, and even sports balls.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

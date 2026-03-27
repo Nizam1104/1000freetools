@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface DrywallResult {
   totalWallArea: number;
@@ -509,45 +511,33 @@ export default function DrywallAreaCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many drywall sheets do I need for a 12x12 room?</h4>
-                <p>
-                  For a 12' × 12' room with 8' ceilings, you have 384 sq ft of wall area (48 ft perimeter × 8 ft). Subtract about 42 sq ft for one door and two windows, leaving 342 sq ft. Add 15% waste factor for 393 sq ft. Using 4' × 8' sheets (32 sq ft each), you need 13 sheets. Add 4 more sheets if doing the ceiling.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I use 1/2 inch or 5/8 inch drywall?</h4>
-                <p>
-                  1/2 inch drywall is standard for walls and easier to handle. 5/8 inch is required for ceilings to prevent sagging and provides better fire resistance and soundproofing. Use 5/8 inch for garage ceilings, between floors, or anywhere fire rating is required.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How much waste should I factor in?</h4>
-                <p>
-                  For simple rectangular rooms, 10-15% waste is typical. Rooms with many corners, windows, or doors need 15-20%. Complex layouts with angles, vaulted ceilings, or numerous cutouts may need 25% or more. It is better to have a few extra sheets than to run short mid-project.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I install drywall myself?</h4>
-                <p>
-                  Yes, drywall is a common DIY project. The hanging is straightforward but heavy. A drywall lift helps with ceilings. The taping and finishing require more skill and practice. Many DIYers hang their own drywall but hire professionals for the finishing work.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the best way to cut drywall?</h4>
-                <p>
-                  Score the face paper with a utility knife, snap the board backward, then cut the back paper. For cutouts like electrical boxes, measure carefully and use a drywall saw or rotary cutting tool. Always cut slightly smaller rather than larger for a tight fit.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many drywall sheets do I need for a 12x12 room?",
+    answer: "For a 12' × 12' room with 8' ceilings, you have 384 sq ft of wall area (48 ft perimeter × 8 ft). Subtract about 42 sq ft for one door and two windows, leaving 342 sq ft. Add 15% waste factor for 393 sq ft. Using 4' × 8' sheets (32 sq ft each), you need 13 sheets. Add 4 more sheets if doing the ceiling.",
+  },
+{
+    question: "Should I use 1/2 inch or 5/8 inch drywall?",
+    answer: "1/2 inch drywall is standard for walls and easier to handle. 5/8 inch is required for ceilings to prevent sagging and provides better fire resistance and soundproofing. Use 5/8 inch for garage ceilings, between floors, or anywhere fire rating is required.",
+  },
+{
+    question: "How much waste should I factor in?",
+    answer: "For simple rectangular rooms, 10-15% waste is typical. Rooms with many corners, windows, or doors need 15-20%. Complex layouts with angles, vaulted ceilings, or numerous cutouts may need 25% or more. It is better to have a few extra sheets than to run short mid-project.",
+  },
+{
+    question: "Can I install drywall myself?",
+    answer: "Yes, drywall is a common DIY project. The hanging is straightforward but heavy. A drywall lift helps with ceilings. The taping and finishing require more skill and practice. Many DIYers hang their own drywall but hire professionals for the finishing work.",
+  },
+{
+    question: "What is the best way to cut drywall?",
+    answer: "Score the face paper with a utility knife, snap the board backward, then cut the back paper. For cutouts like electrical boxes, measure carefully and use a drywall saw or rotary cutting tool. Always cut slightly smaller rather than larger for a tight fit.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

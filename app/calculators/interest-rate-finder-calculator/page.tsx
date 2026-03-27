@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function InterestRateFinderPage() {
   const [principal, setPrincipal] = useState<string>("");
@@ -323,45 +325,33 @@ export default function InterestRateFinderPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is my calculated rate different from my loan agreement?</h4>
-                  <p>
-                    Small differences can come from rounding in payment amounts or fees rolled into the loan. Large differences may indicate additional fees, points, or insurance included in your payment. Check your loan disclosure for the official APR.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does this calculator include fees and points?</h4>
-                  <p>
-                    No, this calculator finds the base interest rate from principal and payment. It does not account for origination fees, points, or other charges. The true APR including fees would be slightly higher than the calculated rate.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I use this for credit card debt?</h4>
-                  <p>
-                    This calculator works for installment loans with fixed payments. Credit cards use revolving credit with minimum payments based on balance. Use a credit card payoff calculator instead for credit card debt.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if my payment changed during the loan?</h4>
-                  <p>
-                    This calculator assumes a fixed payment throughout the loan. If your payment changed (due to rate adjustment or refinancing), use the original payment from when the loan started for an accurate rate calculation.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is the interest rate the same as APR?</h4>
-                  <p>
-                    Not exactly. The interest rate is the cost of borrowing the principal. APR includes the interest rate plus certain fees, expressed as an annual rate. For loans with no fees, the rate and APR are the same.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is my calculated rate different from my loan agreement?",
+    answer: "Small differences can come from rounding in payment amounts or fees rolled into the loan. Large differences may indicate additional fees, points, or insurance included in your payment. Check your loan disclosure for the official APR.",
+  },
+{
+    question: "Does this calculator include fees and points?",
+    answer: "No, this calculator finds the base interest rate from principal and payment. It does not account for origination fees, points, or other charges. The true APR including fees would be slightly higher than the calculated rate.",
+  },
+{
+    question: "Can I use this for credit card debt?",
+    answer: "This calculator works for installment loans with fixed payments. Credit cards use revolving credit with minimum payments based on balance. Use a credit card payoff calculator instead for credit card debt.",
+  },
+{
+    question: "What if my payment changed during the loan?",
+    answer: "This calculator assumes a fixed payment throughout the loan. If your payment changed (due to rate adjustment or refinancing), use the original payment from when the loan started for an accurate rate calculation.",
+  },
+{
+    question: "Is the interest rate the same as APR?",
+    answer: "Not exactly. The interest rate is the cost of borrowing the principal. APR includes the interest rate plus certain fees, expressed as an annual rate. For loans with no fees, the rate and APR are the same.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

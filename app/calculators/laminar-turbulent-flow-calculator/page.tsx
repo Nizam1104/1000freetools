@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -199,43 +201,33 @@ export default function LaminarTurbulentFlowCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is Reynolds number and why does it matter?</h4>
-            <p className="text-xs text-muted-foreground">
-              Reynolds number is the ratio of inertial forces to viscous forces. It predicts flow patterns – low Re means viscosity dominates (laminar), high Re means inertia dominates (turbulent). Critical for pipe design and fluid analysis.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What causes flow to become turbulent?</h4>
-            <p className="text-xs text-muted-foreground">
-              Higher velocity, larger pipe diameter, or lower viscosity increase Reynolds number. When inertial forces overcome viscous damping, small disturbances grow into chaotic eddies. Surface roughness also triggers earlier transition.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is laminar or turbulent flow better?</h4>
-            <p className="text-xs text-muted-foreground">
-              Depends on the application. Laminar flow has lower friction losses (better for pumping). Turbulent flow has better mixing and heat transfer (better for reactors, heat exchangers). Each has advantages for different purposes.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the critical Reynolds number for pipes?</h4>
-            <p className="text-xs text-muted-foreground">
-              For circular pipes, flow is typically laminar below Re = 2000 and turbulent above Re = 4000. The exact transition depends on surface roughness, inlet conditions, and flow disturbances. The 2000-4000 range is transitional.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How does viscosity affect flow regime?</h4>
-            <p className="text-xs text-muted-foreground">
-              Higher viscosity promotes laminar flow by damping disturbances. Honey flows laminarly at much higher velocities than water. Lower viscosity fluids like water or air transition to turbulence more easily at lower velocities.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is Reynolds number and why does it matter?",
+    answer: "Reynolds number is the ratio of inertial forces to viscous forces. It predicts flow patterns – low Re means viscosity dominates (laminar), high Re means inertia dominates (turbulent). Critical for pipe design and fluid analysis.",
+  },
+{
+    question: "What causes flow to become turbulent?",
+    answer: "Higher velocity, larger pipe diameter, or lower viscosity increase Reynolds number. When inertial forces overcome viscous damping, small disturbances grow into chaotic eddies. Surface roughness also triggers earlier transition.",
+  },
+{
+    question: "Is laminar or turbulent flow better?",
+    answer: "Depends on the application. Laminar flow has lower friction losses (better for pumping). Turbulent flow has better mixing and heat transfer (better for reactors, heat exchangers). Each has advantages for different purposes.",
+  },
+{
+    question: "What is the critical Reynolds number for pipes?",
+    answer: "For circular pipes, flow is typically laminar below Re = 2000 and turbulent above Re = 4000. The exact transition depends on surface roughness, inlet conditions, and flow disturbances. The 2000-4000 range is transitional.",
+  },
+{
+    question: "How does viscosity affect flow regime?",
+    answer: "Higher viscosity promotes laminar flow by damping disturbances. Honey flows laminarly at much higher velocities than water. Lower viscosity fluids like water or air transition to turbulence more easily at lower velocities.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

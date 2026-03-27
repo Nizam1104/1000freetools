@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -333,47 +335,33 @@ export default function EngineDisplacementCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How do I calculate engine cc?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Use the formula: cc = π/4 × bore² × stroke × cylinders. Bore and stroke must be in centimeters. For a 4-cylinder with 86mm bore and 86mm stroke: π/4 × 8.6² × 8.6 × 4 = 1,998 cc.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Is bigger engine displacement better?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Depends what you need. Bigger engines make more power and torque but use more fuel. For towing or performance, yes - bigger helps. For city driving and fuel economy, smaller is better. Turbocharging lets small engines make big-engine power when needed.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What does cc stand for in engines?</h4>
-                <p className="text-sm text-muted-foreground">
-                  CC means cubic centimeters. It's the volume of all cylinders combined. 1,000 cc equals 1 liter. A "2.0L" engine is 2,000 cc. Motorcycles use cc, cars usually use liters - same measurement, different units.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How does bore and stroke affect power?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Larger bore allows bigger valves for better airflow at high RPM - more peak power. Longer stroke increases leverage on the crankshaft - more torque. Short-stroke engines rev higher. Long-stroke engines pull harder at low RPM.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Can I increase my engine's displacement?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Yes, through "boring out" (wider cylinders) or "stroking" (longer stroke crankshaft). Boring adds maybe 0.5-1mm per side. Stroking requires new pistons and rods. Both increase displacement but also increase stress and may need tuning.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate engine cc?",
+    answer: "Use the formula: cc = π/4 × bore² × stroke × cylinders. Bore and stroke must be in centimeters. For a 4-cylinder with 86mm bore and 86mm stroke: π/4 × 8.6² × 8.6 × 4 = 1,998 cc.",
+  },
+{
+    question: "Is bigger engine displacement better?",
+    answer: "Depends what you need. Bigger engines make more power and torque but use more fuel. For towing or performance, yes - bigger helps. For city driving and fuel economy, smaller is better. Turbocharging lets small engines make big-engine power when needed.",
+  },
+{
+    question: "What does cc stand for in engines?",
+    answer: "CC means cubic centimeters. It's the volume of all cylinders combined. 1,000 cc equals 1 liter. A \"2.0L\" engine is 2,000 cc. Motorcycles use cc, cars usually use liters - same measurement, different units.",
+  },
+{
+    question: "How does bore and stroke affect power?",
+    answer: "Larger bore allows bigger valves for better airflow at high RPM - more peak power. Longer stroke increases leverage on the crankshaft - more torque. Short-stroke engines rev higher. Long-stroke engines pull harder at low RPM.",
+  },
+{
+    question: "Can I increase my engine's displacement?",
+    answer: "Yes, through \"boring out\" (wider cylinders) or \"stroking\" (longer stroke crankshaft). Boring adds maybe 0.5-1mm per side. Stroking requires new pistons and rods. Both increase displacement but also increase stress and may need tuning.",
+  }
+  ]} />
+</section>
         </div>
       </div>
     </div>

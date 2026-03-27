@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function OperatingMarginCalculatorPage() {
   const [revenue, setRevenue] = useState<string>("");
@@ -317,56 +319,33 @@ export default function OperatingMarginCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good operating margin?</h4>
-                  <p>
-                    It varies by industry. Software companies often achieve 25%+ operating margins while
-                    retailers operate on 3-5%. As a general guide: below 5% is low, 5-10% is average,
-                    10-20% is good, and above 20% is excellent. Always compare to industry peers.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What expenses are included in operating expenses?</h4>
-                  <p>
-                    Operating expenses include selling, general and administrative (SG&A), research and
-                    development (R&D), depreciation and amortization, rent, utilities, and salaries.
-                    They exclude cost of goods sold, interest expense, and income taxes.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can operating margin be negative?</h4>
-                  <p>
-                    Yes. Negative operating margin means operating expenses exceed gross profit. This
-                    happens with startups investing in growth, companies in turnaround situations, or
-                    businesses facing severe competitive pressure. Sustained negative operating margin
-                    is unsustainable without external funding.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How is operating margin different from EBITDA margin?</h4>
-                  <p>
-                    Operating margin includes depreciation and amortization. EBITDA margin excludes them.
-                    EBITDA is often higher because D&A can be substantial for capital-intensive businesses.
-                    Operating margin is more conservative and GAAP-compliant.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why did my operating margin decline?</h4>
-                  <p>
-                    Common causes include: rising labor or material costs, price discounting to gain
-                    share, increased marketing spend, hiring ahead of revenue growth, or one-time
-                    restructuring charges. Analyze each expense category to identify the driver.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good operating margin?",
+    answer: "It varies by industry. Software companies often achieve 25%+ operating margins while retailers operate on 3-5%. As a general guide: below 5% is low, 5-10% is average, 10-20% is good, and above 20% is excellent. Always compare to industry peers.",
+  },
+{
+    question: "What expenses are included in operating expenses?",
+    answer: "Operating expenses include selling, general and administrative (SG&A), research and development (R&D), depreciation and amortization, rent, utilities, and salaries. They exclude cost of goods sold, interest expense, and income taxes.",
+  },
+{
+    question: "Can operating margin be negative?",
+    answer: "Yes. Negative operating margin means operating expenses exceed gross profit. This happens with startups investing in growth, companies in turnaround situations, or businesses facing severe competitive pressure. Sustained negative operating margin is unsustainable without external funding.",
+  },
+{
+    question: "How is operating margin different from EBITDA margin?",
+    answer: "Operating margin includes depreciation and amortization. EBITDA margin excludes them. EBITDA is often higher because D&A can be substantial for capital-intensive businesses. Operating margin is more conservative and GAAP-compliant.",
+  },
+{
+    question: "Why did my operating margin decline?",
+    answer: "Common causes include: rising labor or material costs, price discounting to gain share, increased marketing spend, hiring ahead of revenue growth, or one-time restructuring charges. Analyze each expense category to identify the driver.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function VelocityCalculator() {
   const [displacement, setDisplacement] = useState<string>("");
@@ -345,43 +347,33 @@ export default function VelocityCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can velocity be negative?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Negative velocity means moving in the opposite direction from your defined positive axis. If you define east as positive, a car going west at 50 km/h has velocity -50 km/h. The speed (magnitude) is still 50 km/h.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between average and instantaneous velocity?</h4>
-            <p className="text-xs text-muted-foreground">
-              Average velocity = total displacement ÷ total time. Instantaneous velocity = velocity at a specific moment. Your car's speedometer shows instantaneous speed. If you drive 100 km in 2 hours, your average velocity is 50 km/h, even though you varied speed throughout.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How is acceleration related to velocity?</h4>
-            <p className="text-xs text-muted-foreground">
-              Acceleration is the rate of change of velocity. a = Δv / Δt. Positive acceleration means velocity is increasing. Negative acceleration (deceleration) means velocity is decreasing. An object can have zero velocity but non-zero acceleration (like a ball at the top of its trajectory).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why use displacement instead of distance?</h4>
-            <p className="text-xs text-muted-foreground">
-              Displacement is the straight-line change in position (a vector). Distance is the total path length traveled (a scalar). Velocity uses displacement because it describes how position changes. A race car completing a lap has traveled distance but zero displacement – and therefore zero average velocity.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is terminal velocity?</h4>
-            <p className="text-xs text-muted-foreground">
-              Terminal velocity is the constant speed a falling object reaches when air resistance equals gravitational force. For a skydiver in belly-down position, it's about 55 m/s (200 km/h). In a head-first dive, it can reach 90 m/s. With a parachute, it drops to about 5-7 m/s.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Can velocity be negative?",
+    answer: "Yes. Negative velocity means moving in the opposite direction from your defined positive axis. If you define east as positive, a car going west at 50 km/h has velocity -50 km/h. The speed (magnitude) is still 50 km/h.",
+  },
+{
+    question: "What's the difference between average and instantaneous velocity?",
+    answer: "Average velocity = total displacement ÷ total time. Instantaneous velocity = velocity at a specific moment. Your car's speedometer shows instantaneous speed. If you drive 100 km in 2 hours, your average velocity is 50 km/h, even though you varied speed throughout.",
+  },
+{
+    question: "How is acceleration related to velocity?",
+    answer: "Acceleration is the rate of change of velocity. a = Δv / Δt. Positive acceleration means velocity is increasing. Negative acceleration (deceleration) means velocity is decreasing. An object can have zero velocity but non-zero acceleration (like a ball at the top of its trajectory).",
+  },
+{
+    question: "Why use displacement instead of distance?",
+    answer: "Displacement is the straight-line change in position (a vector). Distance is the total path length traveled (a scalar). Velocity uses displacement because it describes how position changes. A race car completing a lap has traveled distance but zero displacement – and therefore zero average velocity.",
+  },
+{
+    question: "What is terminal velocity?",
+    answer: "Terminal velocity is the constant speed a falling object reaches when air resistance equals gravitational force. For a skydiver in belly-down position, it's about 55 m/s (200 km/h). In a head-first dive, it can reach 90 m/s. With a parachute, it drops to about 5-7 m/s.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

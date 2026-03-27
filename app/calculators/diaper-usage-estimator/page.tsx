@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -511,45 +513,33 @@ export default function DiaperUsageEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How many diapers does a newborn use per day?</h4>
-                  <p>
-                    Newborns typically use 10-12 diapers per day. Some use as many as 15 in the first week. This decreases to 8-10 by 1-2 months as their bladder capacity increases and feeding patterns stabilize.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">When should I move up a diaper size?</h4>
-                  <p>
-                    Move up when you see red marks around the legs or waist, frequent leaks, or difficulty fastening tabs. Don't size up too early — ill-fitting diapers leak more. Most babies stay in each size 2-3 months.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Are expensive diapers worth it?</h4>
-                  <p>
-                    Premium diapers have better absorbency and fewer leaks, which matters for overnight or long outings. For daytime changes every 2-3 hours, store brands work fine. Many families use both — premium at night, budget during the day.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How can I reduce diaper waste?</h4>
-                  <p>
-                    Consider cloth diapers, even part-time. Choose eco-friendly disposable brands made with fewer chemicals. Some brands are biodegradable or compostable. Proper disposal (not flushing) prevents environmental contamination.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the average total cost of diapers?</h4>
-                  <p>
-                    The average baby uses 6,000-8,000 diapers before potty training. At $0.25 per diaper, that's $1,500-2,000. Premium brands run $2,500-3,500. Cloth diapering costs $500-800 including laundry, making it the most economical option.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many diapers does a newborn use per day?",
+    answer: "Newborns typically use 10-12 diapers per day. Some use as many as 15 in the first week. This decreases to 8-10 by 1-2 months as their bladder capacity increases and feeding patterns stabilize.",
+  },
+{
+    question: "When should I move up a diaper size?",
+    answer: "Move up when you see red marks around the legs or waist, frequent leaks, or difficulty fastening tabs. Don't size up too early — ill-fitting diapers leak more. Most babies stay in each size 2-3 months.",
+  },
+{
+    question: "Are expensive diapers worth it?",
+    answer: "Premium diapers have better absorbency and fewer leaks, which matters for overnight or long outings. For daytime changes every 2-3 hours, store brands work fine. Many families use both — premium at night, budget during the day.",
+  },
+{
+    question: "How can I reduce diaper waste?",
+    answer: "Consider cloth diapers, even part-time. Choose eco-friendly disposable brands made with fewer chemicals. Some brands are biodegradable or compostable. Proper disposal (not flushing) prevents environmental contamination.",
+  },
+{
+    question: "What's the average total cost of diapers?",
+    answer: "The average baby uses 6,000-8,000 diapers before potty training. At $0.25 per diaper, that's $1,500-2,000. Premium brands run $2,500-3,500. Cloth diapering costs $500-800 including laundry, making it the most economical option.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

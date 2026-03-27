@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function OvulationCalculator() {
   const [lmpDate, setLmpDate] = useState<string>("");
@@ -361,56 +363,33 @@ export default function OvulationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is this ovulation calculator?</h4>
-                <p>
-                  For women with regular cycles, predictions are reasonably accurate. However, ovulation
-                  can vary by a few days month to month due to stress, illness, or lifestyle changes.
-                  Use this as a guide, not a guarantee. Combine with ovulation tests for better accuracy.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I get pregnant outside my fertile window?</h4>
-                <p>
-                  It is unlikely but not impossible. Sperm survival is typically 3-5 days maximum. The
-                  egg survives only 12-24 hours. Pregnancy outside the calculated window usually means
-                  ovulation occurred earlier or later than predicted — cycles are not always perfectly
-                  regular.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if my cycles are irregular?</h4>
-                <p>
-                  Irregular cycles make prediction harder. Track for several months to find your range.
-                  Consider ovulation predictor kits, basal body temperature charting, or cervical mucus
-                  monitoring. If cycles are consistently irregular, consult a healthcare provider.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How long does it take to conceive?</h4>
-                <p>
-                  For healthy couples in their 20s having regular unprotected sex, about 80% conceive
-                  within 6 months and 90% within a year. Fertility declines with age, especially after 35.
-                  Seek evaluation if not pregnant after 12 months (or 6 months if over 35).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can stress affect ovulation?</h4>
-                <p>
-                  Yes. Significant stress can delay or prevent ovulation by affecting hormone signals
-                  from the brain. This is why ovulation may shift during stressful periods. Managing
-                  stress through exercise, sleep, and relaxation techniques may help regulate cycles.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate is this ovulation calculator?",
+    answer: "For women with regular cycles, predictions are reasonably accurate. However, ovulation can vary by a few days month to month due to stress, illness, or lifestyle changes. Use this as a guide, not a guarantee. Combine with ovulation tests for better accuracy.",
+  },
+{
+    question: "Can I get pregnant outside my fertile window?",
+    answer: "It is unlikely but not impossible. Sperm survival is typically 3-5 days maximum. The egg survives only 12-24 hours. Pregnancy outside the calculated window usually means ovulation occurred earlier or later than predicted — cycles are not always perfectly regular.",
+  },
+{
+    question: "What if my cycles are irregular?",
+    answer: "Irregular cycles make prediction harder. Track for several months to find your range. Consider ovulation predictor kits, basal body temperature charting, or cervical mucus monitoring. If cycles are consistently irregular, consult a healthcare provider.",
+  },
+{
+    question: "How long does it take to conceive?",
+    answer: "For healthy couples in their 20s having regular unprotected sex, about 80% conceive within 6 months and 90% within a year. Fertility declines with age, especially after 35. Seek evaluation if not pregnant after 12 months (or 6 months if over 35).",
+  },
+{
+    question: "Can stress affect ovulation?",
+    answer: "Yes. Significant stress can delay or prevent ovulation by affecting hormone signals from the brain. This is why ovulation may shift during stressful periods. Managing stress through exercise, sleep, and relaxation techniques may help regulate cycles.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

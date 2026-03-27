@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PercentageCalculator() {
   const [mode, setMode] = useState<"percentage-of" | "what-percent" | "percent-change">("percentage-of");
@@ -347,43 +349,33 @@ export default function PercentageCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate a percentage?</h4>
-            <p className="text-xs text-muted-foreground">
-              Divide the part by the whole, then multiply by 100. For example, 25 out of 50: (25 / 50) × 100 = 50%. To find a percentage of a number, convert the percentage to a decimal and multiply: 20% of 80 = 0.20 × 80 = 16.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate percentage change?</h4>
-            <p className="text-xs text-muted-foreground">
-              Subtract the original from the new value, divide by the original, multiply by 100. Price went from $50 to $60: ((60 - 50) / 50) × 100 = 20% increase. If it went from $60 to $50: ((50 - 60) / 60) × 100 = -16.67% (decrease).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between percentage points and percent?</h4>
-            <p className="text-xs text-muted-foreground">
-              Percentage points measure absolute differences. If interest rates go from 5% to 7%, that's a 2 percentage point increase, but a 40% increase ((7-5)/5 × 100). Confusing these leads to errors – always specify which you mean.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can a percentage be more than 100%?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. 100% means "the whole thing." 200% means twice as much. If you had 50 sales last month and 150 this month, that's 300% of last month's sales (or a 200% increase). Percentages over 100% are common in growth comparisons.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I add a percentage to a number?</h4>
-            <p className="text-xs text-muted-foreground">
-              Multiply by (1 + percentage as decimal). Adding 15% to 200: 200 × 1.15 = 230. For tax: $100 + 8% tax = $100 × 1.08 = $108. To subtract: multiply by (1 - percentage). 20% off $100: $100 × 0.80 = $80.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate a percentage?",
+    answer: "Divide the part by the whole, then multiply by 100. For example, 25 out of 50: (25 / 50) × 100 = 50%. To find a percentage of a number, convert the percentage to a decimal and multiply: 20% of 80 = 0.20 × 80 = 16.",
+  },
+{
+    question: "How do I calculate percentage change?",
+    answer: "Subtract the original from the new value, divide by the original, multiply by 100. Price went from $50 to $60: ((60 - 50) / 50) × 100 = 20% increase. If it went from $60 to $50: ((50 - 60) / 60) × 100 = -16.67% (decrease).",
+  },
+{
+    question: "What's the difference between percentage points and percent?",
+    answer: "Percentage points measure absolute differences. If interest rates go from 5% to 7%, that's a 2 percentage point increase, but a 40% increase ((7-5)/5 × 100). Confusing these leads to errors – always specify which you mean.",
+  },
+{
+    question: "Can a percentage be more than 100%?",
+    answer: "Yes. 100% means \"the whole thing.\" 200% means twice as much. If you had 50 sales last month and 150 this month, that's 300% of last month's sales (or a 200% increase). Percentages over 100% are common in growth comparisons.",
+  },
+{
+    question: "How do I add a percentage to a number?",
+    answer: "Multiply by (1 + percentage as decimal). Adding 15% to 200: 200 × 1.15 = 230. For tax: $100 + 8% tax = $100 × 1.08 = $108. To subtract: multiply by (1 - percentage). 20% off $100: $100 × 0.80 = $80.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

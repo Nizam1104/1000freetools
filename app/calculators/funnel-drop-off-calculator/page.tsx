@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface FunnelResult {
   stages: Array<{ name: string; visitors: number; conversionRate: number; dropOffRate: number }>;
@@ -422,55 +424,33 @@ export default function FunnelDropOffCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good funnel conversion rate?</h4>
-                  <p>
-                    It depends on your industry and funnel complexity. B2B SaaS typically sees 2-5% visitor to customer conversion.
-                    E-commerce averages 2-4% cart to purchase. Mobile apps may see 10-25% install to active user. Compare against
-                    industry benchmarks, but focus on improving your own baseline over time.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate drop-off rate?</h4>
-                  <p>
-                    Drop-off rate = (Previous Stage Users - Current Stage Users) / Previous Stage Users x 100.
-                    If 100 users reach stage A and 60 reach stage B, drop-off is (100-60)/100 = 40%.
-                    This means 40% of users left between those two stages.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What stage should I optimize first?</h4>
-                  <p>
-                    Start with the stage that has the highest absolute drop-off. If you lose 500 users between
-                    visitors and signups but only 50 between signup and purchase, fix the visitor-to-signup
-                    flow first. The biggest leaks give the biggest ROI on optimization effort.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How often should I track funnel metrics?</h4>
-                  <p>
-                    Review funnels weekly for active products, monthly for stable ones. Use consistent time
-                    periods for comparison (week-over-week or month-over-month). Set up alerts for significant
-                    changes. Seasonal businesses should compare year-over-year to account for normal fluctuations.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I segment my funnel data?</h4>
-                  <p>
-                    Yes. Segment by traffic source (organic, paid, referral), device (mobile, desktop),
-                    geography, and user type (new, returning). Different segments often have dramatically
-                    different conversion rates. Optimization that works for one segment may not work for another.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good funnel conversion rate?",
+    answer: "It depends on your industry and funnel complexity. B2B SaaS typically sees 2-5% visitor to customer conversion. E-commerce averages 2-4% cart to purchase. Mobile apps may see 10-25% install to active user. Compare against industry benchmarks, but focus on improving your own baseline over time.",
+  },
+{
+    question: "How do I calculate drop-off rate?",
+    answer: "Drop-off rate = (Previous Stage Users - Current Stage Users) / Previous Stage Users x 100. If 100 users reach stage A and 60 reach stage B, drop-off is (100-60)/100 = 40%. This means 40% of users left between those two stages.",
+  },
+{
+    question: "What stage should I optimize first?",
+    answer: "Start with the stage that has the highest absolute drop-off. If you lose 500 users between visitors and signups but only 50 between signup and purchase, fix the visitor-to-signup flow first. The biggest leaks give the biggest ROI on optimization effort.",
+  },
+{
+    question: "How often should I track funnel metrics?",
+    answer: "Review funnels weekly for active products, monthly for stable ones. Use consistent time periods for comparison (week-over-week or month-over-month). Set up alerts for significant changes. Seasonal businesses should compare year-over-year to account for normal fluctuations.",
+  },
+{
+    question: "Should I segment my funnel data?",
+    answer: "Yes. Segment by traffic source (organic, paid, referral), device (mobile, desktop), geography, and user type (new, returning). Different segments often have dramatically different conversion rates. Optimization that works for one segment may not work for another.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

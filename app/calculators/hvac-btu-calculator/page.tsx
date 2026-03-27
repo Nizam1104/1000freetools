@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function HVACBtuCalculator() {
   const [length, setLength] = useState<string>("");
@@ -323,45 +325,33 @@ export default function HVACBtuCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many BTUs do I need per square foot?</h4>
-                <p>
-                  As a rough rule, you need about 20 BTU per square foot (or about 270 BTU per square meter). A 20 m² room needs roughly 5,400 BTU/h. This varies based on ceiling height, insulation, climate, and sun exposure — use this calculator for a more accurate estimate.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is it better to oversize or undersize an AC?</h4>
-                <p>
-                  Neither is ideal, but undersizing is usually less problematic. An oversized unit short-cycles, wasting energy and failing to dehumidify. An undersized unit runs longer but will eventually cool the space. Slightly undersized is better than oversized.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What size AC do I need for a 20 square meter room?</h4>
-                <p>
-                  A 20 m² room typically needs 6,000-7,000 BTU/h (about 0.5-0.6 tons) with average conditions. Increase to 8,000 BTU if you have poor insulation, a hot climate, or large sunny windows.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does ceiling height affect BTU requirements?</h4>
-                <p>
-                  Yes. Standard calculations assume 2.4-2.7m (8-9 ft) ceilings. Higher ceilings mean more air volume to cool. For ceilings over 3m, increase BTU capacity proportionally to the volume difference.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert BTU to tons or kW?</h4>
-                <p>
-                  To convert BTU/h to tons, divide by 12,000. To convert BTU/h to kW, multiply by 0.000293. For example, 24,000 BTU/h equals 2 tons or about 7 kW.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many BTUs do I need per square foot?",
+    answer: "As a rough rule, you need about 20 BTU per square foot (or about 270 BTU per square meter). A 20 m² room needs roughly 5,400 BTU/h. This varies based on ceiling height, insulation, climate, and sun exposure — use this calculator for a more accurate estimate.",
+  },
+{
+    question: "Is it better to oversize or undersize an AC?",
+    answer: "Neither is ideal, but undersizing is usually less problematic. An oversized unit short-cycles, wasting energy and failing to dehumidify. An undersized unit runs longer but will eventually cool the space. Slightly undersized is better than oversized.",
+  },
+{
+    question: "What size AC do I need for a 20 square meter room?",
+    answer: "A 20 m² room typically needs 6,000-7,000 BTU/h (about 0.5-0.6 tons) with average conditions. Increase to 8,000 BTU if you have poor insulation, a hot climate, or large sunny windows.",
+  },
+{
+    question: "Does ceiling height affect BTU requirements?",
+    answer: "Yes. Standard calculations assume 2.4-2.7m (8-9 ft) ceilings. Higher ceilings mean more air volume to cool. For ceilings over 3m, increase BTU capacity proportionally to the volume difference.",
+  },
+{
+    question: "How do I convert BTU to tons or kW?",
+    answer: "To convert BTU/h to tons, divide by 12,000. To convert BTU/h to kW, multiply by 0.000293. For example, 24,000 BTU/h equals 2 tons or about 7 kW.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

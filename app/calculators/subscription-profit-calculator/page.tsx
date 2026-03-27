@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function SubscriptionProfitCalculatorPage() {
   const [subscribers, setSubscribers] = useState<string>("");
@@ -269,43 +271,33 @@ export default function SubscriptionProfitCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How do I calculate subscription business profit?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Start with MRR (subscribers × monthly price), multiply by 12 for ARR. Subtract churn loss (MRR × churn rate) to get net MRR. Annual profit = (Net MRR × 12) - (Operating Costs × 12). Profit margin = (Annual Profit / Annual Revenue) × 100.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What is a good profit margin for subscription businesses?</h4>
-                <p className="text-xs text-muted-foreground">
-                  SaaS companies typically target 70-85% gross margins. Net profit margins vary: early-stage companies may operate at losses while scaling, mature companies aim for 20-30% net margins. Subscription box services often have lower margins (40-60%) due to physical product costs.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How much churn is acceptable?</h4>
-                <p className="text-xs text-muted-foreground">
-                  B2B SaaS: under 3% monthly is excellent, 5-7% is average. B2C subscriptions: 5-10% is common. Streaming services often see 4-6%. The key is that new customer acquisition should exceed churn for growth. A 5% monthly churn means you lose 45% of customers annually.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What's the difference between MRR and ARR?</h4>
-                <p className="text-xs text-muted-foreground">
-                  MRR (Monthly Recurring Revenue) is predictable revenue per month. ARR (Annual Recurring Revenue) is MRR × 12. MRR is better for tracking month-to-month changes; ARR is commonly used for investor reporting and company valuations. Both exclude one-time fees.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How can I reduce churn in my subscription business?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Focus on onboarding (help users get value fast), regular engagement (emails, feature updates), proactive support (reach out before they cancel), and annual plans (reduce payment friction). Exit surveys reveal why customers leave. Even 1% churn reduction significantly impacts lifetime value.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate subscription business profit?",
+    answer: "Start with MRR (subscribers × monthly price), multiply by 12 for ARR. Subtract churn loss (MRR × churn rate) to get net MRR. Annual profit = (Net MRR × 12) - (Operating Costs × 12). Profit margin = (Annual Profit / Annual Revenue) × 100.",
+  },
+{
+    question: "What is a good profit margin for subscription businesses?",
+    answer: "SaaS companies typically target 70-85% gross margins. Net profit margins vary: early-stage companies may operate at losses while scaling, mature companies aim for 20-30% net margins. Subscription box services often have lower margins (40-60%) due to physical product costs.",
+  },
+{
+    question: "How much churn is acceptable?",
+    answer: "B2B SaaS: under 3% monthly is excellent, 5-7% is average. B2C subscriptions: 5-10% is common. Streaming services often see 4-6%. The key is that new customer acquisition should exceed churn for growth. A 5% monthly churn means you lose 45% of customers annually.",
+  },
+{
+    question: "What's the difference between MRR and ARR?",
+    answer: "MRR (Monthly Recurring Revenue) is predictable revenue per month. ARR (Annual Recurring Revenue) is MRR × 12. MRR is better for tracking month-to-month changes; ARR is commonly used for investor reporting and company valuations. Both exclude one-time fees.",
+  },
+{
+    question: "How can I reduce churn in my subscription business?",
+    answer: "Focus on onboarding (help users get value fast), regular engagement (emails, feature updates), proactive support (reach out before they cancel), and annual plans (reduce payment friction). Exit surveys reveal why customers leave. Even 1% churn reduction significantly impacts lifetime value.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

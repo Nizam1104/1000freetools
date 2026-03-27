@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BeltTensionCalculator() {
   const [power, setPower] = useState<string>("");
@@ -249,55 +251,33 @@ export default function BeltTensionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I know if my belt tension is correct?</h4>
-                <p>
-                  A properly tensioned belt should deflect about 1/64 inch per inch of span length when pressed
-                  with moderate thumb pressure. There should be no squealing during startup or under load. The belt
-                  should run smoothly without excessive vibration or wandering on the pulleys.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What happens if belt tension is too high?</h4>
-                <p>
-                  Excessive tension increases bearing loads, which can lead to premature bearing failure. It also
-                  stretches the belt, reduces efficiency, and increases energy consumption. High tension can cause
-                  the belt to crack on the back side and fail prematurely.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What causes belt slippage?</h4>
-                <p>
-                  Slippage occurs when tension is too low, the pulleys are worn or contaminated with oil, or the
-                  load exceeds the drive design. Slippage generates heat, which damages the belt and reduces power
-                  transmission efficiency. Check tension first, then inspect pulley condition.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How often should I check belt tension?</h4>
-                <p>
-                  Check tension during installation, after the 24-hour run-in period, and then as part of regular
-                  maintenance. For critical applications, monthly checks are recommended. For general industrial
-                  use, quarterly inspections are usually sufficient.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I use this calculator for timing belts?</h4>
-                <p>
-                  This calculator provides a general estimate. Timing belts require lower initial tension (1-2%)
-                  because they transmit power through tooth engagement rather than friction. For precise timing
-                  belt calculations, consult the manufacturer specifications for your specific belt type.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I know if my belt tension is correct?",
+    answer: "A properly tensioned belt should deflect about 1/64 inch per inch of span length when pressed with moderate thumb pressure. There should be no squealing during startup or under load. The belt should run smoothly without excessive vibration or wandering on the pulleys.",
+  },
+{
+    question: "What happens if belt tension is too high?",
+    answer: "Excessive tension increases bearing loads, which can lead to premature bearing failure. It also stretches the belt, reduces efficiency, and increases energy consumption. High tension can cause the belt to crack on the back side and fail prematurely.",
+  },
+{
+    question: "What causes belt slippage?",
+    answer: "Slippage occurs when tension is too low, the pulleys are worn or contaminated with oil, or the load exceeds the drive design. Slippage generates heat, which damages the belt and reduces power transmission efficiency. Check tension first, then inspect pulley condition.",
+  },
+{
+    question: "How often should I check belt tension?",
+    answer: "Check tension during installation, after the 24-hour run-in period, and then as part of regular maintenance. For critical applications, monthly checks are recommended. For general industrial use, quarterly inspections are usually sufficient.",
+  },
+{
+    question: "Can I use this calculator for timing belts?",
+    answer: "This calculator provides a general estimate. Timing belts require lower initial tension (1-2%) because they transmit power through tooth engagement rather than friction. For precise timing belt calculations, consult the manufacturer specifications for your specific belt type.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

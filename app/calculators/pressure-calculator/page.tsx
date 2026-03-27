@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Gauge, Droplets } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface PressureResult {
   pressure: number;
@@ -191,33 +193,33 @@ export default function PressureCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is pressure?</h3>
-                <p className="text-sm text-muted-foreground">Pressure is force applied per unit area. It measures how concentrated a force is. Higher pressure means more force on a smaller area.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is the SI unit for pressure?</h3>
-                <p className="text-sm text-muted-foreground">The pascal (Pa) is the SI unit, defined as one newton per square meter. Kilopascals (kPa) and bar are more practical for everyday use.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Why is PSI still used?</h3>
-                <p className="text-sm text-muted-foreground">PSI (pounds per square inch) remains common in the US for tire pressure, scuba tanks, and industrial applications due to tradition and tool calibration.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is atmospheric pressure?</h3>
-                <p className="text-sm text-muted-foreground">Atmospheric pressure is the weight of air above us. At sea level it's about 14.7 psi or 101 kPa. It decreases with altitude.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How is blood pressure measured?</h3>
-                <p className="text-sm text-muted-foreground">Blood pressure uses mmHg (millimeters of mercury). Normal is around 120/80 mmHg. This unit comes from mercury barometers used in early measurements.</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is pressure?",
+    answer: "Pressure is force applied per unit area. It measures how concentrated a force is. Higher pressure means more force on a smaller area.",
+  },
+{
+    question: "What is the SI unit for pressure?",
+    answer: "The pascal (Pa) is the SI unit, defined as one newton per square meter. Kilopascals (kPa) and bar are more practical for everyday use.",
+  },
+{
+    question: "Why is PSI still used?",
+    answer: "PSI (pounds per square inch) remains common in the US for tire pressure, scuba tanks, and industrial applications due to tradition and tool calibration.",
+  },
+{
+    question: "What is atmospheric pressure?",
+    answer: "Atmospheric pressure is the weight of air above us. At sea level it's about 14.7 psi or 101 kPa. It decreases with altitude.",
+  },
+{
+    question: "How is blood pressure measured?",
+    answer: "Blood pressure uses mmHg (millimeters of mercury). Normal is around 120/80 mmHg. This unit comes from mercury barometers used in early measurements.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

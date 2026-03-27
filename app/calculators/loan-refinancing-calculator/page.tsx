@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function LoanRefinancingCalculatorPage() {
   const [currentLoanBalance, setCurrentLoanBalance] = useState<string>("");
@@ -373,45 +375,33 @@ export default function LoanRefinancingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much can I save by refinancing?</h4>
-                  <p>
-                    Savings depend on your loan balance, rate reduction, and remaining term. A 1% rate drop on a $200,000 mortgage saves about $130-150 monthly. Over 30 years, that's roughly $47,000 in interest savings, minus closing costs. Use this calculator with your specific numbers for an accurate estimate.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does refinancing hurt my credit score?</h4>
-                  <p>
-                    Expect a small, temporary dip of 5-10 points from the hard inquiry. Multiple mortgage inquiries within a 45-day window count as one inquiry for scoring purposes. Your score typically recovers within a few months if you continue making on-time payments.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I refinance to a shorter term?</h4>
-                  <p>
-                    Shorter terms like 15 years come with lower rates and much less total interest, but higher monthly payments. Refinancing from a 30-year to 15-year loan might save $50,000+ in interest but could add $400-600 to your monthly payment. Make sure the higher payment fits your budget.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What documents do I need to refinance?</h4>
-                  <p>
-                    Lenders typically require proof of income (pay stubs, W-2s, tax returns), bank statements, proof of homeowners insurance, and authorization to pull your credit report. Self-employed borrowers may need additional documentation like profit-and-loss statements.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I refinance if I have bad credit?</h4>
-                  <p>
-                    It's harder but possible. FHA streamline refinances don't require credit checks for existing FHA loans. VA loans offer similar IRRRL programs. Conventional refinances typically need a 620+ score. If your score is below 620, focus on improving credit before refinancing unless you have an urgent reason like avoiding foreclosure.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much can I save by refinancing?",
+    answer: "Savings depend on your loan balance, rate reduction, and remaining term. A 1% rate drop on a $200,000 mortgage saves about $130-150 monthly. Over 30 years, that's roughly $47,000 in interest savings, minus closing costs. Use this calculator with your specific numbers for an accurate estimate.",
+  },
+{
+    question: "Does refinancing hurt my credit score?",
+    answer: "Expect a small, temporary dip of 5-10 points from the hard inquiry. Multiple mortgage inquiries within a 45-day window count as one inquiry for scoring purposes. Your score typically recovers within a few months if you continue making on-time payments.",
+  },
+{
+    question: "Should I refinance to a shorter term?",
+    answer: "Shorter terms like 15 years come with lower rates and much less total interest, but higher monthly payments. Refinancing from a 30-year to 15-year loan might save $50,000+ in interest but could add $400-600 to your monthly payment. Make sure the higher payment fits your budget.",
+  },
+{
+    question: "What documents do I need to refinance?",
+    answer: "Lenders typically require proof of income (pay stubs, W-2s, tax returns), bank statements, proof of homeowners insurance, and authorization to pull your credit report. Self-employed borrowers may need additional documentation like profit-and-loss statements.",
+  },
+{
+    question: "Can I refinance if I have bad credit?",
+    answer: "It's harder but possible. FHA streamline refinances don't require credit checks for existing FHA loans. VA loans offer similar IRRRL programs. Conventional refinances typically need a 620+ score. If your score is below 620, focus on improving credit before refinancing unless you have an urgent reason like avoiding foreclosure.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

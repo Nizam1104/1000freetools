@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Activity, Droplets } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface ProteinResult {
   absorptionRate: number;
@@ -232,33 +234,33 @@ export default function ProteinAbsorptionCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How much protein can the body absorb at once?</h3>
-                <p className="text-sm text-muted-foreground">The body absorbs about 6-10g of protein per hour depending on the type. However, "absorption" differs from "utilization" - larger amounts are absorbed but used more slowly.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Is whey protein absorbed faster than food?</h3>
-                <p className="text-sm text-muted-foreground">Yes, whey isolate is one of the fastest-absorbing proteins. Whole foods like meat take longer due to digestion of fats and fiber that slow gastric emptying.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Should I take protein before bed?</h3>
-                <p className="text-sm text-muted-foreground">Casein protein before bed provides slow-release amino acids during sleep, potentially reducing muscle breakdown. About 30-40g is typical.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Does protein timing matter?</h3>
-                <p className="text-sm text-muted-foreground">Total daily protein matters most. Timing provides marginal benefits - post-workout protein within 2 hours and even distribution across meals (20-40g each) is optimal.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What affects protein absorption?</h3>
-                <p className="text-sm text-muted-foreground">Meal composition (fat/fiber slow absorption), digestive health, age, protein type, and whether you eat alone or with other foods all affect absorption rate.</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much protein can the body absorb at once?",
+    answer: "The body absorbs about 6-10g of protein per hour depending on the type. However, \"absorption\" differs from \"utilization\" - larger amounts are absorbed but used more slowly.",
+  },
+{
+    question: "Is whey protein absorbed faster than food?",
+    answer: "Yes, whey isolate is one of the fastest-absorbing proteins. Whole foods like meat take longer due to digestion of fats and fiber that slow gastric emptying.",
+  },
+{
+    question: "Should I take protein before bed?",
+    answer: "Casein protein before bed provides slow-release amino acids during sleep, potentially reducing muscle breakdown. About 30-40g is typical.",
+  },
+{
+    question: "Does protein timing matter?",
+    answer: "Total daily protein matters most. Timing provides marginal benefits - post-workout protein within 2 hours and even distribution across meals (20-40g each) is optimal.",
+  },
+{
+    question: "What affects protein absorption?",
+    answer: "Meal composition (fat/fiber slow absorption), digestive health, age, protein type, and whether you eat alone or with other foods all affect absorption rate.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

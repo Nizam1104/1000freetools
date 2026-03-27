@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PcbTraceWidthCalculator() {
   const [current, setCurrent] = useState<string>("");
@@ -245,33 +247,33 @@ export default function PcbTraceWidthCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is the IPC-2221 standard?</h4>
-              <p>IPC-2221 is a generic standard for printed board design. It includes formulas for calculating trace width based on current, copper thickness, and temperature rise. The formulas in this calculator are derived from IPC-2221 guidelines.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How do I convert between oz and mm for copper?</h4>
-              <p>1 oz/ft² copper equals 0.035 mm (1.4 mils) thickness. This refers to the weight of copper per square foot, which correlates to thickness. Common values: 0.5 oz = 0.0175mm, 1 oz = 0.035mm, 2 oz = 0.070mm.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What temperature rise should I use?</h4>
-              <p>10°C is conservative and works for most applications. 20°C is common for consumer electronics. Higher rises reduce trace width but increase heat. Consider your enclosure, airflow, and reliability requirements.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why are internal traces wider than external?</h4>
-              <p>Internal layers are surrounded by substrate material that insulates and traps heat. External layers can dissipate heat to air. For the same current and temperature rise, internal traces need about 2x the cross-sectional area.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Can I use this for high-frequency signals?</h4>
-              <p>This calculator is for DC and low-frequency current capacity. High-frequency signals need impedance-controlled traces, which depend on trace geometry and dielectric properties. Use an impedance calculator for RF designs.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the IPC-2221 standard?",
+    answer: "IPC-2221 is a generic standard for printed board design. It includes formulas for calculating trace width based on current, copper thickness, and temperature rise. The formulas in this calculator are derived from IPC-2221 guidelines.",
+  },
+{
+    question: "How do I convert between oz and mm for copper?",
+    answer: "1 oz/ft² copper equals 0.035 mm (1.4 mils) thickness. This refers to the weight of copper per square foot, which correlates to thickness. Common values: 0.5 oz = 0.0175mm, 1 oz = 0.035mm, 2 oz = 0.070mm.",
+  },
+{
+    question: "What temperature rise should I use?",
+    answer: "10°C is conservative and works for most applications. 20°C is common for consumer electronics. Higher rises reduce trace width but increase heat. Consider your enclosure, airflow, and reliability requirements.",
+  },
+{
+    question: "Why are internal traces wider than external?",
+    answer: "Internal layers are surrounded by substrate material that insulates and traps heat. External layers can dissipate heat to air. For the same current and temperature rise, internal traces need about 2x the cross-sectional area.",
+  },
+{
+    question: "Can I use this for high-frequency signals?",
+    answer: "This calculator is for DC and low-frequency current capacity. High-frequency signals need impedance-controlled traces, which depend on trace geometry and dielectric properties. Use an impedance calculator for RF designs.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

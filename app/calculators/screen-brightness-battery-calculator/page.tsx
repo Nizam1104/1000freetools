@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -352,33 +354,33 @@ export default function ScreenBrightnessBatteryCalculatorPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How much does screen brightness affect battery life?</h4>
-                  <p className="text-sm text-muted-foreground">Screen brightness is typically the largest battery drain, consuming 30-50% of total power. Reducing from 100% to 50% can extend battery life by 20-30% on most devices.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Does dark mode save battery?</h4>
-                  <p className="text-sm text-muted-foreground">Yes, on OLED and AMOLED screens, dark mode can save significant battery because black pixels are turned off completely. LCD screens see minimal benefit.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What brightness level is best for battery?</h4>
-                  <p className="text-sm text-muted-foreground">40-60% brightness offers the best balance between visibility and battery life. Use auto-brightness to let your device optimize based on ambient light.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How do I find my battery capacity?</h4>
-                  <p className="text-sm text-muted-foreground">Check Settings &gt; Battery on phones, System Information on Macs, or search your device model + &quot;battery capacity mAh&quot; online.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What else drains battery besides screen?</h4>
-                  <p className="text-sm text-muted-foreground">Cellular signal, GPS, background apps, push notifications, and high refresh rate displays are major battery drains. Close unused apps and enable battery saver mode.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much does screen brightness affect battery life?",
+    answer: "Screen brightness is typically the largest battery drain, consuming 30-50% of total power. Reducing from 100% to 50% can extend battery life by 20-30% on most devices.",
+  },
+{
+    question: "Does dark mode save battery?",
+    answer: "Yes, on OLED and AMOLED screens, dark mode can save significant battery because black pixels are turned off completely. LCD screens see minimal benefit.",
+  },
+{
+    question: "What brightness level is best for battery?",
+    answer: "40-60% brightness offers the best balance between visibility and battery life. Use auto-brightness to let your device optimize based on ambient light.",
+  },
+{
+    question: "How do I find my battery capacity?",
+    answer: "Check Settings &gt; Battery on phones, System Information on Macs, or search your device model + &quot;battery capacity mAh&quot; online.",
+  },
+{
+    question: "What else drains battery besides screen?",
+    answer: "Cellular signal, GPS, background apps, push notifications, and high refresh rate displays are major battery drains. Close unused apps and enable battery saver mode.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

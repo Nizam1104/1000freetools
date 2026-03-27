@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BondConvexityCalculatorPage() {
   const [faceValue, setFaceValue] = useState<string>("");
@@ -344,55 +346,33 @@ export default function BondConvexityCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good convexity value?</h4>
-                  <p>
-                    Convexity values vary widely based on bond characteristics. Longer maturity and lower
-                    coupon bonds have higher convexity. A 10-year bond might have convexity around 100-150,
-                    while a 30-year bond could exceed 300. Compare convexity within similar bond categories.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does coupon rate affect convexity?</h4>
-                  <p>
-                    Lower coupon bonds have higher convexity because more of their value comes from the
-                    distant principal payment. Zero-coupon bonds have the highest convexity for a given
-                    maturity. Higher coupons reduce convexity by bringing cash flows closer to present.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">When should I use convexity instead of duration?</h4>
-                  <p>
-                    Use both together. Duration works well for small yield changes (under 50 basis points).
-                    For larger moves, convexity becomes important. If you expect significant rate volatility,
-                    convexity analysis is essential for accurate risk assessment.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What causes negative convexity?</h4>
-                  <p>
-                    Negative convexity occurs when bond prices increase less when rates fall than they
-                    decrease when rates rise. This happens with callable bonds (issuer calls when rates
-                    drop) and mortgage-backed securities (homeowners refinance when rates fall).
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does maturity affect convexity?</h4>
-                  <p>
-                    Convexity increases with the square of maturity. Doubling maturity roughly quadruples
-                    convexity. Long-term bonds therefore have much higher convexity than short-term bonds,
-                    making them more sensitive to interest rate curvature effects.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good convexity value?",
+    answer: "Convexity values vary widely based on bond characteristics. Longer maturity and lower coupon bonds have higher convexity. A 10-year bond might have convexity around 100-150, while a 30-year bond could exceed 300. Compare convexity within similar bond categories.",
+  },
+{
+    question: "How does coupon rate affect convexity?",
+    answer: "Lower coupon bonds have higher convexity because more of their value comes from the distant principal payment. Zero-coupon bonds have the highest convexity for a given maturity. Higher coupons reduce convexity by bringing cash flows closer to present.",
+  },
+{
+    question: "When should I use convexity instead of duration?",
+    answer: "Use both together. Duration works well for small yield changes (under 50 basis points). For larger moves, convexity becomes important. If you expect significant rate volatility, convexity analysis is essential for accurate risk assessment.",
+  },
+{
+    question: "What causes negative convexity?",
+    answer: "Negative convexity occurs when bond prices increase less when rates fall than they decrease when rates rise. This happens with callable bonds (issuer calls when rates drop) and mortgage-backed securities (homeowners refinance when rates fall).",
+  },
+{
+    question: "How does maturity affect convexity?",
+    answer: "Convexity increases with the square of maturity. Doubling maturity roughly quadruples convexity. Long-term bonds therefore have much higher convexity than short-term bonds, making them more sensitive to interest rate curvature effects.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

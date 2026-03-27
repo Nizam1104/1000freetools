@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -508,45 +510,33 @@ export default function IndoorCOLevelEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a safe indoor CO2 level?</h4>
-                  <p>
-                    ASHRAE recommends keeping indoor CO2 below 1000 ppm for good air quality. Levels between 800-1000 ppm are acceptable but may cause mild drowsiness in some people. Above 1500 ppm, most people experience reduced cognitive function and headaches.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate is this CO2 estimator?</h4>
-                  <p>
-                    This calculator provides a steady-state estimate assuming constant occupancy and ventilation. Real CO2 levels fluctuate with activity, door openings, and HVAC cycling. For precise measurements, use a calibrated CO2 monitor. This tool is best for planning and rough estimates.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What air changes per hour do I need?</h4>
-                  <p>
-                    Homes typically need 0.35-0.5 ACH minimum under modern codes. Offices and classrooms benefit from 4-6 ACH. Hospitals and labs require 12+ ACH. Higher ACH improves air quality but increases energy costs. Balance ventilation with efficiency.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does CO2 monitoring help prevent virus spread?</h4>
-                  <p>
-                    CO2 is a useful proxy for airborne virus risk. High CO2 means exhaled air is accumulating, which could contain viruses if someone is infected. Keeping CO2 below 800 ppm significantly reduces airborne transmission risk in shared spaces.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I lower CO2 in my room?</h4>
-                  <p>
-                    Open windows to increase fresh air intake. Run exhaust fans or HVAC systems. Reduce the number of people in the room. Take breaks to ventilate between meetings. Install a mechanical ventilation system with heat recovery for year-round fresh air.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a safe indoor CO2 level?",
+    answer: "ASHRAE recommends keeping indoor CO2 below 1000 ppm for good air quality. Levels between 800-1000 ppm are acceptable but may cause mild drowsiness in some people. Above 1500 ppm, most people experience reduced cognitive function and headaches.",
+  },
+{
+    question: "How accurate is this CO2 estimator?",
+    answer: "This calculator provides a steady-state estimate assuming constant occupancy and ventilation. Real CO2 levels fluctuate with activity, door openings, and HVAC cycling. For precise measurements, use a calibrated CO2 monitor. This tool is best for planning and rough estimates.",
+  },
+{
+    question: "What air changes per hour do I need?",
+    answer: "Homes typically need 0.35-0.5 ACH minimum under modern codes. Offices and classrooms benefit from 4-6 ACH. Hospitals and labs require 12+ ACH. Higher ACH improves air quality but increases energy costs. Balance ventilation with efficiency.",
+  },
+{
+    question: "Does CO2 monitoring help prevent virus spread?",
+    answer: "CO2 is a useful proxy for airborne virus risk. High CO2 means exhaled air is accumulating, which could contain viruses if someone is infected. Keeping CO2 below 800 ppm significantly reduces airborne transmission risk in shared spaces.",
+  },
+{
+    question: "How do I lower CO2 in my room?",
+    answer: "Open windows to increase fresh air intake. Run exhaust fans or HVAC systems. Reduce the number of people in the room. Take breaks to ventilate between meetings. Install a mechanical ventilation system with heat recovery for year-round fresh air.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

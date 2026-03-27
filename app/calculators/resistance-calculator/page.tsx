@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ResistanceCalculator() {
   const [mode, setMode] = useState<"VI" | "VP" | "PI" | "resistivity">("VI");
@@ -285,51 +287,33 @@ export default function ResistanceCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is Ohm's Law?</h4>
-                <p>
-                  Ohm's Law states that voltage equals current times resistance (V = IR). It is the
-                  fundamental relationship in electrical circuits, discovered by Georg Ohm in 1827.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate resistance from power?</h4>
-                <p>
-                  Use R = V²/P if you know voltage and power, or R = P/I² if you know current and power.
-                  These come from combining Ohm's Law with the power formula P = VI.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is resistivity?</h4>
-                <p>
-                  Resistivity (ρ) is an intrinsic material property that describes how strongly a
-                  material opposes current. It is independent of shape and size, unlike resistance.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does temperature affect resistance?</h4>
-                <p>
-                  In conductors, heat causes atoms to vibrate more, increasing collisions with
-                  electrons. This raises resistance. In semiconductors, heat frees more charge
-                  carriers, lowering resistance.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the unit of resistance?</h4>
-                <p>
-                  The ohm (Ω) is the SI unit. One ohm equals one volt per ampere. Common prefixes
-                  include kΩ (1000 Ω) and MΩ (1,000,000 Ω) for larger values.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is Ohm's Law?",
+    answer: "Ohm's Law states that voltage equals current times resistance (V = IR). It is the fundamental relationship in electrical circuits, discovered by Georg Ohm in 1827.",
+  },
+{
+    question: "How do I calculate resistance from power?",
+    answer: "Use R = V²/P if you know voltage and power, or R = P/I² if you know current and power. These come from combining Ohm's Law with the power formula P = VI.",
+  },
+{
+    question: "What is resistivity?",
+    answer: "Resistivity (ρ) is an intrinsic material property that describes how strongly a material opposes current. It is independent of shape and size, unlike resistance.",
+  },
+{
+    question: "Why does temperature affect resistance?",
+    answer: "In conductors, heat causes atoms to vibrate more, increasing collisions with electrons. This raises resistance. In semiconductors, heat frees more charge carriers, lowering resistance.",
+  },
+{
+    question: "What is the unit of resistance?",
+    answer: "The ohm (Ω) is the SI unit. One ohm equals one volt per ampere. Common prefixes include kΩ (1000 Ω) and MΩ (1,000,000 Ω) for larger values.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

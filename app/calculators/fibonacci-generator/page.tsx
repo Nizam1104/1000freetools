@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -200,47 +202,33 @@ export default function FibonacciGenerator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the Fibonacci sequence formula?</h4>
-            <p className="text-sm text-muted-foreground">
-              F(n) = F(n-1) + F(n-2), with F(0) = 0 and F(1) = 1. Each number is the sum of the two before it. The sequence goes 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55...
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the 10th Fibonacci number?</h4>
-            <p className="text-sm text-muted-foreground">
-              The 10th Fibonacci number (F(9) if starting from F(0)) is 34. Counting from F(0)=0: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34. If you count from 1 as the first number, the 10th is 55.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is the Fibonacci sequence important?</h4>
-            <p className="text-sm text-muted-foreground">
-              It appears throughout nature, art, and mathematics. The ratio between consecutive Fibonacci numbers approaches the golden ratio (1.618), which describes aesthetically pleasing proportions. It's used in computer algorithms, financial analysis, and biological modeling.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can Fibonacci numbers be negative?</h4>
-            <p className="text-sm text-muted-foreground">
-              The standard sequence uses only non-negative integers. However, you can extend Fibonacci backwards using F(n-2) = F(n) - F(n-1). This gives F(-1) = 1, F(-2) = -1, F(-3) = 2, F(-4) = -3... alternating signs.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate Fibonacci numbers efficiently?</h4>
-            <p className="text-sm text-muted-foreground">
-              For small n, use the recursive formula. For large n, use Binet's closed-form formula or matrix exponentiation. The recursive approach is slow for large n because it recalculates the same values repeatedly. Dynamic programming or memoization solves this.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the Fibonacci sequence formula?",
+    answer: "F(n) = F(n-1) + F(n-2), with F(0) = 0 and F(1) = 1. Each number is the sum of the two before it. The sequence goes 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55...",
+  },
+{
+    question: "What is the 10th Fibonacci number?",
+    answer: "The 10th Fibonacci number (F(9) if starting from F(0)) is 34. Counting from F(0)=0: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34. If you count from 1 as the first number, the 10th is 55.",
+  },
+{
+    question: "Why is the Fibonacci sequence important?",
+    answer: "It appears throughout nature, art, and mathematics. The ratio between consecutive Fibonacci numbers approaches the golden ratio (1.618), which describes aesthetically pleasing proportions. It's used in computer algorithms, financial analysis, and biological modeling.",
+  },
+{
+    question: "Can Fibonacci numbers be negative?",
+    answer: "The standard sequence uses only non-negative integers. However, you can extend Fibonacci backwards using F(n-2) = F(n) - F(n-1). This gives F(-1) = 1, F(-2) = -1, F(-3) = 2, F(-4) = -3... alternating signs.",
+  },
+{
+    question: "How do I calculate Fibonacci numbers efficiently?",
+    answer: "For small n, use the recursive formula. For large n, use Binet's closed-form formula or matrix exponentiation. The recursive approach is slow for large n because it recalculates the same values repeatedly. Dynamic programming or memoization solves this.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

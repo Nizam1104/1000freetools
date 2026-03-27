@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PaintCoverageCalculator() {
   const [length, setLength] = useState<string>("");
@@ -246,33 +248,33 @@ export default function PaintCoverageCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How much paint do I need for a 4x5 meter room?</h4>
-              <p>A 4x5 meter room with 2.7 meter ceilings has about 48.6 m² of wall area. Subtract one door (2 m²) and one window (1.5 m²) for 45.1 m² paintable area. For two coats at 10 m²/L coverage, you need about 9 liters or 2.4 gallons of paint.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Is one coat of paint ever enough?</h4>
-              <p>One coat works when repainting the same color or very similar shades. For color changes, especially dark to light or vice versa, plan on two coats minimum. The first coat seals and provides base coverage; the second gives uniform color and sheen.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Does expensive paint cover better?</h4>
-              <p>Generally yes. Premium paints have higher pigment concentrations and better binders, giving better coverage and durability. A $60/gallon paint covering 400 sq ft/gal often costs less overall than a $30/gallon paint covering 250 sq ft/gal.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How do I calculate paint for multiple rooms?</h4>
-              <p>Calculate each room separately, then add the totals. If using the same color throughout, you can buy in larger quantities for discounts. Keep different colors separate in your calculations.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the difference between liters and gallons for paint?</h4>
-              <p>One gallon equals about 3.785 liters. In countries using the metric system, paint comes in 1L, 2.5L, 5L, and 10L containers. In the US, common sizes are quarts (0.95L), gallons (3.78L), and 5-gallon buckets (19L).</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much paint do I need for a 4x5 meter room?",
+    answer: "A 4x5 meter room with 2.7 meter ceilings has about 48.6 m² of wall area. Subtract one door (2 m²) and one window (1.5 m²) for 45.1 m² paintable area. For two coats at 10 m²/L coverage, you need about 9 liters or 2.4 gallons of paint.",
+  },
+{
+    question: "Is one coat of paint ever enough?",
+    answer: "One coat works when repainting the same color or very similar shades. For color changes, especially dark to light or vice versa, plan on two coats minimum. The first coat seals and provides base coverage; the second gives uniform color and sheen.",
+  },
+{
+    question: "Does expensive paint cover better?",
+    answer: "Generally yes. Premium paints have higher pigment concentrations and better binders, giving better coverage and durability. A $60/gallon paint covering 400 sq ft/gal often costs less overall than a $30/gallon paint covering 250 sq ft/gal.",
+  },
+{
+    question: "How do I calculate paint for multiple rooms?",
+    answer: "Calculate each room separately, then add the totals. If using the same color throughout, you can buy in larger quantities for discounts. Keep different colors separate in your calculations.",
+  },
+{
+    question: "What's the difference between liters and gallons for paint?",
+    answer: "One gallon equals about 3.785 liters. In countries using the metric system, paint comes in 1L, 2.5L, 5L, and 10L containers. In the US, common sizes are quarts (0.95L), gallons (3.78L), and 5-gallon buckets (19L).",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

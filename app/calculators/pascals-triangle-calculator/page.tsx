@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PascalsTriangleCalculator() {
   const [rows, setRows] = useState<string>("");
@@ -249,33 +251,33 @@ export default function PascalsTriangleCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is the formula for Pascal's triangle?</h4>
-              <p>Each entry equals the sum of the two entries above it: C(n,k) = C(n-1,k-1) + C(n-1,k). You can also calculate directly using combinations: C(n,k) = n! / (k! × (n-k)!), where n is the row number and k is the position in the row.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is row 0 at the top?</h4>
-              <p>Row numbering starts at 0 because it corresponds to (a+b)⁰ = 1. This convention matches the binomial theorem and combinatorics, where "n choose 0" equals 1 for any n. The top single 1 is row 0, the next row with two 1s is row 1, and so on.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the sum of row n in Pascal's triangle?</h4>
-              <p>The sum of row n equals 2ⁿ. Row 0 sums to 1 (2⁰). Row 1 sums to 2 (2¹). Row 5 sums to 32 (2⁵). This happens because the sum represents all possible subsets of an n-element set, which equals 2ⁿ.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How does Pascal's triangle relate to combinations?</h4>
-              <p>The kth entry in row n equals "n choose k" — written as C(n,k) or ₙCₖ. This counts how many ways you can choose k items from n items. For example, C(5,2) = 10, which is the third number in row 5.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Who invented Pascal's triangle?</h4>
-              <p>Blaise Pascal didn't invent it — he studied its properties in 1653. Chinese mathematician Jia Xian described it around 1050. Persian mathematician Omar Khayyam studied it in the 11th century. It appears in Indian mathematics even earlier. Different cultures called it by different names.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the formula for Pascal's triangle?",
+    answer: "Each entry equals the sum of the two entries above it: C(n,k) = C(n-1,k-1) + C(n-1,k). You can also calculate directly using combinations: C(n,k) = n! / (k! × (n-k)!), where n is the row number and k is the position in the row.",
+  },
+{
+    question: "Why is row 0 at the top?",
+    answer: "Row numbering starts at 0 because it corresponds to (a+b)⁰ = 1. This convention matches the binomial theorem and combinatorics, where \"n choose 0\" equals 1 for any n. The top single 1 is row 0, the next row with two 1s is row 1, and so on.",
+  },
+{
+    question: "What's the sum of row n in Pascal's triangle?",
+    answer: "The sum of row n equals 2ⁿ. Row 0 sums to 1 (2⁰). Row 1 sums to 2 (2¹). Row 5 sums to 32 (2⁵). This happens because the sum represents all possible subsets of an n-element set, which equals 2ⁿ.",
+  },
+{
+    question: "How does Pascal's triangle relate to combinations?",
+    answer: "The kth entry in row n equals \"n choose k\" — written as C(n,k) or ₙCₖ. This counts how many ways you can choose k items from n items. For example, C(5,2) = 10, which is the third number in row 5.",
+  },
+{
+    question: "Who invented Pascal's triangle?",
+    answer: "Blaise Pascal didn't invent it — he studied its properties in 1653. Chinese mathematician Jia Xian described it around 1050. Persian mathematician Omar Khayyam studied it in the 11th century. It appears in Indian mathematics even earlier. Different cultures called it by different names.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

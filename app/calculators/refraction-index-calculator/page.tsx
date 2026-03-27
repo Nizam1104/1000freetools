@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RefractionIndexCalculator() {
   const [speed, setSpeed] = useState<string>("");
@@ -206,52 +208,33 @@ export default function RefractionIndexCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does refractive index tell us?</h4>
-                <p>
-                  Refractive index shows how much light slows down in a material. It also determines
-                  how much light bends at the interface. Higher n means slower speed and more bending.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can refractive index be less than 1?</h4>
-                <p>
-                  Not for normal materials. Vacuum has n = 1, and all materials have n &gt; 1.
-                  Metamaterials can have negative refractive index, but this is a special case.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does diamond sparkle?</h4>
-                <p>
-                  Diamond has a high refractive index (2.42), causing significant light bending.
-                  Combined with its dispersion (splitting white light into colors), this creates
-                  the characteristic sparkle and fire.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does refractive index change with color?</h4>
-                <p>
-                  Yes. This is called dispersion. Blue light typically has a slightly higher
-                  refractive index than red light, which is why prisms split white light into
-                  a rainbow.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is critical angle?</h4>
-                <p>
-                  When light goes from high-n to low-n material, there is an angle where all light
-                  reflects back. This is total internal reflection, used in fiber optics.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does refractive index tell us?",
+    answer: "Refractive index shows how much light slows down in a material. It also determines how much light bends at the interface. Higher n means slower speed and more bending.",
+  },
+{
+    question: "Can refractive index be less than 1?",
+    answer: "Not for normal materials. Vacuum has n = 1, and all materials have n &gt; 1. Metamaterials can have negative refractive index, but this is a special case.",
+  },
+{
+    question: "Why does diamond sparkle?",
+    answer: "Diamond has a high refractive index (2.42), causing significant light bending. Combined with its dispersion (splitting white light into colors), this creates the characteristic sparkle and fire.",
+  },
+{
+    question: "Does refractive index change with color?",
+    answer: "Yes. This is called dispersion. Blue light typically has a slightly higher refractive index than red light, which is why prisms split white light into a rainbow.",
+  },
+{
+    question: "What is critical angle?",
+    answer: "When light goes from high-n to low-n material, there is an angle where all light reflects back. This is total internal reflection, used in fiber optics.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

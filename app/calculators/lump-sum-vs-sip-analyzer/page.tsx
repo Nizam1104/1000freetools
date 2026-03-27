@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function LumpSumVsSIPAnalyzerPage() {
   const [lumpSumAmount, setLumpSumAmount] = useState<string>("");
@@ -334,45 +336,33 @@ export default function LumpSumVsSIPAnalyzerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Which is better: lump sum or SIP?</h4>
-                  <p>
-                    Lump sum typically generates higher returns because money stays invested longer. However, SIP reduces the risk of investing everything at a market peak. If you have a large amount available and a long time horizon, lump sum wins statistically. If you're investing from salary or worried about timing, SIP provides peace of mind.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I do both lump sum and SIP?</h4>
-                  <p>
-                    Absolutely. Many investors use a hybrid approach: invest a windfall as lump sum while continuing SIP from regular income. You could also split a large amount — invest 50% as lump sum and spread the rest over 6-12 months through STP (Systematic Transfer Plan) from a liquid fund.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What return rate should I assume?</h4>
-                  <p>
-                    For equity mutual funds, 10-12% annually is reasonable over 10+ year periods. Large-cap funds may return 9-11%, while mid-cap and small-cap funds could return 12-15% with higher volatility. Debt funds typically return 6-8%. Always use conservative estimates for planning.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long should I continue my SIP?</h4>
-                  <p>
-                    Minimum 5 years for equity SIPs to ride out market cycles. Ideally 10+ years for significant wealth creation. There's no maximum — many investors continue SIPs throughout their earning years and only start withdrawals in retirement. The key is consistency, not timing.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What happens if I miss an SIP payment?</h4>
-                  <p>
-                    Missing one payment isn't catastrophic, but it breaks discipline. Most funds allow a 30-day grace period. If you miss consistently, the fund may cancel the SIP mandate. Set up auto-debit and maintain buffer in your bank account. If cash flow is tight, reduce the SIP amount rather than skipping payments.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Which is better: lump sum or SIP?",
+    answer: "Lump sum typically generates higher returns because money stays invested longer. However, SIP reduces the risk of investing everything at a market peak. If you have a large amount available and a long time horizon, lump sum wins statistically. If you're investing from salary or worried about timing, SIP provides peace of mind.",
+  },
+{
+    question: "Can I do both lump sum and SIP?",
+    answer: "Absolutely. Many investors use a hybrid approach: invest a windfall as lump sum while continuing SIP from regular income. You could also split a large amount — invest 50% as lump sum and spread the rest over 6-12 months through STP (Systematic Transfer Plan) from a liquid fund.",
+  },
+{
+    question: "What return rate should I assume?",
+    answer: "For equity mutual funds, 10-12% annually is reasonable over 10+ year periods. Large-cap funds may return 9-11%, while mid-cap and small-cap funds could return 12-15% with higher volatility. Debt funds typically return 6-8%. Always use conservative estimates for planning.",
+  },
+{
+    question: "How long should I continue my SIP?",
+    answer: "Minimum 5 years for equity SIPs to ride out market cycles. Ideally 10+ years for significant wealth creation. There's no maximum — many investors continue SIPs throughout their earning years and only start withdrawals in retirement. The key is consistency, not timing.",
+  },
+{
+    question: "What happens if I miss an SIP payment?",
+    answer: "Missing one payment isn't catastrophic, but it breaks discipline. Most funds allow a 30-day grace period. If you miss consistently, the fund may cancel the SIP mandate. Set up auto-debit and maintain buffer in your bank account. If cash flow is tight, reduce the SIP amount rather than skipping payments.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

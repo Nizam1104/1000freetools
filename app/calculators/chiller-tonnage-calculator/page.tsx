@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ChillerTonnageCalculator() {
   const [flowRate, setFlowRate] = useState<string>("");
@@ -248,45 +250,33 @@ export default function ChillerTonnageCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good Delta T for a chiller system?</h4>
-                <p>
-                  Most HVAC systems are designed for 10-12 F Delta T. Industrial processes may use 15-20 F Delta T. If your actual Delta T is much lower than design, you may have flow issues or oversized pumps. Higher than design Delta T can indicate fouled heat exchangers or low flow.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert tons to kilowatts?</h4>
-                <p>
-                  One ton of cooling equals 3.517 kilowatts. To convert tons to kW, multiply by 3.517. For example, a 50-ton chiller produces 175.9 kW of cooling. Note that this is cooling output, not electrical input. Actual power consumption depends on the chiller&apos;s efficiency (COP or kW/ton rating).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What size chiller do I need for my building?</h4>
-                <p>
-                  Building cooling load depends on square footage, occupancy, equipment heat, and climate. A rough estimate is 1 ton per 400-600 square feet for offices. For accurate sizing, have an HVAC engineer perform a load calculation using Manual N or similar methods.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why is my chiller short cycling?</h4>
-                <p>
-                  Short cycling happens when a chiller turns on and off frequently. Common causes include oversized equipment, low flow conditions, or faulty controls. Short cycling reduces efficiency and increases wear. Check that flow rates match design specifications and verify control setpoints.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How can I improve chiller efficiency?</h4>
-                <p>
-                  Keep heat exchanger tubes clean, maintain proper water treatment, and ensure adequate flow rates. Lower condenser water temperatures improve efficiency. Variable speed drives on pumps and fans save energy at part load. Regular maintenance prevents efficiency degradation over time.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good Delta T for a chiller system?",
+    answer: "Most HVAC systems are designed for 10-12 F Delta T. Industrial processes may use 15-20 F Delta T. If your actual Delta T is much lower than design, you may have flow issues or oversized pumps. Higher than design Delta T can indicate fouled heat exchangers or low flow.",
+  },
+{
+    question: "How do I convert tons to kilowatts?",
+    answer: "One ton of cooling equals 3.517 kilowatts. To convert tons to kW, multiply by 3.517. For example, a 50-ton chiller produces 175.9 kW of cooling. Note that this is cooling output, not electrical input. Actual power consumption depends on the chiller&apos;s efficiency (COP or kW/ton rating).",
+  },
+{
+    question: "What size chiller do I need for my building?",
+    answer: "Building cooling load depends on square footage, occupancy, equipment heat, and climate. A rough estimate is 1 ton per 400-600 square feet for offices. For accurate sizing, have an HVAC engineer perform a load calculation using Manual N or similar methods.",
+  },
+{
+    question: "Why is my chiller short cycling?",
+    answer: "Short cycling happens when a chiller turns on and off frequently. Common causes include oversized equipment, low flow conditions, or faulty controls. Short cycling reduces efficiency and increases wear. Check that flow rates match design specifications and verify control setpoints.",
+  },
+{
+    question: "How can I improve chiller efficiency?",
+    answer: "Keep heat exchanger tubes clean, maintain proper water treatment, and ensure adequate flow rates. Lower condenser water temperatures improve efficiency. Variable speed drives on pumps and fans save energy at part load. Regular maintenance prevents efficiency degradation over time.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

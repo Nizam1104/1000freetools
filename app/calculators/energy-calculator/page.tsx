@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -355,47 +357,33 @@ export default function EnergyCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the formula for kinetic energy?</h4>
-            <p className="text-sm text-muted-foreground">
-              KE = ½mv². Mass in kg, velocity in m/s, result in joules. The velocity is squared, so speed matters more than mass. A small object moving fast can have more energy than a large object moving slow.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate potential energy?</h4>
-            <p className="text-sm text-muted-foreground">
-              PE = mgh. Mass in kg, gravity is 9.81 m/s² on Earth, height in meters. A 1 kg object lifted 1 meter gains about 9.8 joules of potential energy.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between joules and calories?</h4>
-            <p className="text-sm text-muted-foreground">
-              Both measure energy. 1 calorie = 4.184 joules. Food "Calories" (capital C) are actually kilocalories - 1 Calorie = 1,000 calories = 4,184 joules. A 200 Calorie snack bar has 836,800 joules of chemical energy.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can energy be negative?</h4>
-            <p className="text-sm text-muted-foreground">
-              Kinetic energy is always positive - you can't have negative motion. Potential energy can be negative depending on your reference point. If ground level is zero, a basement has negative potential energy.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why does velocity get squared in kinetic energy?</h4>
-            <p className="text-sm text-muted-foreground">
-              It comes from the work-energy theorem. To accelerate something, you apply force over distance. The faster it's already going, the more distance it covers while you're accelerating it, so more work gets done. The math works out to v².
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the formula for kinetic energy?",
+    answer: "KE = ½mv². Mass in kg, velocity in m/s, result in joules. The velocity is squared, so speed matters more than mass. A small object moving fast can have more energy than a large object moving slow.",
+  },
+{
+    question: "How do I calculate potential energy?",
+    answer: "PE = mgh. Mass in kg, gravity is 9.81 m/s² on Earth, height in meters. A 1 kg object lifted 1 meter gains about 9.8 joules of potential energy.",
+  },
+{
+    question: "What's the difference between joules and calories?",
+    answer: "Both measure energy. 1 calorie = 4.184 joules. Food \"Calories\" (capital C) are actually kilocalories - 1 Calorie = 1,000 calories = 4,184 joules. A 200 Calorie snack bar has 836,800 joules of chemical energy.",
+  },
+{
+    question: "Can energy be negative?",
+    answer: "Kinetic energy is always positive - you can't have negative motion. Potential energy can be negative depending on your reference point. If ground level is zero, a basement has negative potential energy.",
+  },
+{
+    question: "Why does velocity get squared in kinetic energy?",
+    answer: "It comes from the work-energy theorem. To accelerate something, you apply force over distance. The faster it's already going, the more distance it covers while you're accelerating it, so more work gets done. The math works out to v².",
+  }
+  ]} />
+</section>
     </div>
   );
 }

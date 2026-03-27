@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function NumberToWordsConverter() {
   const [number, setNumber] = useState<string>("");
@@ -277,55 +279,33 @@ export default function NumberToWordsConverter() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do you write large numbers in words?</h4>
-                <p>
-                  Break the number into groups of three digits from right to left. Name each group
-                  (ones, thousands, millions, billions) and combine them. For example, 1,234,567 is
-                  "one million, two hundred thirty-four thousand, five hundred sixty-seven".
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Do you use "and" when writing numbers?</h4>
-                <p>
-                  In American English, "and" is usually reserved for decimal points (two and a half).
-                  British English commonly uses "and" after hundreds (one hundred and twenty-three).
-                  For checks, follow your bank's requirements or local convention.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the largest number this converter handles?</h4>
-                <p>
-                  This converter handles numbers up to 999,999,999,999 (just under one trillion).
-                  For larger numbers, the pattern continues with trillions, quadrillions, and so on,
-                  but these are rarely needed in everyday use.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do you write decimal numbers in words?</h4>
-                <p>
-                  Write the whole number part, then "and" or "point", then each decimal digit
-                  individually. For money, use dollars and cents: $12.34 is "twelve dollars and
-                  thirty-four cents" or "twelve and 34/100 dollars".
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why are number words important for checks?</h4>
-                <p>
-                  Writing amounts in words prevents fraud. Numbers can be altered easily (100 to 1000),
-                  but words are harder to modify without detection. Banks verify both match before
-                  processing. Always write words close to the left edge to prevent additions.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you write large numbers in words?",
+    answer: "Break the number into groups of three digits from right to left. Name each group (ones, thousands, millions, billions) and combine them. For example, 1,234,567 is \"one million, two hundred thirty-four thousand, five hundred sixty-seven\".",
+  },
+{
+    question: "Do you use \"and\" when writing numbers?",
+    answer: "In American English, \"and\" is usually reserved for decimal points (two and a half). British English commonly uses \"and\" after hundreds (one hundred and twenty-three). For checks, follow your bank's requirements or local convention.",
+  },
+{
+    question: "What is the largest number this converter handles?",
+    answer: "This converter handles numbers up to 999,999,999,999 (just under one trillion). For larger numbers, the pattern continues with trillions, quadrillions, and so on, but these are rarely needed in everyday use.",
+  },
+{
+    question: "How do you write decimal numbers in words?",
+    answer: "Write the whole number part, then \"and\" or \"point\", then each decimal digit individually. For money, use dollars and cents: $12.34 is \"twelve dollars and thirty-four cents\" or \"twelve and 34/100 dollars\".",
+  },
+{
+    question: "Why are number words important for checks?",
+    answer: "Writing amounts in words prevents fraud. Numbers can be altered easily (100 to 1000), but words are harder to modify without detection. Banks verify both match before processing. Always write words close to the left edge to prevent additions.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DbCalculator() {
   const [mode, setMode] = useState<"dB_to_power" | "dB_to_voltage" | "power_to_dB" | "voltage_to_dB" | "dBm">("dB_to_power");
@@ -320,45 +322,33 @@ export default function DbCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why is there a difference between power and voltage dB?</h4>
-                <p>
-                  Power is proportional to voltage squared (P = V²/R). When you double voltage, power quadruples. So 6 dB represents 2x voltage but 4x power. The formulas account for this: 10×log for power, 20×log for voltage.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does 0 dB mean?</h4>
-                <p>
-                  0 dB means the ratio equals 1 — no change. Output equals input. It doesn&apos;t mean &quot;no signal&quot; — it means the signal level is unchanged from the reference point.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert dBm to watts?</h4>
-                <p>
-                  Watts = 10^((dBm - 30) / 10). Or remember: 30 dBm = 1 W, 0 dBm = 1 mW, -30 dBm = 1 μW. Each 10 dB change multiplies power by 10.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can decibels be negative?</h4>
-                <p>
-                  Yes. Negative dB indicates a ratio less than 1 — attenuation or loss. -3 dB means half the power. -20 dB means 1/100th the power. Negative values are common for losses and filter rejection.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What&apos;s the difference between dB and dBA?</h4>
-                <p>
-                  dB is a raw ratio. dBA applies a frequency weighting that mimics human hearing sensitivity. dBA is used for noise measurements. A-weighting reduces low and very high frequencies where human ears are less sensitive.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is there a difference between power and voltage dB?",
+    answer: "Power is proportional to voltage squared (P = V²/R). When you double voltage, power quadruples. So 6 dB represents 2x voltage but 4x power. The formulas account for this: 10×log for power, 20×log for voltage.",
+  },
+{
+    question: "What does 0 dB mean?",
+    answer: "0 dB means the ratio equals 1 — no change. Output equals input. It doesn&apos;t mean &quot;no signal&quot; — it means the signal level is unchanged from the reference point.",
+  },
+{
+    question: "How do I convert dBm to watts?",
+    answer: "Watts = 10^((dBm - 30) / 10). Or remember: 30 dBm = 1 W, 0 dBm = 1 mW, -30 dBm = 1 μW. Each 10 dB change multiplies power by 10.",
+  },
+{
+    question: "Can decibels be negative?",
+    answer: "Yes. Negative dB indicates a ratio less than 1 — attenuation or loss. -3 dB means half the power. -20 dB means 1/100th the power. Negative values are common for losses and filter rejection.",
+  },
+{
+    question: "What&apos;s the difference between dB and dBA?",
+    answer: "dB is a raw ratio. dBA applies a frequency weighting that mimics human hearing sensitivity. dBA is used for noise measurements. A-weighting reduces low and very high frequencies where human ears are less sensitive.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface ProductivityResult {
   currentStreak: number;
@@ -368,45 +370,33 @@ export default function ProductivityStreakCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long does it take to form a habit?</h4>
-                  <p>
-                    Research by Phillippa Lally found it takes an average of 66 days for a behavior to become automatic. The popular 21-day myth comes from Maxwell Maltz's observations, but actual habit formation ranges from 18 to 254 days depending on the person and behavior.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What happens if I miss a day?</h4>
-                  <p>
-                    Missing one day doesn't reset your progress significantly. The Lally study found that occasional misses didn't impact long-term habit formation. What matters is getting back on track quickly — don't let one miss become two.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I track multiple habits?</h4>
-                  <p>
-                    Start with one keystone habit first. Once that's solid (66+ days), add another. Trying to change everything at once usually leads to burnout. Stack new habits onto existing ones for better success rates.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is consistency rate more important than streak length?</h4>
-                  <p>
-                    Yes. A 90% consistency rate over 100 days (90 completions) is better than a perfect 30-day streak that ended. Consistency rate shows your actual commitment level and predicts long-term success better than current streak.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the best time to do a habit?</h4>
-                  <p>
-                    The best time is whenever you'll actually do it consistently. Morning habits often work well because willpower is highest early. But night owls may prefer evening routines. Attach habits to existing triggers like brushing teeth or making coffee.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How long does it take to form a habit?",
+    answer: "Research by Phillippa Lally found it takes an average of 66 days for a behavior to become automatic. The popular 21-day myth comes from Maxwell Maltz's observations, but actual habit formation ranges from 18 to 254 days depending on the person and behavior.",
+  },
+{
+    question: "What happens if I miss a day?",
+    answer: "Missing one day doesn't reset your progress significantly. The Lally study found that occasional misses didn't impact long-term habit formation. What matters is getting back on track quickly — don't let one miss become two.",
+  },
+{
+    question: "Should I track multiple habits?",
+    answer: "Start with one keystone habit first. Once that's solid (66+ days), add another. Trying to change everything at once usually leads to burnout. Stack new habits onto existing ones for better success rates.",
+  },
+{
+    question: "Is consistency rate more important than streak length?",
+    answer: "Yes. A 90% consistency rate over 100 days (90 completions) is better than a perfect 30-day streak that ended. Consistency rate shows your actual commitment level and predicts long-term success better than current streak.",
+  },
+{
+    question: "What's the best time to do a habit?",
+    answer: "The best time is whenever you'll actually do it consistently. Morning habits often work well because willpower is highest early. But night owls may prefer evening routines. Attach habits to existing triggers like brushing teeth or making coffee.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

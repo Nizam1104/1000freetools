@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Timer, Footprints } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface SplitResult {
   pacePerKm: string;
@@ -274,33 +276,33 @@ export default function RunningSplitCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is a good running pace?</h3>
-                <p className="text-sm text-muted-foreground">A good pace depends on your fitness level and distance. For recreational runners, 5:30-7:00 min/km (9-11 min/mi) is common for easy runs. Race pace is typically faster.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How do I calculate my pace?</h3>
-                <p className="text-sm text-muted-foreground">Divide your run time by distance. For example, 30 minutes for 5km = 6 min/km pace. This calculator does it automatically with unit conversions.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What pace should I train at?</h3>
-                <p className="text-sm text-muted-foreground">Most training should be at easy pace (1-2 min/km slower than race pace). Add some tempo runs at threshold pace and intervals faster than race pace.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How accurate are race projections?</h3>
-                <p className="text-sm text-muted-foreground">Projections assume similar conditions and proper training. Longer races may be slower due to endurance limits. Use as a guide, not a guarantee.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Should I negative split my race?</h3>
-                <p className="text-sm text-muted-foreground">Yes, starting slightly slower and finishing faster is the optimal strategy for most distances. It prevents early fatigue and strong finishes feel better.</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good running pace?",
+    answer: "A good pace depends on your fitness level and distance. For recreational runners, 5:30-7:00 min/km (9-11 min/mi) is common for easy runs. Race pace is typically faster.",
+  },
+{
+    question: "How do I calculate my pace?",
+    answer: "Divide your run time by distance. For example, 30 minutes for 5km = 6 min/km pace. This calculator does it automatically with unit conversions.",
+  },
+{
+    question: "What pace should I train at?",
+    answer: "Most training should be at easy pace (1-2 min/km slower than race pace). Add some tempo runs at threshold pace and intervals faster than race pace.",
+  },
+{
+    question: "How accurate are race projections?",
+    answer: "Projections assume similar conditions and proper training. Longer races may be slower due to endurance limits. Use as a guide, not a guarantee.",
+  },
+{
+    question: "Should I negative split my race?",
+    answer: "Yes, starting slightly slower and finishing faster is the optimal strategy for most distances. It prevents early fatigue and strong finishes feel better.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

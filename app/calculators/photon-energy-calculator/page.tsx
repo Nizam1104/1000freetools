@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PhotonEnergyCalculator() {
   const [mode, setMode] = useState<"wavelength" | "frequency">("wavelength");
@@ -248,33 +250,33 @@ export default function PhotonEnergyCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is the energy of a visible light photon?</h4>
-              <p>Visible light photons range from about 1.7 eV (red, 740nm) to 3.3 eV (violet, 380nm). Green light at 550nm has approximately 2.25 eV of energy.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How do I convert wavelength to frequency?</h4>
-              <p>Use f = c/λ, where c is the speed of light (3 × 10⁸ m/s) and λ is wavelength in meters. A 500nm photon has frequency f = (3 × 10⁸) / (500 × 10⁻⁹) = 6 × 10¹⁴ Hz.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why does blue light have more energy than red light?</h4>
-              <p>Blue light has shorter wavelength and higher frequency than red light. Since energy is proportional to frequency (E = hf), higher frequency means higher energy per photon.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is Planck's constant?</h4>
-              <p>Planck's constant (h) is a fundamental physical constant: 6.62607015 × 10⁻³⁴ J·s. It relates photon energy to frequency and appears throughout quantum mechanics.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How many Joules is 1 eV?</h4>
-              <p>One electron-volt equals 1.602176634 × 10⁻¹⁹ Joules. This is the energy gained by an electron accelerated through a potential difference of 1 volt.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the energy of a visible light photon?",
+    answer: "Visible light photons range from about 1.7 eV (red, 740nm) to 3.3 eV (violet, 380nm). Green light at 550nm has approximately 2.25 eV of energy.",
+  },
+{
+    question: "How do I convert wavelength to frequency?",
+    answer: "Use f = c/λ, where c is the speed of light (3 × 10⁸ m/s) and λ is wavelength in meters. A 500nm photon has frequency f = (3 × 10⁸) / (500 × 10⁻⁹) = 6 × 10¹⁴ Hz.",
+  },
+{
+    question: "Why does blue light have more energy than red light?",
+    answer: "Blue light has shorter wavelength and higher frequency than red light. Since energy is proportional to frequency (E = hf), higher frequency means higher energy per photon.",
+  },
+{
+    question: "What is Planck's constant?",
+    answer: "Planck's constant (h) is a fundamental physical constant: 6.62607015 × 10⁻³⁴ J·s. It relates photon energy to frequency and appears throughout quantum mechanics.",
+  },
+{
+    question: "How many Joules is 1 eV?",
+    answer: "One electron-volt equals 1.602176634 × 10⁻¹⁹ Joules. This is the energy gained by an electron accelerated through a potential difference of 1 volt.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

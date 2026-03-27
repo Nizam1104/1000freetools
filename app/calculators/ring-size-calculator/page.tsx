@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -394,45 +396,33 @@ export default function RingSizeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if I&apos;m between sizes?</h4>
-                  <p>
-                    Size up rather than down. It&apos;s easier to add sizing beads or have a ring resized smaller than to add material. A slightly loose ring is more comfortable than one that&apos;s too tight.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate is this calculator?</h4>
-                  <p>
-                    The calculator is as accurate as your measurement. Paper strip measurements are typically within half a size. For expensive rings, visit a jeweler for professional sizing.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do ring sizes change over time?</h4>
-                  <p>
-                    Yes. Weight changes, pregnancy, arthritis, and aging can all affect finger size. Re-measure before buying important rings if it&apos;s been more than a year since your last sizing.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I use an existing ring to find my size?</h4>
-                  <p>
-                    Yes. Measure the inside diameter of a ring that fits the intended finger well. Use the diameter measurement option in this calculator for the most accurate result.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why do different jewelers give different sizes?</h4>
-                  <p>
-                    Ring sizing isn&apos;t perfectly standardized. Some jewelers use slightly different mandrels or measurement methods. Always ask which sizing system they use and get sized by the same jeweler who&apos;ll make your ring.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What if I&apos;m between sizes?",
+    answer: "Size up rather than down. It&apos;s easier to add sizing beads or have a ring resized smaller than to add material. A slightly loose ring is more comfortable than one that&apos;s too tight.",
+  },
+{
+    question: "How accurate is this calculator?",
+    answer: "The calculator is as accurate as your measurement. Paper strip measurements are typically within half a size. For expensive rings, visit a jeweler for professional sizing.",
+  },
+{
+    question: "Do ring sizes change over time?",
+    answer: "Yes. Weight changes, pregnancy, arthritis, and aging can all affect finger size. Re-measure before buying important rings if it&apos;s been more than a year since your last sizing.",
+  },
+{
+    question: "Can I use an existing ring to find my size?",
+    answer: "Yes. Measure the inside diameter of a ring that fits the intended finger well. Use the diameter measurement option in this calculator for the most accurate result.",
+  },
+{
+    question: "Why do different jewelers give different sizes?",
+    answer: "Ring sizing isn&apos;t perfectly standardized. Some jewelers use slightly different mandrels or measurement methods. Always ask which sizing system they use and get sized by the same jeweler who&apos;ll make your ring.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BondDurationCalculatorPage() {
   const [faceValue, setFaceValue] = useState<string>("");
@@ -353,45 +355,33 @@ export default function BondDurationCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good duration for a bond?</h4>
-                  <p>
-                    There is no single "good" duration — it depends on your goals and rate outlook. Short duration (1-3 years) suits conservative investors or those expecting rising rates. Long duration (7+ years) suits those seeking higher yields or expecting falling rates. Match duration to when you'll need the money.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is modified duration lower than Macaulay duration?</h4>
-                  <p>
-                    Modified Duration equals Macaulay Duration divided by (1 + yield/frequency). This adjustment accounts for the fact that bond prices and yields move inversely. The higher the yield, the bigger the gap between the two duration measures.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does coupon rate affect duration?</h4>
-                  <p>
-                    Higher coupon bonds have lower duration. You receive more cash earlier through coupon payments, reducing the weighted average time to receive all cash flows. A 10-year bond with a 10% coupon has much lower duration than a 10-year bond with a 2% coupon.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can duration be negative?</h4>
-                  <p>
-                    For standard bonds, duration is always positive. However, certain complex instruments like inverse floaters or some mortgage-backed securities can have negative duration — meaning they gain value when rates rise and lose value when rates fall.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is duration the same as maturity?</h4>
-                  <p>
-                    No. Maturity is when the bond expires. Duration is the weighted average time to receive all cash flows. For zero-coupon bonds, duration equals maturity. For coupon bonds, duration is always less than maturity — often significantly so for high-coupon bonds.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good duration for a bond?",
+    answer: "There is no single \"good\" duration — it depends on your goals and rate outlook. Short duration (1-3 years) suits conservative investors or those expecting rising rates. Long duration (7+ years) suits those seeking higher yields or expecting falling rates. Match duration to when you'll need the money.",
+  },
+{
+    question: "Why is modified duration lower than Macaulay duration?",
+    answer: "Modified Duration equals Macaulay Duration divided by (1 + yield/frequency). This adjustment accounts for the fact that bond prices and yields move inversely. The higher the yield, the bigger the gap between the two duration measures.",
+  },
+{
+    question: "How does coupon rate affect duration?",
+    answer: "Higher coupon bonds have lower duration. You receive more cash earlier through coupon payments, reducing the weighted average time to receive all cash flows. A 10-year bond with a 10% coupon has much lower duration than a 10-year bond with a 2% coupon.",
+  },
+{
+    question: "Can duration be negative?",
+    answer: "For standard bonds, duration is always positive. However, certain complex instruments like inverse floaters or some mortgage-backed securities can have negative duration — meaning they gain value when rates rise and lose value when rates fall.",
+  },
+{
+    question: "Is duration the same as maturity?",
+    answer: "No. Maturity is when the bond expires. Duration is the weighted average time to receive all cash flows. For zero-coupon bonds, duration equals maturity. For coupon bonds, duration is always less than maturity — often significantly so for high-coupon bonds.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

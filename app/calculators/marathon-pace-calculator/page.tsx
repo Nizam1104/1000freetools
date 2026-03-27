@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -452,45 +454,33 @@ export default function MarathonPaceCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's a good marathon time for a beginner?</h4>
-                  <p>
-                    First-time marathoners typically finish between 4:30 and 5:30. Men average around 4:30, women around 5:00. Your personal "good" time depends on your age, fitness background, and training. Focus on finishing healthy rather than hitting a specific time for your first marathon.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate do I need to be with my pace?</h4>
-                  <p>
-                    Aim to stay within 5-10 seconds per km of target pace. Small variations average out over the distance. The bigger risk is going out 20-30 seconds too fast early, which can cost several minutes by the finish. Err on the side of starting slightly slow.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I run by feel or by watch?</h4>
-                  <p>
-                    Use both. Your watch provides objective data, but perceived effort matters more when conditions change. If you're working much harder than expected to hit target pace on a hot day, it's okay to adjust. Experience teaches you to correlate pace with effort.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I convert my 10K or half marathon time to a marathon prediction?</h4>
-                  <p>
-                    Common formulas include multiplying your half marathon time by 2.1-2.2, or using the Riegel formula: T2 = T1 × (D2/D1)^1.06. For example, a 1:45 half marathon predicts roughly 3:40-3:45 for the marathon. These are estimates — actual performance depends on your endurance training.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if I miss my target pace during the race?</h4>
-                  <p>
-                    If you're behind pace at the halfway point but feeling strong, gradually increase effort to close the gap. If you're struggling, adjust your goal rather than pushing into dangerous territory. Finishing strong at a revised time feels better than blowing up and walking the last 10K.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What's a good marathon time for a beginner?",
+    answer: "First-time marathoners typically finish between 4:30 and 5:30. Men average around 4:30, women around 5:00. Your personal \"good\" time depends on your age, fitness background, and training. Focus on finishing healthy rather than hitting a specific time for your first marathon.",
+  },
+{
+    question: "How accurate do I need to be with my pace?",
+    answer: "Aim to stay within 5-10 seconds per km of target pace. Small variations average out over the distance. The bigger risk is going out 20-30 seconds too fast early, which can cost several minutes by the finish. Err on the side of starting slightly slow.",
+  },
+{
+    question: "Should I run by feel or by watch?",
+    answer: "Use both. Your watch provides objective data, but perceived effort matters more when conditions change. If you're working much harder than expected to hit target pace on a hot day, it's okay to adjust. Experience teaches you to correlate pace with effort.",
+  },
+{
+    question: "How do I convert my 10K or half marathon time to a marathon prediction?",
+    answer: "Common formulas include multiplying your half marathon time by 2.1-2.2, or using the Riegel formula: T2 = T1 × (D2/D1)^1.06. For example, a 1:45 half marathon predicts roughly 3:40-3:45 for the marathon. These are estimates — actual performance depends on your endurance training.",
+  },
+{
+    question: "What if I miss my target pace during the race?",
+    answer: "If you're behind pace at the halfway point but feeling strong, gradually increase effort to close the gap. If you're struggling, adjust your goal rather than pushing into dangerous territory. Finishing strong at a revised time feels better than blowing up and walking the last 10K.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

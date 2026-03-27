@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FourPercentRuleRetirementCalculatorPage() {
   const [currentSavings, setCurrentSavings] = useState<string>("");
@@ -395,43 +397,33 @@ export default function FourPercentRuleRetirementCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is the 4% rule still valid in 2024?</h4>
-            <p className="text-xs text-muted-foreground">
-              It's a reasonable starting point, but not a guarantee. The original study's assumptions don't match today's low-yield environment. Many planners now use 3.5% as a more conservative baseline. If you have flexibility to reduce spending in bad market years, 4% is probably fine.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does the 4% rule include Social Security?</h4>
-            <p className="text-xs text-muted-foreground">
-              No – the 4% rule applies to your investment portfolio. Social Security, pensions, and rental income are separate. If you'll get $2,000/month from Social Security, you can subtract that from your needed income and calculate a smaller required portfolio.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What if I retire early (FIRE)?</h4>
-            <p className="text-xs text-muted-foreground">
-              Early retirees face 50+ year time horizons, not 30 years. Most FIRE advocates use 3-3.5% withdrawal rates. The "4% rule" becomes the "3.25% rule" for 50-year retirements. Also consider that early retirees often have flexibility to work part-time if needed.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I adjust for taxes?</h4>
-            <p className="text-xs text-muted-foreground">
-              Absolutely. The 4% rule gives you pre-tax income. If you need $4,000/month after taxes and you're in a 20% tax bracket, you actually need $5,000/month pre-tax – which requires a $1.5 million portfolio, not $1.2 million. Roth accounts change this calculation.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What asset allocation works best with the 4% rule?</h4>
-            <p className="text-xs text-muted-foreground">
-              Bengen's original study used 50-75% stocks. Most subsequent research suggests 60% stocks / 40% bonds is a reasonable baseline. More stocks = higher returns but more volatility. Less stocks = smoother ride but potentially lower returns. Target-date funds typically handle this automatically.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is the 4% rule still valid in 2024?",
+    answer: "It's a reasonable starting point, but not a guarantee. The original study's assumptions don't match today's low-yield environment. Many planners now use 3.5% as a more conservative baseline. If you have flexibility to reduce spending in bad market years, 4% is probably fine.",
+  },
+{
+    question: "Does the 4% rule include Social Security?",
+    answer: "No – the 4% rule applies to your investment portfolio. Social Security, pensions, and rental income are separate. If you'll get $2,000/month from Social Security, you can subtract that from your needed income and calculate a smaller required portfolio.",
+  },
+{
+    question: "What if I retire early (FIRE)?",
+    answer: "Early retirees face 50+ year time horizons, not 30 years. Most FIRE advocates use 3-3.5% withdrawal rates. The \"4% rule\" becomes the \"3.25% rule\" for 50-year retirements. Also consider that early retirees often have flexibility to work part-time if needed.",
+  },
+{
+    question: "Should I adjust for taxes?",
+    answer: "Absolutely. The 4% rule gives you pre-tax income. If you need $4,000/month after taxes and you're in a 20% tax bracket, you actually need $5,000/month pre-tax – which requires a $1.5 million portfolio, not $1.2 million. Roth accounts change this calculation.",
+  },
+{
+    question: "What asset allocation works best with the 4% rule?",
+    answer: "Bengen's original study used 50-75% stocks. Most subsequent research suggests 60% stocks / 40% bonds is a reasonable baseline. More stocks = higher returns but more volatility. Less stocks = smoother ride but potentially lower returns. Target-date funds typically handle this automatically.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

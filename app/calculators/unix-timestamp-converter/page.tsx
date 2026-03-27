@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Calendar, Clock } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface UnixResult {
   timestamp: number;
@@ -247,33 +249,33 @@ export default function UnixTimestampConverterPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is Unix timestamp?</h3>
-                <p className="text-sm text-muted-foreground">Unix timestamp is the number of seconds (or milliseconds) since January 1, 1970 at 00:00:00 UTC. It's a standard way to represent points in time in computing.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Why does Unix time start at 1970?</h3>
-                <p className="text-sm text-muted-foreground">January 1, 1970 was chosen as the Unix Epoch because it was a convenient recent date when Unix was developed. It's the beginning of "computer time."</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is the Year 2038 problem?</h3>
-                <p className="text-sm text-muted-foreground">32-bit systems store Unix time as a signed 32-bit integer, which overflows on January 19, 2038. Systems must migrate to 64-bit time before then.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Does Unix time include leap seconds?</h3>
-                <p className="text-sm text-muted-foreground">No, Unix time ignores leap seconds. Each day is exactly 86400 seconds in Unix time, even when leap seconds are added to UTC.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How do I get current Unix time?</h3>
-                <p className="text-sm text-muted-foreground">Click "Use Current Time" above, or use: JavaScript: Date.now()/1000, Python: time.time(), PHP: time(), Linux: date +%s</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is Unix timestamp?",
+    answer: "Unix timestamp is the number of seconds (or milliseconds) since January 1, 1970 at 00:00:00 UTC. It's a standard way to represent points in time in computing.",
+  },
+{
+    question: "Why does Unix time start at 1970?",
+    answer: "January 1, 1970 was chosen as the Unix Epoch because it was a convenient recent date when Unix was developed. It's the beginning of \"computer time.\"",
+  },
+{
+    question: "What is the Year 2038 problem?",
+    answer: "32-bit systems store Unix time as a signed 32-bit integer, which overflows on January 19, 2038. Systems must migrate to 64-bit time before then.",
+  },
+{
+    question: "Does Unix time include leap seconds?",
+    answer: "No, Unix time ignores leap seconds. Each day is exactly 86400 seconds in Unix time, even when leap seconds are added to UTC.",
+  },
+{
+    question: "How do I get current Unix time?",
+    answer: "Click \"Use Current Time\" above, or use: JavaScript: Date.now()/1000, Python: time.time(), PHP: time(), Linux: date +%s",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

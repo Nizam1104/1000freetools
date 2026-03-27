@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Activity, Shield } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface WBCResult {
   wbcCount: number;
@@ -217,33 +219,33 @@ export default function WbcCountCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is a normal WBC count?</h3>
-                <p className="text-sm text-muted-foreground">Normal WBC count is 4,000-11,000 cells per microliter of blood. Values vary slightly by lab and individual factors like age and pregnancy.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What does high WBC count mean?</h3>
-                <p className="text-sm text-muted-foreground">High WBC (leukocytosis) usually indicates infection, inflammation, or stress. It can also occur with certain medications, smoking, or blood disorders.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What does low WBC count mean?</h3>
-                <p className="text-sm text-muted-foreground">Low WBC (leukopenia) can result from viral infections, autoimmune disorders, bone marrow problems, chemotherapy, or certain medications.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How is WBC count performed?</h3>
-                <p className="text-sm text-muted-foreground">Blood is diluted with Turk's solution (which lyses RBCs), loaded into a hemocytometer, and WBCs are counted in the 4 corner squares under a microscope.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is the WBC count formula?</h3>
-                <p className="text-sm text-muted-foreground">WBC/μL = (Cells counted × Dilution factor) / (Number of squares × Volume per square). For standard count: (Cells × 20) / (4 × 0.1).</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a normal WBC count?",
+    answer: "Normal WBC count is 4,000-11,000 cells per microliter of blood. Values vary slightly by lab and individual factors like age and pregnancy.",
+  },
+{
+    question: "What does high WBC count mean?",
+    answer: "High WBC (leukocytosis) usually indicates infection, inflammation, or stress. It can also occur with certain medications, smoking, or blood disorders.",
+  },
+{
+    question: "What does low WBC count mean?",
+    answer: "Low WBC (leukopenia) can result from viral infections, autoimmune disorders, bone marrow problems, chemotherapy, or certain medications.",
+  },
+{
+    question: "How is WBC count performed?",
+    answer: "Blood is diluted with Turk's solution (which lyses RBCs), loaded into a hemocytometer, and WBCs are counted in the 4 corner squares under a microscope.",
+  },
+{
+    question: "What is the WBC count formula?",
+    answer: "WBC/μL = (Cells counted × Dilution factor) / (Number of squares × Volume per square). For standard count: (Cells × 20) / (4 × 0.1).",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

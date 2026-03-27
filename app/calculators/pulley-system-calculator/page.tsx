@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -188,43 +190,33 @@ export default function PulleySystemCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you calculate pulley mechanical advantage?</h4>
-            <p className="text-xs text-muted-foreground">
-              Count the number of rope segments supporting the moving load. Each segment carries an equal portion of the weight. If 4 rope segments support the load, your mechanical advantage is 4:1, meaning you need only 1/4 of the force to lift it.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a block and tackle pulley system?</h4>
-            <p className="text-xs text-muted-foreground">
-              A block and tackle combines multiple fixed and movable pulleys. The "block" is the housing containing pulleys, and "tackle" refers to the rope. This arrangement multiplies force, allowing heavy loads to be lifted with minimal effort.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does a pulley system reduce the work needed?</h4>
-            <p className="text-xs text-muted-foreground">
-              No – pulleys don't reduce total work (force × distance). They trade force for distance. You pull less force but pull more rope. Energy is conserved; you're just spreading the effort over a longer distance.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the efficiency of a pulley system?</h4>
-            <p className="text-xs text-muted-foreground">
-              Real pulley systems lose 5-15% efficiency per pulley due to friction. A 4-pulley system with 90% efficiency per pulley has about 66% overall efficiency. Use ball-bearing pulleys and proper lubrication to minimize losses.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How much rope do I need for a pulley system?</h4>
-            <p className="text-xs text-muted-foreground">
-              Multiply the lift height by the mechanical advantage, then add extra for knots and anchoring. For a 3-meter lift with a 4:1 system, you need at least 12 meters of rope, plus 2-3 meters for safety and attachment points.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you calculate pulley mechanical advantage?",
+    answer: "Count the number of rope segments supporting the moving load. Each segment carries an equal portion of the weight. If 4 rope segments support the load, your mechanical advantage is 4:1, meaning you need only 1/4 of the force to lift it.",
+  },
+{
+    question: "What is a block and tackle pulley system?",
+    answer: "A block and tackle combines multiple fixed and movable pulleys. The \"block\" is the housing containing pulleys, and \"tackle\" refers to the rope. This arrangement multiplies force, allowing heavy loads to be lifted with minimal effort.",
+  },
+{
+    question: "Does a pulley system reduce the work needed?",
+    answer: "No – pulleys don't reduce total work (force × distance). They trade force for distance. You pull less force but pull more rope. Energy is conserved; you're just spreading the effort over a longer distance.",
+  },
+{
+    question: "What is the efficiency of a pulley system?",
+    answer: "Real pulley systems lose 5-15% efficiency per pulley due to friction. A 4-pulley system with 90% efficiency per pulley has about 66% overall efficiency. Use ball-bearing pulleys and proper lubrication to minimize losses.",
+  },
+{
+    question: "How much rope do I need for a pulley system?",
+    answer: "Multiply the lift height by the mechanical advantage, then add extra for knots and anchoring. For a 3-meter lift with a 4:1 system, you need at least 12 meters of rope, plus 2-3 meters for safety and attachment points.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

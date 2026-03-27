@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function CompoundInterestCalculatorPage() {
   const [principal, setPrincipal] = useState<string>("");
@@ -401,43 +403,33 @@ export default function CompoundInterestCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How is compound interest calculated?</h4>
-            <p className="text-xs text-muted-foreground">
-              The formula is A = P(1 + r/n)^(nt), where P is principal, r is annual rate (as decimal), n is compounding frequency per year, and t is years. For $10,000 at 5% compounded monthly for 10 years: A = 10000(1 + 0.05/12)^(12×10) = $16,470.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does compound interest work against you?</h4>
-            <p className="text-xs text-muted-foreground">
-              Absolutely. Credit cards compound daily, typically at 20-30% APR. That $5,000 balance at 24% compounded daily becomes $6,300 in just one year if you don't pay it down. Compound interest builds wealth when you're earning it, destroys wealth when you're paying it.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between APY and APR?</h4>
-            <p className="text-xs text-muted-foreground">
-              APR is the simple annual rate. APY (Annual Percentage Yield) includes compounding. A 5% APR with monthly compounding equals 5.12% APY. Banks advertise APY for savings accounts (looks higher) and APR for loans (looks lower). Always compare APY to APY.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is compound interest better than simple interest?</h4>
-            <p className="text-xs text-muted-foreground">
-              For investors, yes – compound interest earns more over time. For borrowers, simple interest is cheaper. Most savings accounts and investments use compound interest. Most personal loans use simple interest. Mortgages and credit cards use compound interest.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How can I maximize compound interest?</h4>
-            <p className="text-xs text-muted-foreground">
-              Three levers: start early (time is the biggest factor), contribute consistently (more principal = more compounding), and seek higher rates (within your risk tolerance). A 25-year-old investing $300/month at 7% retires with $525,000. Waiting until 35 cuts that to $245,000.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How is compound interest calculated?",
+    answer: "The formula is A = P(1 + r/n)^(nt), where P is principal, r is annual rate (as decimal), n is compounding frequency per year, and t is years. For $10,000 at 5% compounded monthly for 10 years: A = 10000(1 + 0.05/12)^(12×10) = $16,470.",
+  },
+{
+    question: "Does compound interest work against you?",
+    answer: "Absolutely. Credit cards compound daily, typically at 20-30% APR. That $5,000 balance at 24% compounded daily becomes $6,300 in just one year if you don't pay it down. Compound interest builds wealth when you're earning it, destroys wealth when you're paying it.",
+  },
+{
+    question: "What's the difference between APY and APR?",
+    answer: "APR is the simple annual rate. APY (Annual Percentage Yield) includes compounding. A 5% APR with monthly compounding equals 5.12% APY. Banks advertise APY for savings accounts (looks higher) and APR for loans (looks lower). Always compare APY to APY.",
+  },
+{
+    question: "Is compound interest better than simple interest?",
+    answer: "For investors, yes – compound interest earns more over time. For borrowers, simple interest is cheaper. Most savings accounts and investments use compound interest. Most personal loans use simple interest. Mortgages and credit cards use compound interest.",
+  },
+{
+    question: "How can I maximize compound interest?",
+    answer: "Three levers: start early (time is the biggest factor), contribute consistently (more principal = more compounding), and seek higher rates (within your risk tolerance). A 25-year-old investing $300/month at 7% retires with $525,000. Waiting until 35 cuts that to $245,000.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

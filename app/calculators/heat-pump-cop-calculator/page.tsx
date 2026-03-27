@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -201,43 +203,33 @@ export default function HeatPumpCopCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a good COP for a heat pump?</h4>
-            <p className="text-xs text-muted-foreground">
-              A COP of 3.0 or higher is considered good for air source heat pumps. Ground source systems should achieve COP 4.0+. Modern premium units reach COP 5.0+ under ideal conditions.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why does COP decrease in cold weather?</h4>
-            <p className="text-xs text-muted-foreground">
-              Larger temperature difference between source and sink requires more work. The compressor must raise refrigerant temperature more, consuming more electricity. This is why ground source maintains better winter COP.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is COP the same as efficiency?</h4>
-            <p className="text-xs text-muted-foreground">
-              COP can exceed 100% because it measures heat moved, not heat created. A COP of 4 equals 400% "efficiency" – but this isn't free energy. The extra heat comes from the outdoor environment.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What affects heat pump COP?</h4>
-            <p className="text-xs text-muted-foreground">
-              Source temperature, sink temperature, refrigerant type, compressor efficiency, heat exchanger design, and system maintenance all affect COP. Proper sizing and installation are critical for optimal performance.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How is COP different from HSPF?</h4>
-            <p className="text-xs text-muted-foreground">
-              COP is instantaneous efficiency at specific conditions. HSPF (Heating Seasonal Performance Factor) is seasonal average efficiency over a heating season. HSPF accounts for varying outdoor temperatures.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good COP for a heat pump?",
+    answer: "A COP of 3.0 or higher is considered good for air source heat pumps. Ground source systems should achieve COP 4.0+. Modern premium units reach COP 5.0+ under ideal conditions.",
+  },
+{
+    question: "Why does COP decrease in cold weather?",
+    answer: "Larger temperature difference between source and sink requires more work. The compressor must raise refrigerant temperature more, consuming more electricity. This is why ground source maintains better winter COP.",
+  },
+{
+    question: "Is COP the same as efficiency?",
+    answer: "COP can exceed 100% because it measures heat moved, not heat created. A COP of 4 equals 400% \"efficiency\" – but this isn't free energy. The extra heat comes from the outdoor environment.",
+  },
+{
+    question: "What affects heat pump COP?",
+    answer: "Source temperature, sink temperature, refrigerant type, compressor efficiency, heat exchanger design, and system maintenance all affect COP. Proper sizing and installation are critical for optimal performance.",
+  },
+{
+    question: "How is COP different from HSPF?",
+    answer: "COP is instantaneous efficiency at specific conditions. HSPF (Heating Seasonal Performance Factor) is seasonal average efficiency over a heating season. HSPF accounts for varying outdoor temperatures.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

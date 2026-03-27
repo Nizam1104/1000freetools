@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -349,33 +351,33 @@ export default function ScaleFinderPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is the difference between major and minor scales?</h4>
-                  <p className="text-sm text-muted-foreground">Major scales have a bright, happy sound with the pattern W-W-H-W-W-W-H. Natural minor scales sound sadder with the pattern W-H-W-W-H-W-W. The third note determines the mood.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What are modes in music?</h4>
-                  <p className="text-sm text-muted-foreground">Modes are scales derived from the major scale by starting on different degrees. Dorian starts on the 2nd, Phrygian on the 3rd, Lydian on the 4th, Mixolydian on the 5th, and Locrian on the 7th degree.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">When should I use pentatonic scales?</h4>
-                  <p className="text-sm text-muted-foreground">Pentatonic scales are perfect for beginners and improvisation. The minor pentatonic is essential for blues and rock guitar solos. They work over many chord progressions due to their simple, consonant structure.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What are diatonic chords?</h4>
-                  <p className="text-sm text-muted-foreground">Diatonic chords are built from each note of a scale using only notes from that scale. In C Major, these are C, Dm, Em, F, G, Am, and Bdim. They form the basis of countless songs.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How do I practice scales effectively?</h4>
-                  <p className="text-sm text-muted-foreground">Start slow with a metronome, play ascending and descending, practice in all 12 keys, and apply scales to real music by improvising over backing tracks in the same key.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the difference between major and minor scales?",
+    answer: "Major scales have a bright, happy sound with the pattern W-W-H-W-W-W-H. Natural minor scales sound sadder with the pattern W-H-W-W-H-W-W. The third note determines the mood.",
+  },
+{
+    question: "What are modes in music?",
+    answer: "Modes are scales derived from the major scale by starting on different degrees. Dorian starts on the 2nd, Phrygian on the 3rd, Lydian on the 4th, Mixolydian on the 5th, and Locrian on the 7th degree.",
+  },
+{
+    question: "When should I use pentatonic scales?",
+    answer: "Pentatonic scales are perfect for beginners and improvisation. The minor pentatonic is essential for blues and rock guitar solos. They work over many chord progressions due to their simple, consonant structure.",
+  },
+{
+    question: "What are diatonic chords?",
+    answer: "Diatonic chords are built from each note of a scale using only notes from that scale. In C Major, these are C, Dm, Em, F, G, Am, and Bdim. They form the basis of countless songs.",
+  },
+{
+    question: "How do I practice scales effectively?",
+    answer: "Start slow with a metronome, play ascending and descending, practice in all 12 keys, and apply scales to real music by improvising over backing tracks in the same key.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

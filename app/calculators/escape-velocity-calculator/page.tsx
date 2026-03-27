@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -174,47 +176,33 @@ export default function EscapeVelocityCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is Earth's escape velocity?</h4>
-            <p className="text-sm text-muted-foreground">
-              Earth's escape velocity is 11.2 km/s (25,020 mph or 40,270 km/h). This is the speed a rocket needs at Earth's surface to escape Earth's gravity without further propulsion.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does escape velocity depend on the object's mass?</h4>
-            <p className="text-sm text-muted-foreground">
-              No. A feather and a rocket need the same escape velocity from the same planet. The planet's mass matters, not the escaping object's mass. Gravity pulls harder on heavier objects, but they also need more energy to accelerate - these effects cancel out.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can you escape gravity at any speed?</h4>
-            <p className="text-sm text-muted-foreground">
-              With continuous propulsion, yes. Escape velocity is the speed needed for a ballistic (unpowered) trajectory. Rockets don't reach 11.2 km/s instantly - they accelerate continuously, burning fuel as they climb.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What happens if you go slower than escape velocity?</h4>
-            <p className="text-sm text-muted-foreground">
-              You'll either fall back down or go into orbit. Below escape velocity but above orbital velocity, you follow an elliptical path that eventually returns you to the starting point (unless you hit the planet first).
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is escape velocity higher for gas giants?</h4>
-            <p className="text-sm text-muted-foreground">
-              Gas giants like Jupiter are much more massive than Earth. Jupiter is 318 times Earth's mass. Even though it's also larger (which reduces escape velocity), the mass effect dominates. Jupiter's escape velocity is 60 km/s - over 5 times Earth's.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is Earth's escape velocity?",
+    answer: "Earth's escape velocity is 11.2 km/s (25,020 mph or 40,270 km/h). This is the speed a rocket needs at Earth's surface to escape Earth's gravity without further propulsion.",
+  },
+{
+    question: "Does escape velocity depend on the object's mass?",
+    answer: "No. A feather and a rocket need the same escape velocity from the same planet. The planet's mass matters, not the escaping object's mass. Gravity pulls harder on heavier objects, but they also need more energy to accelerate - these effects cancel out.",
+  },
+{
+    question: "Can you escape gravity at any speed?",
+    answer: "With continuous propulsion, yes. Escape velocity is the speed needed for a ballistic (unpowered) trajectory. Rockets don't reach 11.2 km/s instantly - they accelerate continuously, burning fuel as they climb.",
+  },
+{
+    question: "What happens if you go slower than escape velocity?",
+    answer: "You'll either fall back down or go into orbit. Below escape velocity but above orbital velocity, you follow an elliptical path that eventually returns you to the starting point (unless you hit the planet first).",
+  },
+{
+    question: "Why is escape velocity higher for gas giants?",
+    answer: "Gas giants like Jupiter are much more massive than Earth. Jupiter is 318 times Earth's mass. Even though it's also larger (which reduces escape velocity), the mass effect dominates. Jupiter's escape velocity is 60 km/s - over 5 times Earth's.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

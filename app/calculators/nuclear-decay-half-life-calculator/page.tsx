@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function NuclearDecayHalfLifeCalculator() {
   const [halfLife, setHalfLife] = useState<string>("");
@@ -244,55 +246,33 @@ export default function NuclearDecayHalfLifeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do you calculate half-life decay?</h4>
-                <p>
-                  Use the formula: remaining = initial × (1/2)^(time/half-life). For example, if you
-                  start with 100g of a substance with 5-day half-life, after 15 days (3 half-lives),
-                  you have 100 × (1/2)³ = 100 × 0.125 = 12.5g remaining.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can half-life be affected by external factors?</h4>
-                <p>
-                  No. Radioactive decay is a nuclear process unaffected by temperature, pressure,
-                  chemical bonds, or magnetic fields. This constancy makes half-life reliable for
-                  dating and medical applications. Only the nucleus itself determines decay rate.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What happens after many half-lives?</h4>
-                <p>
-                  The amount approaches zero but never quite reaches it mathematically. Practically,
-                  after 10 half-lives, only 0.1% remains. After 20 half-lives, less than one
-                  millionth remains. For most purposes, the material is considered effectively gone.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How is half-life used in carbon dating?</h4>
-                <p>
-                  Living organisms maintain constant C-14 levels. After death, C-14 decays with a
-                  5,730-year half-life. Measuring remaining C-14 reveals how long ago the organism
-                  died. This works for samples up to about 50,000 years old (roughly 9 half-lives).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do some isotopes have short half-lives?</h4>
-                <p>
-                  Unstable nuclei decay faster. Isotopes far from the stable neutron-proton ratio
-                  decay quickly. Very unstable isotopes may have half-lives of milliseconds. More
-                  stable isotopes can have half-lives of billions of years. Stability determines half-life.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you calculate half-life decay?",
+    answer: "Use the formula: remaining = initial × (1/2)^(time/half-life). For example, if you start with 100g of a substance with 5-day half-life, after 15 days (3 half-lives), you have 100 × (1/2)³ = 100 × 0.125 = 12.5g remaining.",
+  },
+{
+    question: "Can half-life be affected by external factors?",
+    answer: "No. Radioactive decay is a nuclear process unaffected by temperature, pressure, chemical bonds, or magnetic fields. This constancy makes half-life reliable for dating and medical applications. Only the nucleus itself determines decay rate.",
+  },
+{
+    question: "What happens after many half-lives?",
+    answer: "The amount approaches zero but never quite reaches it mathematically. Practically, after 10 half-lives, only 0.1% remains. After 20 half-lives, less than one millionth remains. For most purposes, the material is considered effectively gone.",
+  },
+{
+    question: "How is half-life used in carbon dating?",
+    answer: "Living organisms maintain constant C-14 levels. After death, C-14 decays with a 5,730-year half-life. Measuring remaining C-14 reveals how long ago the organism died. This works for samples up to about 50,000 years old (roughly 9 half-lives).",
+  },
+{
+    question: "Why do some isotopes have short half-lives?",
+    answer: "Unstable nuclei decay faster. Isotopes far from the stable neutron-proton ratio decay quickly. Very unstable isotopes may have half-lives of milliseconds. More stable isotopes can have half-lives of billions of years. Stability determines half-life.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

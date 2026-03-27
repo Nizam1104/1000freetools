@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BaseConverterCalculator() {
   const [value, setValue] = useState<string>("");
@@ -312,43 +314,33 @@ export default function BaseConverterCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do I convert binary to decimal?</h4>
-            <p>
-              Multiply each binary digit by its place value (powers of 2) and add them up. For 1011: (1×8) + (0×4) + (1×2) + (1×1) = 11. Start from the right with 2⁰=1, then 2¹=2, 2²=4, and so on.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Why does hexadecimal use letters?</h4>
-            <p>
-              Hex needs 16 unique symbols but only has 10 digits. Letters A through F represent values 10 through 15. So A=10, B=11, C=12, D=13, E=14, F=15. This keeps each hex digit as a single character.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is base 36 used for?</h4>
-            <p>
-              Base 36 uses all 26 letters plus 10 digits, giving 36 unique symbols. It is useful for creating short, human-readable identifiers from large numbers. URL shorteners sometimes use base 36 or base 62.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do programmers write different bases?</h4>
-            <p>
-              Many languages use prefixes: 0b for binary (0b1010), 0o for octal (0o17), and 0x for hex (0xFF). JavaScript, Python, and C all follow this convention. Decimal needs no prefix.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Can this calculator handle negative numbers?</h4>
-            <p>
-              This calculator works with positive integers. For negative numbers, convert the absolute value and add the minus sign. Note that computers use two's complement for negative binary numbers, which is more complex.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I convert binary to decimal?",
+    answer: "Multiply each binary digit by its place value (powers of 2) and add them up. For 1011: (1×8) + (0×4) + (1×2) + (1×1) = 11. Start from the right with 2⁰=1, then 2¹=2, 2²=4, and so on.",
+  },
+{
+    question: "Why does hexadecimal use letters?",
+    answer: "Hex needs 16 unique symbols but only has 10 digits. Letters A through F represent values 10 through 15. So A=10, B=11, C=12, D=13, E=14, F=15. This keeps each hex digit as a single character.",
+  },
+{
+    question: "What is base 36 used for?",
+    answer: "Base 36 uses all 26 letters plus 10 digits, giving 36 unique symbols. It is useful for creating short, human-readable identifiers from large numbers. URL shorteners sometimes use base 36 or base 62.",
+  },
+{
+    question: "How do programmers write different bases?",
+    answer: "Many languages use prefixes: 0b for binary (0b1010), 0o for octal (0o17), and 0x for hex (0xFF). JavaScript, Python, and C all follow this convention. Decimal needs no prefix.",
+  },
+{
+    question: "Can this calculator handle negative numbers?",
+    answer: "This calculator works with positive integers. For negative numbers, convert the absolute value and add the minus sign. Note that computers use two's complement for negative binary numbers, which is more complex.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

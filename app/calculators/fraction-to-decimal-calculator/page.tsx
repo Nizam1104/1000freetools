@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FractionToDecimalCalculator() {
   const [numerator, setNumerator] = useState<string>("");
@@ -275,56 +277,33 @@ export default function FractionToDecimalCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert a fraction to a decimal?</h4>
-                <p>
-                  Divide the numerator (top number) by the denominator (bottom number). For example,
-                  3/4 means 3 ÷ 4 = 0.75. You can do this by hand with long division or use a calculator.
-                  The result is the decimal equivalent of the fraction.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is 1/3 as a decimal?</h4>
-                <p>
-                  1/3 as a decimal is 0.333... with the 3 repeating forever. This is written as 0.3 with
-                  a bar over the 3, or rounded to a practical number of places like 0.33 or 0.333.
-                  As a percentage, 1/3 is approximately 33.33%.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert a mixed number to a decimal?</h4>
-                <p>
-                  Keep the whole number part and convert only the fraction. For 2 3/4, the whole number
-                  is 2. Convert 3/4 to 0.75. Add them: 2 + 0.75 = 2.75. Alternatively, convert to an
-                  improper fraction first: 2 3/4 = 11/4, then divide: 11 ÷ 4 = 2.75.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do some fractions produce repeating decimals?</h4>
-                <p>
-                  A fraction produces a repeating decimal when the denominator has prime factors other
-                  than 2 or 5. For example, 3 has a prime factor of 3, so 1/3 repeats. Fractions with
-                  denominators like 2, 4, 5, 8, 10, 16, 20, 25 always terminate because their only
-                  prime factors are 2 and/or 5.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I convert decimals back to fractions?</h4>
-                <p>
-                  Yes. Write the decimal as a fraction over a power of 10, then simplify. For 0.75,
-                  write 75/100, then simplify to 3/4. For repeating decimals, use algebra: if x = 0.333...,
-                  then 10x = 3.333..., so 9x = 3, and x = 3/9 = 1/3.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I convert a fraction to a decimal?",
+    answer: "Divide the numerator (top number) by the denominator (bottom number). For example, 3/4 means 3 ÷ 4 = 0.75. You can do this by hand with long division or use a calculator. The result is the decimal equivalent of the fraction.",
+  },
+{
+    question: "What is 1/3 as a decimal?",
+    answer: "1/3 as a decimal is 0.333... with the 3 repeating forever. This is written as 0.3 with a bar over the 3, or rounded to a practical number of places like 0.33 or 0.333. As a percentage, 1/3 is approximately 33.33%.",
+  },
+{
+    question: "How do I convert a mixed number to a decimal?",
+    answer: "Keep the whole number part and convert only the fraction. For 2 3/4, the whole number is 2. Convert 3/4 to 0.75. Add them: 2 + 0.75 = 2.75. Alternatively, convert to an improper fraction first: 2 3/4 = 11/4, then divide: 11 ÷ 4 = 2.75.",
+  },
+{
+    question: "Why do some fractions produce repeating decimals?",
+    answer: "A fraction produces a repeating decimal when the denominator has prime factors other than 2 or 5. For example, 3 has a prime factor of 3, so 1/3 repeats. Fractions with denominators like 2, 4, 5, 8, 10, 16, 20, 25 always terminate because their only prime factors are 2 and/or 5.",
+  },
+{
+    question: "Can I convert decimals back to fractions?",
+    answer: "Yes. Write the decimal as a fraction over a power of 10, then simplify. For 0.75, write 75/100, then simplify to 3/4. For repeating decimals, use algebra: if x = 0.333..., then 10x = 3.333..., so 9x = 3, and x = 3/9 = 1/3.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

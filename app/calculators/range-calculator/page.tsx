@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RangeCalculator() {
   const [numbers, setNumbers] = useState<string>("");
@@ -188,51 +190,33 @@ export default function RangeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does range tell me about my data?</h4>
-                <p>
-                  Range shows the total spread between your smallest and largest values. It gives a quick
-                  sense of variability but does not show how values are distributed in between.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can range be negative?</h4>
-                <p>
-                  No. Range is always zero or positive because you subtract the minimum from the maximum.
-                  Even with negative numbers in your dataset, the range itself is never negative.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if all my numbers are the same?</h4>
-                <p>
-                  The range is zero. This means there is no variation — every value equals the same number.
-                  This can happen in controlled processes or when measuring a constant.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do outliers affect range?</h4>
-                <p>
-                  Outliers have a large effect on range. One extreme value can make the range much larger
-                  than the typical spread. Consider using interquartile range (IQR) if outliers are a concern.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between range and standard deviation?</h4>
-                <p>
-                  Range uses only two values (min and max). Standard deviation considers every value and
-                  shows how much they typically deviate from the mean. Standard deviation is more robust
-                  but requires more calculation.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does range tell me about my data?",
+    answer: "Range shows the total spread between your smallest and largest values. It gives a quick sense of variability but does not show how values are distributed in between.",
+  },
+{
+    question: "Can range be negative?",
+    answer: "No. Range is always zero or positive because you subtract the minimum from the maximum. Even with negative numbers in your dataset, the range itself is never negative.",
+  },
+{
+    question: "What if all my numbers are the same?",
+    answer: "The range is zero. This means there is no variation — every value equals the same number. This can happen in controlled processes or when measuring a constant.",
+  },
+{
+    question: "How do outliers affect range?",
+    answer: "Outliers have a large effect on range. One extreme value can make the range much larger than the typical spread. Consider using interquartile range (IQR) if outliers are a concern.",
+  },
+{
+    question: "What is the difference between range and standard deviation?",
+    answer: "Range uses only two values (min and max). Standard deviation considers every value and shows how much they typically deviate from the mean. Standard deviation is more robust but requires more calculation.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ModuloCalculator() {
   const [dividend, setDividend] = useState<string>("");
@@ -179,43 +181,33 @@ export default function ModuloCalculator() {
         </CardContent>
       </Card>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-medium text-sm mb-2">What does mod mean in math?</h4>
-            <p className="text-xs text-muted-foreground">
-              "Mod" is short for "modulo." It gives the remainder after division. 17 mod 5 = 2 means when you divide 17 by 5, the remainder is 2. Written as: 17 ≡ 2 (mod 5).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Can modulo handle negative numbers?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, but conventions vary. This calculator uses the mathematical convention where the result is always non-negative. -7 mod 3 = 2, because -7 = 3×(-3) + 2.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">What is modulo used for in programming?</h4>
-            <p className="text-xs text-muted-foreground">
-              Common uses include: checking if a number is even (n % 2 == 0), cycling through array indices, implementing hash tables, limiting values to a range, and creating repeating patterns.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">How is modulo different from remainder?</h4>
-            <p className="text-xs text-muted-foreground">
-              For positive numbers, they're the same. For negative numbers, they can differ. The modulo result always has the same sign as the divisor. Remainder takes the sign of the dividend.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">What happens if I divide by zero?</h4>
-            <p className="text-xs text-muted-foreground">
-              Modulo by zero is undefined, just like regular division. The calculator will not produce a result. Mathematically, there's no meaningful answer to "a mod 0."
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does mod mean in math?",
+    answer: "\"Mod\" is short for \"modulo.\" It gives the remainder after division. 17 mod 5 = 2 means when you divide 17 by 5, the remainder is 2. Written as: 17 ≡ 2 (mod 5).",
+  },
+{
+    question: "Can modulo handle negative numbers?",
+    answer: "Yes, but conventions vary. This calculator uses the mathematical convention where the result is always non-negative. -7 mod 3 = 2, because -7 = 3×(-3) + 2.",
+  },
+{
+    question: "What is modulo used for in programming?",
+    answer: "Common uses include: checking if a number is even (n % 2 == 0), cycling through array indices, implementing hash tables, limiting values to a range, and creating repeating patterns.",
+  },
+{
+    question: "How is modulo different from remainder?",
+    answer: "For positive numbers, they're the same. For negative numbers, they can differ. The modulo result always has the same sign as the divisor. Remainder takes the sign of the dividend.",
+  },
+{
+    question: "What happens if I divide by zero?",
+    answer: "Modulo by zero is undefined, just like regular division. The calculator will not produce a result. Mathematically, there's no meaningful answer to \"a mod 0.\"",
+  }
+  ]} />
+</section>
     </div>
   );
 }

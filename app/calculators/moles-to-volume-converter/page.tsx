@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MolesToVolumeConverter() {
   const [mode, setMode] = useState<"moles-to-volume" | "volume-to-moles">("moles-to-volume");
@@ -305,43 +307,33 @@ export default function MolesToVolumeConverter() {
         </CardContent>
       </Card>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-medium text-sm mb-2">Why is 1 mole of gas 22.4 L at STP?</h4>
-            <p className="text-xs text-muted-foreground">
-              Plug STP values into PV = nRT: V = nRT/P = (1 mol)(0.08206)(273.15 K)/(1 atm) = 22.4 L. This is why the number appears so often in gas calculations.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">When does the ideal gas law fail?</h4>
-            <p className="text-xs text-muted-foreground">
-              At high pressures (molecules are close together) and low temperatures (molecules move slowly), real gases deviate from ideal behavior. Use van der Waals equation for more accuracy.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">How do I convert Celsius to Kelvin?</h4>
-            <p className="text-xs text-muted-foreground">
-              Add 273.15. 0°C = 273.15 K, 25°C = 298.15 K, 100°C = 373.15 K. The gas law requires absolute temperature (Kelvin) because 0 K is true zero energy.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Does the type of gas matter?</h4>
-            <p className="text-xs text-muted-foreground">
-              For ideal gases, no. One mole of any ideal gas occupies the same volume at the same T and P. Real gases differ slightly, but the ideal gas law treats all gases identically.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">What's the difference between STP and SATP?</h4>
-            <p className="text-xs text-muted-foreground">
-              STP (Standard Temperature and Pressure) is 0°C and 1 atm or 1 bar. SATP (Standard Ambient Temperature and Pressure) is 25°C and 1 bar—closer to lab conditions.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is 1 mole of gas 22.4 L at STP?",
+    answer: "Plug STP values into PV = nRT: V = nRT/P = (1 mol)(0.08206)(273.15 K)/(1 atm) = 22.4 L. This is why the number appears so often in gas calculations.",
+  },
+{
+    question: "When does the ideal gas law fail?",
+    answer: "At high pressures (molecules are close together) and low temperatures (molecules move slowly), real gases deviate from ideal behavior. Use van der Waals equation for more accuracy.",
+  },
+{
+    question: "How do I convert Celsius to Kelvin?",
+    answer: "Add 273.15. 0°C = 273.15 K, 25°C = 298.15 K, 100°C = 373.15 K. The gas law requires absolute temperature (Kelvin) because 0 K is true zero energy.",
+  },
+{
+    question: "Does the type of gas matter?",
+    answer: "For ideal gases, no. One mole of any ideal gas occupies the same volume at the same T and P. Real gases differ slightly, but the ideal gas law treats all gases identically.",
+  },
+{
+    question: "What's the difference between STP and SATP?",
+    answer: "STP (Standard Temperature and Pressure) is 0°C and 1 atm or 1 bar. SATP (Standard Ambient Temperature and Pressure) is 25°C and 1 bar—closer to lab conditions.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

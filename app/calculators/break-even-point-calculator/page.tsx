@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BreakEvenPointCalculatorPage() {
   const [fixedCosts, setFixedCosts] = useState<string>("");
@@ -314,45 +316,33 @@ export default function BreakEvenPointCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate break-even point in units?</h4>
-                  <p>
-                    Divide total fixed costs by contribution margin per unit. Contribution margin = selling price minus variable cost. Example: $10,000 fixed costs ÷ ($50 price - $30 variable cost) = 500 units to break even.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if I sell multiple products?</h4>
-                  <p>
-                    Calculate a weighted average contribution margin based on your sales mix. If Product A (60% of sales) has $40 margin and Product B (40% of sales) has $60 margin, your weighted average is $48. Use this for overall break-even analysis.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can break-even point be too high?</h4>
-                  <p>
-                    Yes. If your break-even point requires selling more units than the market can support, your business model isn't viable. Solutions include raising prices, reducing fixed costs, or lowering variable costs through efficiency.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does break-even help with pricing decisions?</h4>
-                  <p>
-                    It shows the volume impact of price changes. Lower prices reduce contribution margin, requiring more sales to break even. Higher prices increase margin but may reduce demand. Break-even analysis quantifies this trade-off.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I include owner salary in fixed costs?</h4>
-                  <p>
-                    Yes, if you pay yourself a regular salary. Your break-even should cover all cash outflows including owner compensation. If you're not taking a salary yet, include what you would need to pay someone to do your work.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate break-even point in units?",
+    answer: "Divide total fixed costs by contribution margin per unit. Contribution margin = selling price minus variable cost. Example: $10,000 fixed costs ÷ ($50 price - $30 variable cost) = 500 units to break even.",
+  },
+{
+    question: "What if I sell multiple products?",
+    answer: "Calculate a weighted average contribution margin based on your sales mix. If Product A (60% of sales) has $40 margin and Product B (40% of sales) has $60 margin, your weighted average is $48. Use this for overall break-even analysis.",
+  },
+{
+    question: "Can break-even point be too high?",
+    answer: "Yes. If your break-even point requires selling more units than the market can support, your business model isn't viable. Solutions include raising prices, reducing fixed costs, or lowering variable costs through efficiency.",
+  },
+{
+    question: "How does break-even help with pricing decisions?",
+    answer: "It shows the volume impact of price changes. Lower prices reduce contribution margin, requiring more sales to break even. Higher prices increase margin but may reduce demand. Break-even analysis quantifies this trade-off.",
+  },
+{
+    question: "Should I include owner salary in fixed costs?",
+    answer: "Yes, if you pay yourself a regular salary. Your break-even should cover all cash outflows including owner compensation. If you're not taking a salary yet, include what you would need to pay someone to do your work.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

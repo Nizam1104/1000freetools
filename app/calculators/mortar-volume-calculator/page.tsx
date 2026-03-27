@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -477,55 +479,33 @@ export default function MortarVolumeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much mortar do I need per brick?</h4>
-                  <p>
-                    For standard bricks with 10mm joints, plan on 0.6-0.8 liters of mortar per brick.
-                    This equals roughly 1.2-1.6 kg of wet mortar. Larger bricks or wider joints increase
-                    consumption. A 25kg bag of dry mortar typically lays 20-25 standard bricks.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the best mortar mix for bricklaying?</h4>
-                  <p>
-                    Type N mortar (1 part cement, 1 part lime, 6 parts sand) works for most above-grade
-                    brick walls. It offers good bond strength and flexibility. For load-bearing or
-                    below-grade work, use Type S (1:0.5:4.5) for higher compressive strength.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How wide should mortar joints be?</h4>
-                  <p>
-                    Standard brick joints are 10mm (3/8 inch). Acceptable range is 6-15mm depending on
-                    brick type and application. Wider joints weaken the wall and use more mortar.
-                    Historic brickwork often used narrower joints (6-8mm) for a tighter appearance.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I use old mortar for repairs?</h4>
-                  <p>
-                    Match the original mortar type when repointing historic masonry. Modern Portland-based
-                    mortars are harder and can trap moisture, damaging old bricks. For pre-1900 buildings,
-                    consider lime-based mortar that allows the wall to breathe and move naturally.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long does mortar take to cure?</h4>
-                  <p>
-                    Mortar sets enough to tool joints in 1-2 hours. It reaches initial cure in 24-48 hours.
-                    Full cure takes 28 days. Keep mortar moist during the first week for proper curing.
-                    Avoid heavy loads or stress on the wall for at least 7 days after laying.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much mortar do I need per brick?",
+    answer: "For standard bricks with 10mm joints, plan on 0.6-0.8 liters of mortar per brick. This equals roughly 1.2-1.6 kg of wet mortar. Larger bricks or wider joints increase consumption. A 25kg bag of dry mortar typically lays 20-25 standard bricks.",
+  },
+{
+    question: "What is the best mortar mix for bricklaying?",
+    answer: "Type N mortar (1 part cement, 1 part lime, 6 parts sand) works for most above-grade brick walls. It offers good bond strength and flexibility. For load-bearing or below-grade work, use Type S (1:0.5:4.5) for higher compressive strength.",
+  },
+{
+    question: "How wide should mortar joints be?",
+    answer: "Standard brick joints are 10mm (3/8 inch). Acceptable range is 6-15mm depending on brick type and application. Wider joints weaken the wall and use more mortar. Historic brickwork often used narrower joints (6-8mm) for a tighter appearance.",
+  },
+{
+    question: "Can I use old mortar for repairs?",
+    answer: "Match the original mortar type when repointing historic masonry. Modern Portland-based mortars are harder and can trap moisture, damaging old bricks. For pre-1900 buildings, consider lime-based mortar that allows the wall to breathe and move naturally.",
+  },
+{
+    question: "How long does mortar take to cure?",
+    answer: "Mortar sets enough to tool joints in 1-2 hours. It reaches initial cure in 24-48 hours. Full cure takes 28 days. Keep mortar moist during the first week for proper curing. Avoid heavy loads or stress on the wall for at least 7 days after laying.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

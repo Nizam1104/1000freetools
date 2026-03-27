@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function TriangleAreaCalculator() {
   const [base, setBase] = useState<string>("");
@@ -234,43 +236,33 @@ export default function TriangleAreaCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold text-sm mb-1">What is the formula for triangle area?</h4>
-            <p className="text-sm text-muted-foreground">
-              The basic formula is Area = ½ × base × height. The base can be any side, and the height is the perpendicular distance from that base to the opposite vertex. This formula works for all triangle types.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">How do I find the height of a triangle?</h4>
-            <p className="text-sm text-muted-foreground">
-              In a right triangle, one leg is the height when the other leg is the base. For other triangles, draw a line from the vertex perpendicular to the base (or its extension). If you know the area and base, rearrange the formula: height = 2 × area ÷ base.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">Can I calculate area without the height?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes. If you know all three sides, use Heron's formula. If you know two sides and the angle between them, use A = ½ab sin(C). For equilateral triangles, use A = (√3/4) × side².
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">Why is triangle area half of base times height?</h4>
-            <p className="text-sm text-muted-foreground">
-              A triangle is exactly half of a parallelogram with the same base and height. Two identical triangles can always be arranged to form a parallelogram. Since parallelogram area is base × height, triangle area is half that.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">What units should I use?</h4>
-            <p className="text-sm text-muted-foreground">
-              Use any consistent units for base and height. The area will be in square units – if you measure in centimeters, area is in square centimeters. If you measure in feet, area is in square feet.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the formula for triangle area?",
+    answer: "The basic formula is Area = ½ × base × height. The base can be any side, and the height is the perpendicular distance from that base to the opposite vertex. This formula works for all triangle types.",
+  },
+{
+    question: "How do I find the height of a triangle?",
+    answer: "In a right triangle, one leg is the height when the other leg is the base. For other triangles, draw a line from the vertex perpendicular to the base (or its extension). If you know the area and base, rearrange the formula: height = 2 × area ÷ base.",
+  },
+{
+    question: "Can I calculate area without the height?",
+    answer: "Yes. If you know all three sides, use Heron's formula. If you know two sides and the angle between them, use A = ½ab sin(C). For equilateral triangles, use A = (√3/4) × side².",
+  },
+{
+    question: "Why is triangle area half of base times height?",
+    answer: "A triangle is exactly half of a parallelogram with the same base and height. Two identical triangles can always be arranged to form a parallelogram. Since parallelogram area is base × height, triangle area is half that.",
+  },
+{
+    question: "What units should I use?",
+    answer: "Use any consistent units for base and height. The area will be in square units – if you measure in centimeters, area is in square centimeters. If you measure in feet, area is in square feet.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

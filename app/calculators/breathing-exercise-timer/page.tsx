@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -472,45 +474,33 @@ export default function BreathingExerciseTimerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long should I practice breathing exercises?</h4>
-                  <p>
-                    Start with 3-5 minutes daily. Most people see benefits with 10-15 minutes per day. You can split this into multiple short sessions — 5 minutes morning and evening works well for many people.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Which breathing technique is best for anxiety?</h4>
-                  <p>
-                    The 4-7-8 method is particularly effective for anxiety because the extended exhale strongly activates the relaxation response. Box breathing also works well, especially for acute stress during the day.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can breathing exercises help me fall asleep?</h4>
-                  <p>
-                    Yes. The 4-7-8 technique was specifically designed for sleep. Practice it lying in bed with lights out. Most people fall asleep within 5-10 minutes. It works by slowing heart rate and quieting mental chatter.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it normal to feel weird during Wim Hof breathing?</h4>
-                  <p>
-                    Tingling in extremities and lightheadedness are common due to temporary changes in blood CO2 and pH. These sensations should pass quickly. Never practice Wim Hof near water or while driving. Skip the holds if you have health conditions.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How quickly will I notice results?</h4>
-                  <p>
-                    Many people feel calmer immediately after a single session. For lasting changes in stress levels and sleep quality, expect 2-4 weeks of daily practice. Heart rate variability improvements typically show up within 2 weeks.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How long should I practice breathing exercises?",
+    answer: "Start with 3-5 minutes daily. Most people see benefits with 10-15 minutes per day. You can split this into multiple short sessions — 5 minutes morning and evening works well for many people.",
+  },
+{
+    question: "Which breathing technique is best for anxiety?",
+    answer: "The 4-7-8 method is particularly effective for anxiety because the extended exhale strongly activates the relaxation response. Box breathing also works well, especially for acute stress during the day.",
+  },
+{
+    question: "Can breathing exercises help me fall asleep?",
+    answer: "Yes. The 4-7-8 technique was specifically designed for sleep. Practice it lying in bed with lights out. Most people fall asleep within 5-10 minutes. It works by slowing heart rate and quieting mental chatter.",
+  },
+{
+    question: "Is it normal to feel weird during Wim Hof breathing?",
+    answer: "Tingling in extremities and lightheadedness are common due to temporary changes in blood CO2 and pH. These sensations should pass quickly. Never practice Wim Hof near water or while driving. Skip the holds if you have health conditions.",
+  },
+{
+    question: "How quickly will I notice results?",
+    answer: "Many people feel calmer immediately after a single session. For lasting changes in stress levels and sleep quality, expect 2-4 weeks of daily practice. Heart rate variability improvements typically show up within 2 weeks.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

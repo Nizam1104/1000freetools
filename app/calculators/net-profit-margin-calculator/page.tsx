@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function NetProfitMarginCalculatorPage() {
   const [revenue, setRevenue] = useState<string>("");
@@ -304,55 +306,33 @@ export default function NetProfitMarginCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good net profit margin?</h4>
-                  <p>
-                    It depends on your industry. Software companies often achieve 20%+ margins while grocery
-                    stores operate on 1-3%. As a general rule: below 5% is low, 5-10% is average, 10-20% is
-                    good, and above 20% is excellent. Compare your margin to industry benchmarks for context.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can net profit margin be negative?</h4>
-                  <p>
-                    Yes. Negative net margin means the business is losing money — expenses exceed revenue.
-                    Startups often have negative margins initially while building scale. Established businesses
-                    with sustained negative margins face serious problems and may not survive long-term.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How is net profit margin different from ROI?</h4>
-                  <p>
-                    Net profit margin measures profit as a percentage of sales. Return on investment (ROI)
-                    measures profit relative to capital invested. A business can have high margins but low
-                    ROI if it requires heavy capital investment. Both metrics together give a fuller picture.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why did my margin decrease when revenue increased?</h4>
-                  <p>
-                    This happens when costs grow faster than sales. Common causes include price discounting to
-                    drive volume, rising supplier costs, hiring too quickly, or one-time expenses. Analyze each
-                    expense category to identify where margins are eroding.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I focus on margin or revenue growth?</h4>
-                  <p>
-                    Both matter, but the balance depends on your stage. Early-stage companies often prioritize
-                    growth over margin to capture market share. Mature businesses should optimize for profitability.
-                    Ideally, pursue profitable growth — increasing revenue while maintaining or improving margins.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good net profit margin?",
+    answer: "It depends on your industry. Software companies often achieve 20%+ margins while grocery stores operate on 1-3%. As a general rule: below 5% is low, 5-10% is average, 10-20% is good, and above 20% is excellent. Compare your margin to industry benchmarks for context.",
+  },
+{
+    question: "Can net profit margin be negative?",
+    answer: "Yes. Negative net margin means the business is losing money — expenses exceed revenue. Startups often have negative margins initially while building scale. Established businesses with sustained negative margins face serious problems and may not survive long-term.",
+  },
+{
+    question: "How is net profit margin different from ROI?",
+    answer: "Net profit margin measures profit as a percentage of sales. Return on investment (ROI) measures profit relative to capital invested. A business can have high margins but low ROI if it requires heavy capital investment. Both metrics together give a fuller picture.",
+  },
+{
+    question: "Why did my margin decrease when revenue increased?",
+    answer: "This happens when costs grow faster than sales. Common causes include price discounting to drive volume, rising supplier costs, hiring too quickly, or one-time expenses. Analyze each expense category to identify where margins are eroding.",
+  },
+{
+    question: "Should I focus on margin or revenue growth?",
+    answer: "Both matter, but the balance depends on your stage. Early-stage companies often prioritize growth over margin to capture market share. Mature businesses should optimize for profitability. Ideally, pursue profitable growth — increasing revenue while maintaining or improving margins.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BrickCalculator() {
   const [wallLength, setWallLength] = useState<string>("");
@@ -315,43 +317,33 @@ export default function BrickCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I measure my wall for bricks?</h4>
-            <p className="text-xs text-muted-foreground">
-              Measure the total length and height of the wall in meters. For walls with windows or doors, calculate the total wall area first, then subtract the area of openings. For example, a 5m × 3m wall with a 2m × 1.5m window: (5 × 3) - (2 × 1.5) = 12 m².
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the standard mortar joint thickness?</h4>
-            <p className="text-xs text-muted-foreground">
-              Standard mortar joints are 10mm thick. This applies to both horizontal bed joints and vertical perpend joints. Thicker joints weaken the wall and use more mortar. Thinner joints are harder to lay accurately and may not bond properly.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How much waste should I allow for?</h4>
-            <p className="text-xs text-muted-foreground">
-              For simple rectangular walls with few cuts, 5% waste is adequate. For walls with many openings (windows, doors) requiring brick cuts, use 10%. If you are a beginner or working on complex shapes like curves or arches, allow 15% waste.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How many bricks do I need for a 10×10 foot wall?</h4>
-            <p className="text-xs text-muted-foreground">
-              A 10×10 foot wall is about 9.3 m². Using standard modular bricks (54 per m²), you need roughly 500 bricks. Adding 10% waste brings this to 550 bricks. For a double-brick thick wall, double these quantities.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I use this calculator for pavers?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, the same principle applies. Enter the area to be paved and the paver dimensions. However, paver calculations typically use lower waste factors (3-5%) since cutting is less common. Also, pavers are laid on sand bedding, not mortar.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I measure my wall for bricks?",
+    answer: "Measure the total length and height of the wall in meters. For walls with windows or doors, calculate the total wall area first, then subtract the area of openings. For example, a 5m × 3m wall with a 2m × 1.5m window: (5 × 3) - (2 × 1.5) = 12 m².",
+  },
+{
+    question: "What is the standard mortar joint thickness?",
+    answer: "Standard mortar joints are 10mm thick. This applies to both horizontal bed joints and vertical perpend joints. Thicker joints weaken the wall and use more mortar. Thinner joints are harder to lay accurately and may not bond properly.",
+  },
+{
+    question: "How much waste should I allow for?",
+    answer: "For simple rectangular walls with few cuts, 5% waste is adequate. For walls with many openings (windows, doors) requiring brick cuts, use 10%. If you are a beginner or working on complex shapes like curves or arches, allow 15% waste.",
+  },
+{
+    question: "How many bricks do I need for a 10×10 foot wall?",
+    answer: "A 10×10 foot wall is about 9.3 m². Using standard modular bricks (54 per m²), you need roughly 500 bricks. Adding 10% waste brings this to 550 bricks. For a double-brick thick wall, double these quantities.",
+  },
+{
+    question: "Can I use this calculator for pavers?",
+    answer: "Yes, the same principle applies. Enter the area to be paved and the paver dimensions. However, paver calculations typically use lower waste factors (3-5%) since cutting is less common. Also, pavers are laid on sand bedding, not mortar.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

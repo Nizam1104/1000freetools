@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Cell } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DailyCalorieNeedsCalculator() {
   const [gender, setGender] = useState<"male" | "female">("male");
@@ -385,43 +387,33 @@ export default function DailyCalorieNeedsCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How accurate is this calorie calculator?</h4>
-            <p className="text-xs text-muted-foreground">
-              The Mifflin-St Jeor equation used here is accurate within about 10% for most people. That's ±200-300 calories for average adults. Use the result as a starting point, then adjust based on actual results over 2-4 weeks.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why am I not losing weight at my calculated deficit?</h4>
-            <p className="text-xs text-muted-foreground">
-              Common reasons: underestimating food intake (people typically undercount by 30-50%), overestimating activity, water retention masking fat loss, or your actual TDEE is lower than calculated. Track everything precisely for 2 weeks, then adjust.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I eat back exercise calories?</h4>
-            <p className="text-xs text-muted-foreground">
-              If you calculated TDEE correctly with your actual activity level, no – it's already included. Fitness trackers notoriously overestimate calories burned. If you use sedentary TDEE and exercise separately, add back 50-75% of tracked calories (they overestimate).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How low can I go on calories?</h4>
-            <p className="text-xs text-muted-foreground">
-              Minimum safe intake: 1,200 calories/day for women, 1,500 for men. Below this, it's hard to get adequate nutrients. Very low calorie diets (under 800) should only be done under medical supervision. Slow loss is more sustainable anyway.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Do calorie needs change with weight loss?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. As you lose weight, your BMR drops – smaller bodies need fewer calories. Recalculate every 10-15 lbs lost. Also, metabolic adaptation can reduce TDEE by an extra 5-15% beyond what weight loss alone predicts.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate is this calorie calculator?",
+    answer: "The Mifflin-St Jeor equation used here is accurate within about 10% for most people. That's ±200-300 calories for average adults. Use the result as a starting point, then adjust based on actual results over 2-4 weeks.",
+  },
+{
+    question: "Why am I not losing weight at my calculated deficit?",
+    answer: "Common reasons: underestimating food intake (people typically undercount by 30-50%), overestimating activity, water retention masking fat loss, or your actual TDEE is lower than calculated. Track everything precisely for 2 weeks, then adjust.",
+  },
+{
+    question: "Should I eat back exercise calories?",
+    answer: "If you calculated TDEE correctly with your actual activity level, no – it's already included. Fitness trackers notoriously overestimate calories burned. If you use sedentary TDEE and exercise separately, add back 50-75% of tracked calories (they overestimate).",
+  },
+{
+    question: "How low can I go on calories?",
+    answer: "Minimum safe intake: 1,200 calories/day for women, 1,500 for men. Below this, it's hard to get adequate nutrients. Very low calorie diets (under 800) should only be done under medical supervision. Slow loss is more sustainable anyway.",
+  },
+{
+    question: "Do calorie needs change with weight loss?",
+    answer: "Yes. As you lose weight, your BMR drops – smaller bodies need fewer calories. Recalculate every 10-15 lbs lost. Also, metabolic adaptation can reduce TDEE by an extra 5-15% beyond what weight loss alone predicts.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BeltLengthCalculator() {
   const [d1, setD1] = useState<string>("");
@@ -242,43 +244,33 @@ export default function BeltLengthCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do I measure a worn belt for replacement?</h4>
-            <p>
-              Use a flexible tape measure around the outside of the old belt. For V-belts, this gives the outside circumference. Subtract the belt's nominal top width to estimate pitch length. Or measure pulleys and center distance, then use this calculator.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What's the difference between inside length and outside length?</h4>
-            <p>
-              Inside length is measured along the belt's inner surface. Outside length includes the belt thickness. V-belt part numbers typically use outside length. Classical belts (A, B, C) use outside length; narrow wedge (3V, 5V, 8V) also use outside length.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How much tension should a V-belt have?</h4>
-            <p>
-              Press the belt midpoint with moderate thumb pressure. Deflection should be about 1/64 inch per inch of span length. For a 32-inch span, expect about 1/2 inch deflection. Belt tension gauges provide more accurate measurement.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Can I use this calculator for timing belts?</h4>
-            <p>
-              The basic length formula works for any two-pulley system, but timing belts have different considerations. Timing belt pitch must match pulley tooth pitch. This calculator does not account for tooth engagement requirements.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Why is my belt squealing?</h4>
-            <p>
-              Squealing usually means the belt is loose and slipping. Check tension first. If tension is correct, check for worn pulleys, contaminated belts (oil or grease), or misalignment. Glazed belt surfaces also cause noise and need replacement.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I measure a worn belt for replacement?",
+    answer: "Use a flexible tape measure around the outside of the old belt. For V-belts, this gives the outside circumference. Subtract the belt's nominal top width to estimate pitch length. Or measure pulleys and center distance, then use this calculator.",
+  },
+{
+    question: "What's the difference between inside length and outside length?",
+    answer: "Inside length is measured along the belt's inner surface. Outside length includes the belt thickness. V-belt part numbers typically use outside length. Classical belts (A, B, C) use outside length; narrow wedge (3V, 5V, 8V) also use outside length.",
+  },
+{
+    question: "How much tension should a V-belt have?",
+    answer: "Press the belt midpoint with moderate thumb pressure. Deflection should be about 1/64 inch per inch of span length. For a 32-inch span, expect about 1/2 inch deflection. Belt tension gauges provide more accurate measurement.",
+  },
+{
+    question: "Can I use this calculator for timing belts?",
+    answer: "The basic length formula works for any two-pulley system, but timing belts have different considerations. Timing belt pitch must match pulley tooth pitch. This calculator does not account for tooth engagement requirements.",
+  },
+{
+    question: "Why is my belt squealing?",
+    answer: "Squealing usually means the belt is loose and slipping. Check tension first. If tension is correct, check for worn pulleys, contaminated belts (oil or grease), or misalignment. Glazed belt surfaces also cause noise and need replacement.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

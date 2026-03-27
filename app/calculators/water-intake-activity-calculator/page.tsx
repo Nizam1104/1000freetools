@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Droplets, Activity } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface WaterResult {
   baseIntake: number;
@@ -245,33 +247,33 @@ export default function WaterIntakeActivityCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How much water should I drink daily?</h3>
-                <p className="text-sm text-muted-foreground">A general guideline is 33ml per kg of body weight. For a 70kg person, that's about 2.3 liters. Add more for exercise, hot weather, or illness.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Can I drink too much water?</h3>
-                <p className="text-sm text-muted-foreground">Yes, excessive water intake can cause hyponatremia (low blood sodium). This is rare but can occur in endurance athletes who drink only water without electrolytes.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Does coffee count toward water intake?</h3>
-                <p className="text-sm text-muted-foreground">Yes, despite caffeine's mild diuretic effect, coffee and tea still contribute to hydration. About 80-90% of the fluid is retained by your body.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How do I know if I'm dehydrated?</h3>
-                <p className="text-sm text-muted-foreground">Signs include dark urine, dry mouth, headache, fatigue, and dizziness. Check urine color - pale yellow means you're well hydrated.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Should I drink more in hot weather?</h3>
-                <p className="text-sm text-muted-foreground">Yes, hot and humid conditions increase sweat loss. Add 15-20% more water in hot weather and drink before you feel thirsty.</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much water should I drink daily?",
+    answer: "A general guideline is 33ml per kg of body weight. For a 70kg person, that's about 2.3 liters. Add more for exercise, hot weather, or illness.",
+  },
+{
+    question: "Can I drink too much water?",
+    answer: "Yes, excessive water intake can cause hyponatremia (low blood sodium). This is rare but can occur in endurance athletes who drink only water without electrolytes.",
+  },
+{
+    question: "Does coffee count toward water intake?",
+    answer: "Yes, despite caffeine's mild diuretic effect, coffee and tea still contribute to hydration. About 80-90% of the fluid is retained by your body.",
+  },
+{
+    question: "How do I know if I'm dehydrated?",
+    answer: "Signs include dark urine, dry mouth, headache, fatigue, and dizziness. Check urine color - pale yellow means you're well hydrated.",
+  },
+{
+    question: "Should I drink more in hot weather?",
+    answer: "Yes, hot and humid conditions increase sweat loss. Add 15-20% more water in hot weather and drink before you feel thirsty.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

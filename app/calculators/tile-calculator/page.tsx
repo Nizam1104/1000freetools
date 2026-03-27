@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function TileCalculator() {
   const [length, setLength] = useState<string>("");
@@ -317,43 +319,33 @@ export default function TileCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I measure my room for tiling?</h4>
-            <p className="text-xs text-muted-foreground">
-              Measure the longest length and widest width, even if the room isn't perfectly rectangular. For L-shaped rooms, split into rectangles and add the areas. Don't subtract for cabinets or islands – you need tile under them for proper height matching.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I buy all tiles at once?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, always. Tiles from different production batches can have slight color variations (dye lot differences). Buy everything you need plus 10-15% extra in one purchase. Keep spare tiles for future repairs – finding an exact match years later is nearly impossible.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How much grout do I need?</h4>
-            <p className="text-xs text-muted-foreground">
-              Rough estimate: 1 kg of grout per m² for standard 3mm joints. Larger tiles with wider joints need more. A 25kg bag typically covers 20-30 m² of floor tile. Your tile supplier can calculate exact amounts based on tile size and joint width.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between ceramic and porcelain tile?</h4>
-            <p className="text-xs text-muted-foreground">
-              Porcelain is denser, fired at higher temperatures, and absorbs less than 0.5% water. Ceramic is more porous and softer. Porcelain works outdoors and in wet areas; ceramic is fine for interior walls. Porcelain costs more but lasts longer.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I tile over existing tile?</h4>
-            <p className="text-xs text-muted-foreground">
-              Sometimes. The existing tile must be firmly attached, level, and clean. You'll need a specialty primer and thin-set mortar designed for tile-over-tile. Height buildup is the main issue – doors may need trimming, and transitions to other floors become awkward.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I measure my room for tiling?",
+    answer: "Measure the longest length and widest width, even if the room isn't perfectly rectangular. For L-shaped rooms, split into rectangles and add the areas. Don't subtract for cabinets or islands – you need tile under them for proper height matching.",
+  },
+{
+    question: "Should I buy all tiles at once?",
+    answer: "Yes, always. Tiles from different production batches can have slight color variations (dye lot differences). Buy everything you need plus 10-15% extra in one purchase. Keep spare tiles for future repairs – finding an exact match years later is nearly impossible.",
+  },
+{
+    question: "How much grout do I need?",
+    answer: "Rough estimate: 1 kg of grout per m² for standard 3mm joints. Larger tiles with wider joints need more. A 25kg bag typically covers 20-30 m² of floor tile. Your tile supplier can calculate exact amounts based on tile size and joint width.",
+  },
+{
+    question: "What's the difference between ceramic and porcelain tile?",
+    answer: "Porcelain is denser, fired at higher temperatures, and absorbs less than 0.5% water. Ceramic is more porous and softer. Porcelain works outdoors and in wet areas; ceramic is fine for interior walls. Porcelain costs more but lasts longer.",
+  },
+{
+    question: "Can I tile over existing tile?",
+    answer: "Sometimes. The existing tile must be firmly attached, level, and clean. You'll need a specialty primer and thin-set mortar designed for tile-over-tile. Height buildup is the main issue – doors may need trimming, and transitions to other floors become awkward.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

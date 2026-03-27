@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function OrbitalPeriodCalculator() {
   const [semiMajorAxis, setSemimajorAxis] = useState<string>("");
@@ -251,55 +253,33 @@ export default function OrbitalPeriodCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the orbital period formula?</h4>
-                <p>
-                  T = 2π × √(a³/GM), where T is period, a is semi-major axis, G is the gravitational
-                  constant (6.674×10⁻¹¹), and M is the central body mass. This comes from equating
-                  gravitational force to centripetal force for circular motion.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does satellite mass affect orbital period?</h4>
-                <p>
-                  No — not when the satellite is much less massive than the central body. A 1 kg satellite
-                  and a 1000 kg satellite at the same altitude have identical orbital periods. Only the
-                  central body mass matters. This is why all objects fall at the same rate in a vacuum.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do geostationary satellites orbit at 35,786 km?</h4>
-                <p>
-                  That specific altitude gives exactly 24-hour orbital period, matching Earth's rotation.
-                  Lower orbits are faster; higher orbits are slower. At 35,786 km above the equator,
-                  satellites stay fixed over one point — perfect for communications and weather monitoring.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is this calculator?</h4>
-                <p>
-                  Very accurate for ideal two-body systems. Real orbits have perturbations from other
-                  bodies, atmospheric drag (for LEO), and non-spherical gravity fields. For most
-                  educational and planning purposes, the two-body approximation is sufficient.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I use this for binary star systems?</h4>
-                <p>
-                  For binary systems, use the sum of both masses as M and the separation distance as a.
-                  The formula still applies but both bodies orbit their common center of mass. For
-                  equal-mass binaries, each star orbits at half the separation distance.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the orbital period formula?",
+    answer: "T = 2π × √(a³/GM), where T is period, a is semi-major axis, G is the gravitational constant (6.674×10⁻¹¹), and M is the central body mass. This comes from equating gravitational force to centripetal force for circular motion.",
+  },
+{
+    question: "Does satellite mass affect orbital period?",
+    answer: "No — not when the satellite is much less massive than the central body. A 1 kg satellite and a 1000 kg satellite at the same altitude have identical orbital periods. Only the central body mass matters. This is why all objects fall at the same rate in a vacuum.",
+  },
+{
+    question: "Why do geostationary satellites orbit at 35,786 km?",
+    answer: "That specific altitude gives exactly 24-hour orbital period, matching Earth's rotation. Lower orbits are faster; higher orbits are slower. At 35,786 km above the equator, satellites stay fixed over one point — perfect for communications and weather monitoring.",
+  },
+{
+    question: "How accurate is this calculator?",
+    answer: "Very accurate for ideal two-body systems. Real orbits have perturbations from other bodies, atmospheric drag (for LEO), and non-spherical gravity fields. For most educational and planning purposes, the two-body approximation is sufficient.",
+  },
+{
+    question: "Can I use this for binary star systems?",
+    answer: "For binary systems, use the sum of both masses as M and the separation distance as a. The formula still applies but both bodies orbit their common center of mass. For equal-mass binaries, each star orbits at half the separation distance.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

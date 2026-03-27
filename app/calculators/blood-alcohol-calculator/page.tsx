@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BloodAlcoholCalculator() {
   const [gender, setGender] = useState<"male" | "female">("male");
@@ -335,54 +337,33 @@ export default function BloodAlcoholCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is this BAC calculator?</h4>
-                <p>
-                  This calculator provides an estimate based on the Widmark formula. Actual BAC varies based on
-                  genetics, metabolism, food intake, medication, and other factors. Never rely on calculator results
-                  to determine if you are safe to drive.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How long does it take to sober up?</h4>
-                <p>
-                  Your body metabolizes alcohol at about 0.015% BAC per hour. If your BAC is 0.08%, it takes roughly
-                  5-6 hours to reach zero. Coffee, cold showers, and exercise do not speed up this process — only
-                  time works.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I be under the limit but still impaired?</h4>
-                <p>
-                  Yes. Impairment begins with the first drink. Studies show reduced reaction time and judgment at
-                  0.02% BAC. The legal limit is not a safety threshold — it is a legal definition for prosecution.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What affects how quickly I get drunk?</h4>
-                <p>
-                  Body weight, gender, food intake, drinking speed, medication, fatigue, and genetics all affect
-                  BAC. Carbonated drinks may increase absorption rate. Drinking on an empty stomach leads to faster
-                  and higher peak BAC.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is the legal BAC limit the same everywhere?</h4>
-                <p>
-                  No. Most U.S. states use 0.08% for regular drivers, but commercial drivers face a 0.04% limit.
-                  Some countries have lower limits (0.05% in much of Europe, 0.02% in parts of Asia). For drivers
-                  under 21, most U.S. states have zero tolerance laws (0.01-0.02%).
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate is this BAC calculator?",
+    answer: "This calculator provides an estimate based on the Widmark formula. Actual BAC varies based on genetics, metabolism, food intake, medication, and other factors. Never rely on calculator results to determine if you are safe to drive.",
+  },
+{
+    question: "How long does it take to sober up?",
+    answer: "Your body metabolizes alcohol at about 0.015% BAC per hour. If your BAC is 0.08%, it takes roughly 5-6 hours to reach zero. Coffee, cold showers, and exercise do not speed up this process — only time works.",
+  },
+{
+    question: "Can I be under the limit but still impaired?",
+    answer: "Yes. Impairment begins with the first drink. Studies show reduced reaction time and judgment at 0.02% BAC. The legal limit is not a safety threshold — it is a legal definition for prosecution.",
+  },
+{
+    question: "What affects how quickly I get drunk?",
+    answer: "Body weight, gender, food intake, drinking speed, medication, fatigue, and genetics all affect BAC. Carbonated drinks may increase absorption rate. Drinking on an empty stomach leads to faster and higher peak BAC.",
+  },
+{
+    question: "Is the legal BAC limit the same everywhere?",
+    answer: "No. Most U.S. states use 0.08% for regular drivers, but commercial drivers face a 0.04% limit. Some countries have lower limits (0.05% in much of Europe, 0.02% in parts of Asia). For drivers under 21, most U.S. states have zero tolerance laws (0.01-0.02%).",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

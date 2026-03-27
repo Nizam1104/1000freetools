@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, Gauge, Timer, Route } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface SpeedResult {
   speed: number;
@@ -240,33 +242,33 @@ export default function SpeedCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How do I calculate average speed?</h3>
-                <p className="text-sm text-muted-foreground">Divide total distance by total time. For example, 100 km in 2 hours = 50 km/h average speed. This calculator handles unit conversions automatically.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What's the difference between speed and velocity?</h3>
-                <p className="text-sm text-muted-foreground">Speed is how fast you're going (scalar). Velocity includes direction (vector). A car going 60 mph has speed; 60 mph north has velocity.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How do I convert km/h to mph?</h3>
-                <p className="text-sm text-muted-foreground">Multiply km/h by 0.621 to get mph. Or divide mph by 0.621 to get km/h. 100 km/h equals about 62 mph.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is a knot?</h3>
-                <p className="text-sm text-muted-foreground">A knot is one nautical mile per hour, used in aviation and maritime. One knot equals 1.852 km/h or 1.151 mph.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">Why is my average speed lower than expected?</h3>
-                <p className="text-sm text-muted-foreground">Average speed includes all stops and slow sections. Traffic, hills, and fatigue reduce average speed below your maximum or cruising speed.</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate average speed?",
+    answer: "Divide total distance by total time. For example, 100 km in 2 hours = 50 km/h average speed. This calculator handles unit conversions automatically.",
+  },
+{
+    question: "What's the difference between speed and velocity?",
+    answer: "Speed is how fast you're going (scalar). Velocity includes direction (vector). A car going 60 mph has speed; 60 mph north has velocity.",
+  },
+{
+    question: "How do I convert km/h to mph?",
+    answer: "Multiply km/h by 0.621 to get mph. Or divide mph by 0.621 to get km/h. 100 km/h equals about 62 mph.",
+  },
+{
+    question: "What is a knot?",
+    answer: "A knot is one nautical mile per hour, used in aviation and maritime. One knot equals 1.852 km/h or 1.151 mph.",
+  },
+{
+    question: "Why is my average speed lower than expected?",
+    answer: "Average speed includes all stops and slow sections. Traffic, hills, and fatigue reduce average speed below your maximum or cruising speed.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

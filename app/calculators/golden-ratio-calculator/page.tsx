@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -207,47 +209,33 @@ export default function GoldenRatioCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the exact value of the golden ratio?</h4>
-            <p className="text-sm text-muted-foreground">
-              φ = (1 + √5) / 2 = 1.618033988749895... It's an irrational number, so the decimal never ends or repeats. For practical purposes, 1.618 is accurate enough.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I use the golden ratio in design?</h4>
-            <p className="text-sm text-muted-foreground">
-              Divide your layout using 1.618:1 proportions. For a 1000px wide page, make the main content 618px and sidebar 382px. Or use the golden spiral to place focal points. Many design tools have golden ratio guides built in.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is the golden ratio really everywhere?</h4>
-            <p className="text-sm text-muted-foreground">
-              Sometimes it's overstated. Many claimed golden ratio appearances are coincidental or measured selectively. But genuine examples exist - sunflower seeds, nautilus shells, and classical architecture do use these proportions.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a golden rectangle?</h4>
-            <p className="text-sm text-muted-foreground">
-              A rectangle where the ratio of length to width equals φ. Cut off a square from a golden rectangle, and the remaining rectangle is also golden. This creates the golden spiral when you connect the corners.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How is the golden ratio related to the Fibonacci sequence?</h4>
-            <p className="text-sm text-muted-foreground">
-              The ratio of consecutive Fibonacci numbers converges to φ. F(10)/F(9) = 55/34 = 1.6176. F(20)/F(19) = 6765/4181 = 1.6180. This is why Fibonacci spirals in nature approximate golden spirals.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the exact value of the golden ratio?",
+    answer: "φ = (1 + √5) / 2 = 1.618033988749895... It's an irrational number, so the decimal never ends or repeats. For practical purposes, 1.618 is accurate enough.",
+  },
+{
+    question: "How do I use the golden ratio in design?",
+    answer: "Divide your layout using 1.618:1 proportions. For a 1000px wide page, make the main content 618px and sidebar 382px. Or use the golden spiral to place focal points. Many design tools have golden ratio guides built in.",
+  },
+{
+    question: "Is the golden ratio really everywhere?",
+    answer: "Sometimes it's overstated. Many claimed golden ratio appearances are coincidental or measured selectively. But genuine examples exist - sunflower seeds, nautilus shells, and classical architecture do use these proportions.",
+  },
+{
+    question: "What is a golden rectangle?",
+    answer: "A rectangle where the ratio of length to width equals φ. Cut off a square from a golden rectangle, and the remaining rectangle is also golden. This creates the golden spiral when you connect the corners.",
+  },
+{
+    question: "How is the golden ratio related to the Fibonacci sequence?",
+    answer: "The ratio of consecutive Fibonacci numbers converges to φ. F(10)/F(9) = 55/34 = 1.6176. F(20)/F(19) = 6765/4181 = 1.6180. This is why Fibonacci spirals in nature approximate golden spirals.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

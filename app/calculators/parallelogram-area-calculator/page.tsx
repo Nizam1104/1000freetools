@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ParallelogramAreaCalculator() {
   const [base, setBase] = useState<string>("");
@@ -220,33 +222,33 @@ export default function ParallelogramAreaCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the difference between height and side length?</h4>
-              <p>The side length is the actual length of the slanted edge. The height is the perpendicular distance from the base to the opposite side. In a rectangle, height equals side length. In a tilted parallelogram, height is always shorter than the side.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Can a parallelogram have right angles?</h4>
-              <p>Yes. A parallelogram with one right angle must have four right angles — it's a rectangle. Rectangles are a special type of parallelogram where all angles are 90 degrees.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How do I find the height if I only know the sides and angle?</h4>
-              <p>Use trigonometry: height = side × sin(angle). If you know one side is 10 units and the angle between that side and the base is 30 degrees, the height is 10 × sin(30°) = 10 × 0.5 = 5 units.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Is a rhombus a parallelogram?</h4>
-              <p>Yes. A rhombus is a parallelogram with all four sides equal. It has all the properties of a parallelogram plus perpendicular diagonals that bisect the angles.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Where are parallelograms used in real life?</h4>
-              <p>Parallelograms appear in architecture (slanted roofs, modern building facades), engineering (truss bridges, mechanical linkages), and design (tiling patterns, perspective drawings). The parallelogram law of vector addition is fundamental in physics.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What's the difference between height and side length?",
+    answer: "The side length is the actual length of the slanted edge. The height is the perpendicular distance from the base to the opposite side. In a rectangle, height equals side length. In a tilted parallelogram, height is always shorter than the side.",
+  },
+{
+    question: "Can a parallelogram have right angles?",
+    answer: "Yes. A parallelogram with one right angle must have four right angles — it's a rectangle. Rectangles are a special type of parallelogram where all angles are 90 degrees.",
+  },
+{
+    question: "How do I find the height if I only know the sides and angle?",
+    answer: "Use trigonometry: height = side × sin(angle). If you know one side is 10 units and the angle between that side and the base is 30 degrees, the height is 10 × sin(30°) = 10 × 0.5 = 5 units.",
+  },
+{
+    question: "Is a rhombus a parallelogram?",
+    answer: "Yes. A rhombus is a parallelogram with all four sides equal. It has all the properties of a parallelogram plus perpendicular diagonals that bisect the angles.",
+  },
+{
+    question: "Where are parallelograms used in real life?",
+    answer: "Parallelograms appear in architecture (slanted roofs, modern building facades), engineering (truss bridges, mechanical linkages), and design (tiling patterns, perspective drawings). The parallelogram law of vector addition is fundamental in physics.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

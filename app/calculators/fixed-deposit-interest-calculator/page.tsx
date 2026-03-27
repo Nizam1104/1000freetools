@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -338,47 +340,33 @@ export default function FixedDepositInterestCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How is FD interest calculated?</h4>
-                <p className="text-sm text-muted-foreground">
-                  FD interest uses compound interest formula: A = P(1 + r/n)^(nt). Most banks compound quarterly. For simple interest FDs (rare), use I = P × r × t. Compound interest always gives higher returns over time.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Is FD interest taxable?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Yes, FD interest is taxable as income. Banks deduct TDS (tax deducted at source) if interest exceeds threshold limits. Tax-saving FDs (5-year lock-in) offer deduction under Section 80C in India up to $1,500.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Can I withdraw FD before maturity?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Yes, but with penalties. Banks typically charge 0.5-1% lower interest on premature withdrawals. Some banks allow partial withdrawals. Tax-saving FDs cannot be broken before 5 years.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What happens to FD on maturity?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Banks either credit the amount to your linked account or auto-renew the FD at prevailing rates. Auto-renewal is convenient but you might miss better rates elsewhere. Set maturity instructions when opening the FD.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm mb-2">Are fixed deposits safe?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Bank FDs are very safe. In the US, FDIC insures up to $250,000. In India, DICGC insures up to ₹5 lakh per bank. Corporate FDs carry higher risk but offer better rates. Diversify across banks for large amounts.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How is FD interest calculated?",
+    answer: "FD interest uses compound interest formula: A = P(1 + r/n)^(nt). Most banks compound quarterly. For simple interest FDs (rare), use I = P × r × t. Compound interest always gives higher returns over time.",
+  },
+{
+    question: "Is FD interest taxable?",
+    answer: "Yes, FD interest is taxable as income. Banks deduct TDS (tax deducted at source) if interest exceeds threshold limits. Tax-saving FDs (5-year lock-in) offer deduction under Section 80C in India up to $1,500.",
+  },
+{
+    question: "Can I withdraw FD before maturity?",
+    answer: "Yes, but with penalties. Banks typically charge 0.5-1% lower interest on premature withdrawals. Some banks allow partial withdrawals. Tax-saving FDs cannot be broken before 5 years.",
+  },
+{
+    question: "What happens to FD on maturity?",
+    answer: "Banks either credit the amount to your linked account or auto-renew the FD at prevailing rates. Auto-renewal is convenient but you might miss better rates elsewhere. Set maturity instructions when opening the FD.",
+  },
+{
+    question: "Are fixed deposits safe?",
+    answer: "Bank FDs are very safe. In the US, FDIC insures up to $250,000. In India, DICGC insures up to ₹5 lakh per bank. Corporate FDs carry higher risk but offer better rates. Diversify across banks for large amounts.",
+  }
+  ]} />
+</section>
         </div>
       </div>
     </div>

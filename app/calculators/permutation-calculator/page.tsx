@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PermutationCalculator() {
   const [n, setN] = useState<string>("");
@@ -258,33 +260,33 @@ export default function PermutationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What does P(n,r) mean?</h4>
-              <p>P(n,r) means "permutations of n items taken r at a time." It counts how many ways you can arrange r items selected from n total items when order matters.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">When do I use factorial in permutations?</h4>
-              <p>Factorial appears in the permutation formula: P(n,r) = n! / (n-r)!. When r equals n (arranging all items), it simplifies to just n!.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How is permutation different from combination?</h4>
-              <p>Permutations care about order; combinations don't. ABC and BAC are 2 different permutations but 1 combination. Use permutations for arrangements, combinations for selections.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Can r be larger than n?</h4>
-              <p>No. You can't select more items than you have. If r &gt; n, the permutation equals 0. The calculator requires r ≤ n.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is 0! (zero factorial)?</h4>
-              <p>By definition, 0! = 1. This makes the formulas work correctly. P(n,n) = n! / 0! = n! / 1 = n!, which is correct for arranging all n items.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does P(n,r) mean?",
+    answer: "P(n,r) means \"permutations of n items taken r at a time.\" It counts how many ways you can arrange r items selected from n total items when order matters.",
+  },
+{
+    question: "When do I use factorial in permutations?",
+    answer: "Factorial appears in the permutation formula: P(n,r) = n! / (n-r)!. When r equals n (arranging all items), it simplifies to just n!.",
+  },
+{
+    question: "How is permutation different from combination?",
+    answer: "Permutations care about order; combinations don't. ABC and BAC are 2 different permutations but 1 combination. Use permutations for arrangements, combinations for selections.",
+  },
+{
+    question: "Can r be larger than n?",
+    answer: "No. You can't select more items than you have. If r &gt; n, the permutation equals 0. The calculator requires r ≤ n.",
+  },
+{
+    question: "What is 0! (zero factorial)?",
+    answer: "By definition, 0! = 1. This makes the formulas work correctly. P(n,n) = n! / 0! = n! / 1 = n!, which is correct for arranging all n items.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

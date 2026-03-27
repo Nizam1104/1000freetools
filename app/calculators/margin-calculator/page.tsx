@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MarginCalculatorPage() {
   const [revenue, setRevenue] = useState<string>("");
@@ -271,45 +273,33 @@ export default function MarginCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good profit margin?</h4>
-                  <p>
-                    It depends on your industry. A 10% net margin is excellent for retail but poor for software. As a rough guide: 5% net margin is low, 10% is healthy, and 15%+ is strong for most traditional businesses. Gross margins should be high enough to cover operating expenses with room for profit.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the difference between margin and markup?</h4>
-                  <p>
-                    Margin is profit as a percentage of selling price. Markup is profit as a percentage of cost. Example: Buy for $100, sell for $150. Markup is 50% ($50/$100), but margin is 33% ($50/$150). Margin is the correct metric for profitability analysis.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate the selling price for a target margin?</h4>
-                  <p>
-                    Use the formula: Price = Cost / (1 - Target Margin). For a $100 cost and 40% target margin: Price = $100 / (1 - 0.40) = $100 / 0.60 = $166.67. This ensures your margin is 40% of the selling price, not the cost.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I focus on margin or volume?</h4>
-                  <p>
-                    Both matter, but margin comes first. High volume with negative or razor-thin margins is unsustainable. Aim for healthy margins, then scale volume. Some businesses intentionally run low margins to gain market share, but this strategy requires deep pockets and a clear path to future profitability.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How often should I review my margins?</h4>
-                  <p>
-                    Review product-level margins monthly and overall business margins quarterly. Input costs change, prices may need adjustment, and product mix shifts over time. Set up alerts for significant margin changes on key products. Regular review catches problems before they become crises.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good profit margin?",
+    answer: "It depends on your industry. A 10% net margin is excellent for retail but poor for software. As a rough guide: 5% net margin is low, 10% is healthy, and 15%+ is strong for most traditional businesses. Gross margins should be high enough to cover operating expenses with room for profit.",
+  },
+{
+    question: "What's the difference between margin and markup?",
+    answer: "Margin is profit as a percentage of selling price. Markup is profit as a percentage of cost. Example: Buy for $100, sell for $150. Markup is 50% ($50/$100), but margin is 33% ($50/$150). Margin is the correct metric for profitability analysis.",
+  },
+{
+    question: "How do I calculate the selling price for a target margin?",
+    answer: "Use the formula: Price = Cost / (1 - Target Margin). For a $100 cost and 40% target margin: Price = $100 / (1 - 0.40) = $100 / 0.60 = $166.67. This ensures your margin is 40% of the selling price, not the cost.",
+  },
+{
+    question: "Should I focus on margin or volume?",
+    answer: "Both matter, but margin comes first. High volume with negative or razor-thin margins is unsustainable. Aim for healthy margins, then scale volume. Some businesses intentionally run low margins to gain market share, but this strategy requires deep pockets and a clear path to future profitability.",
+  },
+{
+    question: "How often should I review my margins?",
+    answer: "Review product-level margins monthly and overall business margins quarterly. Input costs change, prices may need adjustment, and product mix shifts over time. Set up alerts for significant margin changes on key products. Regular review catches problems before they become crises.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

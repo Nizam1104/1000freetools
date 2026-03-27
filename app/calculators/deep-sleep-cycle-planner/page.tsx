@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DeepSleepCyclePlanner() {
   const [wakeTime, setWakeTime] = useState<string>("07:00");
@@ -336,45 +338,33 @@ export default function DeepSleepCyclePlanner() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many sleep cycles do I need?</h4>
-                <p>
-                  Most adults need 5 cycles (7.5 hours) per night. Some function well on 4 cycles (6 hours), others need 6 cycles (9 hours). Teens and athletes often need more. Listen to how you feel upon waking.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do I wake up tired after 8 hours?</h4>
-                <p>
-                  You may be waking during deep sleep rather than between cycles. Try adjusting your bedtime by 15-30 minutes. Sleep quality matters more than duration — alcohol, stress, and irregular schedules reduce deep sleep.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I catch up on deep sleep?</h4>
-                <p>
-                  Your body prioritizes deep sleep after deprivation — you&apos;ll get more deep sleep the next night. But chronic sleep debt has cumulative effects. Consistent adequate sleep is better than weekend catch-up.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does age affect deep sleep?</h4>
-                <p>
-                  Yes. Deep sleep decreases with age. Children get the most deep sleep. Adults over 60 may get very little deep sleep and wake frequently. This is normal but still important to optimize what you get.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What&apos;s the best time to go to bed?</h4>
-                <p>
-                  For most people, 9-11 PM aligns with natural circadian rhythms. Earlier bedtimes (9-10 PM) maximize deep sleep since it concentrates in the first sleep cycles. Night owls may shift later but should maintain consistency.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many sleep cycles do I need?",
+    answer: "Most adults need 5 cycles (7.5 hours) per night. Some function well on 4 cycles (6 hours), others need 6 cycles (9 hours). Teens and athletes often need more. Listen to how you feel upon waking.",
+  },
+{
+    question: "Why do I wake up tired after 8 hours?",
+    answer: "You may be waking during deep sleep rather than between cycles. Try adjusting your bedtime by 15-30 minutes. Sleep quality matters more than duration — alcohol, stress, and irregular schedules reduce deep sleep.",
+  },
+{
+    question: "Can I catch up on deep sleep?",
+    answer: "Your body prioritizes deep sleep after deprivation — you&apos;ll get more deep sleep the next night. But chronic sleep debt has cumulative effects. Consistent adequate sleep is better than weekend catch-up.",
+  },
+{
+    question: "Does age affect deep sleep?",
+    answer: "Yes. Deep sleep decreases with age. Children get the most deep sleep. Adults over 60 may get very little deep sleep and wake frequently. This is normal but still important to optimize what you get.",
+  },
+{
+    question: "What&apos;s the best time to go to bed?",
+    answer: "For most people, 9-11 PM aligns with natural circadian rhythms. Earlier bedtimes (9-10 PM) maximize deep sleep since it concentrates in the first sleep cycles. Night owls may shift later but should maintain consistency.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

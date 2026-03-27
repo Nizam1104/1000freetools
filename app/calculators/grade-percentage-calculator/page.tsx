@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Cell } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function GradePercentageCalculatorPage() {
   const [marksObtained, setMarksObtained] = useState<string>("");
@@ -444,43 +446,33 @@ export default function GradePercentageCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate my overall grade from multiple assignments?</h4>
-            <p className="text-xs text-muted-foreground">
-              Add up all marks obtained, then divide by total possible marks. If you scored 85/100, 45/50, and 18/25: total obtained = 148, total possible = 175. Percentage = (148/175) × 100 = 84.6%. Don't average the percentages – that gives wrong results if assignments have different weights.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between weighted and unweighted GPA?</h4>
-            <p className="text-xs text-muted-foreground">
-              Unweighted GPA treats all classes equally – an A in PE counts the same as an A in AP Physics. Weighted GPA gives extra points for honors/AP/IB classes. An A in AP might be 5.0 instead of 4.0. Weighted GPAs can exceed 4.0; unweighted cannot.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is 70% a good grade?</h4>
-            <p className="text-xs text-muted-foreground">
-              Depends on the system. In the US, 70% is a C- (average). In the UK, 70% is a First (excellent – top classification). In India, 70% is an A (very good). Context matters. Graduate programs often require 3.0+ GPA (roughly 83%+) for admission.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I convert my grade to a different country's system?</h4>
-            <p className="text-xs text-muted-foreground">
-              Use a grade conversion tool or WES (World Education Services) guidelines. Rough guide: US A (90-100%) ≈ UK First (70%+) ≈ India O/A (80%+) ≈ Australia HD (85%+). But conversion isn't exact – different systems test different skills.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What GPA do I need for medical/law school?</h4>
-            <p className="text-xs text-muted-foreground">
-              Competitive US medical schools expect 3.7+ GPA (roughly 90%+). Top law schools want 3.8+. But GPA isn't everything – MCAT/LSAT scores, research, and extracurriculars matter too. State schools often have lower thresholds for in-state applicants.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate my overall grade from multiple assignments?",
+    answer: "Add up all marks obtained, then divide by total possible marks. If you scored 85/100, 45/50, and 18/25: total obtained = 148, total possible = 175. Percentage = (148/175) × 100 = 84.6%. Don't average the percentages – that gives wrong results if assignments have different weights.",
+  },
+{
+    question: "What's the difference between weighted and unweighted GPA?",
+    answer: "Unweighted GPA treats all classes equally – an A in PE counts the same as an A in AP Physics. Weighted GPA gives extra points for honors/AP/IB classes. An A in AP might be 5.0 instead of 4.0. Weighted GPAs can exceed 4.0; unweighted cannot.",
+  },
+{
+    question: "Is 70% a good grade?",
+    answer: "Depends on the system. In the US, 70% is a C- (average). In the UK, 70% is a First (excellent – top classification). In India, 70% is an A (very good). Context matters. Graduate programs often require 3.0+ GPA (roughly 83%+) for admission.",
+  },
+{
+    question: "How do I convert my grade to a different country's system?",
+    answer: "Use a grade conversion tool or WES (World Education Services) guidelines. Rough guide: US A (90-100%) ≈ UK First (70%+) ≈ India O/A (80%+) ≈ Australia HD (85%+). But conversion isn't exact – different systems test different skills.",
+  },
+{
+    question: "What GPA do I need for medical/law school?",
+    answer: "Competitive US medical schools expect 3.7+ GPA (roughly 90%+). Top law schools want 3.8+. But GPA isn't everything – MCAT/LSAT scores, research, and extracurriculars matter too. State schools often have lower thresholds for in-state applicants.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

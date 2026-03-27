@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BoltTorqueCalculator() {
   const [boltSize, setBoltSize] = useState<string>("");
@@ -270,55 +272,33 @@ export default function BoltTorqueCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What happens if I overtighten a bolt?</h4>
-                <p>
-                  Overtightening can stretch the bolt beyond its yield point, causing permanent deformation.
-                  This reduces clamping force and may lead to bolt failure. Extreme overtightening can strip
-                  threads in the bolt or the tapped hole, requiring expensive repairs.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I use thread locker with torque specs?</h4>
-                <p>
-                  Thread locker affects friction and changes the torque-preload relationship. If using thread
-                  locker, apply the torque value specified for lubricated conditions or follow the thread
-                  locker manufacturer's recommendations.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate are torque wrenches?</h4>
-                <p>
-                  Quality torque wrenches are accurate to ±4% when properly calibrated. Accuracy decreases
-                  at the low end of the range — use a wrench where your target torque is in the middle 80%
-                  of its range. Recalibrate after dropping or heavy use.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Do I need to retorque bolts after initial tightening?</h4>
-                <p>
-                  Some applications require retorquing after initial use, especially with gasketed joints
-                  that compress over time. Check manufacturer specifications. Critical connections like
-                  wheel lug nuts should be retorqued after 50-100 km of driving.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between torque and tension?</h4>
-                <p>
-                  Torque is the rotational force applied to tighten the bolt. Tension (preload) is the
-                  stretching force created in the bolt that clamps the joint. Torque is the input; tension
-                  is the desired result. Friction determines how much of the torque becomes tension.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What happens if I overtighten a bolt?",
+    answer: "Overtightening can stretch the bolt beyond its yield point, causing permanent deformation. This reduces clamping force and may lead to bolt failure. Extreme overtightening can strip threads in the bolt or the tapped hole, requiring expensive repairs.",
+  },
+{
+    question: "Should I use thread locker with torque specs?",
+    answer: "Thread locker affects friction and changes the torque-preload relationship. If using thread locker, apply the torque value specified for lubricated conditions or follow the thread locker manufacturer's recommendations.",
+  },
+{
+    question: "How accurate are torque wrenches?",
+    answer: "Quality torque wrenches are accurate to ±4% when properly calibrated. Accuracy decreases at the low end of the range — use a wrench where your target torque is in the middle 80% of its range. Recalibrate after dropping or heavy use.",
+  },
+{
+    question: "Do I need to retorque bolts after initial tightening?",
+    answer: "Some applications require retorquing after initial use, especially with gasketed joints that compress over time. Check manufacturer specifications. Critical connections like wheel lug nuts should be retorqued after 50-100 km of driving.",
+  },
+{
+    question: "What is the difference between torque and tension?",
+    answer: "Torque is the rotational force applied to tighten the bolt. Tension (preload) is the stretching force created in the bolt that clamps the joint. Torque is the input; tension is the desired result. Friction determines how much of the torque becomes tension.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

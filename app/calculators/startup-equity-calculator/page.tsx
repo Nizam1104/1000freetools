@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function StartupEquityCalculatorPage() {
   const [founderShares, setFounderShares] = useState<string>("");
@@ -212,33 +214,33 @@ export default function StartupEquityCalculatorPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is a typical option pool size?</h4>
-                  <p className="text-sm text-muted-foreground">Most startups create an option pool of 10-20% of total shares. Early-stage companies often start with 10-15%, while later-stage companies may expand to 20% for hiring executives.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How much dilution is normal per round?</h4>
-                  <p className="text-sm text-muted-foreground">Seed rounds typically dilute founders by 15-25%. Series A usually dilutes by 20-30%. Total founder ownership after Series A is often 50-70% of the original.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is pre-money vs post-money valuation?</h4>
-                  <p className="text-sm text-muted-foreground">Pre-money is the company value before investment. Post-money = pre-money + investment. Investor ownership = investment / post-money valuation.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">When should the option pool be created?</h4>
-                  <p className="text-sm text-muted-foreground">Investors typically require the option pool to be created pre-money, meaning founders bear the dilution. This is standard term sheet language.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How do I calculate share prices?</h4>
-                  <p className="text-sm text-muted-foreground">Price per share = pre-money valuation / total shares outstanding. New shares issued = investment amount / price per share.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a typical option pool size?",
+    answer: "Most startups create an option pool of 10-20% of total shares. Early-stage companies often start with 10-15%, while later-stage companies may expand to 20% for hiring executives.",
+  },
+{
+    question: "How much dilution is normal per round?",
+    answer: "Seed rounds typically dilute founders by 15-25%. Series A usually dilutes by 20-30%. Total founder ownership after Series A is often 50-70% of the original.",
+  },
+{
+    question: "What is pre-money vs post-money valuation?",
+    answer: "Pre-money is the company value before investment. Post-money = pre-money + investment. Investor ownership = investment / post-money valuation.",
+  },
+{
+    question: "When should the option pool be created?",
+    answer: "Investors typically require the option pool to be created pre-money, meaning founders bear the dilution. This is standard term sheet language.",
+  },
+{
+    question: "How do I calculate share prices?",
+    answer: "Price per share = pre-money valuation / total shares outstanding. New shares issued = investment amount / price per share.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

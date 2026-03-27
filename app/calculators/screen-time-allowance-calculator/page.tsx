@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -389,33 +391,33 @@ export default function ScreenTimeAllowanceCalculatorPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What are the recommended screen time limits by age?</h4>
-                  <p className="text-sm text-muted-foreground">AAP recommends: 0-18 months no screens (except video calls), 18-24 months limited high-quality content, 2-5 years max 1 hour/day, 6+ years consistent limits ensuring screens don&apos;t replace sleep and physical activity.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Is educational screen time counted in the limit?</h4>
-                  <p className="text-sm text-muted-foreground">For younger children (under 5), educational content with parental co-viewing is encouraged within the limit. For school-age children, homework-related screen time is typically separate from recreational limits.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How can I enforce screen time limits?</h4>
-                  <p className="text-sm text-muted-foreground">Use parental controls, set device curfews, create a family media plan, keep bedrooms screen-free, and model healthy screen habits yourself. Consistency is key.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What are the signs of too much screen time?</h4>
-                  <p className="text-sm text-muted-foreground">Watch for sleep problems, eye strain, irritability when devices are removed, declining grades, reduced physical activity, and social withdrawal.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Should I allow screens before bedtime?</h4>
-                  <p className="text-sm text-muted-foreground">No. Experts recommend no screens 1-2 hours before bedtime. Blue light suppresses melatonin and can significantly disrupt sleep quality and duration.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What are the recommended screen time limits by age?",
+    answer: "AAP recommends: 0-18 months no screens (except video calls), 18-24 months limited high-quality content, 2-5 years max 1 hour/day, 6+ years consistent limits ensuring screens don&apos;t replace sleep and physical activity.",
+  },
+{
+    question: "Is educational screen time counted in the limit?",
+    answer: "For younger children (under 5), educational content with parental co-viewing is encouraged within the limit. For school-age children, homework-related screen time is typically separate from recreational limits.",
+  },
+{
+    question: "How can I enforce screen time limits?",
+    answer: "Use parental controls, set device curfews, create a family media plan, keep bedrooms screen-free, and model healthy screen habits yourself. Consistency is key.",
+  },
+{
+    question: "What are the signs of too much screen time?",
+    answer: "Watch for sleep problems, eye strain, irritability when devices are removed, declining grades, reduced physical activity, and social withdrawal.",
+  },
+{
+    question: "Should I allow screens before bedtime?",
+    answer: "No. Experts recommend no screens 1-2 hours before bedtime. Blue light suppresses melatonin and can significantly disrupt sleep quality and duration.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

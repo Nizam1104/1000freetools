@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -739,76 +741,37 @@ export default function TrigFunctionCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">
-              When is tangent undefined?
-            </h4>
-            <p className="text-xs text-muted-foreground">
-              Tangent equals sin/cos, so it's undefined whenever cosine equals
-              zero. That happens at 90°, 270°, and every 180° after that. The
-              graph of tangent has vertical asymptotes at these points.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">
-              Why are some cosecant and secant values undefined?
-            </h4>
-            <p className="text-xs text-muted-foreground">
-              Cosecant is 1/sine and secant is 1/cosine. When sine or cosine
-              equals zero, you'd be dividing by zero – which is undefined.
-              Cosecant is undefined at 0°, 180°, 360°. Secant is undefined at
-              90°, 270°.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">
-              How do I convert between degrees and radians?
-            </h4>
-            <p className="text-xs text-muted-foreground">
-              Multiply degrees by π/180 to get radians. Multiply radians by
-              180/π to get degrees. A full circle is 360° or 2π radians. So 180°
-              = π rad, 90° = π/2 rad, 60° = π/3 rad.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">
-              What does it mean that trig functions are periodic?
-            </h4>
-            <p className="text-xs text-muted-foreground">
-              Periodic means they repeat their values in regular intervals. Sine
-              and cosine repeat every 360° (2π rad). Tangent and cotangent
-              repeat every 180° (π rad). This is why sin(30°) = sin(390°) =
-              sin(750°).
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">
-              How do I know which quadrant an angle is in?
-            </h4>
-            <p className="text-xs text-muted-foreground">
-              First normalize the angle to 0°–360°. Quadrant I is 0°–90°,
-              Quadrant II is 90°–180°, Quadrant III is 180°–270°, Quadrant IV is
-              270°–360°. The quadrant tells you which functions are positive.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">
-              What are exact values vs decimal approximations?
-            </h4>
-            <p className="text-xs text-muted-foreground">
-              Exact values use fractions and radicals like 1/2 or √3/2. Decimal
-              approximations are rounded numbers like 0.5 or 0.866025. Exact
-              values are precise; decimals are easier to compare but lose
-              precision.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "When is tangent undefined?",
+    answer: "Tangent equals sin/cos, so it's undefined whenever cosine equals zero. That happens at 90°, 270°, and every 180° after that. The graph of tangent has vertical asymptotes at these points.",
+  },
+{
+    question: "Why are some cosecant and secant values undefined?",
+    answer: "Cosecant is 1/sine and secant is 1/cosine. When sine or cosine equals zero, you'd be dividing by zero – which is undefined. Cosecant is undefined at 0°, 180°, 360°. Secant is undefined at 90°, 270°.",
+  },
+{
+    question: "How do I convert between degrees and radians?",
+    answer: "Multiply degrees by π/180 to get radians. Multiply radians by 180/π to get degrees. A full circle is 360° or 2π radians. So 180° = π rad, 90° = π/2 rad, 60° = π/3 rad.",
+  },
+{
+    question: "What does it mean that trig functions are periodic?",
+    answer: "Periodic means they repeat their values in regular intervals. Sine and cosine repeat every 360° (2π rad). Tangent and cotangent repeat every 180° (π rad). This is why sin(30°) = sin(390°) = sin(750°).",
+  },
+{
+    question: "How do I know which quadrant an angle is in?",
+    answer: "First normalize the angle to 0°–360°. Quadrant I is 0°–90°, Quadrant II is 90°–180°, Quadrant III is 180°–270°, Quadrant IV is 270°–360°. The quadrant tells you which functions are positive.",
+  },
+{
+    question: "What are exact values vs decimal approximations?",
+    answer: "Exact values use fractions and radicals like 1/2 or √3/2. Decimal approximations are rounded numbers like 0.5 or 0.866025. Exact values are precise; decimals are easier to compare but lose precision.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

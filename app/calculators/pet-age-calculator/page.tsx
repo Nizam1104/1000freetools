@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -472,45 +474,33 @@ export default function PetAgeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate my dog age in human years?</h4>
-                  <p>
-                    The first year of a dog life equals about 15 human years. The second year adds about 9 more years. After that, each dog year equals 4 to 7 human years depending on size. Small dogs age slower (about 4-5 human years per dog year), while giant breeds age faster (about 7-8 human years per dog year).
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is one dog year really equal to 7 human years?</h4>
-                  <p>
-                    No, this is a myth. The 7-to-1 ratio does not reflect how dogs actually age. Dogs mature much faster in their first two years, and the rate varies significantly by breed size. A more accurate approach uses different multipliers based on the dog age and size category.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How old is my cat in human years?</h4>
-                  <p>
-                    A one-year-old cat is about 15 in human years. A two-year-old cat is about 24. After that, add about 4 human years for each cat year. So a 10-year-old cat would be roughly 56 in human years. Indoor cats often live into their late teens or early twenties.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why do larger dogs age faster than smaller dogs?</h4>
-                  <p>
-                    Scientists believe rapid growth in large breed puppies may accelerate cellular aging. Large dogs also have higher rates of age-related diseases like cancer. A Great Dane reaches senior status around 5-6 years, while a Chihuahua might not be considered senior until 10-11 years.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">When is my pet considered a senior?</h4>
-                  <p>
-                    For small dogs, senior status typically starts around 10-11 years. Medium dogs become seniors around 8-9 years. Large and giant breeds are considered seniors by 5-7 years. Cats are generally considered seniors at around 11 years and geriatric at 15 years.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate my dog age in human years?",
+    answer: "The first year of a dog life equals about 15 human years. The second year adds about 9 more years. After that, each dog year equals 4 to 7 human years depending on size. Small dogs age slower (about 4-5 human years per dog year), while giant breeds age faster (about 7-8 human years per dog year).",
+  },
+{
+    question: "Is one dog year really equal to 7 human years?",
+    answer: "No, this is a myth. The 7-to-1 ratio does not reflect how dogs actually age. Dogs mature much faster in their first two years, and the rate varies significantly by breed size. A more accurate approach uses different multipliers based on the dog age and size category.",
+  },
+{
+    question: "How old is my cat in human years?",
+    answer: "A one-year-old cat is about 15 in human years. A two-year-old cat is about 24. After that, add about 4 human years for each cat year. So a 10-year-old cat would be roughly 56 in human years. Indoor cats often live into their late teens or early twenties.",
+  },
+{
+    question: "Why do larger dogs age faster than smaller dogs?",
+    answer: "Scientists believe rapid growth in large breed puppies may accelerate cellular aging. Large dogs also have higher rates of age-related diseases like cancer. A Great Dane reaches senior status around 5-6 years, while a Chihuahua might not be considered senior until 10-11 years.",
+  },
+{
+    question: "When is my pet considered a senior?",
+    answer: "For small dogs, senior status typically starts around 10-11 years. Medium dogs become seniors around 8-9 years. Large and giant breeds are considered seniors by 5-7 years. Cats are generally considered seniors at around 11 years and geriatric at 15 years.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

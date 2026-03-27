@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function SIPCalculatorPage() {
   const [monthlyContribution, setMonthlyContribution] = useState<string>("");
@@ -345,43 +347,33 @@ export default function SIPCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is SIP better than lump sum investment?</h4>
-            <p className="text-xs text-muted-foreground">
-              SIP is better for regular income earners who want to build wealth gradually without timing the market. Lump sum works well when you have a large amount (bonus, inheritance) and can tolerate short-term volatility. For most people, SIP reduces the risk of investing everything at a market peak.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is a good SIP return rate?</h4>
-            <p className="text-xs text-muted-foreground">
-              For equity mutual funds, 12% annual return is a reasonable long-term expectation. Large cap funds typically deliver 10-12%, while mid and small cap funds can give 14-18% but with higher volatility. Debt funds usually return 6-8%. Past performance does not guarantee future results.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How much SIP should I start with?</h4>
-            <p className="text-xs text-muted-foreground">
-              Start with an amount you can sustain consistently - even Rs. 500 or Rs. 1,000 per month works. The key is regularity, not the amount. Increase your SIP by 10% annually (step-up SIP) to accelerate wealth creation. A good rule is to invest 10-20% of your monthly income.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">When should I stop or redeem my SIP?</h4>
-            <p className="text-xs text-muted-foreground">
-              Stop your SIP only if you have reached your financial goal, the fund consistently underperforms its benchmark for 2-3 years, or you need the money for planned expenses. Do not stop SIPs during market crashes - that is when you accumulate more units at lower prices.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I lose money in SIP?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, SIPs in equity funds can show negative returns in the short term (1-3 years). However, over periods of 7+ years, equity SIPs have historically delivered positive returns in India. The risk of loss decreases significantly with longer investment horizons. Debt fund SIPs have lower risk but also lower returns.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is SIP better than lump sum investment?",
+    answer: "SIP is better for regular income earners who want to build wealth gradually without timing the market. Lump sum works well when you have a large amount (bonus, inheritance) and can tolerate short-term volatility. For most people, SIP reduces the risk of investing everything at a market peak.",
+  },
+{
+    question: "What is a good SIP return rate?",
+    answer: "For equity mutual funds, 12% annual return is a reasonable long-term expectation. Large cap funds typically deliver 10-12%, while mid and small cap funds can give 14-18% but with higher volatility. Debt funds usually return 6-8%. Past performance does not guarantee future results.",
+  },
+{
+    question: "How much SIP should I start with?",
+    answer: "Start with an amount you can sustain consistently - even Rs. 500 or Rs. 1,000 per month works. The key is regularity, not the amount. Increase your SIP by 10% annually (step-up SIP) to accelerate wealth creation. A good rule is to invest 10-20% of your monthly income.",
+  },
+{
+    question: "When should I stop or redeem my SIP?",
+    answer: "Stop your SIP only if you have reached your financial goal, the fund consistently underperforms its benchmark for 2-3 years, or you need the money for planned expenses. Do not stop SIPs during market crashes - that is when you accumulate more units at lower prices.",
+  },
+{
+    question: "Can I lose money in SIP?",
+    answer: "Yes, SIPs in equity funds can show negative returns in the short term (1-3 years). However, over periods of 7+ years, equity SIPs have historically delivered positive returns in India. The risk of loss decreases significantly with longer investment horizons. Debt fund SIPs have lower risk but also lower returns.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

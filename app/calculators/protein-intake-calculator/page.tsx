@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ProteinIntakeCalculator() {
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -268,45 +270,33 @@ export default function ProteinIntakeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How much protein do I need per day?</h4>
-                <p>
-                  It depends on your goals. Sedentary adults need 0.8g per kg of body weight. Active individuals benefit from 1.2-1.6g/kg. Those building muscle or losing weight may need 1.6-2.2g/kg for optimal results.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I eat too much protein?</h4>
-                <p>
-                  For healthy people, high protein intake (up to 3g/kg) appears safe long-term. Those with kidney disease should consult a doctor. Most people naturally stop eating more protein as it's very satiating.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is plant protein as good as animal protein?</h4>
-                <p>
-                  Plant proteins are often incomplete (missing some amino acids), but eating varied plant sources throughout the day provides all essential amino acids. You may need slightly more total protein on a plant-based diet.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">When should I eat protein?</h4>
-                <p>
-                  Spread protein across 3-5 meals for best results. Aim for 20-40g per meal to maximize muscle protein synthesis. Post-workout protein within 2 hours supports recovery, but total daily intake matters most.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Do I need protein powder?</h4>
-                <p>
-                  No — protein powder is just convenient food, not a requirement. You can hit your targets with whole foods. Powder works well for post-workout shakes or when you need a quick protein boost between meals.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much protein do I need per day?",
+    answer: "It depends on your goals. Sedentary adults need 0.8g per kg of body weight. Active individuals benefit from 1.2-1.6g/kg. Those building muscle or losing weight may need 1.6-2.2g/kg for optimal results.",
+  },
+{
+    question: "Can I eat too much protein?",
+    answer: "For healthy people, high protein intake (up to 3g/kg) appears safe long-term. Those with kidney disease should consult a doctor. Most people naturally stop eating more protein as it's very satiating.",
+  },
+{
+    question: "Is plant protein as good as animal protein?",
+    answer: "Plant proteins are often incomplete (missing some amino acids), but eating varied plant sources throughout the day provides all essential amino acids. You may need slightly more total protein on a plant-based diet.",
+  },
+{
+    question: "When should I eat protein?",
+    answer: "Spread protein across 3-5 meals for best results. Aim for 20-40g per meal to maximize muscle protein synthesis. Post-workout protein within 2 hours supports recovery, but total daily intake matters most.",
+  },
+{
+    question: "Do I need protein powder?",
+    answer: "No — protein powder is just convenient food, not a requirement. You can hit your targets with whole foods. Powder works well for post-workout shakes or when you need a quick protein boost between meals.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -205,43 +207,33 @@ export default function PrimeChecker() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is 1 not a prime number?</h4>
-            <p className="text-xs text-muted-foreground">
-              By definition, primes must have exactly two distinct positive divisors. The number 1 has only one divisor (itself). Excluding 1 ensures unique prime factorization for all numbers.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the smallest prime number?</h4>
-            <p className="text-xs text-muted-foreground">
-              The smallest prime is 2. It is also the only even prime number. All other even numbers are divisible by 2, making them composite.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you check if a large number is prime?</h4>
-            <p className="text-xs text-muted-foreground">
-              For large numbers, trial division becomes slow. Advanced algorithms like Miller-Rabin (probabilistic) or AKS (deterministic) are used. Cryptography uses specialized primality tests for huge numbers.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What are twin primes?</h4>
-            <p className="text-xs text-muted-foreground">
-              Twin primes are pairs of primes that differ by 2, like (3,5), (11,13), (17,19). The Twin Prime Conjecture states there are infinitely many such pairs, but this remains unproven.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Are there patterns in prime numbers?</h4>
-            <p className="text-xs text-muted-foreground">
-              Primes appear random but follow statistical patterns. The Prime Number Theorem describes their distribution. The Riemann Hypothesis, one of math's biggest unsolved problems, relates to prime distribution.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is 1 not a prime number?",
+    answer: "By definition, primes must have exactly two distinct positive divisors. The number 1 has only one divisor (itself). Excluding 1 ensures unique prime factorization for all numbers.",
+  },
+{
+    question: "What is the smallest prime number?",
+    answer: "The smallest prime is 2. It is also the only even prime number. All other even numbers are divisible by 2, making them composite.",
+  },
+{
+    question: "How do you check if a large number is prime?",
+    answer: "For large numbers, trial division becomes slow. Advanced algorithms like Miller-Rabin (probabilistic) or AKS (deterministic) are used. Cryptography uses specialized primality tests for huge numbers.",
+  },
+{
+    question: "What are twin primes?",
+    answer: "Twin primes are pairs of primes that differ by 2, like (3,5), (11,13), (17,19). The Twin Prime Conjecture states there are infinitely many such pairs, but this remains unproven.",
+  },
+{
+    question: "Are there patterns in prime numbers?",
+    answer: "Primes appear random but follow statistical patterns. The Prime Number Theorem describes their distribution. The Riemann Hypothesis, one of math's biggest unsolved problems, relates to prime distribution.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

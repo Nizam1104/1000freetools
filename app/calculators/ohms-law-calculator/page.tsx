@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface OhmsLawResult {
   voltage?: number;
@@ -489,43 +491,33 @@ export default function OhmsLawCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does Ohm's Law apply to all circuits?</h4>
-            <p className="text-xs text-muted-foreground">
-              Ohm's Law applies to ohmic materials - resistors, wires, and simple conductors. It does not directly apply to non-ohmic components like diodes, transistors, or LEDs, which have non-linear voltage-current relationships. For AC circuits with capacitors and inductors, you need to consider impedance instead of simple resistance.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is current denoted by I?</h4>
-            <p className="text-xs text-muted-foreground">
-              The symbol I comes from the French phrase "intensité du courant" (current intensity), used by André-Marie Ampère in the early 1800s. The unit of current (ampere) is named after him. Voltage (V) and resistance (R) use more intuitive abbreviations.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What happens if resistance is zero?</h4>
-            <p className="text-xs text-muted-foreground">
-              If resistance approaches zero, current approaches infinity according to I = V/R. This is a short circuit - extremely dangerous as it can cause fires or explosions. Superconductors have zero resistance but require special conditions (extreme cold) and have current limits.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate resistance for multiple resistors?</h4>
-            <p className="text-xs text-muted-foreground">
-              For series resistors: R_total = R1 + R2 + R3 + ... For parallel resistors: 1/R_total = 1/R1 + 1/R2 + 1/R3 + ... Two parallel resistors simplify to: R_total = (R1 × R2) / (R1 + R2). Series increases resistance; parallel decreases it.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I use Ohm's Law for AC circuits?</h4>
-            <p className="text-xs text-muted-foreground">
-              For purely resistive AC circuits, yes. But most AC circuits have inductance and capacitance, creating reactance. You then use impedance (Z) instead of resistance: V = I × Z. Impedance combines resistance and reactance and depends on frequency.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Does Ohm's Law apply to all circuits?",
+    answer: "Ohm's Law applies to ohmic materials - resistors, wires, and simple conductors. It does not directly apply to non-ohmic components like diodes, transistors, or LEDs, which have non-linear voltage-current relationships. For AC circuits with capacitors and inductors, you need to consider impedance instead of simple resistance.",
+  },
+{
+    question: "Why is current denoted by I?",
+    answer: "The symbol I comes from the French phrase \"intensité du courant\" (current intensity), used by André-Marie Ampère in the early 1800s. The unit of current (ampere) is named after him. Voltage (V) and resistance (R) use more intuitive abbreviations.",
+  },
+{
+    question: "What happens if resistance is zero?",
+    answer: "If resistance approaches zero, current approaches infinity according to I = V/R. This is a short circuit - extremely dangerous as it can cause fires or explosions. Superconductors have zero resistance but require special conditions (extreme cold) and have current limits.",
+  },
+{
+    question: "How do I calculate resistance for multiple resistors?",
+    answer: "For series resistors: R_total = R1 + R2 + R3 + ... For parallel resistors: 1/R_total = 1/R1 + 1/R2 + 1/R3 + ... Two parallel resistors simplify to: R_total = (R1 × R2) / (R1 + R2). Series increases resistance; parallel decreases it.",
+  },
+{
+    question: "Can I use Ohm's Law for AC circuits?",
+    answer: "For purely resistive AC circuits, yes. But most AC circuits have inductance and capacitance, creating reactance. You then use impedance (Z) instead of resistance: V = I × Z. Impedance combines resistance and reactance and depends on frequency.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

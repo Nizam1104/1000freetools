@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function GCDCalculator() {
   const [num1, setNum1] = useState<string>("");
@@ -263,56 +265,33 @@ export default function GCDCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between GCD and HCF?</h4>
-                <p>
-                  There is no difference. GCD (Greatest Common Divisor) and HCF (Highest Common Factor)
-                  are two names for the same concept. Different regions and textbooks prefer different
-                  terms, but they mean exactly the same thing.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I find GCD of more than two numbers?</h4>
-                <p>
-                  Find GCD of the first two numbers, then find GCD of that result with the third number,
-                  and continue. For GCD(12, 18, 24): first GCD(12, 18) = 6, then GCD(6, 24) = 6.
-                  So GCD(12, 18, 24) = 6.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does it mean if GCD is 1?</h4>
-                <p>
-                  When GCD equals 1, the numbers are coprime (or relatively prime). They share no
-                  common factors other than 1. For example, 8 and 15 are coprime because their only
-                  common factor is 1, even though neither number is prime.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can GCD be used for decimal numbers?</h4>
-                <p>
-                  GCD is defined for integers only. For decimals, multiply all numbers by a power of 10
-                  to make them integers, find the GCD, then divide by the same power of 10. However,
-                  this is rarely needed in practice.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What are practical uses of GCD?</h4>
-                <p>
-                  GCD is used to simplify fractions, find common denominators, solve Diophantine equations,
-                  and in cryptography (RSA encryption relies on properties related to GCD). It is also
-                  useful for dividing things into equal groups - like finding the largest tile size that
-                  fits evenly into two different room dimensions.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the difference between GCD and HCF?",
+    answer: "There is no difference. GCD (Greatest Common Divisor) and HCF (Highest Common Factor) are two names for the same concept. Different regions and textbooks prefer different terms, but they mean exactly the same thing.",
+  },
+{
+    question: "How do I find GCD of more than two numbers?",
+    answer: "Find GCD of the first two numbers, then find GCD of that result with the third number, and continue. For GCD(12, 18, 24): first GCD(12, 18) = 6, then GCD(6, 24) = 6. So GCD(12, 18, 24) = 6.",
+  },
+{
+    question: "What does it mean if GCD is 1?",
+    answer: "When GCD equals 1, the numbers are coprime (or relatively prime). They share no common factors other than 1. For example, 8 and 15 are coprime because their only common factor is 1, even though neither number is prime.",
+  },
+{
+    question: "Can GCD be used for decimal numbers?",
+    answer: "GCD is defined for integers only. For decimals, multiply all numbers by a power of 10 to make them integers, find the GCD, then divide by the same power of 10. However, this is rarely needed in practice.",
+  },
+{
+    question: "What are practical uses of GCD?",
+    answer: "GCD is used to simplify fractions, find common denominators, solve Diophantine equations, and in cryptography (RSA encryption relies on properties related to GCD). It is also useful for dividing things into equal groups - like finding the largest tile size that fits evenly into two different room dimensions.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

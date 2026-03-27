@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -486,45 +488,33 @@ export default function CocktailABVCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What ABV is considered a strong cocktail?</h4>
-                  <p>
-                    Cocktails above 20 percent ABV are considered strong. Martinis, Manhattans, and Negronis typically range 24-30 percent. Most mixed drinks with significant juice or soda stay under 15 percent. Beer and wine are 4-14 percent for comparison.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I make a lower-ABV cocktail?</h4>
-                  <p>
-                    Increase the proportion of non-alcoholic mixers. Use lower-ABV ingredients like vermouth, sherry, or amaro instead of straight spirits. Session cocktails use 30 ml of spirit with 90-120 ml of mixer for 6-10 percent ABV.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does shaking change the ABV?</h4>
-                  <p>
-                    Shaking adds dilution from melted ice, which slightly lowers ABV. A shaken cocktail might be 2-4 percent lower ABV than the pre-dilution calculation. However, shaking also chills the drink and creates a pleasant texture that enhances the drinking experience.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a standard drink?</h4>
-                  <p>
-                    In the US, one standard drink contains 14 grams of pure alcohol. This equals 355 ml of 5 percent beer, 148 ml of 12 percent wine, or 44 ml of 40 percent spirits. Different countries define standard drinks differently.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long does it take to metabolize alcohol?</h4>
-                  <p>
-                    The liver processes about one standard drink per hour on average. This rate varies by body weight, sex, food intake, and individual metabolism. Time is the only way to sober up. Coffee, cold showers, and exercise don&apos;t speed alcohol metabolism.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What ABV is considered a strong cocktail?",
+    answer: "Cocktails above 20 percent ABV are considered strong. Martinis, Manhattans, and Negronis typically range 24-30 percent. Most mixed drinks with significant juice or soda stay under 15 percent. Beer and wine are 4-14 percent for comparison.",
+  },
+{
+    question: "How do I make a lower-ABV cocktail?",
+    answer: "Increase the proportion of non-alcoholic mixers. Use lower-ABV ingredients like vermouth, sherry, or amaro instead of straight spirits. Session cocktails use 30 ml of spirit with 90-120 ml of mixer for 6-10 percent ABV.",
+  },
+{
+    question: "Does shaking change the ABV?",
+    answer: "Shaking adds dilution from melted ice, which slightly lowers ABV. A shaken cocktail might be 2-4 percent lower ABV than the pre-dilution calculation. However, shaking also chills the drink and creates a pleasant texture that enhances the drinking experience.",
+  },
+{
+    question: "What is a standard drink?",
+    answer: "In the US, one standard drink contains 14 grams of pure alcohol. This equals 355 ml of 5 percent beer, 148 ml of 12 percent wine, or 44 ml of 40 percent spirits. Different countries define standard drinks differently.",
+  },
+{
+    question: "How long does it take to metabolize alcohol?",
+    answer: "The liver processes about one standard drink per hour on average. This rate varies by body weight, sex, food intake, and individual metabolism. Time is the only way to sober up. Coffee, cold showers, and exercise don&apos;t speed alcohol metabolism.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MedianCalculator() {
   const [numbers, setNumbers] = useState<string>("");
@@ -192,43 +194,33 @@ export default function MedianCalculator() {
         </CardContent>
       </Card>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-medium text-sm mb-2">How do I find the median manually?</h4>
-            <p className="text-xs text-muted-foreground">
-              Sort your numbers from smallest to largest. If you have an odd count, pick the middle number. If even, average the two middle numbers. For 1, 5, 7, 9, 12: median is 7. For 1, 5, 7, 9: median is (5+7)/2 = 6.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">When is the median better than the mean?</h4>
-            <p className="text-xs text-muted-foreground">
-              Use the median when your data is skewed or has outliers. Home prices, salaries, and test scores often have extreme values that make the mean misleading. The median tells you what a "typical" value looks like.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Can the median be a decimal?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. When you have an even number of values, the median is the average of the two middle numbers. If those are 5 and 8, the median is 6.5. This is normal and expected.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">What if all my numbers are the same?</h4>
-            <p className="text-xs text-muted-foreground">
-              The median equals that number. If every value is 10, the median is 10. This makes sense—there's no variation in your data, so the middle value is the same as every value.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Does the median work with negative numbers?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Sort them normally: -10, -5, -2, 0, 3. The median is -2. Negative numbers are just values less than zero and work the same way in median calculations.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I find the median manually?",
+    answer: "Sort your numbers from smallest to largest. If you have an odd count, pick the middle number. If even, average the two middle numbers. For 1, 5, 7, 9, 12: median is 7. For 1, 5, 7, 9: median is (5+7)/2 = 6.",
+  },
+{
+    question: "When is the median better than the mean?",
+    answer: "Use the median when your data is skewed or has outliers. Home prices, salaries, and test scores often have extreme values that make the mean misleading. The median tells you what a \"typical\" value looks like.",
+  },
+{
+    question: "Can the median be a decimal?",
+    answer: "Yes. When you have an even number of values, the median is the average of the two middle numbers. If those are 5 and 8, the median is 6.5. This is normal and expected.",
+  },
+{
+    question: "What if all my numbers are the same?",
+    answer: "The median equals that number. If every value is 10, the median is 10. This makes sense—there's no variation in your data, so the middle value is the same as every value.",
+  },
+{
+    question: "Does the median work with negative numbers?",
+    answer: "Yes. Sort them normally: -10, -5, -2, 0, 3. The median is -2. Negative numbers are just values less than zero and work the same way in median calculations.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

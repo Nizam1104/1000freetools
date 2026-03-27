@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -428,33 +430,33 @@ export default function ScreenTimeCalculatorPage() {
 
         {/* FAQ Section */}
         <div className="mt-6">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What is considered excessive screen time?</h4>
-                  <p className="text-sm text-muted-foreground">For adults, 6+ hours daily is associated with health risks. The 20-20-20 rule (every 20 minutes, look 20 feet away for 20 seconds) helps reduce eye strain regardless of total time.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How does screen time affect sleep?</h4>
-                  <p className="text-sm text-muted-foreground">Blue light from screens suppresses melatonin production, delaying sleep onset and reducing sleep quality. Avoid screens 1-2 hours before bed for better rest.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">What are symptoms of digital eye strain?</h4>
-                  <p className="text-sm text-muted-foreground">Common symptoms include dry eyes, blurred vision, headaches, neck and shoulder pain, and difficulty focusing. Take regular breaks and adjust screen brightness.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Is work screen time different from entertainment?</h4>
-                  <p className="text-sm text-muted-foreground">Yes, work screen time tends to be more focused with breaks, while entertainment often involves longer continuous sessions. Both contribute to total exposure and eye strain.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">How can I reduce screen time health effects?</h4>
-                  <p className="text-sm text-muted-foreground">Use the 20-20-20 rule, enable blue light filters, maintain proper posture, adjust screen brightness to ambient light, and schedule regular screen-free activities.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is considered excessive screen time?",
+    answer: "For adults, 6+ hours daily is associated with health risks. The 20-20-20 rule (every 20 minutes, look 20 feet away for 20 seconds) helps reduce eye strain regardless of total time.",
+  },
+{
+    question: "How does screen time affect sleep?",
+    answer: "Blue light from screens suppresses melatonin production, delaying sleep onset and reducing sleep quality. Avoid screens 1-2 hours before bed for better rest.",
+  },
+{
+    question: "What are symptoms of digital eye strain?",
+    answer: "Common symptoms include dry eyes, blurred vision, headaches, neck and shoulder pain, and difficulty focusing. Take regular breaks and adjust screen brightness.",
+  },
+{
+    question: "Is work screen time different from entertainment?",
+    answer: "Yes, work screen time tends to be more focused with breaks, while entertainment often involves longer continuous sessions. Both contribute to total exposure and eye strain.",
+  },
+{
+    question: "How can I reduce screen time health effects?",
+    answer: "Use the 20-20-20 rule, enable blue light filters, maintain proper posture, adjust screen brightness to ambient light, and schedule regular screen-free activities.",
+  }
+  ]} />
+</section>
         </div>
 
         {/* Related Tools Section */}

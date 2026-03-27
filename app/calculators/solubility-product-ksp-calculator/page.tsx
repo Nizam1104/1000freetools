@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function SolubilityProductCalculator() {
   const [mode, setMode] = useState<"find-ksp" | "find-solubility">("find-ksp");
@@ -296,33 +298,33 @@ export default function SolubilityProductCalculator() {
       </Card>
 
       {/* FAQ Section */}
-      <Card>
-        <CardContent className="p-6">
-          <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-semibold text-sm mb-1">What does Ksp tell us about solubility?</h4>
-              <p className="text-sm text-muted-foreground">Ksp indicates how much of a compound can dissolve in water. Lower Ksp values mean less soluble compounds. However, Ksp values can only be directly compared for compounds with the same ion ratio.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-sm mb-1">How do you calculate molar solubility from Ksp?</h4>
-              <p className="text-sm text-muted-foreground">For a salt MₘXₙ, molar solubility s = (Ksp / (m^m × n^n))^(1/(m+n)). For simple 1:1 salts like AgCl, s = √Ksp.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-sm mb-1">What factors affect Ksp?</h4>
-              <p className="text-sm text-muted-foreground">Ksp is temperature-dependent but independent of concentration. Increasing temperature generally increases Ksp for endothermic dissolution processes.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-sm mb-1">When does precipitation occur?</h4>
-              <p className="text-sm text-muted-foreground">Precipitation occurs when the ion product (Q) exceeds Ksp. If Q &lt; Ksp, the solution is unsaturated. If Q = Ksp, the solution is at equilibrium.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-sm mb-1">What is the common ion effect?</h4>
-              <p className="text-sm text-muted-foreground">Adding a common ion (an ion already present in the equilibrium) decreases solubility by shifting equilibrium toward the solid, according to Le Chatelier&apos;s principle.</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does Ksp tell us about solubility?",
+    answer: "Ksp indicates how much of a compound can dissolve in water. Lower Ksp values mean less soluble compounds. However, Ksp values can only be directly compared for compounds with the same ion ratio.",
+  },
+{
+    question: "How do you calculate molar solubility from Ksp?",
+    answer: "For a salt MₘXₙ, molar solubility s = (Ksp / (m^m × n^n))^(1/(m+n)). For simple 1:1 salts like AgCl, s = √Ksp.",
+  },
+{
+    question: "What factors affect Ksp?",
+    answer: "Ksp is temperature-dependent but independent of concentration. Increasing temperature generally increases Ksp for endothermic dissolution processes.",
+  },
+{
+    question: "When does precipitation occur?",
+    answer: "Precipitation occurs when the ion product (Q) exceeds Ksp. If Q &lt; Ksp, the solution is unsaturated. If Q = Ksp, the solution is at equilibrium.",
+  },
+{
+    question: "What is the common ion effect?",
+    answer: "Adding a common ion (an ion already present in the equilibrium) decreases solubility by shifting equilibrium toward the solid, according to Le Chatelier&apos;s principle.",
+  }
+  ]} />
+</section>
 
       {/* Related Tools Section */}
     </div>

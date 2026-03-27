@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ScientificNotationCalculator() {
   const [number, setNumber] = useState<string>("");
@@ -229,43 +231,33 @@ export default function ScientificNotationCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold text-sm mb-1">What is scientific notation?</h4>
-            <p className="text-sm text-muted-foreground">
-              Scientific notation is a standardized way to write very large or very small numbers using powers of 10. It has the form a × 10ⁿ where a is between 1 and 10, and n is an integer. This format makes calculations and comparisons easier.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">What is E-notation?</h4>
-            <p className="text-sm text-muted-foreground">
-              E-notation is a compact version of scientific notation used in calculators and computers. Instead of writing 6.02 × 10²³, you write 6.02e23. The "e" stands for "exponent" and means "times 10 to the power of."
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">Why use scientific notation?</h4>
-            <p className="text-sm text-muted-foreground">
-              Scientific notation saves space, reduces errors when writing many zeros, and makes it easy to compare magnitudes at a glance. It's essential in science and engineering where numbers span many orders of magnitude.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">Can scientific notation have negative exponents?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes. Negative exponents represent numbers smaller than 1. For example, 0.001 equals 1 × 10⁻³. The negative exponent tells you to move the decimal point left instead of right.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">What's the difference between scientific and engineering notation?</h4>
-            <p className="text-sm text-muted-foreground">
-              Scientific notation uses any integer exponent. Engineering notation uses exponents that are multiples of 3 (like 10³, 10⁶, 10⁻⁹), which align with metric prefixes (kilo, mega, nano). Engineering notation's coefficient ranges from 1 to 999.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is scientific notation?",
+    answer: "Scientific notation is a standardized way to write very large or very small numbers using powers of 10. It has the form a × 10ⁿ where a is between 1 and 10, and n is an integer. This format makes calculations and comparisons easier.",
+  },
+{
+    question: "What is E-notation?",
+    answer: "E-notation is a compact version of scientific notation used in calculators and computers. Instead of writing 6.02 × 10²³, you write 6.02e23. The \"e\" stands for \"exponent\" and means \"times 10 to the power of.\"",
+  },
+{
+    question: "Why use scientific notation?",
+    answer: "Scientific notation saves space, reduces errors when writing many zeros, and makes it easy to compare magnitudes at a glance. It's essential in science and engineering where numbers span many orders of magnitude.",
+  },
+{
+    question: "Can scientific notation have negative exponents?",
+    answer: "Yes. Negative exponents represent numbers smaller than 1. For example, 0.001 equals 1 × 10⁻³. The negative exponent tells you to move the decimal point left instead of right.",
+  },
+{
+    question: "What's the difference between scientific and engineering notation?",
+    answer: "Scientific notation uses any integer exponent. Engineering notation uses exponents that are multiples of 3 (like 10³, 10⁶, 10⁻⁹), which align with metric prefixes (kilo, mega, nano). Engineering notation's coefficient ranges from 1 to 999.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

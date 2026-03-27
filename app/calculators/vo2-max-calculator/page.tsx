@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -281,43 +283,33 @@ export default function VO2MaxCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's a good VO2 max score?</h4>
-            <p className="text-xs text-muted-foreground">
-              Depends on your age and gender. For a 25-year-old man, 40-45 is solid. For a 25-year-old woman, 35-40 is comparable. Elite endurance athletes often score 60+. Don't compare yourself to Olympians – compare yourself to your age group.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How accurate is this VO2 max calculator?</h4>
-            <p className="text-xs text-muted-foreground">
-              Field tests like these get you within 10-15% of lab-tested values. The Cooper test tends to be more accurate for trained runners. Resting heart rate method works better for sedentary folks. For a precise number, you'd need a metabolic cart and a really expensive treadmill.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does VO2 max matter for non-athletes?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Higher VO2 max correlates with lower risk of heart disease, better cognitive function, and longer lifespan. A 2018 study found that every 1-MET increase in cardiorespiratory fitness reduced mortality risk by about 13%. It's not just for runners.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I improve my VO2 max without running?</h4>
-            <p className="text-xs text-muted-foreground">
-              Absolutely. Cycling, rowing, swimming, and even circuit training can boost your VO2 max. The key is intensity – you need to get your heart rate up to 85-95% of maximum, regardless of the activity.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why does VO2 max decrease with age?</h4>
-            <p className="text-xs text-muted-foreground">
-              Max heart rate drops about 1 beat per minute per year. Muscle mass declines. Recovery slows. But here's the good news: trained 60-year-olds often have better VO2 max than sedentary 20-year-olds. Training slows the decline significantly.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What's a good VO2 max score?",
+    answer: "Depends on your age and gender. For a 25-year-old man, 40-45 is solid. For a 25-year-old woman, 35-40 is comparable. Elite endurance athletes often score 60+. Don't compare yourself to Olympians – compare yourself to your age group.",
+  },
+{
+    question: "How accurate is this VO2 max calculator?",
+    answer: "Field tests like these get you within 10-15% of lab-tested values. The Cooper test tends to be more accurate for trained runners. Resting heart rate method works better for sedentary folks. For a precise number, you'd need a metabolic cart and a really expensive treadmill.",
+  },
+{
+    question: "Does VO2 max matter for non-athletes?",
+    answer: "Yes. Higher VO2 max correlates with lower risk of heart disease, better cognitive function, and longer lifespan. A 2018 study found that every 1-MET increase in cardiorespiratory fitness reduced mortality risk by about 13%. It's not just for runners.",
+  },
+{
+    question: "Can I improve my VO2 max without running?",
+    answer: "Absolutely. Cycling, rowing, swimming, and even circuit training can boost your VO2 max. The key is intensity – you need to get your heart rate up to 85-95% of maximum, regardless of the activity.",
+  },
+{
+    question: "Why does VO2 max decrease with age?",
+    answer: "Max heart rate drops about 1 beat per minute per year. Muscle mass declines. Recovery slows. But here's the good news: trained 60-year-olds often have better VO2 max than sedentary 20-year-olds. Training slows the decline significantly.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

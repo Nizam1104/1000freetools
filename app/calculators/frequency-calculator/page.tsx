@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FrequencyCalculator() {
   const [mode, setMode] = useState<"period" | "wavelength" | "angular">("period");
@@ -317,54 +319,33 @@ export default function FrequencyCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the formula for frequency?</h4>
-                <p>
-                  The basic frequency formula is f = 1/T, where T is the period in seconds. For waves,
-                  frequency also equals velocity divided by wavelength: f = v/λ. Angular frequency is
-                  ω = 2πf, measured in radians per second instead of cycles per second.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert Hz to period?</h4>
-                <p>
-                  Period is the inverse of frequency: T = 1/f. For 50 Hz, the period is 1/50 = 0.02 seconds
-                  (20 milliseconds). For 1 MHz (1,000,000 Hz), the period is 1/1,000,000 = 1 microsecond.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between frequency and angular frequency?</h4>
-                <p>
-                  Regular frequency (f) counts complete cycles per second in Hertz. Angular frequency (ω)
-                  measures radians per second. Since one cycle equals 2π radians, ω = 2πf. Angular
-                  frequency is preferred in physics because it eliminates factors of 2π from equations.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I find wavelength from frequency?</h4>
-                <p>
-                  Use λ = v/f, where v is wave velocity. For electromagnetic waves in air or vacuum,
-                  v ≈ 3×10⁸ m/s. A 100 MHz radio signal has wavelength λ = 3×10⁸ / 100×10⁶ = 3 meters.
-                  For sound in air at 20°C, use v ≈ 343 m/s.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What units are used for frequency?</h4>
-                <p>
-                  The SI unit is Hertz (Hz), meaning cycles per second. Common multiples include kHz
-                  (1000 Hz) for audio, MHz (million Hz) for radio and processors, GHz (billion Hz) for
-                  WiFi and CPUs, and THz (trillion Hz) for infrared and visible light.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the formula for frequency?",
+    answer: "The basic frequency formula is f = 1/T, where T is the period in seconds. For waves, frequency also equals velocity divided by wavelength: f = v/λ. Angular frequency is ω = 2πf, measured in radians per second instead of cycles per second.",
+  },
+{
+    question: "How do I convert Hz to period?",
+    answer: "Period is the inverse of frequency: T = 1/f. For 50 Hz, the period is 1/50 = 0.02 seconds (20 milliseconds). For 1 MHz (1,000,000 Hz), the period is 1/1,000,000 = 1 microsecond.",
+  },
+{
+    question: "What is the difference between frequency and angular frequency?",
+    answer: "Regular frequency (f) counts complete cycles per second in Hertz. Angular frequency (ω) measures radians per second. Since one cycle equals 2π radians, ω = 2πf. Angular frequency is preferred in physics because it eliminates factors of 2π from equations.",
+  },
+{
+    question: "How do I find wavelength from frequency?",
+    answer: "Use λ = v/f, where v is wave velocity. For electromagnetic waves in air or vacuum, v ≈ 3×10⁸ m/s. A 100 MHz radio signal has wavelength λ = 3×10⁸ / 100×10⁶ = 3 meters. For sound in air at 20°C, use v ≈ 343 m/s.",
+  },
+{
+    question: "What units are used for frequency?",
+    answer: "The SI unit is Hertz (Hz), meaning cycles per second. Common multiples include kHz (1000 Hz) for audio, MHz (million Hz) for radio and processors, GHz (billion Hz) for WiFi and CPUs, and THz (trillion Hz) for infrared and visible light.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

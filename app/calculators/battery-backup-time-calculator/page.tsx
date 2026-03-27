@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BatteryBackupTimeCalculatorPage() {
   const [batteryCapacity, setBatteryCapacity] = useState<string>("");
@@ -441,43 +443,33 @@ export default function BatteryBackupTimeCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How long will a 100Ah battery last?</h4>
-              <p>
-                It depends on your load. A 100Ah 12V lead-acid battery has about 600Wh usable (50% DoD). Running a 50W device gives roughly 12 hours. A 100W device gives about 6 hours. Double the wattage, halve the runtime.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Should I choose lithium or lead-acid for backup?</h4>
-              <p>
-                Lithium costs more upfront but lasts longer and provides more usable capacity. Lead-acid is cheaper but heavier and needs more maintenance. For occasional outages, lead-acid works. For daily use or critical backup, lithium is worth the investment.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What size inverter do I need?</h4>
-              <p>
-                Add up the wattage of all devices you might run simultaneously. Choose an inverter rated 20-25% higher than that total. Motors and compressors need surge capacity — check the inverter surge rating for starting loads.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Can I connect multiple batteries together?</h4>
-              <p>
-                Yes. Connecting in parallel (positive to positive, negative to negative) increases capacity (Ah) while keeping voltage the same. Connecting in series increases voltage. Match battery type, age, and capacity when connecting batteries.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is my actual runtime shorter than calculated?</h4>
-              <p>
-                Several factors reduce real-world runtime. Battery capacity decreases with age. Cold temperatures reduce capacity. High current draws are less efficient. Inverter efficiency varies with load. Device wattage labels show maximum, not average consumption.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How long will a 100Ah battery last?",
+    answer: "It depends on your load. A 100Ah 12V lead-acid battery has about 600Wh usable (50% DoD). Running a 50W device gives roughly 12 hours. A 100W device gives about 6 hours. Double the wattage, halve the runtime.",
+  },
+{
+    question: "Should I choose lithium or lead-acid for backup?",
+    answer: "Lithium costs more upfront but lasts longer and provides more usable capacity. Lead-acid is cheaper but heavier and needs more maintenance. For occasional outages, lead-acid works. For daily use or critical backup, lithium is worth the investment.",
+  },
+{
+    question: "What size inverter do I need?",
+    answer: "Add up the wattage of all devices you might run simultaneously. Choose an inverter rated 20-25% higher than that total. Motors and compressors need surge capacity — check the inverter surge rating for starting loads.",
+  },
+{
+    question: "Can I connect multiple batteries together?",
+    answer: "Yes. Connecting in parallel (positive to positive, negative to negative) increases capacity (Ah) while keeping voltage the same. Connecting in series increases voltage. Match battery type, age, and capacity when connecting batteries.",
+  },
+{
+    question: "Why is my actual runtime shorter than calculated?",
+    answer: "Several factors reduce real-world runtime. Battery capacity decreases with age. Cold temperatures reduce capacity. High current draws are less efficient. Inverter efficiency varies with load. Device wattage labels show maximum, not average consumption.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

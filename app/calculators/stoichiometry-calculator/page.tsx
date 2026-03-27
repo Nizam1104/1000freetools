@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function StoichiometryCalculator() {
   const [mode, setMode] = useState<"mol-to-mol" | "g-to-g" | "mol-to-g" | "g-to-mol">("mol-to-mol");
@@ -280,33 +282,33 @@ export default function StoichiometryCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold">What is stoichiometry used for?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Stoichiometry calculates the exact amounts of reactants needed and products formed in chemical reactions. Chemists use it to determine how much of each chemical to mix, predict reaction yields, and scale up from lab experiments to industrial production.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">Why must chemical equations be balanced?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Balanced equations obey the law of conservation of mass—atoms aren't created or destroyed. The coefficients give you the mole ratios needed for stoichiometric calculations. An unbalanced equation gives wrong ratios and incorrect results.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">What is a mole ratio?</h4>
-            <p className="text-sm text-muted-foreground mt-1">A mole ratio is the ratio of coefficients between any two substances in a balanced equation. In 2H₂ + O₂ → 2H₂O, the H₂:O₂ ratio is 2:1, meaning 2 moles of hydrogen react with 1 mole of oxygen. Use these ratios to convert between substances.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">How do you find the limiting reactant?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Calculate how much product each reactant could produce if fully consumed. The reactant that produces the least product is limiting—it runs out first and determines the maximum yield. Any excess reactant remains after the reaction stops.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">What is the difference between theoretical and actual yield?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Theoretical yield is the maximum amount calculated from stoichiometry assuming perfect conditions. Actual yield is what you really get in the lab—always less due to incomplete reactions, side reactions, and losses during purification. Percent yield = (actual/theoretical) × 100%.</p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is stoichiometry used for?",
+    answer: "Stoichiometry calculates the exact amounts of reactants needed and products formed in chemical reactions. Chemists use it to determine how much of each chemical to mix, predict reaction yields, and scale up from lab experiments to industrial production.",
+  },
+{
+    question: "Why must chemical equations be balanced?",
+    answer: "Balanced equations obey the law of conservation of mass—atoms aren't created or destroyed. The coefficients give you the mole ratios needed for stoichiometric calculations. An unbalanced equation gives wrong ratios and incorrect results.",
+  },
+{
+    question: "What is a mole ratio?",
+    answer: "A mole ratio is the ratio of coefficients between any two substances in a balanced equation. In 2H₂ + O₂ → 2H₂O, the H₂:O₂ ratio is 2:1, meaning 2 moles of hydrogen react with 1 mole of oxygen. Use these ratios to convert between substances.",
+  },
+{
+    question: "How do you find the limiting reactant?",
+    answer: "Calculate how much product each reactant could produce if fully consumed. The reactant that produces the least product is limiting—it runs out first and determines the maximum yield. Any excess reactant remains after the reaction stops.",
+  },
+{
+    question: "What is the difference between theoretical and actual yield?",
+    answer: "Theoretical yield is the maximum amount calculated from stoichiometry assuming perfect conditions. Actual yield is what you really get in the lab—always less due to incomplete reactions, side reactions, and losses during purification. Percent yield = (actual/theoretical) × 100%.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

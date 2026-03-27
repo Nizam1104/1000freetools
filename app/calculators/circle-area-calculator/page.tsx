@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function CircleAreaCalculator() {
   const [radius, setRadius] = useState<string>("");
@@ -244,45 +246,33 @@ export default function CircleAreaCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is pi and why is it used?</h4>
-                <p>
-                  Pi is a mathematical constant approximately equal to 3.14159. It represents the ratio of any circle&apos;s circumference to its diameter. Pi is irrational, meaning its decimal representation never ends or repeats. It appears in formulas for circles, spheres, waves, and many areas of mathematics and physics.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I find the radius if I know the area?</h4>
-                <p>
-                  Rearrange the area formula: r = square root of (A / pi). For example, if area is 78.54 square units, divide by pi to get 25, then take the square root to find radius equals 5 units.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What&apos;s the difference between circumference and perimeter?</h4>
-                <p>
-                  Perimeter is the general term for the distance around any shape. Circumference specifically refers to the perimeter of a circle. For polygons, we say perimeter. For circles, we say circumference.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I use diameter instead of radius?</h4>
-                <p>
-                  Yes. Since diameter equals 2 times radius, you can use A = pi times (d/2) squared, which simplifies to A = (pi times d squared) / 4. Many people find it easier to measure diameter directly.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does area use square units?</h4>
-                <p>
-                  Area measures two-dimensional space. When you multiply radius by radius (r squared), you&apos;re multiplying length times length, which gives square units. If radius is in meters, area is in square meters.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is pi and why is it used?",
+    answer: "Pi is a mathematical constant approximately equal to 3.14159. It represents the ratio of any circle&apos;s circumference to its diameter. Pi is irrational, meaning its decimal representation never ends or repeats. It appears in formulas for circles, spheres, waves, and many areas of mathematics and physics.",
+  },
+{
+    question: "How do I find the radius if I know the area?",
+    answer: "Rearrange the area formula: r = square root of (A / pi). For example, if area is 78.54 square units, divide by pi to get 25, then take the square root to find radius equals 5 units.",
+  },
+{
+    question: "What&apos;s the difference between circumference and perimeter?",
+    answer: "Perimeter is the general term for the distance around any shape. Circumference specifically refers to the perimeter of a circle. For polygons, we say perimeter. For circles, we say circumference.",
+  },
+{
+    question: "Can I use diameter instead of radius?",
+    answer: "Yes. Since diameter equals 2 times radius, you can use A = pi times (d/2) squared, which simplifies to A = (pi times d squared) / 4. Many people find it easier to measure diameter directly.",
+  },
+{
+    question: "Why does area use square units?",
+    answer: "Area measures two-dimensional space. When you multiply radius by radius (r squared), you&apos;re multiplying length times length, which gives square units. If radius is in meters, area is in square meters.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RadiationDoseCalculator() {
   const [activity, setActivity] = useState<string>("");
@@ -248,54 +250,33 @@ export default function RadiationDoseCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a Becquerel (Bq)?</h4>
-                <p>
-                  One Becquerel equals one radioactive decay per second. It measures activity, not dose.
-                  A typical smoke detector contains about 37,000 Bq (1 µCi) of Americium-241.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between dose and dose rate?</h4>
-                <p>
-                  Dose rate is how much radiation you receive per unit time (mSv/h). Total dose is the
-                  accumulated amount over your exposure period. A high dose rate for a short time can
-                  equal a low dose rate for a long time.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is this calculator accurate for all radiation types?</h4>
-                <p>
-                  This calculator uses a simplified gamma constant approximation. It works best for gamma
-                  emitters at distances where the source can be treated as a point. Alpha and beta radiation
-                  require different calculations due to their limited range in air.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a safe radiation dose?</h4>
-                <p>
-                  For the general public, the annual limit above background is 1 mSv/year. Radiation workers
-                  can receive up to 20 mSv/year averaged over 5 years. Below 100 mSv, health effects are
-                  difficult to detect statistically.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How does shielding affect dose calculations?</h4>
-                <p>
-                  Shielding reduces dose exponentially based on material thickness and the radiation's
-                  half-value layer. This calculator does not account for shielding. Add appropriate
-                  safety margins if shielding is present between you and the source.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a Becquerel (Bq)?",
+    answer: "One Becquerel equals one radioactive decay per second. It measures activity, not dose. A typical smoke detector contains about 37,000 Bq (1 µCi) of Americium-241.",
+  },
+{
+    question: "What is the difference between dose and dose rate?",
+    answer: "Dose rate is how much radiation you receive per unit time (mSv/h). Total dose is the accumulated amount over your exposure period. A high dose rate for a short time can equal a low dose rate for a long time.",
+  },
+{
+    question: "Is this calculator accurate for all radiation types?",
+    answer: "This calculator uses a simplified gamma constant approximation. It works best for gamma emitters at distances where the source can be treated as a point. Alpha and beta radiation require different calculations due to their limited range in air.",
+  },
+{
+    question: "What is a safe radiation dose?",
+    answer: "For the general public, the annual limit above background is 1 mSv/year. Radiation workers can receive up to 20 mSv/year averaged over 5 years. Below 100 mSv, health effects are difficult to detect statistically.",
+  },
+{
+    question: "How does shielding affect dose calculations?",
+    answer: "Shielding reduces dose exponentially based on material thickness and the radiation's half-value layer. This calculator does not account for shielding. Add appropriate safety margins if shielding is present between you and the source.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

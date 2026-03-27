@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RangeEstimatorEvPage() {
   const [batteryCapacity, setBatteryCapacity] = useState<string>("");
@@ -298,53 +300,33 @@ export default function RangeEstimatorEvPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is this EV range estimate?</h4>
-                <p>
-                  This calculator provides a reasonable estimate based on typical EV efficiency. Real-world
-                  range varies by vehicle model, driving style, and conditions. Use it for trip planning,
-                  not as an exact prediction.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does cold weather reduce EV range?</h4>
-                <p>
-                  Cold temperatures slow battery chemistry and increase cabin heating demand. At 20°F,
-                  expect 20-40% less range. Pre-conditioning while plugged in helps preserve range.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is highway or city driving better for EVs?</h4>
-                <p>
-                  City driving is typically more efficient for EVs. Regenerative braking recovers energy
-                  during stops. Highway driving at 70+ mph uses more energy due to aerodynamic drag.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I charge to 100% before a trip?</h4>
-                <p>
-                  For daily driving, 80-90% is better for battery health. For long trips, charging to 100%
-                  is fine. Modern EVs manage battery health automatically. Plan charging stops for trips
-                  beyond your comfortable range.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do hills affect electric vehicle range?</h4>
-                <p>
-                  Climbing uses extra energy, but regenerative braking recovers some when descending.
-                  Net effect depends on elevation change. Mountainous terrain typically reduces range
-                  by 15-30% compared to flat driving.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate is this EV range estimate?",
+    answer: "This calculator provides a reasonable estimate based on typical EV efficiency. Real-world range varies by vehicle model, driving style, and conditions. Use it for trip planning, not as an exact prediction.",
+  },
+{
+    question: "Why does cold weather reduce EV range?",
+    answer: "Cold temperatures slow battery chemistry and increase cabin heating demand. At 20°F, expect 20-40% less range. Pre-conditioning while plugged in helps preserve range.",
+  },
+{
+    question: "Is highway or city driving better for EVs?",
+    answer: "City driving is typically more efficient for EVs. Regenerative braking recovers energy during stops. Highway driving at 70+ mph uses more energy due to aerodynamic drag.",
+  },
+{
+    question: "Should I charge to 100% before a trip?",
+    answer: "For daily driving, 80-90% is better for battery health. For long trips, charging to 100% is fine. Modern EVs manage battery health automatically. Plan charging stops for trips beyond your comfortable range.",
+  },
+{
+    question: "How do hills affect electric vehicle range?",
+    answer: "Climbing uses extra energy, but regenerative braking recovers some when descending. Net effect depends on elevation change. Mountainous terrain typically reduces range by 15-30% compared to flat driving.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

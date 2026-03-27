@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MacroCalculator() {
   const [gender, setGender] = useState<"male" | "female">("male");
@@ -435,45 +437,33 @@ export default function MacroCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How much protein do I really need?</h4>
-                <p>
-                  For muscle building or fat loss, aim for 1.6-2.2g per kg of body weight (0.7-1g per lb). A 180 lb person would target 126-180g daily. Sedentary individuals need less (0.8g/kg), but higher protein helps preserve muscle during weight loss and keeps you fuller longer.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Are carbs necessary for fat loss?</h4>
-                <p>
-                  No macronutrient is strictly necessary except protein (for essential amino acids). You can lose fat on low-carb or high-carb diets as long as you're in a calorie deficit. Choose based on preference and training needs. Athletes typically perform better with moderate to high carbs.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate are macro calculators?</h4>
-                <p>
-                  Calculators give estimates within 10-20% of actual needs for most people. Use the result as a starting point, then adjust based on progress over 2-4 weeks. If weight isn't moving as expected, adjust calories by 100-200 per day and reassess.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I track net carbs or total carbs?</h4>
-                <p>
-                  For most goals, track total carbs. Net carbs (total minus fiber) matter primarily for ketogenic diets where fiber doesn't impact blood sugar or ketosis. If you're not keto, total carbs give a simpler, more consistent target.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if I go over my macros some days?</h4>
-                <p>
-                  One day won't ruin progress. Look at your weekly average, not daily perfection. If you consistently exceed macros, reassess your targets — they might be too restrictive. Sustainable nutrition allows flexibility. Aim for 80% adherence and don't stress over occasional deviations.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much protein do I really need?",
+    answer: "For muscle building or fat loss, aim for 1.6-2.2g per kg of body weight (0.7-1g per lb). A 180 lb person would target 126-180g daily. Sedentary individuals need less (0.8g/kg), but higher protein helps preserve muscle during weight loss and keeps you fuller longer.",
+  },
+{
+    question: "Are carbs necessary for fat loss?",
+    answer: "No macronutrient is strictly necessary except protein (for essential amino acids). You can lose fat on low-carb or high-carb diets as long as you're in a calorie deficit. Choose based on preference and training needs. Athletes typically perform better with moderate to high carbs.",
+  },
+{
+    question: "How accurate are macro calculators?",
+    answer: "Calculators give estimates within 10-20% of actual needs for most people. Use the result as a starting point, then adjust based on progress over 2-4 weeks. If weight isn't moving as expected, adjust calories by 100-200 per day and reassess.",
+  },
+{
+    question: "Should I track net carbs or total carbs?",
+    answer: "For most goals, track total carbs. Net carbs (total minus fiber) matter primarily for ketogenic diets where fiber doesn't impact blood sugar or ketosis. If you're not keto, total carbs give a simpler, more consistent target.",
+  },
+{
+    question: "What if I go over my macros some days?",
+    answer: "One day won't ruin progress. Look at your weekly average, not daily perfection. If you consistently exceed macros, reassess your targets — they might be too restrictive. Sustainable nutrition allows flexibility. Aim for 80% adherence and don't stress over occasional deviations.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

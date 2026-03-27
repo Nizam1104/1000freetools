@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PumpHorsepowerCalculator() {
   const [flowRate, setFlowRate] = useState<string>("");
@@ -192,45 +194,33 @@ export default function PumpHorsepowerCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is total head in pump calculations?</h4>
-                <p>
-                  Total head is the total height the pump must lift the fluid, including vertical lift, friction losses in pipes, and any pressure requirements at the outlet. It represents the total energy the pump must add to the fluid.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I choose a motor size?</h4>
-                <p>
-                  Select a motor rated 10-25% higher than the calculated shaft power to provide a safety margin. This accounts for startup loads, voltage variations, and ensures the motor doesn't run at maximum capacity continuously.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does fluid density matter?</h4>
-                <p>
-                  Denser fluids require more power to move. Water has a density of 1000 kg/m³. Oil might be 850 kg/m³, while sludge could be 1200 kg/m³. The calculator adjusts power requirements based on the fluid you specify.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What affects pump efficiency?</h4>
-                <p>
-                  Efficiency depends on pump type, size, age, and operating point. Pumps are most efficient at their design flow rate. Running too far from the best efficiency point (BEP) wastes energy and causes premature wear.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert between HP and kW?</h4>
-                <p>
-                  1 horsepower equals 745.7 watts or 0.746 kW. To convert HP to kW, multiply by 0.746. To convert kW to HP, divide by 0.746. Motor nameplates typically show both ratings.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is total head in pump calculations?",
+    answer: "Total head is the total height the pump must lift the fluid, including vertical lift, friction losses in pipes, and any pressure requirements at the outlet. It represents the total energy the pump must add to the fluid.",
+  },
+{
+    question: "How do I choose a motor size?",
+    answer: "Select a motor rated 10-25% higher than the calculated shaft power to provide a safety margin. This accounts for startup loads, voltage variations, and ensures the motor doesn't run at maximum capacity continuously.",
+  },
+{
+    question: "Why does fluid density matter?",
+    answer: "Denser fluids require more power to move. Water has a density of 1000 kg/m³. Oil might be 850 kg/m³, while sludge could be 1200 kg/m³. The calculator adjusts power requirements based on the fluid you specify.",
+  },
+{
+    question: "What affects pump efficiency?",
+    answer: "Efficiency depends on pump type, size, age, and operating point. Pumps are most efficient at their design flow rate. Running too far from the best efficiency point (BEP) wastes energy and causes premature wear.",
+  },
+{
+    question: "How do I convert between HP and kW?",
+    answer: "1 horsepower equals 745.7 watts or 0.746 kW. To convert HP to kW, multiply by 0.746. To convert kW to HP, divide by 0.746. Motor nameplates typically show both ratings.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

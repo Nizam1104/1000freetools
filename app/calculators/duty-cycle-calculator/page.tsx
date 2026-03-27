@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DutyCycleCalculator() {
   const [onTime, setOnTime] = useState<string>("");
@@ -284,45 +286,33 @@ export default function DutyCycleCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What does a 100% duty cycle mean?</h4>
-                <p>
-                  A 100% duty cycle means the signal is always high (on) with no off-time. The output delivers full continuous power, equivalent to a direct connection to the supply. There is no PWM effect at 100% duty cycle since the signal never switches off.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate duty cycle from frequency?</h4>
-                <p>
-                  First find the period: T = 1/frequency. Then duty cycle = (on-time / period) × 100%. For example, at 1 kHz (1 ms period) with 0.25 ms on-time, duty cycle = (0.25 / 1) × 100% = 25%.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What frequency should I use for PWM motor control?</h4>
-                <p>
-                  For DC motors, 1-20 kHz is typical. Below 1 kHz, you may hear audible whining. Above 20 kHz, switching losses increase without benefit. Small motors can use higher frequencies. Large motors often work well at 2-8 kHz.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does my LED flicker with PWM?</h4>
-                <p>
-                  Flicker occurs when PWM frequency is too low. The human eye can detect flicker below about 100 Hz, especially in peripheral vision. Use at least 200 Hz for general lighting, 1 kHz or higher for camera applications to avoid banding in video.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between duty cycle and frequency?</h4>
-                <p>
-                  Frequency is how many complete cycles occur per second. Duty cycle is what percentage of each cycle the signal is on. You can change duty cycle without changing frequency, which is how PWM controls power while maintaining constant switching rate.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does a 100% duty cycle mean?",
+    answer: "A 100% duty cycle means the signal is always high (on) with no off-time. The output delivers full continuous power, equivalent to a direct connection to the supply. There is no PWM effect at 100% duty cycle since the signal never switches off.",
+  },
+{
+    question: "How do I calculate duty cycle from frequency?",
+    answer: "First find the period: T = 1/frequency. Then duty cycle = (on-time / period) × 100%. For example, at 1 kHz (1 ms period) with 0.25 ms on-time, duty cycle = (0.25 / 1) × 100% = 25%.",
+  },
+{
+    question: "What frequency should I use for PWM motor control?",
+    answer: "For DC motors, 1-20 kHz is typical. Below 1 kHz, you may hear audible whining. Above 20 kHz, switching losses increase without benefit. Small motors can use higher frequencies. Large motors often work well at 2-8 kHz.",
+  },
+{
+    question: "Why does my LED flicker with PWM?",
+    answer: "Flicker occurs when PWM frequency is too low. The human eye can detect flicker below about 100 Hz, especially in peripheral vision. Use at least 200 Hz for general lighting, 1 kHz or higher for camera applications to avoid banding in video.",
+  },
+{
+    question: "What is the difference between duty cycle and frequency?",
+    answer: "Frequency is how many complete cycles occur per second. Duty cycle is what percentage of each cycle the signal is on. You can change duty cycle without changing frequency, which is how PWM controls power while maintaining constant switching rate.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

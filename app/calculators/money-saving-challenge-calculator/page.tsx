@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -434,45 +436,33 @@ export default function MoneySavingChallengeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if I miss a week?</h4>
-                  <p>
-                    Don't quit—just catch up. Add the missed amount to next week's deposit, or spread it over the remaining weeks. The goal is building a savings habit, not perfection.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I do the regular or reverse challenge?</h4>
-                  <p>
-                    Reverse is often easier psychologically. Starting with $52 feels manageable, and ending with $1 feels like a victory lap. Regular challenge builds momentum but ends with the hardest payments.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I combine challenges?</h4>
-                  <p>
-                    Absolutely. Do the penny challenge daily and a weekly challenge too. Just make sure your total weekly savings fits your budget.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Where should I keep the money?</h4>
-                  <p>
-                    Use a high-yield savings account separate from your checking. The slightly higher interest adds up, and separation reduces temptation to spend.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if I can't afford the later weeks?</h4>
-                  <p>
-                    Scale down. Instead of $52 in week 52, do $25. Or restart at a lower increment. The best challenge is one you can actually complete.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What if I miss a week?",
+    answer: "Don't quit—just catch up. Add the missed amount to next week's deposit, or spread it over the remaining weeks. The goal is building a savings habit, not perfection.",
+  },
+{
+    question: "Should I do the regular or reverse challenge?",
+    answer: "Reverse is often easier psychologically. Starting with $52 feels manageable, and ending with $1 feels like a victory lap. Regular challenge builds momentum but ends with the hardest payments.",
+  },
+{
+    question: "Can I combine challenges?",
+    answer: "Absolutely. Do the penny challenge daily and a weekly challenge too. Just make sure your total weekly savings fits your budget.",
+  },
+{
+    question: "Where should I keep the money?",
+    answer: "Use a high-yield savings account separate from your checking. The slightly higher interest adds up, and separation reduces temptation to spend.",
+  },
+{
+    question: "What if I can't afford the later weeks?",
+    answer: "Scale down. Instead of $52 in week 52, do $25. Or restart at a lower increment. The best challenge is one you can actually complete.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

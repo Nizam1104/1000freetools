@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function SquareAreaCalculator() {
   const [side, setSide] = useState<string>("");
@@ -257,43 +259,33 @@ export default function SquareAreaCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold text-sm mb-1">How do you calculate the area of a square?</h4>
-            <p className="text-sm text-muted-foreground">
-              Multiply the side length by itself: Area = s². If one side is 6 inches, the area is 36 square inches. This works because a square's length equals its width.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">How do you find the diagonal of a square?</h4>
-            <p className="text-sm text-muted-foreground">
-              Use the formula diagonal = side × √2. The diagonal creates two right triangles inside the square, and by the Pythagorean theorem, d² = s² + s² = 2s², so d = s√2.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">What's the difference between area and perimeter?</h4>
-            <p className="text-sm text-muted-foreground">
-              Area measures the space inside the square (square units). Perimeter measures the distance around the outside (linear units). A 4×4 square has area 16 sq units and perimeter 16 units – same number but different meanings.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">Can I find the side length if I know the area?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes. Take the square root of the area: side = √area. If the area is 64 square meters, the side length is √64 = 8 meters.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-1">Is a square a rectangle?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes, a square is a special type of rectangle where all sides are equal. All squares are rectangles, but not all rectangles are squares. A square is also a special type of rhombus with right angles.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you calculate the area of a square?",
+    answer: "Multiply the side length by itself: Area = s². If one side is 6 inches, the area is 36 square inches. This works because a square's length equals its width.",
+  },
+{
+    question: "How do you find the diagonal of a square?",
+    answer: "Use the formula diagonal = side × √2. The diagonal creates two right triangles inside the square, and by the Pythagorean theorem, d² = s² + s² = 2s², so d = s√2.",
+  },
+{
+    question: "What's the difference between area and perimeter?",
+    answer: "Area measures the space inside the square (square units). Perimeter measures the distance around the outside (linear units). A 4×4 square has area 16 sq units and perimeter 16 units – same number but different meanings.",
+  },
+{
+    question: "Can I find the side length if I know the area?",
+    answer: "Yes. Take the square root of the area: side = √area. If the area is 64 square meters, the side length is √64 = 8 meters.",
+  },
+{
+    question: "Is a square a rectangle?",
+    answer: "Yes, a square is a special type of rectangle where all sides are equal. All squares are rectangles, but not all rectangles are squares. A square is also a special type of rhombus with right angles.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

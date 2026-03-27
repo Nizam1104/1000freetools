@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ConcreteVolumeCalculator() {
   const [shape, setShape] = useState<"slab" | "column" | "footing" | "wall">("slab");
@@ -346,43 +348,33 @@ export default function ConcreteVolumeCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I convert cubic feet to cubic yards?</h4>
-            <p className="text-xs text-muted-foreground">
-              Divide cubic feet by 27. There are 27 cubic feet in a cubic yard (3×3×3). A 10×10 slab at 4 inches is 33 cubic feet, which equals 1.22 cubic yards. Ready-mix companies sell by the yard, not by the foot.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I buy bags or ready-mix?</h4>
-            <p className="text-xs text-muted-foreground">
-              Bags make sense for projects under 1 cubic yard – a small patio, post holes, or repairs. Anything over 2 yards and ready-mix delivery is cheaper and less labor. Between 1-2 yards, it depends on your access and back strength.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What happens if I order too little concrete?</h4>
-            <p className="text-xs text-muted-foreground">
-              Ready-mix companies charge "short load" fees for orders under their minimum (usually 4-5 yards). If you're short mid-pour, you're in trouble – concrete sets in 90 minutes. Always round up. Leftover concrete can be used for stepping stones or garden edging.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How thick should a concrete slab be?</h4>
-            <p className="text-xs text-muted-foreground">
-              Residential patios and sidewalks: 4 inches. Driveways: 5-6 inches (more if you park heavy trucks). Shop floors: 6 inches minimum. Garage floors with lifts: 6-8 inches with rebar. Thicker isn't always better – proper subgrade preparation matters more.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Do I need rebar in my concrete?</h4>
-            <p className="text-xs text-muted-foreground">
-              For slabs on grade (patios, sidewalks), welded wire mesh is usually enough. Driveways and structural slabs need rebar – typically #3 (3/8") or #4 (1/2") bars on 18-inch centers. Columns and footings always need vertical rebar. Check local codes.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I convert cubic feet to cubic yards?",
+    answer: "Divide cubic feet by 27. There are 27 cubic feet in a cubic yard (3×3×3). A 10×10 slab at 4 inches is 33 cubic feet, which equals 1.22 cubic yards. Ready-mix companies sell by the yard, not by the foot.",
+  },
+{
+    question: "Should I buy bags or ready-mix?",
+    answer: "Bags make sense for projects under 1 cubic yard – a small patio, post holes, or repairs. Anything over 2 yards and ready-mix delivery is cheaper and less labor. Between 1-2 yards, it depends on your access and back strength.",
+  },
+{
+    question: "What happens if I order too little concrete?",
+    answer: "Ready-mix companies charge \"short load\" fees for orders under their minimum (usually 4-5 yards). If you're short mid-pour, you're in trouble – concrete sets in 90 minutes. Always round up. Leftover concrete can be used for stepping stones or garden edging.",
+  },
+{
+    question: "How thick should a concrete slab be?",
+    answer: "Residential patios and sidewalks: 4 inches. Driveways: 5-6 inches (more if you park heavy trucks). Shop floors: 6 inches minimum. Garage floors with lifts: 6-8 inches with rebar. Thicker isn't always better – proper subgrade preparation matters more.",
+  },
+{
+    question: "Do I need rebar in my concrete?",
+    answer: "For slabs on grade (patios, sidewalks), welded wire mesh is usually enough. Driveways and structural slabs need rebar – typically #3 (3/8\") or #4 (1/2\") bars on 18-inch centers. Columns and footings always need vertical rebar. Check local codes.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

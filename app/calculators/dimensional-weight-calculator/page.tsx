@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -522,45 +524,33 @@ export default function DimensionalWeightCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">When does DIM weight apply?</h4>
-                  <p>
-                    DIM weight applies when it's greater than actual weight. For FedEx and UPS, DIM pricing applies to all packages. For USPS, it only applies to Priority Mail packages larger than 1 cubic foot (1,728 cubic inches).
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do carriers measure package dimensions?</h4>
-                  <p>
-                    Carriers measure at the longest points of each dimension, including any bulges or irregularities. They round up to the nearest whole inch. A box measuring 10.2 x 8.5 x 6.1 inches is billed as 11 x 9 x 7 inches.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is USPS DIM factor higher?</h4>
-                  <p>
-                    USPS has a DIM factor of 166 vs. 139 for private carriers. This means USPS dimensional weight calculations result in lower weights. For bulky, lightweight items, USPS is often cheaper due to this more favorable factor.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do international shipments use DIM weight?</h4>
-                  <p>
-                    Yes. International carriers use DIM weight with a metric formula: (L x W x H in cm) / 5000 = DIM weight in kg. This is roughly equivalent to the 139 factor used domestically in inches.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I dispute DIM weight charges?</h4>
-                  <p>
-                    If you believe a package was measured incorrectly, you can request a re-measurement. Carriers use automated systems that can make errors. Take photos of your packaged item with a measuring tape before shipping as evidence.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "When does DIM weight apply?",
+    answer: "DIM weight applies when it's greater than actual weight. For FedEx and UPS, DIM pricing applies to all packages. For USPS, it only applies to Priority Mail packages larger than 1 cubic foot (1,728 cubic inches).",
+  },
+{
+    question: "How do carriers measure package dimensions?",
+    answer: "Carriers measure at the longest points of each dimension, including any bulges or irregularities. They round up to the nearest whole inch. A box measuring 10.2 x 8.5 x 6.1 inches is billed as 11 x 9 x 7 inches.",
+  },
+{
+    question: "Why is USPS DIM factor higher?",
+    answer: "USPS has a DIM factor of 166 vs. 139 for private carriers. This means USPS dimensional weight calculations result in lower weights. For bulky, lightweight items, USPS is often cheaper due to this more favorable factor.",
+  },
+{
+    question: "Do international shipments use DIM weight?",
+    answer: "Yes. International carriers use DIM weight with a metric formula: (L x W x H in cm) / 5000 = DIM weight in kg. This is roughly equivalent to the 139 factor used domestically in inches.",
+  },
+{
+    question: "Can I dispute DIM weight charges?",
+    answer: "If you believe a package was measured incorrectly, you can request a re-measurement. Carriers use automated systems that can make errors. Take photos of your packaged item with a measuring tape before shipping as evidence.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

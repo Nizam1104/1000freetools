@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function LoanEMICalculatorPage() {
   const [loanAmount, setLoanAmount] = useState<string>("");
@@ -353,43 +355,33 @@ export default function LoanEMICalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How is EMI calculated?</h4>
-            <p className="text-xs text-muted-foreground">
-              EMI uses the reducing balance method: EMI = P × R × (1+R)^N / [(1+R)^N - 1]. P is loan amount, R is monthly interest rate (annual rate ÷ 12 ÷ 100), N is tenure in months. The formula ensures equal payments throughout the loan term.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I reduce my EMI?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, by extending tenure, making partial prepayments, or refinancing at a lower rate. Prepayments directly reduce principal, which reduces future interest. Even small extra payments can shave years off your loan.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What happens if I miss an EMI?</h4>
-            <p className="text-xs text-muted-foreground">
-              Late fees apply (typically 2-3% per month). Your credit score takes a hit after 30 days. After 90 days, the loan becomes NPA (non-performing asset). Consistent defaults can lead to asset seizure for secured loans.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is it better to reduce EMI or tenure?</h4>
-            <p className="text-xs text-muted-foreground">
-              If you can afford it, reducing tenure saves more interest. But if cash flow is tight, reducing EMI gives breathing room. Some lenders let you prepay without changing EMI – this automatically shortens tenure and maximizes interest savings.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the difference between flat and reducing rate?</h4>
-            <p className="text-xs text-muted-foreground">
-              Flat rate calculates interest on original principal throughout. Reducing rate calculates on outstanding balance. A 10% flat rate equals ~18% reducing rate. Always compare reducing rates – they're the true cost of borrowing.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How is EMI calculated?",
+    answer: "EMI uses the reducing balance method: EMI = P × R × (1+R)^N / [(1+R)^N - 1]. P is loan amount, R is monthly interest rate (annual rate ÷ 12 ÷ 100), N is tenure in months. The formula ensures equal payments throughout the loan term.",
+  },
+{
+    question: "Can I reduce my EMI?",
+    answer: "Yes, by extending tenure, making partial prepayments, or refinancing at a lower rate. Prepayments directly reduce principal, which reduces future interest. Even small extra payments can shave years off your loan.",
+  },
+{
+    question: "What happens if I miss an EMI?",
+    answer: "Late fees apply (typically 2-3% per month). Your credit score takes a hit after 30 days. After 90 days, the loan becomes NPA (non-performing asset). Consistent defaults can lead to asset seizure for secured loans.",
+  },
+{
+    question: "Is it better to reduce EMI or tenure?",
+    answer: "If you can afford it, reducing tenure saves more interest. But if cash flow is tight, reducing EMI gives breathing room. Some lenders let you prepay without changing EMI – this automatically shortens tenure and maximizes interest savings.",
+  },
+{
+    question: "What's the difference between flat and reducing rate?",
+    answer: "Flat rate calculates interest on original principal throughout. Reducing rate calculates on outstanding balance. A 10% flat rate equals ~18% reducing rate. Always compare reducing rates – they're the true cost of borrowing.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

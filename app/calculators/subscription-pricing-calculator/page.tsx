@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -455,43 +457,33 @@ export default function SubscriptionPricingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How do I calculate subscription pricing for my SaaS?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Start with your costs: add fixed costs (hosting, salaries) and variable costs per customer. Decide your target margin (70-80% is typical for SaaS). Then factor in your expected customer distribution across tiers. Our calculator does this automatically and shows your break-even point.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What is a good profit margin for subscription businesses?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Successful SaaS companies typically achieve 70-85% gross margins. Net profit margins vary widely: early-stage companies may operate at a loss while growing, while mature companies target 20-30% net margins. Focus on unit economics first – each customer should be profitable on their own.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How many pricing tiers should I offer?</h4>
-                <p className="text-xs text-muted-foreground">
-                  Most successful SaaS products use 3 tiers: Basic/Starter, Professional/Pro, and Enterprise. This follows the "Goldilocks effect" where most customers choose the middle option. Some products succeed with 2 tiers, while complex enterprise products may have 4+ tiers with custom pricing.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">What churn rate is acceptable for subscription businesses?</h4>
-                <p className="text-xs text-muted-foreground">
-                  For B2B SaaS, under 3% monthly churn is excellent, 5-7% is average, and above 7% is concerning. B2C subscription services typically see higher churn (7-10%). Annual churn should ideally be under 10% for healthy SaaS businesses. Remember: reducing churn by even 1% significantly impacts lifetime value.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm mb-2">How do I calculate customer lifetime value (CLV)?</h4>
-                <p className="text-xs text-muted-foreground">
-                  CLV = (Average Revenue Per User × Gross Margin) ÷ Churn Rate. For example, if ARPU is $50, gross margin is 80%, and monthly churn is 5%, CLV = ($50 × 0.80) ÷ 0.05 = $800. This tells you the maximum you should spend to acquire a customer while remaining profitable.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate subscription pricing for my SaaS?",
+    answer: "Start with your costs: add fixed costs (hosting, salaries) and variable costs per customer. Decide your target margin (70-80% is typical for SaaS). Then factor in your expected customer distribution across tiers. Our calculator does this automatically and shows your break-even point.",
+  },
+{
+    question: "What is a good profit margin for subscription businesses?",
+    answer: "Successful SaaS companies typically achieve 70-85% gross margins. Net profit margins vary widely: early-stage companies may operate at a loss while growing, while mature companies target 20-30% net margins. Focus on unit economics first – each customer should be profitable on their own.",
+  },
+{
+    question: "How many pricing tiers should I offer?",
+    answer: "Most successful SaaS products use 3 tiers: Basic/Starter, Professional/Pro, and Enterprise. This follows the \"Goldilocks effect\" where most customers choose the middle option. Some products succeed with 2 tiers, while complex enterprise products may have 4+ tiers with custom pricing.",
+  },
+{
+    question: "What churn rate is acceptable for subscription businesses?",
+    answer: "For B2B SaaS, under 3% monthly churn is excellent, 5-7% is average, and above 7% is concerning. B2C subscription services typically see higher churn (7-10%). Annual churn should ideally be under 10% for healthy SaaS businesses. Remember: reducing churn by even 1% significantly impacts lifetime value.",
+  },
+{
+    question: "How do I calculate customer lifetime value (CLV)?",
+    answer: "CLV = (Average Revenue Per User × Gross Margin) ÷ Churn Rate. For example, if ARPU is $50, gross margin is 80%, and monthly churn is 5%, CLV = ($50 × 0.80) ÷ 0.05 = $800. This tells you the maximum you should spend to acquire a customer while remaining profitable.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

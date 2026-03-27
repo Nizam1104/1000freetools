@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ChildHeightPredictor() {
   const [fatherHeight, setFatherHeight] = useState<string>("");
@@ -292,45 +294,33 @@ export default function ChildHeightPredictor() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is the mid-parental height method?</h4>
-                <p>
-                  The mid-parental method predicts adult height within about 10 cm (4 inches) for roughly 95 percent of children. It works best for children whose parents are both close to average height. The prediction becomes less precise when parents have very different heights or when there&apos;s a family history of early or late puberty.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can a child be taller than both parents?</h4>
-                <p>
-                  Yes, this happens regularly. Height genes can skip generations, so a child might inherit tall genes from grandparents or other relatives. Children of short parents can also be tall if they inherit favorable combinations of height-related genes. Nutrition and health during childhood also play significant roles.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">At what age do children stop growing?</h4>
-                <p>
-                  Girls typically stop growing around age 14-16, about 2 years after their first period. Boys continue growing until age 16-18, sometimes into their early 20s. Growth plates in the bones close after puberty, which ends the possibility of natural height increase.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does exercise help children grow taller?</h4>
-                <p>
-                  Regular physical activity supports healthy bone development and growth hormone release, but it won&apos;t make a child exceed their genetic potential. Activities like swimming, basketball, and hanging exercises are often recommended, but their main benefit is overall health, not height increase beyond genetics.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I be concerned if my child is shorter than predicted?</h4>
-                <p>
-                  Children grow at different rates. Some are &quot;late bloomers&quot; who catch up during puberty. If your child&apos;s height falls below the 3rd percentile or if growth suddenly slows, consult a pediatrician. Most children who are shorter than predicted are healthy and simply on their own growth trajectory.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate is the mid-parental height method?",
+    answer: "The mid-parental method predicts adult height within about 10 cm (4 inches) for roughly 95 percent of children. It works best for children whose parents are both close to average height. The prediction becomes less precise when parents have very different heights or when there&apos;s a family history of early or late puberty.",
+  },
+{
+    question: "Can a child be taller than both parents?",
+    answer: "Yes, this happens regularly. Height genes can skip generations, so a child might inherit tall genes from grandparents or other relatives. Children of short parents can also be tall if they inherit favorable combinations of height-related genes. Nutrition and health during childhood also play significant roles.",
+  },
+{
+    question: "At what age do children stop growing?",
+    answer: "Girls typically stop growing around age 14-16, about 2 years after their first period. Boys continue growing until age 16-18, sometimes into their early 20s. Growth plates in the bones close after puberty, which ends the possibility of natural height increase.",
+  },
+{
+    question: "Does exercise help children grow taller?",
+    answer: "Regular physical activity supports healthy bone development and growth hormone release, but it won&apos;t make a child exceed their genetic potential. Activities like swimming, basketball, and hanging exercises are often recommended, but their main benefit is overall health, not height increase beyond genetics.",
+  },
+{
+    question: "Should I be concerned if my child is shorter than predicted?",
+    answer: "Children grow at different rates. Some are &quot;late bloomers&quot; who catch up during puberty. If your child&apos;s height falls below the 3rd percentile or if growth suddenly slows, consult a pediatrician. Most children who are shorter than predicted are healthy and simply on their own growth trajectory.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

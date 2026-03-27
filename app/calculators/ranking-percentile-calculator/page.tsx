@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RankingPercentileCalculatorPage() {
   const [rank, setRank] = useState<string>("");
@@ -244,53 +246,33 @@ export default function RankingPercentileCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between rank and percentile?</h4>
-                <p>
-                  Rank is your position (1st, 15th, 100th). Percentile shows what percentage you scored
-                  better than. Rank 15 out of 200 is the 92.5th percentile — you did better than 92.5% of students.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is a higher percentile better?</h4>
-                <p>
-                  Yes. The 99th percentile means you scored better than 99% of test-takers. The 50th
-                  percentile is the median — half scored higher, half scored lower.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How is percentile used in college admissions?</h4>
-                <p>
-                  Colleges use percentiles to compare applicants from different schools. A 95th percentile
-                  SAT score means you outperformed 95% of all test-takers, regardless of your school's
-                  grading scale.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can percentile be above 99?</h4>
-                <p>
-                  Technically no — 99.99th percentile is the maximum. Some tests report "99+" for scores
-                  at the very top. This means you are in the top 1% but the test cannot distinguish finer
-                  differences at that level.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good percentile rank?</h4>
-                <p>
-                  It depends on your goal. For competitive programs, aim for 90th percentile or higher.
-                  For general purposes, 75th percentile or above is considered strong. The 50th percentile
-                  is average — half of test-takers score above this.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the difference between rank and percentile?",
+    answer: "Rank is your position (1st, 15th, 100th). Percentile shows what percentage you scored better than. Rank 15 out of 200 is the 92.5th percentile — you did better than 92.5% of students.",
+  },
+{
+    question: "Is a higher percentile better?",
+    answer: "Yes. The 99th percentile means you scored better than 99% of test-takers. The 50th percentile is the median — half scored higher, half scored lower.",
+  },
+{
+    question: "How is percentile used in college admissions?",
+    answer: "Colleges use percentiles to compare applicants from different schools. A 95th percentile SAT score means you outperformed 95% of all test-takers, regardless of your school's grading scale.",
+  },
+{
+    question: "Can percentile be above 99?",
+    answer: "Technically no — 99.99th percentile is the maximum. Some tests report \"99+\" for scores at the very top. This means you are in the top 1% but the test cannot distinguish finer differences at that level.",
+  },
+{
+    question: "What is a good percentile rank?",
+    answer: "It depends on your goal. For competitive programs, aim for 90th percentile or higher. For general purposes, 75th percentile or above is considered strong. The 50th percentile is average — half of test-takers score above this.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

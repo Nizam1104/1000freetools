@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function SteelWeightCalculator() {
   const [shape, setShape] = useState<"bar" | "sheet" | "pipe" | "beam">("bar");
@@ -359,43 +361,33 @@ export default function SteelWeightCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the density of mild steel?</h4>
-            <p className="text-xs text-muted-foreground">
-              Mild steel (low carbon steel) has a density of approximately 7850 kg/m³ or 7.85 g/cm³. In imperial units, that's 0.284 lb/in³ or 490 lb/ft³. This is the standard value used for most structural steel calculations.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate the weight of a steel pipe?</h4>
-            <p className="text-xs text-muted-foreground">
-              For a pipe, calculate the cross-sectional area of the steel ring: π × ((OD/2)² - (ID/2)²), then multiply by length for volume, then by density for weight. Or use the shortcut: Weight/m = (OD - wall) × wall × 0.02466 for mm dimensions in kg/m.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is stainless steel heavier than regular steel?</h4>
-            <p className="text-xs text-muted-foreground">
-              Slightly. Stainless steel (typically 8000 kg/m³) is about 2% denser than mild steel (7850 kg/m³). The difference comes from alloying elements like chromium and nickel. For most practical purposes, you can treat them as having the same density.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How much does a 4x8 sheet of steel weigh?</h4>
-            <p className="text-xs text-muted-foreground">
-              Depends on thickness. A 4×8 foot sheet of 1/4" steel weighs about 327 lbs. At 1/2" thick, it's 654 lbs. At 1" thick, roughly 1300 lbs. The formula: length(ft) × width(ft) × thickness(in) × 40.8 = weight in pounds.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is aluminum so much lighter than steel?</h4>
-            <p className="text-xs text-muted-foreground">
-              Aluminum's density (2700 kg/m³) is only 34% of steel's. This is due to aluminum's atomic structure – lighter atoms packed less densely. That's why aluminum is popular in aerospace and automotive applications where weight matters.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the density of mild steel?",
+    answer: "Mild steel (low carbon steel) has a density of approximately 7850 kg/m³ or 7.85 g/cm³. In imperial units, that's 0.284 lb/in³ or 490 lb/ft³. This is the standard value used for most structural steel calculations.",
+  },
+{
+    question: "How do I calculate the weight of a steel pipe?",
+    answer: "For a pipe, calculate the cross-sectional area of the steel ring: π × ((OD/2)² - (ID/2)²), then multiply by length for volume, then by density for weight. Or use the shortcut: Weight/m = (OD - wall) × wall × 0.02466 for mm dimensions in kg/m.",
+  },
+{
+    question: "Is stainless steel heavier than regular steel?",
+    answer: "Slightly. Stainless steel (typically 8000 kg/m³) is about 2% denser than mild steel (7850 kg/m³). The difference comes from alloying elements like chromium and nickel. For most practical purposes, you can treat them as having the same density.",
+  },
+{
+    question: "How much does a 4x8 sheet of steel weigh?",
+    answer: "Depends on thickness. A 4×8 foot sheet of 1/4\" steel weighs about 327 lbs. At 1/2\" thick, it's 654 lbs. At 1\" thick, roughly 1300 lbs. The formula: length(ft) × width(ft) × thickness(in) × 40.8 = weight in pounds.",
+  },
+{
+    question: "Why is aluminum so much lighter than steel?",
+    answer: "Aluminum's density (2700 kg/m³) is only 34% of steel's. This is due to aluminum's atomic structure – lighter atoms packed less densely. That's why aluminum is popular in aerospace and automotive applications where weight matters.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

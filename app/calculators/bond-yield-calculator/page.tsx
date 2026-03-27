@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BondYieldCalculatorPage() {
   const [faceValue, setFaceValue] = useState<string>("");
@@ -328,45 +330,33 @@ export default function BondYieldCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the difference between current yield and YTM?</h4>
-                  <p>
-                    Current yield only measures annual coupon income as a percentage of price. YTM includes both coupon income and any capital gain or loss from holding the bond to maturity. YTM is the more complete measure of expected return.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is YTM higher for discount bonds?</h4>
-                  <p>
-                    Discount bonds trade below face value. At maturity, you receive the full face value, giving you a capital gain in addition to coupon income. This extra gain pushes YTM above the current yield. The deeper the discount, the bigger the difference.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is a higher YTM always better?</h4>
-                  <p>
-                    Not necessarily. Higher YTM often means higher risk — the bond may be discounted because of credit concerns or call risk. Compare bonds with similar credit ratings and maturities. A junk bond's high YTM compensates for default risk, not superior value.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does YTM assume I reinvest the coupons?</h4>
-                  <p>
-                    Yes. YTM calculations assume all coupon payments are reinvested at the same YTM rate. If you spend the coupons or reinvest at lower rates, your actual return will be less than the stated YTM. This is called reinvestment risk.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can YTM be negative?</h4>
-                  <p>
-                    Yes, though it's rare. A bond can have negative YTM if it trades at such a high premium that the capital loss at maturity outweighs all coupon payments. This sometimes happens with safe-haven government bonds during flight-to-quality events.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the difference between current yield and YTM?",
+    answer: "Current yield only measures annual coupon income as a percentage of price. YTM includes both coupon income and any capital gain or loss from holding the bond to maturity. YTM is the more complete measure of expected return.",
+  },
+{
+    question: "Why is YTM higher for discount bonds?",
+    answer: "Discount bonds trade below face value. At maturity, you receive the full face value, giving you a capital gain in addition to coupon income. This extra gain pushes YTM above the current yield. The deeper the discount, the bigger the difference.",
+  },
+{
+    question: "Is a higher YTM always better?",
+    answer: "Not necessarily. Higher YTM often means higher risk — the bond may be discounted because of credit concerns or call risk. Compare bonds with similar credit ratings and maturities. A junk bond's high YTM compensates for default risk, not superior value.",
+  },
+{
+    question: "Does YTM assume I reinvest the coupons?",
+    answer: "Yes. YTM calculations assume all coupon payments are reinvested at the same YTM rate. If you spend the coupons or reinvest at lower rates, your actual return will be less than the stated YTM. This is called reinvestment risk.",
+  },
+{
+    question: "Can YTM be negative?",
+    answer: "Yes, though it's rare. A bond can have negative YTM if it trades at such a high premium that the capital loss at maturity outweighs all coupon payments. This sometimes happens with safe-haven government bonds during flight-to-quality events.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

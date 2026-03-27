@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RectangleAreaCalculator() {
   const [length, setLength] = useState<string>("");
@@ -202,50 +204,33 @@ export default function RectangleAreaCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is a square a rectangle?</h4>
-                <p>
-                  Yes. A square is a special rectangle where all four sides are equal. The same formulas
-                  work — just use the same value for length and width.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I find the diagonal of a rectangle?</h4>
-                <p>
-                  Use the Pythagorean theorem: diagonal = √(length² + width²). The diagonal splits the
-                  rectangle into two right triangles.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What units should I use?</h4>
-                <p>
-                  Any consistent units work. If length and width are in feet, area is in square feet
-                  and perimeter is in feet. The calculator does not convert between units.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I use decimals?</h4>
-                <p>
-                  Yes. Enter decimals like 10.5 or 3.14. The calculator handles fractional measurements
-                  and gives precise results.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if I only know area and one side?</h4>
-                <p>
-                  Divide area by the known side to find the other. For example, if area is 120 sq ft
-                  and length is 12 ft, width = 120 ÷ 12 = 10 ft.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is a square a rectangle?",
+    answer: "Yes. A square is a special rectangle where all four sides are equal. The same formulas work — just use the same value for length and width.",
+  },
+{
+    question: "How do I find the diagonal of a rectangle?",
+    answer: "Use the Pythagorean theorem: diagonal = √(length² + width²). The diagonal splits the rectangle into two right triangles.",
+  },
+{
+    question: "What units should I use?",
+    answer: "Any consistent units work. If length and width are in feet, area is in square feet and perimeter is in feet. The calculator does not convert between units.",
+  },
+{
+    question: "Can I use decimals?",
+    answer: "Yes. Enter decimals like 10.5 or 3.14. The calculator handles fractional measurements and gives precise results.",
+  },
+{
+    question: "What if I only know area and one side?",
+    answer: "Divide area by the known side to find the other. For example, if area is 120 sq ft and length is 12 ft, width = 120 ÷ 12 = 10 ft.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

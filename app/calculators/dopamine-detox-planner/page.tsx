@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -470,45 +472,33 @@ export default function DopamineDetoxPlannerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is dopamine detox scientifically proven?</h4>
-                  <p>
-                    The term dopamine detox is not a clinical diagnosis, but the underlying concept has scientific support. Research shows that excessive exposure to high-reward stimuli can downregulate dopamine receptors. Periods of reduced stimulation allow receptors to recover. The practice combines elements of cognitive behavioral therapy and mindfulness.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long should a dopamine detox last?</h4>
-                  <p>
-                    For beginners, start with 4 to 12 hours. A full 24-hour detox provides noticeable benefits for most people. Extended detoxes of 48 to 72 hours offer deeper resets but require more commitment. The best duration is one you can complete consistently. Weekly mini-detoxes often work better than occasional long ones.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I work during a dopamine detox?</h4>
-                  <p>
-                    Yes, but limit work to essential tasks only. Avoid multitasking and constant email checking. Use work as a focused activity rather than a distraction. If your job requires heavy computer or phone use, consider doing your detox on a weekend or day off.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What activities are allowed during a detox?</h4>
-                  <p>
-                    Low-stimulation activities are encouraged: walking, reading physical books, journaling, meditation, light exercise, cooking, cleaning, face-to-face conversations, and spending time in nature. The key is avoiding activities designed to hijack your attention with rapid rewards.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How often should I do a dopamine detox?</h4>
-                  <p>
-                    Many people benefit from a weekly mini-detox of 4 to 12 hours, such as a screen-free Sunday morning. A full 24-hour detox once a month provides a deeper reset. Listen to your body. If you feel constantly overstimulated, increase frequency. If you feel balanced, maintain with occasional detoxes.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is dopamine detox scientifically proven?",
+    answer: "The term dopamine detox is not a clinical diagnosis, but the underlying concept has scientific support. Research shows that excessive exposure to high-reward stimuli can downregulate dopamine receptors. Periods of reduced stimulation allow receptors to recover. The practice combines elements of cognitive behavioral therapy and mindfulness.",
+  },
+{
+    question: "How long should a dopamine detox last?",
+    answer: "For beginners, start with 4 to 12 hours. A full 24-hour detox provides noticeable benefits for most people. Extended detoxes of 48 to 72 hours offer deeper resets but require more commitment. The best duration is one you can complete consistently. Weekly mini-detoxes often work better than occasional long ones.",
+  },
+{
+    question: "Can I work during a dopamine detox?",
+    answer: "Yes, but limit work to essential tasks only. Avoid multitasking and constant email checking. Use work as a focused activity rather than a distraction. If your job requires heavy computer or phone use, consider doing your detox on a weekend or day off.",
+  },
+{
+    question: "What activities are allowed during a detox?",
+    answer: "Low-stimulation activities are encouraged: walking, reading physical books, journaling, meditation, light exercise, cooking, cleaning, face-to-face conversations, and spending time in nature. The key is avoiding activities designed to hijack your attention with rapid rewards.",
+  },
+{
+    question: "How often should I do a dopamine detox?",
+    answer: "Many people benefit from a weekly mini-detox of 4 to 12 hours, such as a screen-free Sunday morning. A full 24-hour detox once a month provides a deeper reset. Listen to your body. If you feel constantly overstimulated, increase frequency. If you feel balanced, maintain with occasional detoxes.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

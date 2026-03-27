@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DilutionCalculator() {
   const [mode, setMode] = useState<"find-c2" | "find-v1" | "find-c1" | "find-v2">("find-c2");
@@ -363,43 +365,33 @@ export default function DilutionCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is the dilution formula?</h4>
-            <p>
-              The dilution formula is C1V1 = C2V2. This means the initial concentration times initial volume equals final concentration times final volume. The amount of solute stays constant — you're just adding more solvent.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do I calculate dilution factor?</h4>
-            <p>
-              Dilution factor equals V2/V1 or C1/C2. A 1:10 dilution has a dilution factor of 10. If you mix 1 mL stock with 9 mL water, total volume is 10 mL, so dilution factor is 10/1 = 10.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is a serial dilution?</h4>
-            <p>
-              Serial dilution means performing multiple dilutions in sequence. Take 1 mL from tube 1, add to 9 mL in tube 2 (1:10). Take 1 mL from tube 2, add to 9 mL in tube 3 (1:100 cumulative). This creates a concentration series for standard curves.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Do units matter for dilution calculations?</h4>
-            <p>
-              Yes, but only for consistency. C1 and C2 must use the same units (both M, both mM, etc.). V1 and V2 must use the same units (both mL, both L, etc.). The formula works with any concentration and volume units as long as they match.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do I make a 1:100 dilution?</h4>
-            <p>
-              For a 1:100 dilution, mix 1 part stock with 99 parts diluent. For 10 mL total: add 0.1 mL (100 uL) stock to 9.9 mL diluent. For 100 mL total: add 1 mL stock to 99 mL diluent.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the dilution formula?",
+    answer: "The dilution formula is C1V1 = C2V2. This means the initial concentration times initial volume equals final concentration times final volume. The amount of solute stays constant — you're just adding more solvent.",
+  },
+{
+    question: "How do I calculate dilution factor?",
+    answer: "Dilution factor equals V2/V1 or C1/C2. A 1:10 dilution has a dilution factor of 10. If you mix 1 mL stock with 9 mL water, total volume is 10 mL, so dilution factor is 10/1 = 10.",
+  },
+{
+    question: "What is a serial dilution?",
+    answer: "Serial dilution means performing multiple dilutions in sequence. Take 1 mL from tube 1, add to 9 mL in tube 2 (1:10). Take 1 mL from tube 2, add to 9 mL in tube 3 (1:100 cumulative). This creates a concentration series for standard curves.",
+  },
+{
+    question: "Do units matter for dilution calculations?",
+    answer: "Yes, but only for consistency. C1 and C2 must use the same units (both M, both mM, etc.). V1 and V2 must use the same units (both mL, both L, etc.). The formula works with any concentration and volume units as long as they match.",
+  },
+{
+    question: "How do I make a 1:100 dilution?",
+    answer: "For a 1:100 dilution, mix 1 part stock with 99 parts diluent. For 10 mL total: add 0.1 mL (100 uL) stock to 9.9 mL diluent. For 100 mL total: add 1 mL stock to 99 mL diluent.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

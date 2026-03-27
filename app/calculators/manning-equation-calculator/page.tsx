@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ManningEquationCalculator() {
   const [n, setN] = useState<string>("");
@@ -240,45 +242,33 @@ export default function ManningEquationCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is hydraulic radius and how do I calculate it?</h4>
-                <p>
-                  Hydraulic radius (R) equals cross-sectional area (A) divided by wetted perimeter (P). For a rectangular channel: R = (width × depth) / (width + 2 × depth). For a full circular pipe: R = diameter / 4. The wetted perimeter is the length of channel boundary in contact with water.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">When should I use Manning's equation vs. other formulas?</h4>
-                <p>
-                  Use Manning for open channel flow and partially full pipes. For pressurized pipe flow, use the Darcy-Weisbach or Hazen-Williams equations. Manning works well for turbulent flow (Reynolds number &gt; 2000), which covers most civil engineering applications.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What units does the Manning equation use?</h4>
-                <p>
-                  The form used here is for SI units: velocity in m/s, radius in meters, slope as m/m. For US customary units, the equation includes a conversion factor: V = (1.486/n) × R^(2/3) × S^(1/2), giving velocity in ft/s with radius in feet.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate is the Manning equation?</h4>
-                <p>
-                  Accuracy depends mainly on selecting the correct n value. With a well-chosen n, Manning typically predicts velocity within 10-20% for natural channels and 5-10% for constructed channels. The biggest source of error is usually estimating roughness for natural streams with variable conditions.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I use Manning's equation for sloped pipes?</h4>
-                <p>
-                  Yes, for partially full pipes flowing by gravity. The pipe acts as an open channel with a free water surface. For full pipes under pressure, use pipe flow equations instead. The hydraulic radius changes with fill level, so capacity isn't linear with depth.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is hydraulic radius and how do I calculate it?",
+    answer: "Hydraulic radius (R) equals cross-sectional area (A) divided by wetted perimeter (P). For a rectangular channel: R = (width × depth) / (width + 2 × depth). For a full circular pipe: R = diameter / 4. The wetted perimeter is the length of channel boundary in contact with water.",
+  },
+{
+    question: "When should I use Manning's equation vs. other formulas?",
+    answer: "Use Manning for open channel flow and partially full pipes. For pressurized pipe flow, use the Darcy-Weisbach or Hazen-Williams equations. Manning works well for turbulent flow (Reynolds number &gt; 2000), which covers most civil engineering applications.",
+  },
+{
+    question: "What units does the Manning equation use?",
+    answer: "The form used here is for SI units: velocity in m/s, radius in meters, slope as m/m. For US customary units, the equation includes a conversion factor: V = (1.486/n) × R^(2/3) × S^(1/2), giving velocity in ft/s with radius in feet.",
+  },
+{
+    question: "How accurate is the Manning equation?",
+    answer: "Accuracy depends mainly on selecting the correct n value. With a well-chosen n, Manning typically predicts velocity within 10-20% for natural channels and 5-10% for constructed channels. The biggest source of error is usually estimating roughness for natural streams with variable conditions.",
+  },
+{
+    question: "Can I use Manning's equation for sloped pipes?",
+    answer: "Yes, for partially full pipes flowing by gravity. The pipe acts as an open channel with a free water surface. For full pipes under pressure, use pipe flow equations instead. The hydraulic radius changes with fill level, so capacity isn't linear with depth.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

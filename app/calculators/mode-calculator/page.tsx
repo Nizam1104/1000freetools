@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ModeCalculator() {
   const [numbers, setNumbers] = useState<string>("");
@@ -200,43 +202,33 @@ export default function ModeCalculator() {
         </CardContent>
       </Card>
 
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-medium text-sm mb-2">Can a dataset have more than one mode?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes. Two modes = bimodal. Three modes = trimodal. More than three = multimodal. This often indicates distinct subgroups in your data. Example: A bimodal age distribution at a family restaurant might show peaks for children and parents.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">What if every value appears the same number of times?</h4>
-            <p className="text-xs text-muted-foreground">
-              Then there is no mode. Every value is equally common. This happens with uniform distributions. In such cases, the mean or median may be more useful measures of central tendency.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">Can the mode be used with decimal numbers?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, but exact matches are rare with continuous data. For measurements like height or weight, values are often grouped into ranges first (e.g., 150-155 cm, 155-160 cm) before finding the modal range.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">When is mode better than mean or median?</h4>
-            <p className="text-xs text-muted-foreground">
-              Use mode for categorical data (you can't average "red" and "blue"). Also useful when you need the most common value for decision-making—like which product size to stock more of.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-sm mb-2">How do I find the mode manually?</h4>
-            <p className="text-xs text-muted-foreground">
-              List all unique values. Count how many times each appears. The value(s) with the highest count is the mode. For large datasets, a frequency table or this calculator makes it easier.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Can a dataset have more than one mode?",
+    answer: "Yes. Two modes = bimodal. Three modes = trimodal. More than three = multimodal. This often indicates distinct subgroups in your data. Example: A bimodal age distribution at a family restaurant might show peaks for children and parents.",
+  },
+{
+    question: "What if every value appears the same number of times?",
+    answer: "Then there is no mode. Every value is equally common. This happens with uniform distributions. In such cases, the mean or median may be more useful measures of central tendency.",
+  },
+{
+    question: "Can the mode be used with decimal numbers?",
+    answer: "Yes, but exact matches are rare with continuous data. For measurements like height or weight, values are often grouped into ranges first (e.g., 150-155 cm, 155-160 cm) before finding the modal range.",
+  },
+{
+    question: "When is mode better than mean or median?",
+    answer: "Use mode for categorical data (you can't average \"red\" and \"blue\"). Also useful when you need the most common value for decision-making—like which product size to stock more of.",
+  },
+{
+    question: "How do I find the mode manually?",
+    answer: "List all unique values. Count how many times each appears. The value(s) with the highest count is the mode. For large datasets, a frequency table or this calculator makes it easier.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

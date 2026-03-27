@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MonthlyBudgetBreakdownCalculatorPage() {
   const [monthlyIncome, setMonthlyIncome] = useState<string>("");
@@ -326,45 +328,33 @@ export default function MonthlyBudgetBreakdownCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if my expenses exceed my income?</h4>
-                  <p>
-                    You have three options: increase income (side hustle, raise, second job), decrease expenses (cut subscriptions, cook at home, downsize housing), or both. Start by tracking every expense for a month—you may find surprising leaks.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much should I save each month?</h4>
-                  <p>
-                    Aim for 20% of take-home pay if possible. At minimum, build a $1,000 emergency fund, then contribute enough to get any employer 401(k) match, then build 3-6 months of expenses.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I budget every dollar or just track categories?</h4>
-                  <p>
-                    Both work. Zero-based budgeting (every dollar assigned a job) gives more control. Category tracking is more flexible. Try both for a month each and see which you stick with.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I handle irregular income?</h4>
-                  <p>
-                    Base your budget on your lowest expected month. In high-income months, save the surplus. Alternatively, pay yourself a fixed "salary" from a business account and smooth out the variations.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it normal to go over budget sometimes?</h4>
-                  <p>
-                    Yes. Budgets are planning tools, not straitjackets. If you overspend in one category, cover it by reducing another category that month. The goal is awareness and progress, not perfection.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What if my expenses exceed my income?",
+    answer: "You have three options: increase income (side hustle, raise, second job), decrease expenses (cut subscriptions, cook at home, downsize housing), or both. Start by tracking every expense for a month—you may find surprising leaks.",
+  },
+{
+    question: "How much should I save each month?",
+    answer: "Aim for 20% of take-home pay if possible. At minimum, build a $1,000 emergency fund, then contribute enough to get any employer 401(k) match, then build 3-6 months of expenses.",
+  },
+{
+    question: "Should I budget every dollar or just track categories?",
+    answer: "Both work. Zero-based budgeting (every dollar assigned a job) gives more control. Category tracking is more flexible. Try both for a month each and see which you stick with.",
+  },
+{
+    question: "How do I handle irregular income?",
+    answer: "Base your budget on your lowest expected month. In high-income months, save the surplus. Alternatively, pay yourself a fixed \"salary\" from a business account and smooth out the variations.",
+  },
+{
+    question: "Is it normal to go over budget sometimes?",
+    answer: "Yes. Budgets are planning tools, not straitjackets. If you overspend in one category, cover it by reducing another category that month. The goal is awareness and progress, not perfection.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function TrigIdentityVerifier() {
   const [leftSide, setLeftSide] = useState<string>("");
@@ -242,31 +244,25 @@ export default function TrigIdentityVerifier() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How does the verifier work?</h4>
-            <p className="text-xs text-muted-foreground">
-              The calculator tests the equation at multiple angle values. If both sides give the same result for all test angles, it's likely a valid identity. This numerical approach catches most identities but isn't a formal proof.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I use variables like x or θ?</h4>
-            <p className="text-xs text-muted-foreground">
-              No, just enter the expressions using sin, cos, tan, etc. The calculator automatically tests multiple angles to verify the identity holds for all values.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What if I get undefined values?</h4>
-            <p className="text-xs text-muted-foreground">
-              Some identities have restrictions. For example, tan is undefined at 90°. The verifier skips angles where either side is undefined.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How does the verifier work?",
+    answer: "The calculator tests the equation at multiple angle values. If both sides give the same result for all test angles, it's likely a valid identity. This numerical approach catches most identities but isn't a formal proof.",
+  },
+{
+    question: "Can I use variables like x or θ?",
+    answer: "No, just enter the expressions using sin, cos, tan, etc. The calculator automatically tests multiple angles to verify the identity holds for all values.",
+  },
+{
+    question: "What if I get undefined values?",
+    answer: "Some identities have restrictions. For example, tan is undefined at 90°. The verifier skips angles where either side is undefined.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

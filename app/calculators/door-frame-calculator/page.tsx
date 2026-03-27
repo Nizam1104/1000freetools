@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -465,45 +467,33 @@ export default function DoorFrameCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What size rough opening do I need for a 36 inch door?</h4>
-                  <p>
-                    For a 36 inch door, the rough opening should be 38 inches wide and 81 inches tall. This allows 2 inches of width for the frame (3/4 inch on each side) plus shimming space (1/4 inch on each side), and 1 inch of height for the frame and leveling.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I measure for a replacement door frame?</h4>
-                  <p>
-                    Measure the existing door slab width and height in three places each. Use the smallest measurement. For the rough opening, measure the distance between studs. Also measure wall thickness at multiple points since walls are not always uniform.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I put a 32 inch door in a 30 inch opening?</h4>
-                  <p>
-                    No, not without reframing. A 32 inch door needs a rough opening of at least 34 inches. Trying to fit a larger door into a smaller opening will not work. You would need to remove drywall and reframe the opening with a wider header and king studs.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What lumber do I need for a door frame?</h4>
-                  <p>
-                    Interior door frames typically use 1x4 or 1x6 lumber for jambs. Exterior frames use 2x6 lumber. For the rough opening, use 2x4 or 2x6 studs matching your wall construction. The header should be sized based on whether the wall is load-bearing.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much clearance does a door need at the bottom?</h4>
-                  <p>
-                    Standard bottom clearance is 1/2 inch for carpeted floors and 3/8 inch for hard surface flooring. Bathroom doors may need 3/4 to 1 inch clearance for proper ventilation. Exterior doors sit on a threshold, so clearance depends on the threshold height.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What size rough opening do I need for a 36 inch door?",
+    answer: "For a 36 inch door, the rough opening should be 38 inches wide and 81 inches tall. This allows 2 inches of width for the frame (3/4 inch on each side) plus shimming space (1/4 inch on each side), and 1 inch of height for the frame and leveling.",
+  },
+{
+    question: "How do I measure for a replacement door frame?",
+    answer: "Measure the existing door slab width and height in three places each. Use the smallest measurement. For the rough opening, measure the distance between studs. Also measure wall thickness at multiple points since walls are not always uniform.",
+  },
+{
+    question: "Can I put a 32 inch door in a 30 inch opening?",
+    answer: "No, not without reframing. A 32 inch door needs a rough opening of at least 34 inches. Trying to fit a larger door into a smaller opening will not work. You would need to remove drywall and reframe the opening with a wider header and king studs.",
+  },
+{
+    question: "What lumber do I need for a door frame?",
+    answer: "Interior door frames typically use 1x4 or 1x6 lumber for jambs. Exterior frames use 2x6 lumber. For the rough opening, use 2x4 or 2x6 studs matching your wall construction. The header should be sized based on whether the wall is load-bearing.",
+  },
+{
+    question: "How much clearance does a door need at the bottom?",
+    answer: "Standard bottom clearance is 1/2 inch for carpeted floors and 3/8 inch for hard surface flooring. Bathroom doors may need 3/4 to 1 inch clearance for proper ventilation. Exterior doors sit on a threshold, so clearance depends on the threshold height.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

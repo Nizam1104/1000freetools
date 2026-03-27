@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function FiftyThirtyTwentyBudgetRuleCalculatorPage() {
   const [monthlyIncome, setMonthlyIncome] = useState<string>("");
@@ -410,43 +412,33 @@ export default function FiftyThirtyTwentyBudgetRuleCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Should I use gross or net income for the 50/30/20 rule?</h4>
-            <p className="text-xs text-muted-foreground">
-              Always use after-tax (net) income – what actually hits your bank account. The 50/30/20 rule is about allocating spendable money. If you make $5,000 gross but take home $3,800, budget based on $3,800. Taxes aren't part of your budget – they're already gone.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does the 50/30/20 rule work for high earners?</h4>
-            <p className="text-xs text-muted-foreground">
-              It works, but high earners often don't need 50% for needs. Someone making $20,000/month might only need $6,000 (30%) for living expenses. In that case, keep needs at actual cost, maintain 20% savings minimum, and let wants expand – or better yet, increase savings to 30-40%.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What if I have high-interest debt?</h4>
-            <p className="text-xs text-muted-foreground">
-              Aggressive debt payoff counts as savings in the 50/30/20 framework. If you're crushing credit card debt, you might do 50/10/40 temporarily – 40% to debt is still "savings" because you're building net worth. Once high-interest debt is gone, redirect that 40% to investments.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I track if I'm following the 50/30/20 rule?</h4>
-            <p className="text-xs text-muted-foreground">
-              Review your bank statements monthly. Categorize each transaction as need, want, or savings. Add them up and calculate percentages. Most budgeting apps (Mint, YNAB, Personal Capital) do this automatically. If needs are at 55%, find $200-300 to cut or shift from wants.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is the 50/30/20 rule better than zero-based budgeting?</h4>
-            <p className="text-xs text-muted-foreground">
-              Depends on your personality. 50/30/20 is simpler and more flexible – good for people who hate detailed tracking. Zero-based budgeting (every dollar assigned a job) gives more control but requires more work. Try 50/30/20 first. If you need more structure, graduate to zero-based.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Should I use gross or net income for the 50/30/20 rule?",
+    answer: "Always use after-tax (net) income – what actually hits your bank account. The 50/30/20 rule is about allocating spendable money. If you make $5,000 gross but take home $3,800, budget based on $3,800. Taxes aren't part of your budget – they're already gone.",
+  },
+{
+    question: "Does the 50/30/20 rule work for high earners?",
+    answer: "It works, but high earners often don't need 50% for needs. Someone making $20,000/month might only need $6,000 (30%) for living expenses. In that case, keep needs at actual cost, maintain 20% savings minimum, and let wants expand – or better yet, increase savings to 30-40%.",
+  },
+{
+    question: "What if I have high-interest debt?",
+    answer: "Aggressive debt payoff counts as savings in the 50/30/20 framework. If you're crushing credit card debt, you might do 50/10/40 temporarily – 40% to debt is still \"savings\" because you're building net worth. Once high-interest debt is gone, redirect that 40% to investments.",
+  },
+{
+    question: "How do I track if I'm following the 50/30/20 rule?",
+    answer: "Review your bank statements monthly. Categorize each transaction as need, want, or savings. Add them up and calculate percentages. Most budgeting apps (Mint, YNAB, Personal Capital) do this automatically. If needs are at 55%, find $200-300 to cut or shift from wants.",
+  },
+{
+    question: "Is the 50/30/20 rule better than zero-based budgeting?",
+    answer: "Depends on your personality. 50/30/20 is simpler and more flexible – good for people who hate detailed tracking. Zero-based budgeting (every dollar assigned a job) gives more control but requires more work. Try 50/30/20 first. If you need more structure, graduate to zero-based.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

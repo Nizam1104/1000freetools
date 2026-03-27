@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PipeFrictionLossCalculator() {
   const [flowRate, setFlowRate] = useState<string>("");
@@ -251,33 +253,33 @@ export default function PipeFrictionLossCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the difference between head loss and pressure drop?</h4>
-              <p>Head loss is expressed in meters (or feet) of fluid column. Pressure drop is in Pascals (or psi). They're related by: ΔP = ρghf, where ρ is density, g is gravity, and hf is head loss.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Does this calculator include fittings and valves?</h4>
-              <p>No, this calculates straight pipe friction only. Fittings, valves, and bends add additional losses. Use equivalent length method or K-factor method to account for fittings separately.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">How accurate is the Swamee-Jain equation?</h4>
-              <p>The Swamee-Jain approximation is accurate to within 1% of the Colebrook equation for typical pipe flow conditions. It's widely used in engineering because it doesn't require iteration.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is my pressure drop so high?</h4>
-              <p>Common causes: pipe too small for flow rate, excessive flow velocity, very long pipe runs, or rough pipe material. Consider increasing pipe diameter or reducing flow rate.</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What viscosity should I use for water?</h4>
-              <p>At 20°C (68°F), water's kinematic viscosity is 1.004×10⁻⁶ m²/s. At 40°C it's 0.658×10⁻⁶ m²/s. Warmer water has lower viscosity and slightly lower friction loss.</p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What's the difference between head loss and pressure drop?",
+    answer: "Head loss is expressed in meters (or feet) of fluid column. Pressure drop is in Pascals (or psi). They're related by: ΔP = ρghf, where ρ is density, g is gravity, and hf is head loss.",
+  },
+{
+    question: "Does this calculator include fittings and valves?",
+    answer: "No, this calculates straight pipe friction only. Fittings, valves, and bends add additional losses. Use equivalent length method or K-factor method to account for fittings separately.",
+  },
+{
+    question: "How accurate is the Swamee-Jain equation?",
+    answer: "The Swamee-Jain approximation is accurate to within 1% of the Colebrook equation for typical pipe flow conditions. It's widely used in engineering because it doesn't require iteration.",
+  },
+{
+    question: "Why is my pressure drop so high?",
+    answer: "Common causes: pipe too small for flow rate, excessive flow velocity, very long pipe runs, or rough pipe material. Consider increasing pipe diameter or reducing flow rate.",
+  },
+{
+    question: "What viscosity should I use for water?",
+    answer: "At 20°C (68°F), water's kinematic viscosity is 1.004×10⁻⁶ m²/s. At 40°C it's 0.658×10⁻⁶ m²/s. Warmer water has lower viscosity and slightly lower friction loss.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

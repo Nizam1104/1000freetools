@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function InterestVsPrincipalSplitCalculatorPage() {
   const [loanAmount, setLoanAmount] = useState<string>("");
@@ -341,45 +343,33 @@ export default function InterestVsPrincipalSplitCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is my early payment mostly interest?</h4>
-                  <p>
-                    Interest is calculated on the outstanding balance. At the start, you owe the full loan amount, so interest is at its maximum. As you pay down principal, the balance shrinks and less interest accrues each month.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">When does principal exceed interest?</h4>
-                  <p>
-                    For most 30-year mortgages, principal exceeds interest around payment 180-200 (year 15-17). For 15-year loans, the crossover happens much earlier, around year 5-7. Higher interest rates push the crossover point later.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does paying extra reduce my monthly payment?</h4>
-                  <p>
-                    No, extra principal payments do not change your required monthly payment. They reduce the loan balance and shorten the loan term. To lower your payment, you would need to refinance the loan.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I pay extra principal or invest?</h4>
-                  <p>
-                    Compare your loan rate to expected investment returns. If your mortgage is 3% and you expect 7% from investments, investing may be better. If your loan is 7%+, paying it down gives a guaranteed 7% return. Consider your risk tolerance and financial goals.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I verify my payment split?</h4>
-                  <p>
-                    Your monthly loan statement shows the interest and principal portions of each payment. Lenders must provide this by law. Compare the statement to this calculator's results to verify accuracy.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Why is my early payment mostly interest?",
+    answer: "Interest is calculated on the outstanding balance. At the start, you owe the full loan amount, so interest is at its maximum. As you pay down principal, the balance shrinks and less interest accrues each month.",
+  },
+{
+    question: "When does principal exceed interest?",
+    answer: "For most 30-year mortgages, principal exceeds interest around payment 180-200 (year 15-17). For 15-year loans, the crossover happens much earlier, around year 5-7. Higher interest rates push the crossover point later.",
+  },
+{
+    question: "Does paying extra reduce my monthly payment?",
+    answer: "No, extra principal payments do not change your required monthly payment. They reduce the loan balance and shorten the loan term. To lower your payment, you would need to refinance the loan.",
+  },
+{
+    question: "Should I pay extra principal or invest?",
+    answer: "Compare your loan rate to expected investment returns. If your mortgage is 3% and you expect 7% from investments, investing may be better. If your loan is 7%+, paying it down gives a guaranteed 7% return. Consider your risk tolerance and financial goals.",
+  },
+{
+    question: "How do I verify my payment split?",
+    answer: "Your monthly loan statement shows the interest and principal portions of each payment. Lenders must provide this by law. Compare the statement to this calculator's results to verify accuracy.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

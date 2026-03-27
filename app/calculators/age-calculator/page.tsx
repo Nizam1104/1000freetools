@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -283,43 +285,33 @@ export default function AgeCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do you calculate age accurately?</h4>
-            <p className="text-xs text-muted-foreground">
-              Count complete years first – only count a year if your birthday has passed. Then count complete months from your last birthday. Finally, count remaining days. This gives you precise age in years, months, and days rather than just years.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why does age matter in different cultures?</h4>
-            <p className="text-xs text-muted-foreground">
-              In East Asian cultures, you're 1 at birth and gain a year each New Year (not birthday). In Korea, you're also a year older on New Year's Day. Some cultures count pregnancy time. Western age counts from birth date – the method used by this calculator.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What's the oldest verified human age?</h4>
-            <p className="text-xs text-muted-foreground">
-              Jeanne Calment of France lived to 122 years and 164 days (1875-1997), the oldest verified person ever. The oldest living person is typically around 115-118. Maximum human lifespan appears to be around 120-125 years based on current data.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How many days have I lived?</h4>
-            <p className="text-xs text-muted-foreground">
-              Multiply your age in years by 365.25 (accounting for leap years), then add days for months and extra days. A 30-year-old has lived approximately 10,957 days. Our calculator shows the exact number based on your specific birth date.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">When is my next birthday?</h4>
-            <p className="text-xs text-muted-foreground">
-              Your next birthday is the anniversary of your birth date in the current or next year. If your birthday already passed this year, it's next year. The calculator shows days remaining until your next birthday when you calculate your age.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do you calculate age accurately?",
+    answer: "Count complete years first – only count a year if your birthday has passed. Then count complete months from your last birthday. Finally, count remaining days. This gives you precise age in years, months, and days rather than just years.",
+  },
+{
+    question: "Why does age matter in different cultures?",
+    answer: "In East Asian cultures, you're 1 at birth and gain a year each New Year (not birthday). In Korea, you're also a year older on New Year's Day. Some cultures count pregnancy time. Western age counts from birth date – the method used by this calculator.",
+  },
+{
+    question: "What's the oldest verified human age?",
+    answer: "Jeanne Calment of France lived to 122 years and 164 days (1875-1997), the oldest verified person ever. The oldest living person is typically around 115-118. Maximum human lifespan appears to be around 120-125 years based on current data.",
+  },
+{
+    question: "How many days have I lived?",
+    answer: "Multiply your age in years by 365.25 (accounting for leap years), then add days for months and extra days. A 30-year-old has lived approximately 10,957 days. Our calculator shows the exact number based on your specific birth date.",
+  },
+{
+    question: "When is my next birthday?",
+    answer: "Your next birthday is the anniversary of your birth date in the current or next year. If your birthday already passed this year, it's next year. The calculator shows days remaining until your next birthday when you calculate your age.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -504,45 +506,33 @@ export default function ClothingShrinkageEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does all clothing shrink?</h4>
-                  <p>
-                    Most natural fiber clothing shrinks to some degree. Cotton, wool, linen, and rayon all shrink with heat and moisture. Synthetic fibers like polyester and nylon are much more stable. Blends shrink less than 100 percent natural fibers. Pre-shrunk fabrics minimize but don&apos;t eliminate shrinkage.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I unshrink clothes?</h4>
-                  <p>
-                    Sometimes. Soak shrunken wool or cotton in lukewarm water with hair conditioner or baby shampoo for 30 minutes. Gently stretch back to original size and lay flat to dry. This works best on wool. Cotton that&apos;s severely shrunk is difficult to restore completely.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much does denim shrink?</h4>
-                  <p>
-                    Raw (unwashed) denim can shrink 7-10 percent in length and 4-5 percent in width during the first wash. Sanforized denim shrinks 1-3 percent. Most jeans are sanforized. Check the label. If it says &quot;shrink-to-fit&quot; or &quot;raw,&quot; expect significant shrinkage.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does washing in hot water always cause shrinkage?</h4>
-                  <p>
-                    Hot water increases shrinkage risk but doesn&apos;t guarantee it. Pre-shrunk and synthetic fabrics handle hot water well. Natural fibers that haven&apos;t been pre-shrunk will shrink more in hot water. The dryer&apos;s heat often causes more shrinkage than the wash temperature.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why do clothes shrink more in length than width?</h4>
-                  <p>
-                    Fabric is woven or knitted with lengthwise (warp) and crosswise (weft) threads. The warp threads are under more tension during manufacturing, so they have more potential to relax and shrink. This is why length shrinkage typically exceeds width shrinkage.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Does all clothing shrink?",
+    answer: "Most natural fiber clothing shrinks to some degree. Cotton, wool, linen, and rayon all shrink with heat and moisture. Synthetic fibers like polyester and nylon are much more stable. Blends shrink less than 100 percent natural fibers. Pre-shrunk fabrics minimize but don&apos;t eliminate shrinkage.",
+  },
+{
+    question: "Can I unshrink clothes?",
+    answer: "Sometimes. Soak shrunken wool or cotton in lukewarm water with hair conditioner or baby shampoo for 30 minutes. Gently stretch back to original size and lay flat to dry. This works best on wool. Cotton that&apos;s severely shrunk is difficult to restore completely.",
+  },
+{
+    question: "How much does denim shrink?",
+    answer: "Raw (unwashed) denim can shrink 7-10 percent in length and 4-5 percent in width during the first wash. Sanforized denim shrinks 1-3 percent. Most jeans are sanforized. Check the label. If it says &quot;shrink-to-fit&quot; or &quot;raw,&quot; expect significant shrinkage.",
+  },
+{
+    question: "Does washing in hot water always cause shrinkage?",
+    answer: "Hot water increases shrinkage risk but doesn&apos;t guarantee it. Pre-shrunk and synthetic fabrics handle hot water well. Natural fibers that haven&apos;t been pre-shrunk will shrink more in hot water. The dryer&apos;s heat often causes more shrinkage than the wash temperature.",
+  },
+{
+    question: "Why do clothes shrink more in length than width?",
+    answer: "Fabric is woven or knitted with lengthwise (warp) and crosswise (weft) threads. The warp threads are under more tension during manufacturing, so they have more potential to relax and shrink. This is why length shrinkage typically exceeds width shrinkage.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

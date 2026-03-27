@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function EBITDACalculatorPage() {
   const [netIncome, setNetIncome] = useState<string>("");
@@ -361,45 +363,33 @@ export default function EBITDACalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good EBITDA margin?</h4>
-                  <p>
-                    A good EBITDA margin depends on the industry. For most businesses, 10-20% is considered healthy. Software and technology companies often achieve 25-40% margins. Retail and restaurants typically have 5-15% margins. Compare your margin to industry averages for meaningful assessment.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is EBITDA the same as operating cash flow?</h4>
-                  <p>
-                    No, EBITDA is not the same as operating cash flow. EBITDA ignores changes in working capital and does not account for capital expenditures. Operating cash flow from the cash flow statement includes working capital changes and is a more complete measure of cash generation.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why do investors use EBITDA?</h4>
-                  <p>
-                    Investors use EBITDA because it allows comparison of operating performance across companies with different capital structures, tax rates, and depreciation policies. It is also used in valuation multiples and is a common metric in loan covenants and private equity deals.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What are the limitations of EBITDA?</h4>
-                  <p>
-                    EBITDA ignores capital expenditures, changes in working capital, interest expense, and taxes. It can make highly leveraged or capital-intensive businesses appear more profitable than they are. Warren Buffett famously criticized EBITDA, noting it ignores the cost of assets needed to run the business.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How is EBITDA different from EBIT?</h4>
-                  <p>
-                    EBIT (Earnings Before Interest and Taxes) includes depreciation and amortization, while EBITDA excludes them. EBIT equals operating income on most income statements. EBITDA = EBIT + Depreciation + Amortization. EBIT is closer to GAAP operating income.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good EBITDA margin?",
+    answer: "A good EBITDA margin depends on the industry. For most businesses, 10-20% is considered healthy. Software and technology companies often achieve 25-40% margins. Retail and restaurants typically have 5-15% margins. Compare your margin to industry averages for meaningful assessment.",
+  },
+{
+    question: "Is EBITDA the same as operating cash flow?",
+    answer: "No, EBITDA is not the same as operating cash flow. EBITDA ignores changes in working capital and does not account for capital expenditures. Operating cash flow from the cash flow statement includes working capital changes and is a more complete measure of cash generation.",
+  },
+{
+    question: "Why do investors use EBITDA?",
+    answer: "Investors use EBITDA because it allows comparison of operating performance across companies with different capital structures, tax rates, and depreciation policies. It is also used in valuation multiples and is a common metric in loan covenants and private equity deals.",
+  },
+{
+    question: "What are the limitations of EBITDA?",
+    answer: "EBITDA ignores capital expenditures, changes in working capital, interest expense, and taxes. It can make highly leveraged or capital-intensive businesses appear more profitable than they are. Warren Buffett famously criticized EBITDA, noting it ignores the cost of assets needed to run the business.",
+  },
+{
+    question: "How is EBITDA different from EBIT?",
+    answer: "EBIT (Earnings Before Interest and Taxes) includes depreciation and amortization, while EBITDA excludes them. EBIT equals operating income on most income statements. EBITDA = EBIT + Depreciation + Amortization. EBIT is closer to GAAP operating income.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

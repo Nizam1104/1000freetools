@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function InductorCalculations() {
   // Tab 1: Inductance from physical params
@@ -350,45 +352,33 @@ export default function InductorCalculations() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I increase inductance?</h4>
-                <p>
-                  Add more turns — inductance increases with the square of turns. Use a core with higher permeability. Increase the cross-sectional area of the core. Decrease the magnetic path length. Adding a ferromagnetic core can increase inductance by orders of magnitude compared to air.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the difference between inductance and reactance?</h4>
-                <p>
-                  Inductance (L) is a physical property of the coil, measured in henries. It does not change with frequency. Reactance (X_L) is the opposition to AC current, measured in ohms. Reactance depends on both inductance and frequency: X_L = 2πfL.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why does an inductor block high frequencies?</h4>
-                <p>
-                  Inductive reactance increases with frequency. At high frequencies, X_L becomes very large, limiting current flow. This makes inductors useful as low-pass filters — they pass DC and low frequencies while blocking high frequencies.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the Q factor of an inductor?</h4>
-                <p>
-                  Q factor (quality factor) is the ratio of reactance to resistance: Q = X_L / R. Higher Q means lower losses and better performance in tuned circuits. Air-core inductors typically have higher Q than ferrite-core inductors at RF frequencies.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I calculate inductance for a toroidal core?</h4>
-                <p>
-                  Use the same formula: L = (µ₀ × µᵣ × N² × A) / l. For a toroid, A is the cross-sectional area of the core ring. l is the mean magnetic path length (approximately π × mean diameter). Many toroid datasheets provide an AL value for easier calculation.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I increase inductance?",
+    answer: "Add more turns — inductance increases with the square of turns. Use a core with higher permeability. Increase the cross-sectional area of the core. Decrease the magnetic path length. Adding a ferromagnetic core can increase inductance by orders of magnitude compared to air.",
+  },
+{
+    question: "What is the difference between inductance and reactance?",
+    answer: "Inductance (L) is a physical property of the coil, measured in henries. It does not change with frequency. Reactance (X_L) is the opposition to AC current, measured in ohms. Reactance depends on both inductance and frequency: X_L = 2πfL.",
+  },
+{
+    question: "Why does an inductor block high frequencies?",
+    answer: "Inductive reactance increases with frequency. At high frequencies, X_L becomes very large, limiting current flow. This makes inductors useful as low-pass filters — they pass DC and low frequencies while blocking high frequencies.",
+  },
+{
+    question: "What is the Q factor of an inductor?",
+    answer: "Q factor (quality factor) is the ratio of reactance to resistance: Q = X_L / R. Higher Q means lower losses and better performance in tuned circuits. Air-core inductors typically have higher Q than ferrite-core inductors at RF frequencies.",
+  },
+{
+    question: "How do I calculate inductance for a toroidal core?",
+    answer: "Use the same formula: L = (µ₀ × µᵣ × N² × A) / l. For a toroid, A is the cross-sectional area of the core ring. l is the mean magnetic path length (approximately π × mean diameter). Many toroid datasheets provide an AL value for easier calculation.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

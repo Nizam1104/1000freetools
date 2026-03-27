@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -191,47 +193,33 @@ export default function GravitationalForceCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is Newton's law of gravitation?</h4>
-            <p className="text-sm text-muted-foreground">
-              F = G × m₁ × m₂ / r². Every mass attracts every other mass with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is gravitational force always attractive?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes. Unlike electric charges which can attract or repel, mass only attracts other mass. There's no such thing as negative mass (as far as we know), so gravity only pulls, never pushes.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is gravity considered a weak force?</h4>
-            <p className="text-sm text-muted-foreground">
-              The gravitational constant G is extremely small (10⁻¹¹). A tiny magnet can overcome Earth's gravity to pick up a paperclip. Gravity dominates at large scales only because mass is always positive and adds up, while electric charges tend to cancel out.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Does the gravitational force between Earth and Sun change?</h4>
-            <p className="text-sm text-muted-foreground">
-              Yes. Earth's orbit is elliptical, not circular. At perihelion (closest approach in January), the force is about 7% stronger than at aphelion (farthest point in July). This doesn't cause seasons - that's from Earth's axial tilt.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What happens to gravitational force inside a planet?</h4>
-            <p className="text-sm text-muted-foreground">
-              Inside a uniform sphere, only the mass below you contributes to gravity. At Earth's center, you'd be weightless - all the mass pulls equally in all directions. The force decreases linearly as you go down (assuming uniform density).
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is Newton's law of gravitation?",
+    answer: "F = G × m₁ × m₂ / r². Every mass attracts every other mass with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.",
+  },
+{
+    question: "Is gravitational force always attractive?",
+    answer: "Yes. Unlike electric charges which can attract or repel, mass only attracts other mass. There's no such thing as negative mass (as far as we know), so gravity only pulls, never pushes.",
+  },
+{
+    question: "Why is gravity considered a weak force?",
+    answer: "The gravitational constant G is extremely small (10⁻¹¹). A tiny magnet can overcome Earth's gravity to pick up a paperclip. Gravity dominates at large scales only because mass is always positive and adds up, while electric charges tend to cancel out.",
+  },
+{
+    question: "Does the gravitational force between Earth and Sun change?",
+    answer: "Yes. Earth's orbit is elliptical, not circular. At perihelion (closest approach in January), the force is about 7% stronger than at aphelion (farthest point in July). This doesn't cause seasons - that's from Earth's axial tilt.",
+  },
+{
+    question: "What happens to gravitational force inside a planet?",
+    answer: "Inside a uniform sphere, only the mass below you contributes to gravity. At Earth's center, you'd be weightless - all the mass pulls equally in all directions. The force decreases linearly as you go down (assuming uniform density).",
+  }
+  ]} />
+</section>
     </div>
   );
 }

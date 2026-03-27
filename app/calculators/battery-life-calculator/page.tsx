@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BatteryLifeCalculator() {
   const [capacity, setCapacity] = useState<string>("");
@@ -282,43 +284,33 @@ export default function BatteryLifeCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do I calculate battery life in hours?</h4>
-            <p>
-              Divide the usable battery capacity by the load current. For a 100Ah battery at 80% DoD powering a 10A load: (100 × 0.80) / 10 = 8 hours. This calculator handles the math automatically.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What depth of discharge should I use?</h4>
-            <p>
-              It depends on battery chemistry. Lead-acid (flooded, AGM, gel) should stay at 50% DoD for maximum life. Lithium iron phosphate (LiFePO4) can safely use 80-90%. Deep cycle batteries tolerate deeper discharges than starting batteries.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Why is my battery dying faster than calculated?</h4>
-            <p>
-              Several factors reduce real-world runtime. Old batteries lose capacity. Cold temperatures reduce output. High discharge rates are less efficient (Peukert effect). Your actual load might be higher than expected. Check with a multimeter.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Can I convert watts to amps for this calculator?</h4>
-            <p>
-              Yes. Divide watts by voltage to get amps. A 120W device on a 12V system draws 10A (120/12=10). This calculator accepts either watts or amps as input and converts automatically.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How does battery age affect runtime?</h4>
-            <p>
-              Batteries lose capacity over time. A lead-acid battery might have 80% of original capacity after 300-500 cycles. Lithium batteries retain 80% capacity after 2000+ cycles. Old batteries need replacement when runtime becomes unacceptable.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate battery life in hours?",
+    answer: "Divide the usable battery capacity by the load current. For a 100Ah battery at 80% DoD powering a 10A load: (100 × 0.80) / 10 = 8 hours. This calculator handles the math automatically.",
+  },
+{
+    question: "What depth of discharge should I use?",
+    answer: "It depends on battery chemistry. Lead-acid (flooded, AGM, gel) should stay at 50% DoD for maximum life. Lithium iron phosphate (LiFePO4) can safely use 80-90%. Deep cycle batteries tolerate deeper discharges than starting batteries.",
+  },
+{
+    question: "Why is my battery dying faster than calculated?",
+    answer: "Several factors reduce real-world runtime. Old batteries lose capacity. Cold temperatures reduce output. High discharge rates are less efficient (Peukert effect). Your actual load might be higher than expected. Check with a multimeter.",
+  },
+{
+    question: "Can I convert watts to amps for this calculator?",
+    answer: "Yes. Divide watts by voltage to get amps. A 120W device on a 12V system draws 10A (120/12=10). This calculator accepts either watts or amps as input and converts automatically.",
+  },
+{
+    question: "How does battery age affect runtime?",
+    answer: "Batteries lose capacity over time. A lead-acid battery might have 80% of original capacity after 300-500 cycles. Lithium batteries retain 80% capacity after 2000+ cycles. Old batteries need replacement when runtime becomes unacceptable.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

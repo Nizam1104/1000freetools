@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription} from "@/comp
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -437,43 +439,33 @@ export default function BasketballShootingPercentageCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good field goal percentage in basketball?</h4>
-                <p>
-                  It depends on position and level. In the NBA, 46% is average for all players. Guards typically shoot 42-46%, forwards 46-50%, and centers 55% or higher. College averages run about 2-4% lower than the NBA.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How is shooting percentage calculated?</h4>
-                <p>
-                  Divide made shots by attempted shots. If you made 25 of 50 shots, your percentage is 25/50 = 0.500 or 50%. Basketball traditionally shows this as .500 rather than 50%.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Do free throws count in field goal percentage?</h4>
-                <p>
-                  No. Field goal percentage excludes free throws. Free throws have their own statistic (FT%). This separation exists because free throws are fundamentally different from live-play shots.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do centers have higher shooting percentages?</h4>
-                <p>
-                  Centers shoot closer to the basket where shots are easier. They get more dunks, layups, and short hook shots. Guards take more jump shots and contested attempts, which lowers their percentage.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many attempts do I need for a meaningful percentage?</h4>
-                <p>
-                  Small samples can be misleading. Shooting 6 of 10 in one game does not make you a 60% shooter. For season stats, you need hundreds of attempts. NBA leaders typically have 400+ field goal attempts per season.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good field goal percentage in basketball?",
+    answer: "It depends on position and level. In the NBA, 46% is average for all players. Guards typically shoot 42-46%, forwards 46-50%, and centers 55% or higher. College averages run about 2-4% lower than the NBA.",
+  },
+{
+    question: "How is shooting percentage calculated?",
+    answer: "Divide made shots by attempted shots. If you made 25 of 50 shots, your percentage is 25/50 = 0.500 or 50%. Basketball traditionally shows this as .500 rather than 50%.",
+  },
+{
+    question: "Do free throws count in field goal percentage?",
+    answer: "No. Field goal percentage excludes free throws. Free throws have their own statistic (FT%). This separation exists because free throws are fundamentally different from live-play shots.",
+  },
+{
+    question: "Why do centers have higher shooting percentages?",
+    answer: "Centers shoot closer to the basket where shots are easier. They get more dunks, layups, and short hook shots. Guards take more jump shots and contested attempts, which lowers their percentage.",
+  },
+{
+    question: "How many attempts do I need for a meaningful percentage?",
+    answer: "Small samples can be misleading. Shooting 6 of 10 in one game does not make you a 60% shooter. For season stats, you need hundreds of attempts. NBA leaders typically have 400+ field goal attempts per season.",
+  }
+  ]} />
+</section>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function IdealBedtimeCalculator() {
   const [wakeTime, setWakeTime] = useState<string>("07:00");
@@ -284,45 +286,33 @@ export default function IdealBedtimeCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How many sleep cycles do I need?</h4>
-                <p>
-                  Most adults need 5-6 sleep cycles per night, which equals 7.5-9 hours. Four cycles (6 hours) may work for some people but leaves many sleep-deprived over time. Teenagers and young adults often need 6 cycles or more.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why do I feel groggy even after 8 hours of sleep?</h4>
-                <p>
-                  You probably woke during deep sleep instead of at the end of a cycle. Try adjusting your bedtime by 15-30 minutes to align with cycle boundaries. Sleep quality also matters — apnea, alcohol, or an uncomfortable room can fragment sleep.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I nap during the day?</h4>
-                <p>
-                  Short naps (20 minutes) can boost alertness without affecting nighttime sleep. Longer naps enter deep sleep and cause grogginess. Avoid napping after 3 PM if you have trouble falling asleep at night.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is it bad to wake up before my alarm?</h4>
-                <p>
-                  Waking naturally before your alarm usually means you completed a sleep cycle — that is a good sign. If you consistently wake hours early and cannot fall back asleep, you may need to adjust your bedtime or address stress.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How long does it take to fall asleep?</h4>
-                <p>
-                  Most people fall asleep in 10-20 minutes. Falling asleep in under 5 minutes often signals sleep deprivation. Taking over 30 minutes regularly may indicate insomnia or poor sleep hygiene.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How many sleep cycles do I need?",
+    answer: "Most adults need 5-6 sleep cycles per night, which equals 7.5-9 hours. Four cycles (6 hours) may work for some people but leaves many sleep-deprived over time. Teenagers and young adults often need 6 cycles or more.",
+  },
+{
+    question: "Why do I feel groggy even after 8 hours of sleep?",
+    answer: "You probably woke during deep sleep instead of at the end of a cycle. Try adjusting your bedtime by 15-30 minutes to align with cycle boundaries. Sleep quality also matters — apnea, alcohol, or an uncomfortable room can fragment sleep.",
+  },
+{
+    question: "Should I nap during the day?",
+    answer: "Short naps (20 minutes) can boost alertness without affecting nighttime sleep. Longer naps enter deep sleep and cause grogginess. Avoid napping after 3 PM if you have trouble falling asleep at night.",
+  },
+{
+    question: "Is it bad to wake up before my alarm?",
+    answer: "Waking naturally before your alarm usually means you completed a sleep cycle — that is a good sign. If you consistently wake hours early and cannot fall back asleep, you may need to adjust your bedtime or address stress.",
+  },
+{
+    question: "How long does it take to fall asleep?",
+    answer: "Most people fall asleep in 10-20 minutes. Falling asleep in under 5 minutes often signals sleep deprivation. Taking over 30 minutes regularly may indicate insomnia or poor sleep hygiene.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

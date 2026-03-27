@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BloodSugarConverter() {
   const [mgdl, setMgdl] = useState<string>("");
@@ -287,55 +289,33 @@ export default function BloodSugarConverter() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a normal blood sugar level?</h4>
-                <p>
-                  For people without diabetes, normal fasting blood sugar is 70-100 mg/dL (3.9-5.6 mmol/L). Two hours
-                  after eating, normal is below 140 mg/dL (7.8 mmol/L). Targets may differ for people with diabetes
-                  based on age, health status, and other factors.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">When should I test my blood sugar?</h4>
-                <p>
-                  Common testing times include: first thing in the morning (fasting), before meals, 2 hours after
-                  meals, before exercise, before driving, and at bedtime. Your doctor will recommend a testing
-                  schedule based on your treatment plan.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What causes high blood sugar?</h4>
-                <p>
-                  High blood sugar (hyperglycemia) can result from eating too many carbohydrates, insufficient
-                  insulin or medication, illness, stress, lack of physical activity, or certain medications like
-                  steroids.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is considered low blood sugar?</h4>
-                <p>
-                  Blood sugar below 70 mg/dL (3.9 mmol/L) is considered low (hypoglycemia). Symptoms include
-                  shakiness, sweating, confusion, and irritability. Treat with 15 grams of fast-acting carbohydrate
-                  and recheck in 15 minutes.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I convert HbA1c to blood glucose?</h4>
-                <p>
-                  HbA1c reflects average blood sugar over 2-3 months and uses different units (percentage). There
-                  are conversion formulas to estimate average glucose from HbA1c, but they provide approximations,
-                  not exact equivalents to fingerstick readings.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a normal blood sugar level?",
+    answer: "For people without diabetes, normal fasting blood sugar is 70-100 mg/dL (3.9-5.6 mmol/L). Two hours after eating, normal is below 140 mg/dL (7.8 mmol/L). Targets may differ for people with diabetes based on age, health status, and other factors.",
+  },
+{
+    question: "When should I test my blood sugar?",
+    answer: "Common testing times include: first thing in the morning (fasting), before meals, 2 hours after meals, before exercise, before driving, and at bedtime. Your doctor will recommend a testing schedule based on your treatment plan.",
+  },
+{
+    question: "What causes high blood sugar?",
+    answer: "High blood sugar (hyperglycemia) can result from eating too many carbohydrates, insufficient insulin or medication, illness, stress, lack of physical activity, or certain medications like steroids.",
+  },
+{
+    question: "What is considered low blood sugar?",
+    answer: "Blood sugar below 70 mg/dL (3.9 mmol/L) is considered low (hypoglycemia). Symptoms include shakiness, sweating, confusion, and irritability. Treat with 15 grams of fast-acting carbohydrate and recheck in 15 minutes.",
+  },
+{
+    question: "Can I convert HbA1c to blood glucose?",
+    answer: "HbA1c reflects average blood sugar over 2-3 months and uses different units (percentage). There are conversion formulas to estimate average glucose from HbA1c, but they provide approximations, not exact equivalents to fingerstick readings.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

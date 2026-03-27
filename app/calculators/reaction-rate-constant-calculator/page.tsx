@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Info, FlaskConical, Timer } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface RateConstantResult {
   rateConstant: number;
@@ -238,33 +240,33 @@ export default function ReactionRateConstantCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is the rate constant k?</h3>
-                <p className="text-sm text-muted-foreground">The rate constant k is a proportionality factor in the rate law that relates reaction rate to reactant concentrations. It's specific to each reaction and temperature.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">How do I determine reaction order?</h3>
-                <p className="text-sm text-muted-foreground">Reaction order is determined experimentally by measuring how rate changes with concentration. Plot concentration vs time data or use the method of initial rates.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What affects the rate constant?</h3>
-                <p className="text-sm text-muted-foreground">Temperature (Arrhenius equation), catalysts, and activation energy affect k. Concentration does NOT affect the rate constant itself, only the rate.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What is half-life?</h3>
-                <p className="text-sm text-muted-foreground">Half-life is the time for reactant concentration to decrease by half. For first-order reactions, it's constant. For other orders, it depends on initial concentration.</p>
-              </div>
-              <div className="p-5 bg-muted rounded-lg">
-                <h3 className="font-semibold mb-2">What are the units of k?</h3>
-                <p className="text-sm text-muted-foreground">Units depend on order: zero order (M/s), first order (s⁻¹), second order (M⁻¹s⁻¹). General formula: M^(1-n)/s where n is the order.</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the rate constant k?",
+    answer: "The rate constant k is a proportionality factor in the rate law that relates reaction rate to reactant concentrations. It's specific to each reaction and temperature.",
+  },
+{
+    question: "How do I determine reaction order?",
+    answer: "Reaction order is determined experimentally by measuring how rate changes with concentration. Plot concentration vs time data or use the method of initial rates.",
+  },
+{
+    question: "What affects the rate constant?",
+    answer: "Temperature (Arrhenius equation), catalysts, and activation energy affect k. Concentration does NOT affect the rate constant itself, only the rate.",
+  },
+{
+    question: "What is half-life?",
+    answer: "Half-life is the time for reactant concentration to decrease by half. For first-order reactions, it's constant. For other orders, it depends on initial concentration.",
+  },
+{
+    question: "What are the units of k?",
+    answer: "Units depend on order: zero order (M/s), first order (s⁻¹), second order (M⁻¹s⁻¹). General formula: M^(1-n)/s where n is the order.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

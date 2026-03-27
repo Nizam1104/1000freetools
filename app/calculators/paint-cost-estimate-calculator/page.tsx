@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PaintCostEstimateCalculatorPage() {
   const [roomLength, setRoomLength] = useState<string>("");
@@ -435,33 +437,33 @@ export default function PaintCostEstimateCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How much paint do I need for a 12x12 room?</h4>
-                  <p>A 12x12 room with 8-foot ceilings has about 384 sq ft of wall area. After subtracting one door (21 sq ft) and one window (12 sq ft), you get roughly 351 sq ft. For two coats, that's 702 sq ft. At 350 sq ft per gallon, you need 2 gallons. Budget $60-100 for mid-range paint.</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does paint coverage really vary that much?</h4>
-                  <p>Yes. Cheap paint might cover 250 sq ft per gallon while premium paint covers 400+ sq ft. The price difference often evens out — two gallons of cheap paint costs similar to one gallon of premium, but the premium paint looks better and lasts longer.</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I include the ceiling in my estimate?</h4>
-                  <p>Ceilings need separate calculation. Multiply length times width for ceiling area. Ceiling paint is usually flat and covers well — about 400 sq ft per gallon. Many people paint ceilings white regardless of wall color.</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I estimate paint for multiple rooms?</h4>
-                  <p>Calculate each room separately, then add the totals. If using the same color throughout, you can often buy larger quantities at a discount. Keep rooms with different colors separate in your calculations.</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the average cost of interior paint per gallon?</h4>
-                  <p>Budget paint runs $20-35 per gallon. Mid-range quality costs $40-60 per gallon. Premium paints range from $60-100+ per gallon. Higher-priced paints typically have better coverage, durability, and washability.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much paint do I need for a 12x12 room?",
+    answer: "A 12x12 room with 8-foot ceilings has about 384 sq ft of wall area. After subtracting one door (21 sq ft) and one window (12 sq ft), you get roughly 351 sq ft. For two coats, that's 702 sq ft. At 350 sq ft per gallon, you need 2 gallons. Budget $60-100 for mid-range paint.",
+  },
+{
+    question: "Does paint coverage really vary that much?",
+    answer: "Yes. Cheap paint might cover 250 sq ft per gallon while premium paint covers 400+ sq ft. The price difference often evens out — two gallons of cheap paint costs similar to one gallon of premium, but the premium paint looks better and lasts longer.",
+  },
+{
+    question: "Should I include the ceiling in my estimate?",
+    answer: "Ceilings need separate calculation. Multiply length times width for ceiling area. Ceiling paint is usually flat and covers well — about 400 sq ft per gallon. Many people paint ceilings white regardless of wall color.",
+  },
+{
+    question: "How do I estimate paint for multiple rooms?",
+    answer: "Calculate each room separately, then add the totals. If using the same color throughout, you can often buy larger quantities at a discount. Keep rooms with different colors separate in your calculations.",
+  },
+{
+    question: "What's the average cost of interior paint per gallon?",
+    answer: "Budget paint runs $20-35 per gallon. Mid-range quality costs $40-60 per gallon. Premium paints range from $60-100+ per gallon. Higher-priced paints typically have better coverage, durability, and washability.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

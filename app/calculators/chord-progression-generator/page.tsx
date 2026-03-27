@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -548,45 +550,33 @@ export default function ChordProgressionGeneratorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the most popular chord progression?</h4>
-                  <p>
-                    The I-V-vi-IV progression (called the &quot;pop progression&quot; or &quot;axis progression&quot;) appears in countless hit songs across decades and genres. Examples include &quot;Let It Be,&quot; &quot;With or Without You,&quot; &quot;Don&apos;t Stop Believin&apos;,&quot; and &quot;Someone Like You.&quot; Its popularity comes from its emotional balance and strong resolution.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I transpose a progression to a different key?</h4>
-                  <p>
-                    Keep the Roman numerals the same and apply them to the new key. For example, I-V-vi-IV in C is C-G-Am-F. In G major, it becomes G-D-Em-C. Count the scale degrees: I is the 1st note, V is the 5th, vi is the 6th (minor), IV is the 4th.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I use minor progressions in major keys?</h4>
-                  <p>
-                    Yes. Modal interchange (borrowing chords from parallel modes) is common in songwriting. A major key song might use the minor iv chord for emotional effect. The Beatles&apos; &quot;In My Life&quot; uses a borrowed minor chord. Experiment with mixing major and minor sounds.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What makes a chord progression sound sad or happy?</h4>
-                  <p>
-                    Major progressions tend to sound brighter, minor progressions darker. But context matters. A vi-IV-I-V progression uses the same chords as I-V-vi-IV but starts on the minor chord, creating a more melancholic feel. Tempo, rhythm, and melody also shape emotional perception.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How many chords should a progression have?</h4>
-                  <p>
-                    Most pop and rock songs use 3-4 chords per section. Two-chord vamps work for some styles. Jazz progressions often have more chords with faster changes. Start simple. You can always add complexity later. Many classic songs use the same 4 chords throughout.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the most popular chord progression?",
+    answer: "The I-V-vi-IV progression (called the &quot;pop progression&quot; or &quot;axis progression&quot;) appears in countless hit songs across decades and genres. Examples include &quot;Let It Be,&quot; &quot;With or Without You,&quot; &quot;Don&apos;t Stop Believin&apos;,&quot; and &quot;Someone Like You.&quot; Its popularity comes from its emotional balance and strong resolution.",
+  },
+{
+    question: "How do I transpose a progression to a different key?",
+    answer: "Keep the Roman numerals the same and apply them to the new key. For example, I-V-vi-IV in C is C-G-Am-F. In G major, it becomes G-D-Em-C. Count the scale degrees: I is the 1st note, V is the 5th, vi is the 6th (minor), IV is the 4th.",
+  },
+{
+    question: "Can I use minor progressions in major keys?",
+    answer: "Yes. Modal interchange (borrowing chords from parallel modes) is common in songwriting. A major key song might use the minor iv chord for emotional effect. The Beatles&apos; &quot;In My Life&quot; uses a borrowed minor chord. Experiment with mixing major and minor sounds.",
+  },
+{
+    question: "What makes a chord progression sound sad or happy?",
+    answer: "Major progressions tend to sound brighter, minor progressions darker. But context matters. A vi-IV-I-V progression uses the same chords as I-V-vi-IV but starts on the minor chord, creating a more melancholic feel. Tempo, rhythm, and melody also shape emotional perception.",
+  },
+{
+    question: "How many chords should a progression have?",
+    answer: "Most pop and rock songs use 3-4 chords per section. Two-chord vamps work for some styles. Jazz progressions often have more chords with faster changes. Start simple. You can always add complexity later. Many classic songs use the same 4 chords throughout.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

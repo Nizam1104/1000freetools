@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -409,45 +411,33 @@ export default function COEmissionsCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How accurate are these emission estimates?</h4>
-                  <p>
-                    These are reasonable averages based on published emission factors. Actual emissions vary by vehicle efficiency, driving conditions, electricity grid mix, and production methods. For precise carbon accounting, use location-specific factors and actual consumption data.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why does beef have such high emissions?</h4>
-                  <p>
-                    Cattle produce methane during digestion, which is 28 times more potent than CO2. Beef production also requires large amounts of land, water, and feed. Land use changes like deforestation for grazing add to the carbon footprint.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do electric vehicles really produce zero emissions?</h4>
-                  <p>
-                    EVs have zero tailpipe emissions, but electricity generation may produce CO2 depending on the grid mix. In regions with clean electricity, EVs have much lower lifecycle emissions. As grids decarbonize, EV emissions decrease automatically.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How many trees do I need to plant to offset my emissions?</h4>
-                  <p>
-                    Divide your annual emissions in kg by 22 to find trees needed. An average American produces about 15,000 kg CO2 per year, requiring roughly 680 trees. However, trees take years to reach full absorption capacity, and existing forests are already counted in global carbon cycles.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a good carbon footprint target?</h4>
-                  <p>
-                    To limit warming to 1.5 C, global average emissions must reach about 2,000 kg CO2 per person per year by 2050. Current averages range from 15,000 kg (US) to under 1,000 kg (many African nations). Reducing personal emissions by 50-80 percent is often recommended for developed countries.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How accurate are these emission estimates?",
+    answer: "These are reasonable averages based on published emission factors. Actual emissions vary by vehicle efficiency, driving conditions, electricity grid mix, and production methods. For precise carbon accounting, use location-specific factors and actual consumption data.",
+  },
+{
+    question: "Why does beef have such high emissions?",
+    answer: "Cattle produce methane during digestion, which is 28 times more potent than CO2. Beef production also requires large amounts of land, water, and feed. Land use changes like deforestation for grazing add to the carbon footprint.",
+  },
+{
+    question: "Do electric vehicles really produce zero emissions?",
+    answer: "EVs have zero tailpipe emissions, but electricity generation may produce CO2 depending on the grid mix. In regions with clean electricity, EVs have much lower lifecycle emissions. As grids decarbonize, EV emissions decrease automatically.",
+  },
+{
+    question: "How many trees do I need to plant to offset my emissions?",
+    answer: "Divide your annual emissions in kg by 22 to find trees needed. An average American produces about 15,000 kg CO2 per year, requiring roughly 680 trees. However, trees take years to reach full absorption capacity, and existing forests are already counted in global carbon cycles.",
+  },
+{
+    question: "What is a good carbon footprint target?",
+    answer: "To limit warming to 1.5 C, global average emissions must reach about 2,000 kg CO2 per person per year by 2050. Current averages range from 15,000 kg (US) to under 1,000 kg (many African nations). Reducing personal emissions by 50-80 percent is often recommended for developed countries.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

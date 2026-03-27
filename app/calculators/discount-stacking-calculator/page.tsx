@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface Discount {
   id: number;
@@ -504,45 +506,33 @@ export default function DiscountStackingCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do most stores allow discount stacking?</h4>
-                  <p>
-                    It depends on the store. Department stores and clothing retailers often allow stacking a sale price with a coupon. Electronics stores are stricter. Always check the coupon terms — "cannot be combined" means no stacking.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why isn't 20% + 20% equal to 40% off?</h4>
-                  <p>
-                    Because the second 20% applies to the already-discounted price, not the original. $100 - 20% = $80. Then $80 - 20% = $64. You saved $36, which is 36% off, not 40%. This is how sequential discounts work.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I stack manufacturer and store coupons?</h4>
-                  <p>
-                    Many grocery and drug stores allow this. A manufacturer coupon plus a store coupon on the same item is common. Some stores also let you stack a third discount like a loyalty reward or app coupon.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's the best order to apply discounts?</h4>
-                  <p>
-                    If you have control, apply percentage discounts first, then fixed-dollar discounts. This maximizes savings. However, most POS systems have a fixed order you can't change.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do cashback apps count as discount stacking?</h4>
-                  <p>
-                    Yes, and they're the best kind because they don't affect the checkout total. Apps like Ibotta, Fetch Rewards, and Rakuten give cash back after purchase, stacking on top of any in-store discounts you already used.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Do most stores allow discount stacking?",
+    answer: "It depends on the store. Department stores and clothing retailers often allow stacking a sale price with a coupon. Electronics stores are stricter. Always check the coupon terms — \"cannot be combined\" means no stacking.",
+  },
+{
+    question: "Why isn't 20% + 20% equal to 40% off?",
+    answer: "Because the second 20% applies to the already-discounted price, not the original. $100 - 20% = $80. Then $80 - 20% = $64. You saved $36, which is 36% off, not 40%. This is how sequential discounts work.",
+  },
+{
+    question: "Can I stack manufacturer and store coupons?",
+    answer: "Many grocery and drug stores allow this. A manufacturer coupon plus a store coupon on the same item is common. Some stores also let you stack a third discount like a loyalty reward or app coupon.",
+  },
+{
+    question: "What's the best order to apply discounts?",
+    answer: "If you have control, apply percentage discounts first, then fixed-dollar discounts. This maximizes savings. However, most POS systems have a fixed order you can't change.",
+  },
+{
+    question: "Do cashback apps count as discount stacking?",
+    answer: "Yes, and they're the best kind because they don't affect the checkout total. Apps like Ibotta, Fetch Rewards, and Rakuten give cash back after purchase, stacking on top of any in-store discounts you already used.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

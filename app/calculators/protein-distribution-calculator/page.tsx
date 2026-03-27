@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function ProteinDistributionCalculator() {
   const [dailyProtein, setDailyProtein] = useState<string>("");
@@ -218,45 +220,33 @@ export default function ProteinDistributionCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How much protein can my body absorb per meal?</h4>
-                <p>
-                  Your body absorbs nearly all protein you eat, but only about 20-40g per meal is used for muscle protein synthesis. The rest gets used for energy or other bodily functions. Spreading intake across meals maximizes the muscle-building benefit.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is it better to eat protein before or after workout?</h4>
-                <p>
-                  Total daily protein matters more than timing. That said, having 20-40g within 2 hours after training supports recovery. Pre-workout protein (1-3 hours before) can also help if you train fasted or haven't eaten in several hours.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I have protein at breakfast?</h4>
-                <p>
-                  Yes. Most people eat too little protein at breakfast and too much at dinner. A 30g protein breakfast helps control appetite all day and prevents muscle breakdown after the overnight fast.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Does protein timing matter for muscle gain?</h4>
-                <p>
-                  Timing has a small effect compared to total daily intake. Hitting your daily protein target consistently matters most. Even distribution across 3-5 meals provides a slight edge over skewed intake patterns.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I eat all my protein in one meal?</h4>
-                <p>
-                  You can, but it's not optimal. One large protein meal triggers muscle synthesis once, then your body returns to baseline. Multiple smaller doses throughout the day keep synthesis elevated longer, leading to better overall muscle growth.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How much protein can my body absorb per meal?",
+    answer: "Your body absorbs nearly all protein you eat, but only about 20-40g per meal is used for muscle protein synthesis. The rest gets used for energy or other bodily functions. Spreading intake across meals maximizes the muscle-building benefit.",
+  },
+{
+    question: "Is it better to eat protein before or after workout?",
+    answer: "Total daily protein matters more than timing. That said, having 20-40g within 2 hours after training supports recovery. Pre-workout protein (1-3 hours before) can also help if you train fasted or haven't eaten in several hours.",
+  },
+{
+    question: "Should I have protein at breakfast?",
+    answer: "Yes. Most people eat too little protein at breakfast and too much at dinner. A 30g protein breakfast helps control appetite all day and prevents muscle breakdown after the overnight fast.",
+  },
+{
+    question: "Does protein timing matter for muscle gain?",
+    answer: "Timing has a small effect compared to total daily intake. Hitting your daily protein target consistently matters most. Even distribution across 3-5 meals provides a slight edge over skewed intake patterns.",
+  },
+{
+    question: "Can I eat all my protein in one meal?",
+    answer: "You can, but it's not optimal. One large protein meal triggers muscle synthesis once, then your body returns to baseline. Multiple smaller doses throughout the day keep synthesis elevated longer, leading to better overall muscle growth.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

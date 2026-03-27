@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function SolarPanelRequirementCalculator() {
   const [dailyConsumption, setDailyConsumption] = useState<string>("");
@@ -328,33 +330,33 @@ export default function SolarPanelRequirementCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold">How do I find my daily energy consumption?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Check your electric bill for monthly kWh usage. Divide by 30 for daily average. Multiply by 1,000 to convert to watt-hours. For example, 900 kWh/month = 30 kWh/day = 30,000 Wh/day.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">Can I install solar panels myself?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Technically yes, but it's not recommended unless you have electrical experience. Grid-tied systems require permits, inspections, and utility approval. Off-grid is more DIY-friendly but still requires proper wiring and safety equipment.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">How much does a solar panel system cost?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Residential systems average $2.50-3.50 per watt before incentives. A 7,500W (7.5 kW) system costs $18,750-26,250 installed. The federal tax credit covers 30%, bringing net cost to $13,000-18,000.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">Do solar panels work in winter?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Yes, but production drops 30-50% depending on location. Shorter days and lower sun angle reduce output. Snow coverage stops production entirely until it melts or slides off. Cold temperatures actually improve panel efficiency.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">How long do solar panels last?</h4>
-            <p className="text-sm text-muted-foreground mt-1">Most panels come with 25-30 year warranties guaranteeing 80-85% of original output. They don't suddenly stop working—they gradually degrade about 0.5-1% per year. Panels from the 1980s are still producing at reduced capacity today.</p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I find my daily energy consumption?",
+    answer: "Check your electric bill for monthly kWh usage. Divide by 30 for daily average. Multiply by 1,000 to convert to watt-hours. For example, 900 kWh/month = 30 kWh/day = 30,000 Wh/day.",
+  },
+{
+    question: "Can I install solar panels myself?",
+    answer: "Technically yes, but it's not recommended unless you have electrical experience. Grid-tied systems require permits, inspections, and utility approval. Off-grid is more DIY-friendly but still requires proper wiring and safety equipment.",
+  },
+{
+    question: "How much does a solar panel system cost?",
+    answer: "Residential systems average $2.50-3.50 per watt before incentives. A 7,500W (7.5 kW) system costs $18,750-26,250 installed. The federal tax credit covers 30%, bringing net cost to $13,000-18,000.",
+  },
+{
+    question: "Do solar panels work in winter?",
+    answer: "Yes, but production drops 30-50% depending on location. Shorter days and lower sun angle reduce output. Snow coverage stops production entirely until it melts or slides off. Cold temperatures actually improve panel efficiency.",
+  },
+{
+    question: "How long do solar panels last?",
+    answer: "Most panels come with 25-30 year warranties guaranteeing 80-85% of original output. They don't suddenly stop working—they gradually degrade about 0.5-1% per year. Panels from the 1980s are still producing at reduced capacity today.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

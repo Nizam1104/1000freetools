@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -437,45 +439,33 @@ export default function DroneFlightTimeEstimatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How can I increase my drone flight time?</h4>
-                  <p>
-                    The most effective ways are: reduce weight by removing unnecessary accessories, use higher capacity batteries (if your drone can handle them), fly smoothly without aggressive maneuvers, avoid wind, and maintain proper battery care. Upgrading to more efficient propellers can also help.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why does my drone battery drain so fast?</h4>
-                  <p>
-                    Fast battery drain is usually caused by aggressive flying, heavy payload, old or damaged batteries, cold weather, or flying in wind. Check your battery health with a capacity tester. If the battery is more than 2-3 years old or has many charge cycles, it may need replacement.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long should a drone battery last?</h4>
-                  <p>
-                    Consumer camera drones typically achieve 20-35 minutes per battery. Racing drones get 4-8 minutes due to high power demands. Mini drones may get 10-15 minutes. Professional long-range drones can achieve 30-45 minutes. Always land with 20% reserve for safety.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does cold weather affect drone batteries?</h4>
-                  <p>
-                    Yes, significantly. LiPo batteries lose 20-30% capacity at freezing temperatures. Pre-warm batteries before flying in cold weather by keeping them in an inside pocket or using a battery warmer. Fly gently until batteries warm up from use. Expect shorter flight times in winter.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How many batteries should I buy for my drone?</h4>
-                  <p>
-                    For casual flying, 2-3 batteries give you about an hour of total flight time. For serious photography or all-day events, 4-6 batteries plus a charging hub is recommended. Consider that batteries take 60-90 minutes to charge, so having multiple batteries lets you keep flying while others charge.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How can I increase my drone flight time?",
+    answer: "The most effective ways are: reduce weight by removing unnecessary accessories, use higher capacity batteries (if your drone can handle them), fly smoothly without aggressive maneuvers, avoid wind, and maintain proper battery care. Upgrading to more efficient propellers can also help.",
+  },
+{
+    question: "Why does my drone battery drain so fast?",
+    answer: "Fast battery drain is usually caused by aggressive flying, heavy payload, old or damaged batteries, cold weather, or flying in wind. Check your battery health with a capacity tester. If the battery is more than 2-3 years old or has many charge cycles, it may need replacement.",
+  },
+{
+    question: "How long should a drone battery last?",
+    answer: "Consumer camera drones typically achieve 20-35 minutes per battery. Racing drones get 4-8 minutes due to high power demands. Mini drones may get 10-15 minutes. Professional long-range drones can achieve 30-45 minutes. Always land with 20% reserve for safety.",
+  },
+{
+    question: "Does cold weather affect drone batteries?",
+    answer: "Yes, significantly. LiPo batteries lose 20-30% capacity at freezing temperatures. Pre-warm batteries before flying in cold weather by keeping them in an inside pocket or using a battery warmer. Fly gently until batteries warm up from use. Expect shorter flight times in winter.",
+  },
+{
+    question: "How many batteries should I buy for my drone?",
+    answer: "For casual flying, 2-3 batteries give you about an hour of total flight time. For serious photography or all-day events, 4-6 batteries plus a charging hub is recommended. Consider that batteries take 60-90 minutes to charge, so having multiple batteries lets you keep flying while others charge.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

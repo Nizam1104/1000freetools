@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Table,
   TableBody,
@@ -197,43 +199,33 @@ export default function HeadLossDarcyWeisbachCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I find the Darcy friction factor?</h4>
-            <p className="text-xs text-muted-foreground">
-              For laminar flow (Re &lt; 2000), use f = 64/Re. For turbulent flow, use the Colebrook equation or Moody chart. Alternatively, the Swamee-Jain equation gives a direct calculation: f = 0.25 / [log10(ε/3.7D + 5.74/Re^0.9)]².
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What is the difference between Darcy and Fanning friction factors?</h4>
-            <p className="text-xs text-muted-foreground">
-              The Darcy friction factor is 4 times the Fanning friction factor. Darcy is used in civil/mechanical engineering (this calculator), while Fanning is common in chemical engineering. Always verify which factor your source uses.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Why is head loss proportional to velocity squared?</h4>
-            <p className="text-xs text-muted-foreground">
-              Turbulent flow creates eddies and vortices that dissipate energy. The kinetic energy of fluid is proportional to v², so friction losses scale with velocity squared. Doubling flow rate quadruples head loss.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How does pipe diameter affect head loss?</h4>
-            <p className="text-xs text-muted-foreground">
-              Head loss is inversely proportional to diameter. Doubling pipe diameter reduces head loss by half (for same velocity). But for constant flow rate, doubling diameter reduces velocity by 4×, cutting head loss by 16×.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Can I use this for non-circular pipes?</h4>
-            <p className="text-xs text-muted-foreground">
-              Yes, use the hydraulic diameter: D_h = 4A/P where A is cross-sectional area and P is wetted perimeter. For rectangular ducts, D_h = 2ab/(a+b). The Darcy-Weisbach equation works with this equivalent diameter.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I find the Darcy friction factor?",
+    answer: "For laminar flow (Re &lt; 2000), use f = 64/Re. For turbulent flow, use the Colebrook equation or Moody chart. Alternatively, the Swamee-Jain equation gives a direct calculation: f = 0.25 / [log10(ε/3.7D + 5.74/Re^0.9)]².",
+  },
+{
+    question: "What is the difference between Darcy and Fanning friction factors?",
+    answer: "The Darcy friction factor is 4 times the Fanning friction factor. Darcy is used in civil/mechanical engineering (this calculator), while Fanning is common in chemical engineering. Always verify which factor your source uses.",
+  },
+{
+    question: "Why is head loss proportional to velocity squared?",
+    answer: "Turbulent flow creates eddies and vortices that dissipate energy. The kinetic energy of fluid is proportional to v², so friction losses scale with velocity squared. Doubling flow rate quadruples head loss.",
+  },
+{
+    question: "How does pipe diameter affect head loss?",
+    answer: "Head loss is inversely proportional to diameter. Doubling pipe diameter reduces head loss by half (for same velocity). But for constant flow rate, doubling diameter reduces velocity by 4×, cutting head loss by 16×.",
+  },
+{
+    question: "Can I use this for non-circular pipes?",
+    answer: "Yes, use the hydraulic diameter: D_h = 4A/P where A is cross-sectional area and P is wetted perimeter. For rectangular ducts, D_h = 2ab/(a+b). The Darcy-Weisbach equation works with this equivalent diameter.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

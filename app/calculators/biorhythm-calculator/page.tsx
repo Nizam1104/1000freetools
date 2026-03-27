@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BiorhythmCalculatorPage() {
   const [birthDate, setBirthDate] = useState<string>("");
@@ -387,56 +389,33 @@ export default function BiorhythmCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Are biorhythms scientifically proven?</h4>
-                  <p>
-                    Biorhythm theory is considered pseudoscience by most researchers. Controlled studies have not
-                    consistently supported its predictions. However, many people find value in tracking their cycles
-                    as a form of self-awareness, similar to mood tracking or journaling.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What does a negative cycle mean?</h4>
-                  <p>
-                    Negative doesn't mean bad — it means the cycle is in its releasing or resting phase. Physical
-                    negative might mean lower energy but better flexibility. Emotional negative could mean more
-                    introspection. Use low phases appropriately rather than fearing them.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I improve my biorhythm scores?</h4>
-                  <p>
-                    You cannot change the cycle timing — they are fixed from birth. However, you can work with your
-                    cycles rather than against them. Rest during physical lows, plan creative work during emotional
-                    highs, and tackle complex problems during intellectual peaks.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What are double critical days?</h4>
-                  <p>
-                    Double critical days occur when two cycles cross zero on the same day. Triple critical days
-                    (all three crossing) are rare. These days are thought to be especially unpredictable. Some
-                    people report more accidents or mistakes on these days.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why is my overall day rating different from individual cycles?</h4>
-                  <p>
-                    The overall rating averages all three cycles. You might have one cycle peaking while another is
-                    low, resulting in an average day. Pay attention to individual cycles for specific activities —
-                    use physical peaks for exercise, intellectual peaks for studying, and emotional peaks for
-                    social events.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Are biorhythms scientifically proven?",
+    answer: "Biorhythm theory is considered pseudoscience by most researchers. Controlled studies have not consistently supported its predictions. However, many people find value in tracking their cycles as a form of self-awareness, similar to mood tracking or journaling.",
+  },
+{
+    question: "What does a negative cycle mean?",
+    answer: "Negative doesn't mean bad — it means the cycle is in its releasing or resting phase. Physical negative might mean lower energy but better flexibility. Emotional negative could mean more introspection. Use low phases appropriately rather than fearing them.",
+  },
+{
+    question: "Can I improve my biorhythm scores?",
+    answer: "You cannot change the cycle timing — they are fixed from birth. However, you can work with your cycles rather than against them. Rest during physical lows, plan creative work during emotional highs, and tackle complex problems during intellectual peaks.",
+  },
+{
+    question: "What are double critical days?",
+    answer: "Double critical days occur when two cycles cross zero on the same day. Triple critical days (all three crossing) are rare. These days are thought to be especially unpredictable. Some people report more accidents or mistakes on these days.",
+  },
+{
+    question: "Why is my overall day rating different from individual cycles?",
+    answer: "The overall rating averages all three cycles. You might have one cycle peaking while another is low, resulting in an average day. Pay attention to individual cycles for specific activities — use physical peaks for exercise, intellectual peaks for studying, and emotional peaks for social events.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

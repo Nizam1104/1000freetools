@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BoilerEfficiencyCalculator() {
   const [fuelInput, setFuelInput] = useState<string>("");
@@ -252,55 +254,33 @@ export default function BoilerEfficiencyCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good boiler efficiency?</h4>
-                <p>
-                  Modern gas boilers should achieve 85-95% efficiency. Condensing boilers can reach 95-98%.
-                  Older non-condensing boilers typically operate at 70-80%. If your boiler is below 75%,
-                  replacement may be cost-effective.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why is stack temperature important?</h4>
-                <p>
-                  Stack temperature indicates how much heat is being lost up the chimney. Higher exhaust
-                  temperatures mean more wasted energy. However, temperature must stay above the dew point
-                  to prevent condensation corrosion in non-condensing boilers.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How often should boiler efficiency be tested?</h4>
-                <p>
-                  Industrial boilers should be tested quarterly or after major maintenance. Commercial systems
-                  should be tested annually. Regular combustion analysis helps maintain optimal efficiency
-                  and identifies problems before they cause significant energy waste.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What causes low boiler efficiency?</h4>
-                <p>
-                  Common causes include scale buildup on heat transfer surfaces, soot accumulation, excess
-                  air from poor combustion control, high stack temperature, steam leaks, and inadequate
-                  insulation. Poor maintenance is the leading cause of efficiency degradation.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is a condensing boiler worth it?</h4>
-                <p>
-                  Condensing boilers recover latent heat from water vapor in flue gases, achieving 10-15%
-                  better efficiency than conventional boilers. They are most cost-effective in cold climates
-                  with long heating seasons and low return water temperatures.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good boiler efficiency?",
+    answer: "Modern gas boilers should achieve 85-95% efficiency. Condensing boilers can reach 95-98%. Older non-condensing boilers typically operate at 70-80%. If your boiler is below 75%, replacement may be cost-effective.",
+  },
+{
+    question: "Why is stack temperature important?",
+    answer: "Stack temperature indicates how much heat is being lost up the chimney. Higher exhaust temperatures mean more wasted energy. However, temperature must stay above the dew point to prevent condensation corrosion in non-condensing boilers.",
+  },
+{
+    question: "How often should boiler efficiency be tested?",
+    answer: "Industrial boilers should be tested quarterly or after major maintenance. Commercial systems should be tested annually. Regular combustion analysis helps maintain optimal efficiency and identifies problems before they cause significant energy waste.",
+  },
+{
+    question: "What causes low boiler efficiency?",
+    answer: "Common causes include scale buildup on heat transfer surfaces, soot accumulation, excess air from poor combustion control, high stack temperature, steam leaks, and inadequate insulation. Poor maintenance is the leading cause of efficiency degradation.",
+  },
+{
+    question: "Is a condensing boiler worth it?",
+    answer: "Condensing boilers recover latent heat from water vapor in flue gases, achieving 10-15% better efficiency than conventional boilers. They are most cost-effective in cold climates with long heating seasons and low return water temperatures.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

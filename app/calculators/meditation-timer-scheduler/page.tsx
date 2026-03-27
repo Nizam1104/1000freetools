@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -424,45 +426,33 @@ export default function MeditationTimerSchedulerPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How long should I meditate as a beginner?</h4>
-                  <p>
-                    Start with 5-10 minutes daily. This is long enough to settle in but short enough to maintain consistently. After 2-3 weeks of daily practice, gradually increase to 15-20 minutes if you want deeper sessions.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What if I can't stop thinking?</h4>
-                  <p>
-                    You're not supposed to stop thinking. Meditation isn't about emptying your mind—it's about noticing thoughts without getting caught in them. When you notice you're thinking, gently return to your breath. That's the practice.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I use interval bells?</h4>
-                  <p>
-                    Interval bells help during longer sessions (20+ minutes) to check your posture and refocus. For shorter sessions, just start and end bells work fine. Some traditions use bells every 5-10 minutes; others prefer silence.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is it better to meditate morning or night?</h4>
-                  <p>
-                    Morning meditation sets a calm tone for the day. Evening practice helps unwind. The best time is whenever you'll actually do it consistently. Some people benefit from both—short morning session, longer evening one.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What position should I sit in?</h4>
-                  <p>
-                    Sit comfortably with your spine reasonably straight. Options include: cross-legged on a cushion, kneeling on a meditation bench, or in a chair with feet flat. Lying down often leads to sleep—save that for body scan practices.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How long should I meditate as a beginner?",
+    answer: "Start with 5-10 minutes daily. This is long enough to settle in but short enough to maintain consistently. After 2-3 weeks of daily practice, gradually increase to 15-20 minutes if you want deeper sessions.",
+  },
+{
+    question: "What if I can't stop thinking?",
+    answer: "You're not supposed to stop thinking. Meditation isn't about emptying your mind—it's about noticing thoughts without getting caught in them. When you notice you're thinking, gently return to your breath. That's the practice.",
+  },
+{
+    question: "Should I use interval bells?",
+    answer: "Interval bells help during longer sessions (20+ minutes) to check your posture and refocus. For shorter sessions, just start and end bells work fine. Some traditions use bells every 5-10 minutes; others prefer silence.",
+  },
+{
+    question: "Is it better to meditate morning or night?",
+    answer: "Morning meditation sets a calm tone for the day. Evening practice helps unwind. The best time is whenever you'll actually do it consistently. Some people benefit from both—short morning session, longer evening one.",
+  },
+{
+    question: "What position should I sit in?",
+    answer: "Sit comfortably with your spine reasonably straight. Options include: cross-legged on a cushion, kneeling on a meditation bench, or in a chair with feet flat. Lying down often leads to sleep—save that for body scan practices.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

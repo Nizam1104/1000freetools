@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BeamBendingCalculator() {
   const [supportType, setSupportType] = useState<"simply" | "cantilever">("simply");
@@ -306,43 +308,33 @@ export default function BeamBendingCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is Young's modulus?</h4>
-            <p>
-              Young's modulus (E) measures material stiffness. It describes how much a material stretches under tension. Steel has E ≈ 200 GPa, aluminum ≈ 70 GPa. Higher E means less deflection for the same load.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do I calculate moment of inertia for a rectangular beam?</h4>
-            <p>
-              For a rectangle: I = (b × h³) / 12, where b is the width (base) and h is the height. The height is cubed, so increasing beam depth has a much bigger effect than increasing width.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is an acceptable deflection limit?</h4>
-            <p>
-              Building codes specify limits based on application. Floors: L/360 (span divided by 360). Roofs: L/240. For a 10-foot (120 inch) floor span, maximum deflection is 120/360 = 0.33 inches.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What's the difference between simply supported and cantilever beams?</h4>
-            <p>
-              Simply supported beams rest on supports at both ends (like a bridge). Cantilever beams are fixed at one end and free at the other (like a diving board). Cantilevers experience higher moments and deflections.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Can I use this calculator for wood beams?</h4>
-            <p>
-              Yes, but wood is anisotropic — properties vary with grain direction. Use appropriate E values for the wood species and grade. Also check shear stress, which can govern for short, deep wood beams.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is Young's modulus?",
+    answer: "Young's modulus (E) measures material stiffness. It describes how much a material stretches under tension. Steel has E ≈ 200 GPa, aluminum ≈ 70 GPa. Higher E means less deflection for the same load.",
+  },
+{
+    question: "How do I calculate moment of inertia for a rectangular beam?",
+    answer: "For a rectangle: I = (b × h³) / 12, where b is the width (base) and h is the height. The height is cubed, so increasing beam depth has a much bigger effect than increasing width.",
+  },
+{
+    question: "What is an acceptable deflection limit?",
+    answer: "Building codes specify limits based on application. Floors: L/360 (span divided by 360). Roofs: L/240. For a 10-foot (120 inch) floor span, maximum deflection is 120/360 = 0.33 inches.",
+  },
+{
+    question: "What's the difference between simply supported and cantilever beams?",
+    answer: "Simply supported beams rest on supports at both ends (like a bridge). Cantilever beams are fixed at one end and free at the other (like a diving board). Cantilevers experience higher moments and deflections.",
+  },
+{
+    question: "Can I use this calculator for wood beams?",
+    answer: "Yes, but wood is anisotropic — properties vary with grain direction. Use appropriate E values for the wood species and grade. Also check shear stress, which can govern for short, deep wood beams.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

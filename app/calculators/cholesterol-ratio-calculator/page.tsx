@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function CholesterolRatioCalculator() {
   const [totalCholesterol, setTotalCholesterol] = useState<string>("");
@@ -349,45 +351,33 @@ export default function CholesterolRatioCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good cholesterol ratio?</h4>
-                <p>
-                  A Total/HDL ratio below 5.0 is considered good, with below 3.5 being optimal. The average American has a ratio around 5.0. For LDL/HDL ratio, below 3.0 is good and below 2.0 is optimal. Lower ratios always indicate lower cardiovascular risk.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is my cholesterol ratio more important than LDL?</h4>
-                <p>
-                  Both matter, but ratios often predict risk better. LDL tells you how much &quot;bad&quot; cholesterol you have. Ratios show the balance between harmful and protective cholesterol. Many cardiologists now consider ratios alongside absolute LDL values when assessing risk and treatment decisions.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How often should I check my cholesterol?</h4>
-                <p>
-                  Adults over 20 should have cholesterol checked every 4-6 years if results are normal and risk is low. People with high cholesterol, heart disease, or diabetes need more frequent testing, often annually. Those starting cholesterol medication should be rechecked within 3 months.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can high triglycerides affect my ratios?</h4>
-                <p>
-                  High triglycerides don&apos;t directly change the Total/HDL or LDL/HDL ratios, but they often accompany low HDL and small, dense LDL particles, which increase risk. The combination of high triglycerides and low HDL is particularly concerning and may warrant more aggressive treatment.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What if my ratios are high but my LDL is normal?</h4>
-                <p>
-                  This usually means your HDL is low. Focus on raising HDL through exercise, weight loss, and possibly medication. Niacin can raise HDL but hasn&apos;t consistently reduced cardiovascular events in trials. Lifestyle changes remain the first-line approach for improving ratios.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good cholesterol ratio?",
+    answer: "A Total/HDL ratio below 5.0 is considered good, with below 3.5 being optimal. The average American has a ratio around 5.0. For LDL/HDL ratio, below 3.0 is good and below 2.0 is optimal. Lower ratios always indicate lower cardiovascular risk.",
+  },
+{
+    question: "Is my cholesterol ratio more important than LDL?",
+    answer: "Both matter, but ratios often predict risk better. LDL tells you how much &quot;bad&quot; cholesterol you have. Ratios show the balance between harmful and protective cholesterol. Many cardiologists now consider ratios alongside absolute LDL values when assessing risk and treatment decisions.",
+  },
+{
+    question: "How often should I check my cholesterol?",
+    answer: "Adults over 20 should have cholesterol checked every 4-6 years if results are normal and risk is low. People with high cholesterol, heart disease, or diabetes need more frequent testing, often annually. Those starting cholesterol medication should be rechecked within 3 months.",
+  },
+{
+    question: "Can high triglycerides affect my ratios?",
+    answer: "High triglycerides don&apos;t directly change the Total/HDL or LDL/HDL ratios, but they often accompany low HDL and small, dense LDL particles, which increase risk. The combination of high triglycerides and low HDL is particularly concerning and may warrant more aggressive treatment.",
+  },
+{
+    question: "What if my ratios are high but my LDL is normal?",
+    answer: "This usually means your HDL is low. Focus on raising HDL through exercise, weight loss, and possibly medication. Niacin can raise HDL but hasn&apos;t consistently reduced cardiovascular events in trials. Lifestyle changes remain the first-line approach for improving ratios.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

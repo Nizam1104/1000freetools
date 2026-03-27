@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Droplets, Thermometer, Info, Cloud, CloudRain } from "lucide-react";
+import Faqs from "@/components/utils/Faqs";
+
 
 interface DewPointResult {
   dewPoint: number;
@@ -498,45 +500,33 @@ export default function DewPointCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is a comfortable dew point?</h4>
-                  <p>
-                    Most people feel comfortable with dew points between 50 F and 59 F (10-15 C). Below 50 F feels dry and crisp. Above 60 F starts feeling humid. Above 70 F feels oppressive to most people.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can dew point be higher than temperature?</h4>
-                  <p>
-                    No. Dew point cannot exceed air temperature. When they're equal, relative humidity is 100% and condensation occurs. If you see a reading where dew point appears higher, it's a measurement error.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What causes high dew points?</h4>
-                  <p>
-                    High dew points come from moisture in the air. Sources include evaporation from bodies of water, transpiration from plants, and moist air masses moving in from tropical regions. Gulf Coast states often see dew points above 70 F in summer.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How does dew point affect health?</h4>
-                  <p>
-                    High dew points make it harder for sweat to evaporate, reducing your body's ability to cool itself. This increases heat stress risk. People with respiratory conditions may also find high humidity uncomfortable. Low dew points (dry air) can irritate skin and airways.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Why does my car fog up?</h4>
-                  <p>
-                    Your breath adds moisture to the car's air, raising the dew point. When that moist air hits cold windows, it cools below the dew point and condenses. Running the AC removes moisture from the air, lowering the dew point and clearing the fog.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a comfortable dew point?",
+    answer: "Most people feel comfortable with dew points between 50 F and 59 F (10-15 C). Below 50 F feels dry and crisp. Above 60 F starts feeling humid. Above 70 F feels oppressive to most people.",
+  },
+{
+    question: "Can dew point be higher than temperature?",
+    answer: "No. Dew point cannot exceed air temperature. When they're equal, relative humidity is 100% and condensation occurs. If you see a reading where dew point appears higher, it's a measurement error.",
+  },
+{
+    question: "What causes high dew points?",
+    answer: "High dew points come from moisture in the air. Sources include evaporation from bodies of water, transpiration from plants, and moist air masses moving in from tropical regions. Gulf Coast states often see dew points above 70 F in summer.",
+  },
+{
+    question: "How does dew point affect health?",
+    answer: "High dew points make it harder for sweat to evaporate, reducing your body's ability to cool itself. This increases heat stress risk. People with respiratory conditions may also find high humidity uncomfortable. Low dew points (dry air) can irritate skin and airways.",
+  },
+{
+    question: "Why does my car fog up?",
+    answer: "Your breath adds moisture to the car's air, raising the dew point. When that moist air hits cold windows, it cools below the dew point and condenses. Running the AC removes moisture from the air, lowering the dew point and clearing the fog.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

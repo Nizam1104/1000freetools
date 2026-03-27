@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 import {
   Select,
   SelectContent,
@@ -455,55 +457,33 @@ export default function BirdCageSizeCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is bigger always better for bird cages?</h4>
-                  <p>
-                    Yes. There is no such thing as a cage being too large. Birds use every inch of available space.
-                    If you can afford a bigger cage than the minimum recommendation, get it. Your bird will be
-                    healthier and happier.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I keep multiple birds in one cage?</h4>
-                  <p>
-                    Yes, but you need more space. This calculator adjusts for multiple birds by adding 50% more
-                    space for each additional bird. However, some species are territorial and should not be housed
-                    together. Research your species before combining birds.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do round cages work for birds?</h4>
-                  <p>
-                    Round cages are not recommended. Birds need corners to retreat to when feeling insecure. Round
-                    cages also make it difficult to place perches properly and can cause stress because birds cannot
-                    find a safe spot.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How important is cage height?</h4>
-                  <p>
-                    Height matters less than length and width for most species. Parrots climb, so they use vertical
-                    space, but they fly horizontally. A cage that is wider than it is tall is usually better than
-                    a tall, narrow aviary-style cage.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What else should I include in the cage?</h4>
-                  <p>
-                    Add multiple perches of varying diameters to exercise feet, toys for mental stimulation, food
-                    and water dishes, and a bath area. Rotate toys regularly to prevent boredom. Leave some empty
-                    space for movement — don't fill every inch with accessories.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is bigger always better for bird cages?",
+    answer: "Yes. There is no such thing as a cage being too large. Birds use every inch of available space. If you can afford a bigger cage than the minimum recommendation, get it. Your bird will be healthier and happier.",
+  },
+{
+    question: "Can I keep multiple birds in one cage?",
+    answer: "Yes, but you need more space. This calculator adjusts for multiple birds by adding 50% more space for each additional bird. However, some species are territorial and should not be housed together. Research your species before combining birds.",
+  },
+{
+    question: "Do round cages work for birds?",
+    answer: "Round cages are not recommended. Birds need corners to retreat to when feeling insecure. Round cages also make it difficult to place perches properly and can cause stress because birds cannot find a safe spot.",
+  },
+{
+    question: "How important is cage height?",
+    answer: "Height matters less than length and width for most species. Parrots climb, so they use vertical space, but they fly horizontally. A cage that is wider than it is tall is usually better than a tall, narrow aviary-style cage.",
+  },
+{
+    question: "What else should I include in the cage?",
+    answer: "Add multiple perches of varying diameters to exercise feet, toys for mental stimulation, food and water dishes, and a bath area. Rotate toys regularly to prevent boredom. Leave some empty space for movement — don't fill every inch with accessories.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

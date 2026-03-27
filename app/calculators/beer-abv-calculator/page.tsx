@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription} from "@/comp
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BeerABVCalculatorPage() {
   const [og, setOg] = useState<string>("");
@@ -314,43 +316,33 @@ export default function BeerABVCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What is a good ABV for homebrew beer?</h4>
-              <p>
-                Most homebrewers target 5-7% ABV for standard ales and lagers. This range is approachable for most drinkers and manageable for yeast. Session beers run 3-4%, while strong ales and barleywines can reach 10% or higher.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Why is my ABV lower than expected?</h4>
-              <p>
-                Common causes include low mash temperature (producing more unfermentable sugars), poor yeast health, fermentation temperature too low, or inaccurate gravity readings. Check your thermometer calibration and ensure healthy yeast pitching.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Can ABV be too high for yeast?</h4>
-              <p>
-                Yes. Most ale yeasts struggle above 10-12% ABV. Wine yeasts or champagne yeasts handle higher alcohol. For strong beers, consider step feeding (adding sugar gradually) or blending with high-gravity distillates after fermentation.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">Do I need to temperature-correct my gravity readings?</h4>
-              <p>
-                Yes, if your sample temperature differs significantly from the hydrometer's calibration temperature. A 20°F difference can cause a 0.002-0.003 error, which translates to 0.3-0.4% ABV error. For precise measurements, correction matters.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-foreground mb-2">What's the difference between ABV and proof?</h4>
-              <p>
-                Proof is simply twice the ABV in the US system. A 5% ABV beer is 10 proof. The term comes from historical gunpowder tests for alcohol content. Most countries now use ABV exclusively for labeling.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good ABV for homebrew beer?",
+    answer: "Most homebrewers target 5-7% ABV for standard ales and lagers. This range is approachable for most drinkers and manageable for yeast. Session beers run 3-4%, while strong ales and barleywines can reach 10% or higher.",
+  },
+{
+    question: "Why is my ABV lower than expected?",
+    answer: "Common causes include low mash temperature (producing more unfermentable sugars), poor yeast health, fermentation temperature too low, or inaccurate gravity readings. Check your thermometer calibration and ensure healthy yeast pitching.",
+  },
+{
+    question: "Can ABV be too high for yeast?",
+    answer: "Yes. Most ale yeasts struggle above 10-12% ABV. Wine yeasts or champagne yeasts handle higher alcohol. For strong beers, consider step feeding (adding sugar gradually) or blending with high-gravity distillates after fermentation.",
+  },
+{
+    question: "Do I need to temperature-correct my gravity readings?",
+    answer: "Yes, if your sample temperature differs significantly from the hydrometer's calibration temperature. A 20°F difference can cause a 0.002-0.003 error, which translates to 0.3-0.4% ABV error. For precise measurements, correction matters.",
+  },
+{
+    question: "What's the difference between ABV and proof?",
+    answer: "Proof is simply twice the ABV in the US system. A 5% ABV beer is 10 proof. The term comes from historical gunpowder tests for alcohol content. Most countries now use ABV exclusively for labeling.",
+  }
+  ]} />
+</section>
       </div>
     </div>
   );

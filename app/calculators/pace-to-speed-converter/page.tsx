@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function PaceToSpeedConverter() {
   const [paceMin, setPaceMin] = useState<string>("");
@@ -279,54 +281,33 @@ export default function PaceToSpeedConverter() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is a good running pace?</h4>
-                <p>
-                  It depends on distance and experience. For 5K, recreational runners average 5:00-7:00
-                  min/km. For marathons, 4:30-6:30 min/km is common. Elite runners go much faster —
-                  world record marathon pace is about 2:50 min/km. Compare yourself to your own progress.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How do I convert treadmill speed to pace?</h4>
-                <p>
-                  Treadmills display speed in km/h or mph. To get pace, divide 60 by the speed.
-                  For example, 10 km/h = 60/10 = 6:00 min/km. Many treadmills now show pace directly.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Why is my outdoor pace slower than treadmill pace?</h4>
-                <p>
-                  Outdoor running has wind resistance, terrain changes, and no belt assistance.
-                  Treadmill pace feels easier. Add 0.5-1% incline on the treadmill to better match
-                  outdoor effort. GPS watches can also be slightly inaccurate in certain conditions.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">How accurate are GPS pace measurements?</h4>
-                <p>
-                  GPS watches are generally accurate within 1-3% in open areas. Buildings, trees, and
-                  bridges can cause signal issues. Instant pace fluctuates — look at lap or average
-                  pace for more reliable readings. Newer multi-band GPS is more accurate.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Should I train at race pace?</h4>
-                <p>
-                  Include some race-pace workouts but not exclusively. Most training should be easier
-                  than race pace to build aerobic base. Include intervals at faster than race pace and
-                  long runs slower than race pace. Race-pace runs teach your body the specific effort.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is a good running pace?",
+    answer: "It depends on distance and experience. For 5K, recreational runners average 5:00-7:00 min/km. For marathons, 4:30-6:30 min/km is common. Elite runners go much faster — world record marathon pace is about 2:50 min/km. Compare yourself to your own progress.",
+  },
+{
+    question: "How do I convert treadmill speed to pace?",
+    answer: "Treadmills display speed in km/h or mph. To get pace, divide 60 by the speed. For example, 10 km/h = 60/10 = 6:00 min/km. Many treadmills now show pace directly.",
+  },
+{
+    question: "Why is my outdoor pace slower than treadmill pace?",
+    answer: "Outdoor running has wind resistance, terrain changes, and no belt assistance. Treadmill pace feels easier. Add 0.5-1% incline on the treadmill to better match outdoor effort. GPS watches can also be slightly inaccurate in certain conditions.",
+  },
+{
+    question: "How accurate are GPS pace measurements?",
+    answer: "GPS watches are generally accurate within 1-3% in open areas. Buildings, trees, and bridges can cause signal issues. Instant pace fluctuates — look at lap or average pace for more reliable readings. Newer multi-band GPS is more accurate.",
+  },
+{
+    question: "Should I train at race pace?",
+    answer: "Include some race-pace workouts but not exclusively. Most training should be easier than race pace to build aerobic base. Include intervals at faster than race pace and long runs slower than race pace. Race-pace runs teach your body the specific effort.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

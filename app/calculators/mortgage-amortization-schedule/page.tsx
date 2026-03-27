@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MortgageAmortizationSchedulePage() {
   const [loanAmount, setLoanAmount] = useState<string>("");
@@ -373,56 +375,33 @@ export default function MortgageAmortizationSchedulePage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How is monthly mortgage payment calculated?</h4>
-                  <p>
-                    Monthly payment uses the formula: M = P [i(1+i)^n] / [(1+i)^n - 1], where P is principal,
-                    i is monthly interest rate (annual rate divided by 12), and n is total number of payments
-                    (loan term in years times 12). This formula ensures equal payments throughout the loan.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the difference between 15-year and 30-year mortgage?</h4>
-                  <p>
-                    A 15-year mortgage has higher monthly payments but much lower total interest. A 30-year
-                    mortgage has lower payments but you pay interest for twice as long. For example, on a
-                    $300,000 loan at 6%, the 15-year saves about $180,000 in interest compared to 30-year.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Does paying extra principal reduce monthly payment?</h4>
-                  <p>
-                    No. Extra principal payments reduce your loan balance and shorten the term, but your
-                    required monthly payment stays the same. The extra simply means you will make fewer
-                    total payments over the life of the loan. Some lenders offer recasting to lower payments.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is mortgage amortization vs depreciation?</h4>
-                  <p>
-                    Amortization refers to paying down a loan balance over time through scheduled payments.
-                    Depreciation is an accounting method for spreading the cost of an asset over its useful
-                    life. For homeowners, mortgage amortization builds equity while the property may appreciate.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I pay off my mortgage early or invest?</h4>
-                  <p>
-                    Compare your mortgage rate to expected investment returns. If your mortgage is 3% and
-                    investments return 7%, investing may win. But paying off the mortgage guarantees a
-                    3% return with zero risk. Consider your risk tolerance, tax situation, and peace of mind.
-                    Many people do both — contribute to retirement accounts while making extra mortgage payments.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How is monthly mortgage payment calculated?",
+    answer: "Monthly payment uses the formula: M = P [i(1+i)^n] / [(1+i)^n - 1], where P is principal, i is monthly interest rate (annual rate divided by 12), and n is total number of payments (loan term in years times 12). This formula ensures equal payments throughout the loan.",
+  },
+{
+    question: "What is the difference between 15-year and 30-year mortgage?",
+    answer: "A 15-year mortgage has higher monthly payments but much lower total interest. A 30-year mortgage has lower payments but you pay interest for twice as long. For example, on a $300,000 loan at 6%, the 15-year saves about $180,000 in interest compared to 30-year.",
+  },
+{
+    question: "Does paying extra principal reduce monthly payment?",
+    answer: "No. Extra principal payments reduce your loan balance and shorten the term, but your required monthly payment stays the same. The extra simply means you will make fewer total payments over the life of the loan. Some lenders offer recasting to lower payments.",
+  },
+{
+    question: "What is mortgage amortization vs depreciation?",
+    answer: "Amortization refers to paying down a loan balance over time through scheduled payments. Depreciation is an accounting method for spreading the cost of an asset over its useful life. For homeowners, mortgage amortization builds equity while the property may appreciate.",
+  },
+{
+    question: "Should I pay off my mortgage early or invest?",
+    answer: "Compare your mortgage rate to expected investment returns. If your mortgage is 3% and investments return 7%, investing may win. But paying off the mortgage guarantees a 3% return with zero risk. Consider your risk tolerance, tax situation, and peace of mind. Many people do both — contribute to retirement accounts while making extra mortgage payments.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

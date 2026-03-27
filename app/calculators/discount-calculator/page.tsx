@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DiscountCalculatorPage() {
   const [originalPrice, setOriginalPrice] = useState<string>("");
@@ -371,43 +373,33 @@ export default function DiscountCalculatorPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate the discount percentage if I know both prices?</h4>
-            <p className="text-xs text-muted-foreground">
-              Divide the discount amount by the original price, multiply by 100. Original $80, sale $60: discount = $20, percentage = (20/80) × 100 = 25%. Or use: ((Original - Sale) / Original) × 100.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Is a bigger discount always better?</h4>
-            <p className="text-xs text-muted-foreground">
-              Not necessarily. 50% off a $20 item saves $10. 30% off a $100 item saves $30. Always calculate the actual dollar savings. Also consider: do you need it? A "bargain" you don't use is 100% wasted.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">How do I calculate tax on a discounted price?</h4>
-            <p className="text-xs text-muted-foreground">
-              Tax is calculated on the sale price, not the original. $100 item, 20% off, 8% tax: Sale price = $80. Tax = $80 × 0.08 = $6.40. Total = $86.40. Never calculate tax before applying the discount.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">What does "up to 70% off" mean?</h4>
-            <p className="text-xs text-muted-foreground">
-              It means some items are 70% off, but many are less. Retailers use this to attract you with the maximum discount while most items might only be 20-40% off. Check individual item discounts, not just the headline.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-2">Are "buy one get one free" deals actually 50% off?</h4>
-            <p className="text-xs text-muted-foreground">
-              Mathematically, yes – if you need two items. But if you only needed one, you spent 100% more than planned. BOGO is 50% off per item only if you use both. Otherwise, it's full price for something extra you may not need.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate the discount percentage if I know both prices?",
+    answer: "Divide the discount amount by the original price, multiply by 100. Original $80, sale $60: discount = $20, percentage = (20/80) × 100 = 25%. Or use: ((Original - Sale) / Original) × 100.",
+  },
+{
+    question: "Is a bigger discount always better?",
+    answer: "Not necessarily. 50% off a $20 item saves $10. 30% off a $100 item saves $30. Always calculate the actual dollar savings. Also consider: do you need it? A \"bargain\" you don't use is 100% wasted.",
+  },
+{
+    question: "How do I calculate tax on a discounted price?",
+    answer: "Tax is calculated on the sale price, not the original. $100 item, 20% off, 8% tax: Sale price = $80. Tax = $80 × 0.08 = $6.40. Total = $86.40. Never calculate tax before applying the discount.",
+  },
+{
+    question: "What does \"up to 70% off\" mean?",
+    answer: "It means some items are 70% off, but many are less. Retailers use this to attract you with the maximum discount while most items might only be 20-40% off. Check individual item discounts, not just the headline.",
+  },
+{
+    question: "Are \"buy one get one free\" deals actually 50% off?",
+    answer: "Mathematically, yes – if you need two items. But if you only needed one, you spent 100% more than planned. BOGO is 50% off per item only if you use both. Otherwise, it's full price for something extra you may not need.",
+  }
+  ]} />
+</section>
     </div>
   );
 }

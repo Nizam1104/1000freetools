@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function MarkupCalculatorPage() {
   const [costPrice, setCostPrice] = useState<string>("");
@@ -301,45 +303,33 @@ export default function MarkupCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate selling price from cost and markup?</h4>
-                  <p>
-                    Multiply your cost by (1 + markup percentage as a decimal). For a $50 item with 40% markup: $50 × 1.40 = $70 selling price. The markup amount is $70 - $50 = $20.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What's a good markup percentage?</h4>
-                  <p>
-                    It depends on your industry and costs. Retail typically uses 50-100% markup. Restaurants often use 300%+ on food. Service businesses may use lower markups but higher volume. Calculate based on your overhead and profit goals.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Is markup the same as profit margin?</h4>
-                  <p>
-                    No. Markup is based on cost; margin is based on selling price. A 50% markup gives you a 33% profit margin. To get a 50% profit margin, you need a 100% markup. This calculator shows both values.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How do I calculate markup if I know cost and selling price?</h4>
-                  <p>
-                    Subtract cost from selling price to get the markup amount. Divide by cost and multiply by 100. Example: Cost $80, sell for $120. Markup = ($120 - $80) / $80 × 100 = 50%.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Should I include taxes in my markup calculation?</h4>
-                  <p>
-                    No. Sales tax is added on top of the selling price and remitted to the government. Calculate your markup on your actual product cost. Sales tax is a pass-through cost, not part of your pricing strategy.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "How do I calculate selling price from cost and markup?",
+    answer: "Multiply your cost by (1 + markup percentage as a decimal). For a $50 item with 40% markup: $50 × 1.40 = $70 selling price. The markup amount is $70 - $50 = $20.",
+  },
+{
+    question: "What's a good markup percentage?",
+    answer: "It depends on your industry and costs. Retail typically uses 50-100% markup. Restaurants often use 300%+ on food. Service businesses may use lower markups but higher volume. Calculate based on your overhead and profit goals.",
+  },
+{
+    question: "Is markup the same as profit margin?",
+    answer: "No. Markup is based on cost; margin is based on selling price. A 50% markup gives you a 33% profit margin. To get a 50% profit margin, you need a 100% markup. This calculator shows both values.",
+  },
+{
+    question: "How do I calculate markup if I know cost and selling price?",
+    answer: "Subtract cost from selling price to get the markup amount. Divide by cost and multiply by 100. Example: Cost $80, sell for $120. Markup = ($120 - $80) / $80 × 100 = 50%.",
+  },
+{
+    question: "Should I include taxes in my markup calculation?",
+    answer: "No. Sales tax is added on top of the selling price and remitted to the government. Calculate your markup on your actual product cost. Sales tax is a pass-through cost, not part of your pricing strategy.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

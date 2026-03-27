@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function RecurringDepositCalculatorPage() {
   const [monthlyDeposit, setMonthlyDeposit] = useState<string>("");
@@ -216,50 +218,33 @@ export default function RecurringDepositCalculatorPage() {
           </CardContent>
         </Card>
 
-        <Card className="mt-6">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is RD interest taxable?</h4>
-                <p>
-                  Yes. RD interest is fully taxable as "Income from Other Sources." Banks deduct TDS
-                  if annual interest exceeds ₹40,000 (₹50,000 for senior citizens).
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Can I withdraw RD before maturity?</h4>
-                <p>
-                  Yes, but penalties apply. Most banks charge 1-2% lower interest for premature
-                  withdrawal. Some allow partial withdrawals after a lock-in period.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What happens if I miss a monthly payment?</h4>
-                <p>
-                  Banks charge penalty for missed payments (₹10-100 depending on amount). After
-                  consecutive defaults, the RD may be closed prematurely.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">Is RD safer than mutual funds?</h4>
-                <p>
-                  RDs are safer — they offer guaranteed returns and are insured up to ₹5 lakh per
-                  depositor per bank. Mutual funds carry market risk but may give higher returns.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-medium text-foreground mb-2">What is the minimum RD tenure?</h4>
-                <p>
-                  Most banks offer RDs from 6 months to 10 years. Common tenures are 1, 2, 3, and
-                  5 years. Longer tenures typically get better interest rates.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "Is RD interest taxable?",
+    answer: "Yes. RD interest is fully taxable as \"Income from Other Sources.\" Banks deduct TDS if annual interest exceeds ₹40,000 (₹50,000 for senior citizens).",
+  },
+{
+    question: "Can I withdraw RD before maturity?",
+    answer: "Yes, but penalties apply. Most banks charge 1-2% lower interest for premature withdrawal. Some allow partial withdrawals after a lock-in period.",
+  },
+{
+    question: "What happens if I miss a monthly payment?",
+    answer: "Banks charge penalty for missed payments (₹10-100 depending on amount). After consecutive defaults, the RD may be closed prematurely.",
+  },
+{
+    question: "Is RD safer than mutual funds?",
+    answer: "RDs are safer — they offer guaranteed returns and are insured up to ₹5 lakh per depositor per bank. Mutual funds carry market risk but may give higher returns.",
+  },
+{
+    question: "What is the minimum RD tenure?",
+    answer: "Most banks offer RDs from 6 months to 10 years. Common tenures are 1, 2, 3, and 5 years. Longer tenures typically get better interest rates.",
+  }
+  ]} />
+</section>
 
       </div>
     </div>

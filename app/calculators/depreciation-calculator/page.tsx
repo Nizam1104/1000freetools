@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function DepreciationCalculatorPage() {
   const [assetCost, setAssetCost] = useState<string>("");
@@ -414,45 +416,33 @@ export default function DepreciationCalculatorPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What is the simplest depreciation method?</h4>
-                  <p>
-                    Straight-line depreciation is the simplest. You subtract salvage value from cost, then divide by useful life. A $10,000 asset with $1,000 salvage value and 5-year life depreciates $1,800 per year.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Can I change depreciation methods?</h4>
-                  <p>
-                    Generally, you need IRS approval to change depreciation methods. Form 3115 is used to request a change. It's best to choose the right method from the start rather than trying to switch later.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">What happens when I sell a depreciated asset?</h4>
-                  <p>
-                    If you sell for more than the book value, you may have depreciation recapture taxed as ordinary income. If you sell for less, you may have a deductible loss. Keep records of the sale.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">Do I have to depreciate assets?</h4>
-                  <p>
-                    For business assets with a useful life over one year, depreciation is generally required. You can't deduct the full cost immediately (unless qualifying for Section 179). Personal assets aren't depreciated.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-foreground mb-2">How is book value different from market value?</h4>
-                  <p>
-                    Book value is cost minus accumulated depreciation. Market value is what someone would pay for the asset today. They're often different. A well-maintained vehicle might have a market value higher than its book value.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What is the simplest depreciation method?",
+    answer: "Straight-line depreciation is the simplest. You subtract salvage value from cost, then divide by useful life. A $10,000 asset with $1,000 salvage value and 5-year life depreciates $1,800 per year.",
+  },
+{
+    question: "Can I change depreciation methods?",
+    answer: "Generally, you need IRS approval to change depreciation methods. Form 3115 is used to request a change. It's best to choose the right method from the start rather than trying to switch later.",
+  },
+{
+    question: "What happens when I sell a depreciated asset?",
+    answer: "If you sell for more than the book value, you may have depreciation recapture taxed as ordinary income. If you sell for less, you may have a deductible loss. Keep records of the sale.",
+  },
+{
+    question: "Do I have to depreciate assets?",
+    answer: "For business assets with a useful life over one year, depreciation is generally required. You can't deduct the full cost immediately (unless qualifying for Section 179). Personal assets aren't depreciated.",
+  },
+{
+    question: "How is book value different from market value?",
+    answer: "Book value is cost minus accumulated depreciation. Market value is what someone would pay for the asset today. They're often different. A well-maintained vehicle might have a market value higher than its book value.",
+  }
+  ]} />
+</section>
 
         </div>
       </div>

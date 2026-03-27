@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Faqs from "@/components/utils/Faqs";
+
 
 export default function BatteryCRateCalculator() {
   const [capacity, setCapacity] = useState<string>("");
@@ -261,43 +263,33 @@ export default function BatteryCRateCalculator() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm text-muted-foreground">
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What does 1C mean on a battery?</h4>
-            <p>
-              1C means the battery will fully charge or discharge in exactly one hour. For a 5Ah battery, 1C equals 5 amps. For a 100Ah battery, 1C equals 100 amps. It scales with capacity.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">How do I calculate C-rate from current?</h4>
-            <p>
-              Divide the current by the battery capacity. If you have a 20Ah battery and draw 10 amps, the C-rate is 10/20 = 0.5C. This calculator does it automatically.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">What is a good C-rate for lithium batteries?</h4>
-            <p>
-              It depends on the application. For solar storage, 0.2C to 0.5C is common. For power tools, 5C to 10C. For RC models, 50C to 100C. Always check your specific battery specifications.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Can I charge at the same C-rate as discharge?</h4>
-            <p>
-              Usually not. Most batteries have lower maximum charge C-rates than discharge C-rates. Charging generates more heat and stress. A battery rated for 10C discharge might only support 1C charge.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-foreground mb-2">Does C-rate affect battery life?</h4>
-            <p>
-              Yes. Higher C-rates generate more heat and cause more wear. Regularly charging or discharging at high C-rates reduces cycle life. For maximum lifespan, use lower C-rates when possible.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <section className="container mx-auto px-4 py-12 mb-12">
+  <h2 className="text-3xl font-semibold mb-8 text-center">
+    Frequently Asked Questions
+  </h2>
+  <Faqs faqs={[
+{
+    question: "What does 1C mean on a battery?",
+    answer: "1C means the battery will fully charge or discharge in exactly one hour. For a 5Ah battery, 1C equals 5 amps. For a 100Ah battery, 1C equals 100 amps. It scales with capacity.",
+  },
+{
+    question: "How do I calculate C-rate from current?",
+    answer: "Divide the current by the battery capacity. If you have a 20Ah battery and draw 10 amps, the C-rate is 10/20 = 0.5C. This calculator does it automatically.",
+  },
+{
+    question: "What is a good C-rate for lithium batteries?",
+    answer: "It depends on the application. For solar storage, 0.2C to 0.5C is common. For power tools, 5C to 10C. For RC models, 50C to 100C. Always check your specific battery specifications.",
+  },
+{
+    question: "Can I charge at the same C-rate as discharge?",
+    answer: "Usually not. Most batteries have lower maximum charge C-rates than discharge C-rates. Charging generates more heat and stress. A battery rated for 10C discharge might only support 1C charge.",
+  },
+{
+    question: "Does C-rate affect battery life?",
+    answer: "Yes. Higher C-rates generate more heat and cause more wear. Regularly charging or discharging at high C-rates reduces cycle life. For maximum lifespan, use lower C-rates when possible.",
+  }
+  ]} />
+</section>
     </div>
   );
 }
