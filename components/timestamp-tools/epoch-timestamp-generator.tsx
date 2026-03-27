@@ -59,12 +59,6 @@ export default function TimestampEpochGenerator() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold">Epoch Timestamp Generator</h2>
-        <p className="text-sm text-muted-foreground">
-          Generate epoch timestamps for any given date and time
-        </p>
-      </div>
 
       <Card className="p-4">
         <div className="grid gap-4 sm:grid-cols-3">

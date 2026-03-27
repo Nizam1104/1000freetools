@@ -127,16 +127,6 @@ export default function Rfc2822TimestampConverter() {
         </div>
       </Card>
 
-      <div className="flex gap-2">
-        <Button onClick={handleConvert} className="flex-1">
-          <ArrowRightLeft className="w-4 h-4 mr-2" />
-          Convert
-        </Button>
-        <Button variant="outline" onClick={handleClear} disabled={!input}>
-          <RotateCcw className="w-4 h-4" />
-        </Button>
-      </div>
-
       {output && (
         <Card className={`p-4 ${output.startsWith("Invalid") ? "border-destructive" : ""}`}>
           <div className="flex justify-between items-start">

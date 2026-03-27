@@ -62,13 +62,6 @@ export default function AddSubtractTimeFromTimestamp() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold">Add/Subtract Time from Timestamp</h2>
-        <p className="text-sm text-muted-foreground">
-          Add or subtract time from a given Unix timestamp
-        </p>
-      </div>
-
       <Card className="p-4">
         <div className="space-y-4">
           <div className="space-y-2">
@@ -143,16 +136,6 @@ export default function AddSubtractTimeFromTimestamp() {
           </div>
         </div>
       </Card>
-
-      <div className="flex gap-2">
-        <Button onClick={handleCalculate} className="flex-1">
-          <ArrowRightLeft className="w-4 h-4 mr-2" />
-          Calculate
-        </Button>
-        <Button variant="outline" onClick={handleClear} disabled={!timestamp}>
-          <RotateCcw className="w-4 h-4" />
-        </Button>
-      </div>
 
       {result && (
         <Card className="p-4">

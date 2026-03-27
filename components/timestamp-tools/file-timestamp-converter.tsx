@@ -119,12 +119,6 @@ export function FileTimestampConverter() {
     <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <h2 className="text-2xl font-semibold tracking-tight">File Timestamp Converter</h2>
-            <p className="text-sm text-muted-foreground">
-              Convert between Unix timestamps and human-readable dates
-            </p>
-          </div>
           <Button variant="outline" size="sm" onClick={handleUseCurrent}>
             Use Current Time
           </Button>

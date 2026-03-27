@@ -47,12 +47,6 @@ export default function DiscordTimestampGenerator() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold">Discord Timestamp Generator</h2>
-        <p className="text-sm text-muted-foreground">
-          Generate Discord's custom timestamp markup
-        </p>
-      </div>
 
       <Card className="p-4">
         <div className="space-y-4">

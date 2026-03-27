@@ -78,12 +78,6 @@ export default function CountdownTimerFromTimestamp() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold">Countdown Timer from Timestamp</h2>
-        <p className="text-sm text-muted-foreground">
-          Create a live countdown timer based on a Unix timestamp
-        </p>
-      </div>
 
       <Card className="p-4">
         <div className="space-y-4">

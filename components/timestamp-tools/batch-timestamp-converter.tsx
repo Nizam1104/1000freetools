@@ -58,12 +58,6 @@ export default function BatchTimestampConverter() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold">Batch Timestamp Converter</h2>
-        <p className="text-sm text-muted-foreground">
-          Convert multiple timestamps at once
-        </p>
-      </div>
 
       <Card className="p-4">
         <div className="space-y-4">
@@ -108,16 +102,6 @@ export default function BatchTimestampConverter() {
           </div>
         </div>
       </Card>
-
-      <div className="flex gap-2">
-        <Button onClick={convertTimestamps} className="flex-1">
-          <ArrowRightLeft className="w-4 h-4 mr-2" />
-          Convert
-        </Button>
-        <Button variant="outline" onClick={handleClear} disabled={!input}>
-          <RotateCcw className="w-4 h-4" />
-        </Button>
-      </div>
 
       {results.length > 0 && (
         <div className="grid gap-6 lg:grid-cols-2">
