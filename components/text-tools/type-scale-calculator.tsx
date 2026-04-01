@@ -5,8 +5,14 @@ import { useState, useCallback } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+
+function parseNumbers(input: string) {
+  return input
+    .match(/-?\d+(\.\d+)?/g)
+    ?.map((n) => Number(n))
+    .filter((n) => Number.isFinite(n)) ?? []
+}
 
 export function TypeScaleCalculator() {
   const [input, setInput] = useState("")
@@ -17,8 +23,66 @@ export function TypeScaleCalculator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Type Scale Calculator logic
-      setOutput(input)
+      const trimmed = input.trim()
+      if (!trimmed) {
+        setOutput("")
+        return
+      }
+
+      let basePx = 16
+      let ratio = 1.25
+      let minStep = -2
+      let maxStep = 6
+      let rootPx = 16
+
+      try {
+        const parsed = JSON.parse(trimmed)
+        if (parsed && typeof parsed === "object") {
+          if (typeof (parsed as any).basePx === "number") basePx = (parsed as any).basePx
+          if (typeof (parsed as any).ratio === "number") ratio = (parsed as any).ratio
+          if (typeof (parsed as any).minStep === "number") minStep = (parsed as any).minStep
+          if (typeof (parsed as any).maxStep === "number") maxStep = (parsed as any).maxStep
+          if (typeof (parsed as any).rootPx === "number") rootPx = (parsed as any).rootPx
+        }
+      } catch {
+        const nums = parseNumbers(trimmed)
+        if (nums.length >= 1) basePx = nums[0]
+        if (nums.length >= 2) ratio = nums[1]
+        if (nums.length >= 3) minStep = Math.trunc(nums[2])
+        if (nums.length >= 4) maxStep = Math.trunc(nums[3])
+        if (nums.length >= 5) rootPx = nums[4]
+      }
+
+      if (!(basePx > 0)) throw new Error("basePx must be > 0")
+      if (!(ratio > 0)) throw new Error("ratio must be > 0")
+      if (minStep > maxStep) throw new Error("minStep must be <= maxStep")
+      if (!(rootPx > 0)) throw new Error("rootPx must be > 0")
+
+      const rows: Array<{ step: number; px: number; rem: number }> = []
+      for (let step = minStep; step <= maxStep; step++) {
+        const px = basePx * Math.pow(ratio, step)
+        const rem = px / rootPx
+        rows.push({ step, px, rem })
+      }
+
+      const table = rows
+        .map((r) => {
+          const step = r.step.toString().padStart(3, " ")
+          const px = r.px.toFixed(3).replace(/\.?0+$/, "").padStart(8, " ")
+          const rem = r.rem.toFixed(4).replace(/0+$/, "").replace(/\.$/, "").padStart(8, " ")
+          return `${step} | ${px} px | ${rem} rem`
+        })
+        .join("\n")
+
+      setOutput(
+        [
+          `basePx=${basePx}, ratio=${ratio}, steps=${minStep}..${maxStep}, rootPx=${rootPx}`,
+          "",
+          "step | size | rem",
+          "-----|------|-----",
+          table,
+        ].join("\n")
+      )
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

@@ -8,6 +8,17 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+function byteLengthUtf8(str: string) {
+  return new TextEncoder().encode(str).byteLength
+}
+
+function base64UrlToString(b64url: string) {
+  const b64 = b64url.replace(/-/g, "+").replace(/_/g, "/") + "===".slice((b64url.length + 3) % 4)
+  const binary = atob(b64)
+  const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0))
+  return new TextDecoder().decode(bytes)
+}
+
 export function JwtTokenSizeCalculatorOptimizer() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +28,46 @@ export function JwtTokenSizeCalculatorOptimizer() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement JWT Token Size Calculator logic
-      setOutput(input)
+      const token = input.trim()
+      const parts = token.split(".")
+      if (parts.length < 2) throw new Error("JWT must have at least header.payload (and usually signature)")
+
+      const [headerB64, payloadB64, signatureB64 = ""] = parts
+      const headerJson = base64UrlToString(headerB64)
+      const payloadJson = base64UrlToString(payloadB64)
+
+      let header: unknown = null
+      let payload: unknown = null
+      try {
+        header = JSON.parse(headerJson)
+      } catch {}
+      try {
+        payload = JSON.parse(payloadJson)
+      } catch {}
+
+      const totalBytes = byteLengthUtf8(token)
+      const report = [
+        `Total token length (chars): ${token.length}`,
+        `Total token size (utf-8 bytes): ${totalBytes}`,
+        "",
+        `Header segment (chars): ${headerB64.length}`,
+        `Payload segment (chars): ${payloadB64.length}`,
+        `Signature segment (chars): ${signatureB64.length}`,
+        "",
+        `Decoded header bytes: ${byteLengthUtf8(headerJson)}`,
+        `Decoded payload bytes: ${byteLengthUtf8(payloadJson)}`,
+        "",
+        `Header JSON: ${typeof header === "object" && header !== null ? JSON.stringify(header) : headerJson}`,
+        `Payload JSON: ${typeof payload === "object" && payload !== null ? JSON.stringify(payload) : payloadJson}`,
+        "",
+        "Optimization tips:",
+        "- Use shorter claim names for custom fields",
+        "- Avoid large arrays / embedded objects",
+        "- Prefer reference IDs over embedded documents",
+        "- If using JWE/JWK inline, consider key IDs (kid) + server-side key lookup",
+      ].join("\n")
+
+      setOutput(report)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

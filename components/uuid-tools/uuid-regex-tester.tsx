@@ -8,6 +8,9 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+const UUID_V1_V5_REGEX =
+  /\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b/gi
+
 export function UuidRegexTester() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +20,29 @@ export function UuidRegexTester() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement UUID Regex Tester logic
-      setOutput(input)
+      const text = input.trim()
+      if (!text) {
+        setOutput("")
+        return
+      }
+
+      const matches = Array.from(text.matchAll(UUID_V1_V5_REGEX)).map((m) => m[0])
+      const unique = Array.from(new Set(matches.map((m) => m.toLowerCase())))
+      const isSingleUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
+        text,
+      )
+
+      const summary = [
+        `Valid single UUID: ${isSingleUuid ? "yes" : "no"}`,
+        `Matches found: ${matches.length}`,
+        `Unique matches: ${unique.length}`,
+        "",
+        unique.join("\n"),
+      ]
+        .join("\n")
+        .trimEnd()
+
+      setOutput(summary)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

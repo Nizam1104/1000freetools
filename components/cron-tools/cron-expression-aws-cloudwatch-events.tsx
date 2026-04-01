@@ -8,6 +8,21 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+function parseKeyValueLines(text: string): Record<string, string> {
+  const out: Record<string, string> = {}
+  const lines = text.replace(/\r\n/g, "\n").split("\n")
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed || trimmed.startsWith("#")) continue
+    const idx = trimmed.indexOf(":")
+    if (idx === -1) continue
+    const k = trimmed.slice(0, idx).trim()
+    const v = trimmed.slice(idx + 1).trim()
+    if (k) out[k] = v
+  }
+  return out
+}
+
 export function CronExpressionAwsCloudwatchEvents() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +32,27 @@ export function CronExpressionAwsCloudwatchEvents() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement AWS CloudWatch Cron Generator logic
-      setOutput(input)
+      const cfg = parseKeyValueLines(input)
+      const cron = cfg.cron || input.trim().split(/\s+/).slice(0, 5).join(" ")
+      if (!cron || cron.split(/\s+/).length < 5) {
+        throw new Error('Provide a 5-field cron (min hour dom mon dow). Example: "0 12 * * ?".')
+      }
+
+      // EventBridge (CloudWatch Events) cron format: cron(Minutes Hours Day-of-month Month Day-of-week Year)
+      // Users often paste 5-field cron; we assume missing year and set day-of-week to ? if both dom/dow specified.
+      const fields = cron.split(/\s+/)
+      const [min, hour, dom, mon, dow] = fields
+      const year = cfg.year || "*"
+      const scheduleExpression = `cron(${min} ${hour} ${dom} ${mon} ${dow} ${year})`
+
+      const ruleName = cfg.name || "example-schedule-rule"
+      const out = [
+        `ScheduleExpression: ${scheduleExpression}`,
+        "",
+        "Example (AWS CLI):",
+        `aws events put-rule --name ${ruleName} --schedule-expression '${scheduleExpression}'`,
+      ].join("\n")
+      setOutput(out)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

@@ -5,7 +5,6 @@ const path = require('path');
 
 // Configuration
 const TARGET_DIRS = ['app', 'components'];
-const BACKUP_EXT = '.bak';
 const FAQ_IMPORT_PATH = '@/components/utils/Faqs';
 
 /**
@@ -183,7 +182,7 @@ function extractAndReplaceFAQ(content) {
   // Extract Q&A pairs from the FAQ Card
   const faqs = [];
   // Match both <h3> and <h4> tags for questions, with flexible className patterns
-  const qaRegex = /<div[\s\n]*>[\s\n]*<(?:h3|h4)[^>]*>([\s\S]*?)<\/(?:h3|h4)>[\s\n]*<p[^>]*>([\s\S]*?)<\/p>[\s\n]*<\/div>/g;
+  const qaRegex = /<div[^>]*>\s*<(?:h3|h4)[^>]*>([\s\S]*?)<\/(?:h3|h4)>\s*<p[^>]*>([\s\S]*?)<\/p>\s*<\/div>/g;
   let qaMatch;
 
   while ((qaMatch = qaRegex.exec(faqCardContent)) !== null) {
@@ -279,14 +278,10 @@ function processFile(filePath) {
   // Add import if needed
   content = addImport(content);
 
-  // Backup and write
-  const backupPath = filePath + BACKUP_EXT;
-  fs.writeFileSync(backupPath, originalContent);
 
   fs.writeFileSync(filePath, content);
 
   console.log(`  ✅ Migrated: ${filePath}`);
-  console.log(`  💾 Backup: ${backupPath}`);
 }
 
 /**

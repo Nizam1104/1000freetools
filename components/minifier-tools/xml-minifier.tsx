@@ -17,8 +17,13 @@ export function XmlMinifier() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement XML Minifier logic
-      setOutput(input)
+      const minified = input
+        .replace(/\r\n/g, "\n")
+        .replace(/<!--[\s\S]*?-->/g, "")
+        .replace(/>\s+</g, "><")
+        .replace(/\s{2,}/g, " ")
+        .trim()
+      setOutput(minified)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

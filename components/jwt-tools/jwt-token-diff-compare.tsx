@@ -5,8 +5,56 @@ import { useState, useCallback } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+
+function base64UrlToUtf8(input: string) {
+  const b64 = input.replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(input.length / 4) * 4, "=")
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))
+  return new TextDecoder().decode(bytes)
+}
+
+function decodeJwt(token: string) {
+  const parts = token.trim().split(".")
+  if (parts.length < 2) throw new Error("Expected a JWT with at least header.payload")
+  const header = JSON.parse(base64UrlToUtf8(parts[0]))
+  const payload = JSON.parse(base64UrlToUtf8(parts[1]))
+  return { header, payload, hasSignature: parts.length >= 3 }
+}
+
+function stableJson(value: unknown) {
+  const seen = new WeakSet<object>()
+  const sortObj = (v: any): any => {
+    if (!v || typeof v !== "object") return v
+    if (seen.has(v)) return v
+    seen.add(v)
+    if (Array.isArray(v)) return v.map(sortObj)
+    return Object.keys(v)
+      .sort()
+      .reduce((acc: any, k) => {
+        acc[k] = sortObj(v[k])
+        return acc
+      }, {})
+  }
+  return JSON.stringify(sortObj(value), null, 2)
+}
+
+function diffObjects(a: any, b: any) {
+  const keys = new Set<string>([...Object.keys(a ?? {}), ...Object.keys(b ?? {})])
+  const diffs: Array<{ key: string; a: unknown; b: unknown; change: "added" | "removed" | "changed" | "same" }> = []
+  for (const key of Array.from(keys).sort()) {
+    const av = a?.[key]
+    const bv = b?.[key]
+    const aHas = Object.prototype.hasOwnProperty.call(a ?? {}, key)
+    const bHas = Object.prototype.hasOwnProperty.call(b ?? {}, key)
+    let change: "added" | "removed" | "changed" | "same"
+    if (!aHas && bHas) change = "added"
+    else if (aHas && !bHas) change = "removed"
+    else if (stableJson(av) !== stableJson(bv)) change = "changed"
+    else change = "same"
+    diffs.push({ key, a: av, b: bv, change })
+  }
+  return diffs.filter((d) => d.change !== "same")
+}
 
 export function JwtTokenDiffCompare() {
   const [input, setInput] = useState("")
@@ -17,8 +65,33 @@ export function JwtTokenDiffCompare() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement JWT Token Diff/Compare logic
-      setOutput(input)
+      const tokens = input
+        .split(/\s+/)
+        .map((t) => t.trim())
+        .filter(Boolean)
+        .filter((t) => t.includes("."))
+
+      if (tokens.length < 2) {
+        throw new Error("Paste two JWTs (separated by whitespace/newlines).")
+      }
+
+      const a = decodeJwt(tokens[0])
+      const b = decodeJwt(tokens[1])
+
+      const headerDiff = diffObjects(a.header as any, b.header as any)
+      const payloadDiff = diffObjects(a.payload as any, b.payload as any)
+
+      const report = {
+        tokenA: { hasSignature: a.hasSignature, header: a.header, payload: a.payload },
+        tokenB: { hasSignature: b.hasSignature, header: b.header, payload: b.payload },
+        diffs: {
+          header: headerDiff,
+          payload: payloadDiff,
+        },
+        notes: ["Diff is computed on top-level keys only.", "JWTs are decoded without verifying signatures."],
+      }
+
+      setOutput(stableJson(report))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

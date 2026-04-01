@@ -5,8 +5,46 @@ import { useState, useCallback } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+
+function base64UrlToUtf8(input: string) {
+  const b64 = input.replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(input.length / 4) * 4, "=")
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))
+  return new TextDecoder().decode(bytes)
+}
+
+function utf8ToBase64Url(input: string) {
+  const bytes = new TextEncoder().encode(input)
+  let bin = ""
+  for (const b of bytes) bin += String.fromCharCode(b)
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "")
+}
+
+function decodeJwtParts(token: string) {
+  const parts = token.trim().split(".")
+  if (parts.length < 2) throw new Error("Expected a JWT with at least header.payload")
+  const header = JSON.parse(base64UrlToUtf8(parts[0]))
+  const payload = JSON.parse(base64UrlToUtf8(parts[1]))
+  return { parts, header, payload }
+}
+
+function redactPayload(payload: Record<string, unknown>) {
+  const keep = new Set(["iss", "sub", "aud", "exp", "iat", "nbf", "jti", "scope"])
+  const out: Record<string, unknown> = {}
+  for (const [k, v] of Object.entries(payload)) {
+    if (keep.has(k)) out[k] = v
+    else if (v === null) out[k] = null
+    else if (typeof v === "number" || typeof v === "boolean") out[k] = v
+    else if (typeof v === "string") out[k] = "<redacted>"
+    else out[k] = "<redacted>"
+  }
+  return out
+}
+
+function maskMiddle(s: string, head = 8, tail = 8) {
+  if (s.length <= head + tail + 3) return s
+  return `${s.slice(0, head)}…${s.slice(-tail)}`
+}
 
 export function JwtTokenScramblerObfuscator() {
   const [input, setInput] = useState("")
@@ -17,8 +55,39 @@ export function JwtTokenScramblerObfuscator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement JWT Token Scrambler logic
-      setOutput(input)
+      const token = input.trim()
+      if (!token) {
+        setOutput("")
+        return
+      }
+
+      const { parts, header, payload } = decodeJwtParts(token)
+      const redacted = redactPayload(payload ?? {})
+      const newHeader = { ...header }
+
+      const headerSeg = utf8ToBase64Url(JSON.stringify(newHeader))
+      const payloadSeg = utf8ToBase64Url(JSON.stringify(redacted))
+      const scrambledToken = `${headerSeg}.${payloadSeg}.[redacted]`
+
+      const report = {
+        original: {
+          header,
+          payload,
+          tokenPreview: maskMiddle(token, 16, 16),
+          segments: parts.map((p) => maskMiddle(p, 12, 12)),
+        },
+        scrambled: {
+          token: scrambledToken,
+          header: newHeader,
+          payload: redacted,
+        },
+        notes: [
+          "This does not preserve the original signature (signature is replaced with [redacted]).",
+          "Use this output for sharing examples without leaking sensitive claims.",
+        ],
+      }
+
+      setOutput(JSON.stringify(report, null, 2))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

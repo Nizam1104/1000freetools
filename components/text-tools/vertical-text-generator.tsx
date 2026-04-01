@@ -17,8 +17,12 @@ export function VerticalTextGenerator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Vertical Text Generator logic
-      setOutput(input)
+      const lines = input.replace(/\r\n/g, "\n").split("\n")
+      const verticalized = lines
+        .map((line) => line.split("").join("\n"))
+        .join("\n\n")
+        .trimEnd()
+      setOutput(verticalized)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

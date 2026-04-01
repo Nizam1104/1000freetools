@@ -5,8 +5,60 @@ import { useState, useCallback } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+
+function base64UrlToUtf8(input: string) {
+  const b64 = input.replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(input.length / 4) * 4, "=")
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))
+  return new TextDecoder().decode(bytes)
+}
+
+function tryDecodeJwt(token: string) {
+  const parts = token.trim().split(".")
+  if (parts.length < 2) return null
+  try {
+    const header = JSON.parse(base64UrlToUtf8(parts[0]))
+    const payload = JSON.parse(base64UrlToUtf8(parts[1]))
+    return { header, payload, hasSignature: parts.length >= 3 }
+  } catch {
+    return null
+  }
+}
+
+function looksLikeJwt(value: string) {
+  const parts = value.trim().split(".")
+  return parts.length >= 2 && parts[0].length > 0 && parts[1].length > 0
+}
+
+function parseKeyValueLines(text: string) {
+  const out: Record<string, string> = {}
+  for (const rawLine of text.split(/\r?\n/)) {
+    const line = rawLine.trim()
+    if (!line) continue
+    const idx = line.indexOf("=")
+    if (idx === -1) continue
+    const k = line.slice(0, idx).trim()
+    const v = line.slice(idx + 1).trim()
+    if (k) out[k] = v
+  }
+  return out
+}
+
+function scanForJwtStrings(value: unknown, path: string, hits: Array<{ path: string; token: string }>) {
+  if (typeof value === "string") {
+    if (looksLikeJwt(value)) hits.push({ path, token: value.trim() })
+    return
+  }
+  if (Array.isArray(value)) {
+    value.forEach((v, i) => scanForJwtStrings(v, `${path}[${i}]`, hits))
+    return
+  }
+  if (value && typeof value === "object") {
+    for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
+      scanForJwtStrings(v, path ? `${path}.${k}` : k, hits)
+    }
+  }
+}
 
 export function JwtTokenStorageViewer() {
   const [input, setInput] = useState("")
@@ -17,8 +69,51 @@ export function JwtTokenStorageViewer() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement JWT Token Storage Viewer logic
-      setOutput(input)
+      const trimmed = input.trim()
+      if (!trimmed) {
+        setOutput("")
+        return
+      }
+
+      let parsed: unknown = null
+      try {
+        parsed = JSON.parse(trimmed)
+      } catch {
+        // If it isn't JSON, try cookie/localStorage exports (key=value per line)
+        parsed = parseKeyValueLines(trimmed)
+      }
+
+      const hits: Array<{ path: string; token: string }> = []
+      scanForJwtStrings(parsed, "", hits)
+
+      const decoded = hits
+        .map((h) => {
+          const d = tryDecodeJwt(h.token)
+          if (!d) return null
+          return { path: h.path || "(root)", token: h.token, ...d }
+        })
+        .filter(Boolean) as Array<{
+        path: string
+        token: string
+        header: unknown
+        payload: unknown
+        hasSignature: boolean
+      }>
+
+      const report = {
+        scannedType: Array.isArray(parsed) ? "array" : typeof parsed === "object" && parsed ? "object" : typeof parsed,
+        jwtCandidatesFound: hits.length,
+        jwtDecoded: decoded.length,
+        results: decoded.map((d) => ({
+          path: d.path,
+          hasSignature: d.hasSignature,
+          header: d.header,
+          payload: d.payload,
+          tokenPreview: d.token.length > 40 ? `${d.token.slice(0, 20)}…${d.token.slice(-20)}` : d.token,
+        })),
+      }
+
+      setOutput(JSON.stringify(report, null, 2))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

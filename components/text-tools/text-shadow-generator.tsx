@@ -5,8 +5,34 @@ import { useState, useCallback } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+
+function parseShadowLine(line: string) {
+  // Supports:
+  // - "x y blur color" (spaces)
+  // - "x,y,blur,color" (commas)
+  // - "x y color" (blur optional)
+  const clean = line.trim()
+  if (!clean) return null
+  const parts = clean.includes(",") ? clean.split(",").map((p) => p.trim()).filter(Boolean) : clean.split(/\s+/)
+  if (parts.length < 3) return null
+
+  const [xRaw, yRaw, third, fourth] = parts
+  const x = xRaw
+  const y = yRaw
+  let blur: string | null = null
+  let color: string
+
+  if (parts.length >= 4) {
+    blur = third
+    color = parts.slice(3).join(" ")
+  } else {
+    color = parts.slice(2).join(" ")
+  }
+
+  const seg = [x, y, blur, color].filter(Boolean).join(" ")
+  return seg
+}
 
 export function TextShadowGenerator() {
   const [input, setInput] = useState("")
@@ -17,8 +43,14 @@ export function TextShadowGenerator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Text Shadow Generator logic
-      setOutput(input)
+      const lines = input.split(/\r?\n/).map((l) => l.trim())
+      const shadows = lines.map(parseShadowLine).filter(Boolean) as string[]
+
+      if (shadows.length === 0) {
+        throw new Error('Add one shadow per line, e.g. "2px 2px 4px rgba(0,0,0,0.3)".')
+      }
+
+      setOutput(`text-shadow: ${shadows.join(", ")};`)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

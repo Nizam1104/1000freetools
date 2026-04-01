@@ -8,6 +8,20 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+const UUID_CHARS = "0123456789abcdef"
+const UUID_REGEX = /\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b/gi
+
+function shannonEntropy(freq: number[], total: number) {
+  if (total === 0) return 0
+  let h = 0
+  for (const c of freq) {
+    if (c === 0) continue
+    const p = c / total
+    h -= p * Math.log2(p)
+  }
+  return h
+}
+
 export function UuidEntropyChecker() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +31,31 @@ export function UuidEntropyChecker() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement UUID Entropy Checker logic
-      setOutput(input)
+      const uuids = Array.from(input.matchAll(UUID_REGEX)).map((m) => m[0].toLowerCase())
+      if (uuids.length === 0) throw new Error("No UUIDs found in input")
+
+      const unique = new Set(uuids)
+      const hexOnly = uuids.join("").replace(/-/g, "")
+      const freq = Array.from({ length: 16 }, () => 0)
+      for (const ch of hexOnly) {
+        const idx = UUID_CHARS.indexOf(ch)
+        if (idx >= 0) freq[idx]++
+      }
+      const entropy = shannonEntropy(freq, hexOnly.length)
+      const maxEntropy = Math.log2(16) // 4 bits per hex symbol
+
+      const report = [
+        `UUIDs found: ${uuids.length}`,
+        `Unique UUIDs: ${unique.size}`,
+        `Duplicates: ${uuids.length - unique.size}`,
+        "",
+        `Shannon entropy per hex char: ${entropy.toFixed(4)} bits (max ${maxEntropy.toFixed(4)})`,
+        "",
+        "Hex frequency:",
+        ...freq.map((c, i) => `${UUID_CHARS[i]}: ${c}`),
+      ].join("\n")
+
+      setOutput(report)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

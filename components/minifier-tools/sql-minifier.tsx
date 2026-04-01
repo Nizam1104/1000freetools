@@ -17,8 +17,20 @@ export function SqlMinifier() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement SQL Minifier logic
-      setOutput(input)
+      const withoutLineComments = input
+        .replace(/\r\n/g, "\n")
+        .replace(/--[^\n]*$/gm, "")
+        .replace(/#[^\n]*$/gm, "")
+      const withoutBlockComments = withoutLineComments.replace(/\/\*[\s\S]*?\*\//g, "")
+      const minified = withoutBlockComments
+        .split("\n")
+        .map((l) => l.trim())
+        .filter(Boolean)
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .replace(/\s*([(),;=<>+\-*/])\s*/g, "$1")
+        .trim()
+      setOutput(minified)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

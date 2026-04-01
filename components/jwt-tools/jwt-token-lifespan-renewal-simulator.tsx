@@ -5,8 +5,27 @@ import { useState, useCallback } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+
+function base64UrlToUtf8(input: string) {
+  const b64 = input.replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(input.length / 4) * 4, "=")
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))
+  return new TextDecoder().decode(bytes)
+}
+
+function decodeJwt(token: string) {
+  const parts = token.trim().split(".")
+  if (parts.length < 2) throw new Error("Expected a JWT with at least header.payload")
+  const header = JSON.parse(base64UrlToUtf8(parts[0]))
+  const payload = JSON.parse(base64UrlToUtf8(parts[1]))
+  return { header, payload, hasSignature: parts.length >= 3 }
+}
+
+function toIsoIfSeconds(value: unknown) {
+  if (typeof value !== "number" || !Number.isFinite(value)) return null
+  // JWT times are NumericDate: seconds since epoch
+  return new Date(value * 1000).toISOString()
+}
 
 export function JwtTokenLifespanRenewalSimulator() {
   const [input, setInput] = useState("")
@@ -17,8 +36,54 @@ export function JwtTokenLifespanRenewalSimulator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement JWT Token Lifespan Simulator logic
-      setOutput(input)
+      const token = input.trim()
+      if (!token) {
+        setOutput("")
+        return
+      }
+
+      const { header, payload, hasSignature } = decodeJwt(token)
+      const nowMs = Date.now()
+      const nowSec = Math.floor(nowMs / 1000)
+
+      const exp = (payload as any)?.exp
+      const iat = (payload as any)?.iat
+      const nbf = (payload as any)?.nbf
+
+      const secondsUntilExp = typeof exp === "number" ? exp - nowSec : null
+      const secondsSinceIat = typeof iat === "number" ? nowSec - iat : null
+      const secondsUntilNbf = typeof nbf === "number" ? nbf - nowSec : null
+
+      const recommendedRefreshSkewSec = 60
+      const recommendedRefreshAt =
+        typeof exp === "number" ? Math.max((exp as number) - recommendedRefreshSkewSec, nowSec) : null
+
+      const report = {
+        now: { epochSeconds: nowSec, iso: new Date(nowMs).toISOString() },
+        hasSignature,
+        header,
+        claims: {
+          iat: { value: iat ?? null, iso: toIsoIfSeconds(iat) },
+          nbf: { value: nbf ?? null, iso: toIsoIfSeconds(nbf) },
+          exp: { value: exp ?? null, iso: toIsoIfSeconds(exp) },
+        },
+        derived: {
+          secondsSinceIat,
+          secondsUntilNbf,
+          secondsUntilExp,
+          isNotYetValid: typeof secondsUntilNbf === "number" ? secondsUntilNbf > 0 : null,
+          isExpired: typeof secondsUntilExp === "number" ? secondsUntilExp <= 0 : null,
+          recommendedRefresh: recommendedRefreshAt
+            ? { epochSeconds: recommendedRefreshAt, iso: new Date(recommendedRefreshAt * 1000).toISOString() }
+            : null,
+        },
+        notes: [
+          "This tool decodes JWT claims without verifying the signature.",
+          "JWT time claims (iat/nbf/exp) are interpreted as seconds since UNIX epoch.",
+        ],
+      }
+
+      setOutput(JSON.stringify(report, null, 2))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

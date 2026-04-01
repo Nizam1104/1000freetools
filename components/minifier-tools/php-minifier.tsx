@@ -17,8 +17,18 @@ export function PhpMinifier() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement PHP Minifier logic
-      setOutput(input)
+      const normalized = input.replace(/\r\n/g, "\n")
+      const withoutBlockComments = normalized.replace(/\/\*[\s\S]*?\*\//g, "")
+      const withoutLineComments = withoutBlockComments.replace(/(^|[^:])\/\/[^\n]*$/gm, "$1").replace(/#[^\n]*$/gm, "")
+      const minified = withoutLineComments
+        .split("\n")
+        .map((l) => l.trim())
+        .filter(Boolean)
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .replace(/\s*([{}();,=<>+\-*/])\s*/g, "$1")
+        .trim()
+      setOutput(minified)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

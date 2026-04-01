@@ -17,8 +17,13 @@ export function OfflineUuidGenerator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Offline UUID Generator logic
-      setOutput(input)
+      const raw = input.trim()
+      const count = raw ? Number.parseInt(raw, 10) : 1
+      if (!Number.isFinite(count) || count <= 0 || count > 50000) {
+        throw new Error("Enter a number between 1 and 50000")
+      }
+      const uuids = Array.from({ length: count }, () => crypto.randomUUID())
+      setOutput(uuids.join("\n"))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

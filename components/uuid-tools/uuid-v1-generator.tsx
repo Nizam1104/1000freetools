@@ -8,6 +8,46 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+const UUID_EPOCH_MS = Date.UTC(1582, 9, 15)
+
+function hex(num: number, len: number) {
+  return num.toString(16).padStart(len, "0")
+}
+
+function randomInt(maxExclusive: number) {
+  const buf = new Uint32Array(1)
+  crypto.getRandomValues(buf)
+  return buf[0] % maxExclusive
+}
+
+function randomBytes(len: number): Uint8Array {
+  const bytes = new Uint8Array(len)
+  crypto.getRandomValues(bytes)
+  return bytes
+}
+
+function generateUuidV1(): string {
+  const nowMs = Date.now()
+  const timestamp100ns = BigInt(nowMs - UUID_EPOCH_MS) * 10000n + BigInt(randomInt(10000))
+
+  const timeLow = Number(timestamp100ns & 0xffffffffn)
+  const timeMid = Number((timestamp100ns >> 32n) & 0xffffn)
+  const timeHi = Number((timestamp100ns >> 48n) & 0x0fffn)
+  const timeHiAndVersion = timeHi | 0x1000
+
+  const clockSeq = randomInt(1 << 14)
+  const clockSeqHiAndReserved = ((clockSeq >> 8) & 0x3f) | 0x80
+  const clockSeqLow = clockSeq & 0xff
+
+  const node = randomBytes(6)
+  node[0] |= 0x01 // set multicast bit (random node id)
+
+  return `${hex(timeLow, 8)}-${hex(timeMid, 4)}-${hex(timeHiAndVersion, 4)}-${hex(
+    clockSeqHiAndReserved,
+    2,
+  )}${hex(clockSeqLow, 2)}-${Array.from(node, (b) => hex(b, 2)).join("")}`
+}
+
 export function UuidV1Generator() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +57,13 @@ export function UuidV1Generator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement UUID v1 Generator logic
-      setOutput(input)
+      const raw = input.trim()
+      const count = raw ? Number.parseInt(raw, 10) : 1
+      if (!Number.isFinite(count) || count <= 0 || count > 5000) {
+        throw new Error("Enter a number between 1 and 5000")
+      }
+      const uuids = Array.from({ length: count }, () => generateUuidV1())
+      setOutput(uuids.join("\n"))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

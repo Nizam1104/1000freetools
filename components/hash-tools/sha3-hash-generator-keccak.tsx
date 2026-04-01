@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+import SHA3 from "crypto-js/sha3"
 
 export function Sha3HashGeneratorKeccak() {
   const [input, setInput] = useState("")
@@ -17,8 +18,12 @@ export function Sha3HashGeneratorKeccak() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement SHA-3/Keccak Hash Generator logic
-      setOutput(input)
+      // crypto-js uses Keccak under the SHA3 helper.
+      // Default output length is 512 bits; surface common sizes.
+      const msg = input
+      const sha3_256 = SHA3(msg, { outputLength: 256 }).toString()
+      const sha3_512 = SHA3(msg, { outputLength: 512 }).toString()
+      setOutput(`SHA3-256: ${sha3_256}\nSHA3-512: ${sha3_512}`)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

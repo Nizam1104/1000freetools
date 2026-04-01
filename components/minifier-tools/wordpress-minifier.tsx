@@ -17,8 +17,24 @@ export function WordpressMinifier() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement WordPress Minifier logic
-      setOutput(input)
+      const normalized = input.replace(/\r\n/g, "\n")
+
+      // Best-effort minifier for mixed WordPress snippets (HTML/CSS/JS/PHP).
+      // It avoids deep parsing (unsafe) and focuses on whitespace & comment trimming.
+      const withoutHtmlComments = normalized.replace(/<!--[\s\S]*?-->/g, "")
+      const withoutBlockComments = withoutHtmlComments.replace(/\/\*[\s\S]*?\*\//g, "")
+      const withoutLineComments = withoutBlockComments.replace(/(^|[^:])\/\/[^\n]*$/gm, "$1")
+
+      const minified = withoutLineComments
+        .split("\n")
+        .map((l) => l.trim())
+        .filter(Boolean)
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .replace(/>\s+</g, "><")
+        .trim()
+
+      setOutput(minified)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

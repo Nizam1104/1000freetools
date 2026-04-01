@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+import RIPEMD160 from "crypto-js/ripemd160"
 
 export function Ripemd160HashGenerator() {
   const [input, setInput] = useState("")
@@ -17,8 +18,8 @@ export function Ripemd160HashGenerator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement RIPEMD-160 Hash Generator logic
-      setOutput(input)
+      const hash = RIPEMD160(input).toString()
+      setOutput(hash)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

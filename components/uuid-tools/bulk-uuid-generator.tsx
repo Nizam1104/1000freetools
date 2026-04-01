@@ -17,8 +17,13 @@ export function BulkUuidGenerator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Bulk UUID Generator logic
-      setOutput(input)
+      const cfg = input.trim()
+      const count = cfg ? Number.parseInt(cfg, 10) : 1
+      if (!Number.isFinite(count) || count <= 0 || count > 100000) {
+        throw new Error("Enter a number between 1 and 100000")
+      }
+      const uuids = Array.from({ length: count }, () => crypto.randomUUID())
+      setOutput(uuids.join("\n"))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

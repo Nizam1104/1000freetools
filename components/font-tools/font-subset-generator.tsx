@@ -5,8 +5,28 @@ import { useState, useCallback } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
+
+function toHex4(n: number) {
+  return n.toString(16).toUpperCase().padStart(4, "0")
+}
+
+function toUnicodeRange(codePoints: number[]) {
+  const uniqSorted = Array.from(new Set(codePoints)).sort((a, b) => a - b)
+  const ranges: Array<[number, number]> = []
+  for (const cp of uniqSorted) {
+    const last = ranges[ranges.length - 1]
+    if (!last) ranges.push([cp, cp])
+    else if (cp === last[1] + 1) last[1] = cp
+    else ranges.push([cp, cp])
+  }
+
+  return ranges
+    .map(([start, end]) =>
+      start === end ? `U+${toHex4(start)}` : `U+${toHex4(start)}-${toHex4(end)}`
+    )
+    .join(", ")
+}
 
 export function FontSubsetGenerator() {
   const [input, setInput] = useState("")
@@ -17,8 +37,39 @@ export function FontSubsetGenerator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Font Subset Generator logic
-      setOutput(input)
+      const chars = Array.from(input)
+      if (chars.length === 0) {
+        setOutput("")
+        return
+      }
+
+      const seen = new Set<string>()
+      const uniqueChars: string[] = []
+      const codePoints: number[] = []
+
+      for (const ch of chars) {
+        if (seen.has(ch)) continue
+        seen.add(ch)
+        uniqueChars.push(ch)
+        codePoints.push(ch.codePointAt(0) ?? 0)
+      }
+
+      const subsetString = uniqueChars.join("")
+      const unicodeRange = toUnicodeRange(codePoints)
+      const codePointList = Array.from(new Set(codePoints))
+        .sort((a, b) => a - b)
+        .map((cp) => `U+${toHex4(cp)}`)
+        .join(" ")
+
+      setOutput(
+        [
+          subsetString,
+          "",
+          `Unique characters: ${uniqueChars.length}`,
+          `Code points: ${codePointList}`,
+          `CSS unicode-range: ${unicodeRange}`,
+        ].join("\n")
+      )
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

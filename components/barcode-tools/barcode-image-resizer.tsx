@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Slider } from "@/components/ui/slider"
 import { Copy, Check, Trash2, Download, Upload, Image as ImageIcon, Settings2, Info } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 interface ImageInfo {
   originalWidth: number
@@ -25,7 +24,7 @@ export default function BarcodeImageResizer() {
   const [isProcessing, setIsProcessing] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
   const [copied, setCopied] = useState<string | null>(null)
-  
+
   // Resize settings
   const [resizeMode, setResizeMode] = useState<"pixels" | "inches" | "mm" | "percent">("pixels")
   const [targetWidth, setTargetWidth] = useState<string>("")

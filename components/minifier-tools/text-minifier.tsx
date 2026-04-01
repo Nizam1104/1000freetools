@@ -17,8 +17,15 @@ export function TextMinifier() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Text Minifier logic
-      setOutput(input)
+      const minified = input
+        .replace(/\r\n/g, "\n")
+        .split("\n")
+        .map((l) => l.trim())
+        .filter((l) => l.length > 0)
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .trim()
+      setOutput(minified)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

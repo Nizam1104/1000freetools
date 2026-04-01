@@ -8,6 +8,21 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+function parseKeyValueLines(text: string): Record<string, string> {
+  const out: Record<string, string> = {}
+  const lines = text.replace(/\r\n/g, "\n").split("\n")
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed || trimmed.startsWith("#")) continue
+    const idx = trimmed.indexOf(":")
+    if (idx === -1) continue
+    const k = trimmed.slice(0, idx).trim()
+    const v = trimmed.slice(idx + 1).trim()
+    if (k) out[k] = v
+  }
+  return out
+}
+
 export function CronExpressionKubernetesCronjobs() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +32,40 @@ export function CronExpressionKubernetesCronjobs() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Kubernetes CronJob Generator logic
-      setOutput(input)
+      const cfg = parseKeyValueLines(input)
+      const schedule = cfg.schedule || input.trim().split(/\s+/).slice(0, 5).join(" ")
+      if (!schedule || schedule.split(/\s+/).length < 5) {
+        throw new Error('Provide at least a 5-field cron schedule. Example: schedule: "*/5 * * * *"')
+      }
+
+      const name = cfg.name || "example-cronjob"
+      const image = cfg.image || "busybox:1.36"
+      const command = cfg.command || "echo hello from cronjob"
+      const restartPolicy = cfg.restartPolicy || "OnFailure"
+
+      const yaml = `apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ${name}
+spec:
+  schedule: "${schedule}"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: ${restartPolicy}
+          containers:
+            - name: ${name}
+              image: ${image}
+              command:
+                - /bin/sh
+                - -lc
+                - ${JSON.stringify(command)}
+`
+      setOutput(yaml)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

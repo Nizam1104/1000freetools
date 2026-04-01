@@ -17,8 +17,14 @@ export function SvgMinifier() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement SVG Minifier logic
-      setOutput(input)
+      const minified = input
+        .replace(/\r\n/g, "\n")
+        .replace(/<!--[\s\S]*?-->/g, "")
+        .replace(/>\s+</g, "><")
+        .replace(/\s{2,}/g, " ")
+        .replace(/\s+(?=[/>])/g, "")
+        .trim()
+      setOutput(minified)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

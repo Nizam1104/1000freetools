@@ -8,6 +8,73 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+function parseBasicYaml(yaml: string): Record<string, unknown> {
+  const result: Record<string, unknown> = {}
+  const lines = yaml.replace(/\r\n/g, "\n").split("\n")
+  const stack: { obj: Record<string, unknown>; indent: number }[] = [{ obj: result, indent: -1 }]
+
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed || trimmed.startsWith("#")) continue
+
+    const indent = line.search(/\S/)
+    const match = trimmed.match(/^([^\s:#]+)\s*:\s*(.*)$/)
+    if (!match) continue
+
+    const [, key, rawValue] = match
+
+    while (stack.length > 1 && stack[stack.length - 1].indent >= indent) {
+      stack.pop()
+    }
+
+    const current = stack[stack.length - 1].obj
+
+    const value = rawValue.trim()
+    if (value === "" || value === "{}") {
+      current[key] = {}
+      stack.push({ obj: current[key] as Record<string, unknown>, indent })
+      continue
+    }
+
+    let parsed: unknown = value
+    if (value === "true") parsed = true
+    else if (value === "false") parsed = false
+    else if (value === "null" || value === "~") parsed = null
+    else if (/^-?\d+$/.test(value)) parsed = Number.parseInt(value, 10)
+    else if (/^-?\d*\.\d+$/.test(value)) parsed = Number.parseFloat(value)
+    else if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      parsed = value.slice(1, -1)
+    }
+
+    current[key] = parsed
+  }
+
+  return result
+}
+
+function flattenToProperties(
+  value: unknown,
+  parentKey = "",
+  out: Record<string, string> = {},
+): Record<string, string> {
+  if (Array.isArray(value)) {
+    value.forEach((v, idx) => flattenToProperties(v, parentKey ? `${parentKey}[${idx}]` : `[${idx}]`, out))
+    return out
+  }
+  if (typeof value === "object" && value !== null) {
+    for (const [k, v] of Object.entries(value)) {
+      const nextKey = parentKey ? `${parentKey}.${k}` : k
+      flattenToProperties(v, nextKey, out)
+    }
+    return out
+  }
+  if (parentKey) out[parentKey] = String(value ?? "")
+  return out
+}
+
 export function YamlToPropertiesConverter() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +84,13 @@ export function YamlToPropertiesConverter() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement YAML to Properties Converter logic
-      setOutput(input)
+      const parsed = parseBasicYaml(input)
+      const flattened = flattenToProperties(parsed)
+      const properties = Object.entries(flattened)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([k, v]) => `${k}=${v}`)
+        .join("\n")
+      setOutput(properties)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

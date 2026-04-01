@@ -12,35 +12,35 @@ import { cn } from "@/lib/utils"
 function decodeBarcodeFromImageData(imageData: ImageData): string | null {
   // This is a simplified decoder - in production you would use a proper library
   // For demo purposes, we'll return a mock result based on image analysis
-  
+
   const { data, width, height } = imageData
-  
+
   // Calculate average brightness and patterns
   let totalBrightness = 0
   let darkRegions = 0
   let lightRegions = 0
-  
+
   for (let i = 0; i < data.length; i += 4) {
     const brightness = (data[i] + data[i + 1] + data[i + 2]) / 3
     totalBrightness += brightness
-    
+
     if (brightness < 128) {
       darkRegions++
     } else {
       lightRegions++
     }
   }
-  
+
   const avgBrightness = totalBrightness / (data.length / 4)
   const darkRatio = darkRegions / (darkRegions + lightRegions)
-  
+
   // Mock decoding based on image characteristics
   // In production, this would use actual barcode detection algorithms
   if (darkRatio > 0.3 && darkRatio < 0.7) {
     // Could be a valid barcode/QR code
     return `DECODED_${Math.floor(avgBrightness)}_${Math.floor(darkRatio * 100)}`
   }
-  
+
   return null
 }
 
@@ -82,10 +82,10 @@ export default function BarcodeScanner() {
 
         ctx.drawImage(img, 0, 0)
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-        
+
         // Try to decode
         const decoded = decodeBarcodeFromImageData(imageData)
-        
+
         if (decoded) {
           // For demo, generate a realistic-looking result
           const mockResults = [
@@ -151,9 +151,9 @@ export default function BarcodeScanner() {
 
     ctx.drawImage(video, 0, 0)
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-    
+
     const decoded = decodeBarcodeFromImageData(imageData)
-    
+
     if (decoded) {
       const mockResults = [
         "https://example.com/product/67890",
@@ -186,10 +186,10 @@ export default function BarcodeScanner() {
 
   const detectedType = scannedData ? (
     scannedData.startsWith('http') ? 'URL' :
-    scannedData.startsWith('WIFI:') ? 'WiFi' :
-    scannedData.startsWith('CONTACT:') ? 'vCard' :
-    /^\d{12,13}$/.test(scannedData) ? 'EAN/UPC' :
-    scannedData.length < 20 ? 'Code' : 'Text'
+      scannedData.startsWith('WIFI:') ? 'WiFi' :
+        scannedData.startsWith('CONTACT:') ? 'vCard' :
+          /^\d{12,13}$/.test(scannedData) ? 'EAN/UPC' :
+            scannedData.length < 20 ? 'Code' : 'Text'
   ) : null
 
   return (
@@ -205,7 +205,7 @@ export default function BarcodeScanner() {
             <Camera className="size-6" />
             <span>{isScanning ? "Capture Frame" : "Use Camera"}</span>
           </Button>
-          
+
           <Button
             variant="outline"
             onClick={() => fileInputRef.current?.click()}
@@ -362,7 +362,7 @@ export default function BarcodeScanner() {
               </div>
             </div>
             <p className="text-xs text-muted-foreground mt-2">
-              Note: For best results, ensure good lighting and hold the camera steady. 
+              Note: For best results, ensure good lighting and hold the camera steady.
               The barcode should be clearly visible and not blurred.
             </p>
           </div>

@@ -17,8 +17,15 @@ export function TextToAsciiArtGenerator() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Text to ASCII Art Generator logic
-      setOutput(input)
+      const lines = input.replace(/\r\n/g, "\n").split("\n")
+      const width = Math.max(...lines.map((l) => l.length), 0)
+      const top = `+${"-".repeat(width + 2)}+`
+      const boxed = [
+        top,
+        ...lines.map((l) => `| ${l.padEnd(width, " ")} |`),
+        top,
+      ].join("\n")
+      setOutput(boxed)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

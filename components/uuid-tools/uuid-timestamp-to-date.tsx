@@ -8,6 +8,26 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+const UUID_REGEX = /\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b/gi
+const UUID_V1_VERSION_MASK = 0x1000
+const UUID_V1_VERSION_VALUE = 0x1000
+const UUID_EPOCH_MS = Date.UTC(1582, 9, 15) // 1582-10-15
+
+function uuidV1ToDate(uuid: string): Date {
+  const hex = uuid.toLowerCase()
+  const timeLow = Number.parseInt(hex.slice(0, 8), 16)
+  const timeMid = Number.parseInt(hex.slice(9, 13), 16)
+  const timeHiAndVersion = Number.parseInt(hex.slice(14, 18), 16)
+  if ((timeHiAndVersion & 0xf000) !== 0x1000) {
+    throw new Error("Not a UUID v1 (timestamp-based) value")
+  }
+
+  const timeHi = timeHiAndVersion & 0x0fff
+  const timestamp100ns = (BigInt(timeHi) << 48n) | (BigInt(timeMid) << 32n) | BigInt(timeLow)
+  const msSinceUuidEpoch = Number(timestamp100ns / 10000n) // 100ns -> ms
+  return new Date(UUID_EPOCH_MS + msSinceUuidEpoch)
+}
+
 export function UuidTimestampToDate() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
@@ -17,8 +37,22 @@ export function UuidTimestampToDate() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement UUID Timestamp to Date logic
-      setOutput(input)
+      const matches = Array.from(input.matchAll(UUID_REGEX)).map((m) => m[0])
+      if (matches.length === 0) {
+        throw new Error("No UUIDs found in input")
+      }
+
+      const rows = matches.map((uuid) => {
+        try {
+          const date = uuidV1ToDate(uuid)
+          return `${uuid}  ->  ${date.toISOString()}`
+        } catch (e) {
+          const msg = e instanceof Error ? e.message : "Unknown error"
+          return `${uuid}  ->  ${msg}`
+        }
+      })
+
+      setOutput(rows.join("\n"))
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")

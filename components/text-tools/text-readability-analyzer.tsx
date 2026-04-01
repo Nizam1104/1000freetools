@@ -8,22 +8,80 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Copy, Check, Trash2, Download } from "lucide-react"
 
+function countSyllables(word: string) {
+  const w = word.toLowerCase().replace(/[^a-z]/g, "")
+  if (!w) return 0
+  if (w.length <= 3) return 1
+  const withoutSilentE = w.replace(/e$/i, "")
+  const groups = withoutSilentE.match(/[aeiouy]+/g)
+  const count = groups ? groups.length : 1
+  return Math.max(1, count)
+}
+
+function analyzeReadability(text: string) {
+  const cleaned = text.trim()
+  const chars = cleaned.length
+  const letters = (cleaned.match(/[A-Za-z]/g) ?? []).length
+  const words = (cleaned.match(/\b[\p{L}\p{N}']+\b/gu) ?? []).length
+  const sentences = (cleaned.match(/[.!?]+/g) ?? []).length || (cleaned ? 1 : 0)
+  const wordList = cleaned.match(/\b[\p{L}']+\b/gu) ?? []
+  const syllables = wordList.reduce((sum, w) => sum + countSyllables(w), 0)
+
+  const wps = words ? words / sentences : 0
+  const spw = words ? syllables / words : 0
+
+  // Flesch Reading Ease
+  const flesch = words ? 206.835 - 1.015 * wps - 84.6 * spw : 0
+  // Flesch–Kincaid Grade
+  const fkGrade = words ? 0.39 * wps + 11.8 * spw - 15.59 : 0
+  // Coleman–Liau (approx using letters/words, sentences/words)
+  const L = words ? (letters / words) * 100 : 0
+  const S = words ? (sentences / words) * 100 : 0
+  const colemanLiau = words ? 0.0588 * L - 0.296 * S - 15.8 : 0
+
+  return {
+    characters: chars,
+    letters,
+    words,
+    sentences,
+    syllables,
+    fleschReadingEase: Number.isFinite(flesch) ? Number(flesch.toFixed(2)) : 0,
+    fleschKincaidGrade: Number.isFinite(fkGrade) ? Number(fkGrade.toFixed(2)) : 0,
+    colemanLiauIndex: Number.isFinite(colemanLiau) ? Number(colemanLiau.toFixed(2)) : 0,
+  }
+}
+
 export function TextReadabilityAnalyzer() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("")
   const [copied, setCopied] = useState(false)
   const [error, setError] = useState("")
+  const [format, setFormat] = useState<"pretty" | "json">("pretty")
 
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement Text Readability Analyzer logic
-      setOutput(input)
+      const stats = analyzeReadability(input)
+      if (format === "json") {
+        setOutput(JSON.stringify(stats, null, 2))
+      } else {
+        const lines = [
+          `Words: ${stats.words}`,
+          `Sentences: ${stats.sentences}`,
+          `Characters: ${stats.characters}`,
+          `Syllables (approx): ${stats.syllables}`,
+          "",
+          `Flesch Reading Ease: ${stats.fleschReadingEase}`,
+          `Flesch–Kincaid Grade: ${stats.fleschKincaidGrade}`,
+          `Coleman–Liau Index: ${stats.colemanLiauIndex}`,
+        ]
+        setOutput(lines.join("\n"))
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")
     }
-  }, [input])
+  }, [input, format])
 
   const handleCopy = useCallback(async () => {
     if (output) {
@@ -73,11 +131,27 @@ export function TextReadabilityAnalyzer() {
       <div className="grid gap-6 md:grid-cols-2">
         <div className="space-y-4">
           <Label htmlFor="input">Input</Label>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="format" className="text-xs text-muted-foreground">
+                Output format
+              </Label>
+              <select
+                id="format"
+                value={format}
+                onChange={(e) => setFormat(e.target.value as "pretty" | "json")}
+                className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm"
+              >
+                <option value="pretty">Readable</option>
+                <option value="json">JSON</option>
+              </select>
+            </div>
+          </div>
           <Textarea
             id="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter your data here..."
+            placeholder="Paste text to analyze..."
             className="min-h-[400px] font-mono text-sm"
           />
           <div className="flex items-center gap-2">

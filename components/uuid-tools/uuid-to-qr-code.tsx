@@ -17,8 +17,15 @@ export function UuidToQrCode() {
   const handleConvert = useCallback(() => {
     try {
       setError("")
-      // TODO: Implement UUID to QR Code logic
-      setOutput(input)
+      const uuid = input.trim()
+      if (!uuid) throw new Error("Enter a UUID")
+      const isUuid =
+        /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(uuid)
+      if (!isUuid) throw new Error("Input does not look like a UUID")
+
+      // Output a QR image URL (easy to open/share/download).
+      const url = `https://quickchart.io/qr?text=${encodeURIComponent(uuid)}&size=300`
+      setOutput(url)
     } catch (e) {
       setError(e instanceof Error ? e.message : "Conversion error")
       setOutput("")
