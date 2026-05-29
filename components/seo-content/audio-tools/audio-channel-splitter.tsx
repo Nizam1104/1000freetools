@@ -2,118 +2,84 @@ export default function AudioChannelSplitterSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Splitting Stereo Audio into Separate Channel Files</h2>
-        <div className="prose prose-slate dark:prose-invert">
-          <p>
-            This channel splitter extracts each channel from a stereo audio file into separate mono 
-            files. Upload a stereo file, and the tool creates individual files for left, right, 
-            center, LFE, and surround channels (up to 6 channels total).
-          </p>
-          <p>
-            Each channel becomes its own mono WebM file. This is useful for isolating specific 
-            channel content, analyzing channel differences, or preparing stems for remixing.
-          </p>
-        </div>
+        <h2 className="text-2xl font-semibold mb-4">Getting individual channels out of a stereo or surround file</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Drop a stereo file and you get two downloads: left and right, each as a separate mono WebM file. If your file has more channels (up to 5.1 surround), you get up to six: left, right, center, LFE, left surround, right surround.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          This is different from the channel remover. The remover silences a channel but keeps the stereo wrapper. This tool tears the channels apart and hands you each one as its own file. No wrapper, no silent side. Just the raw signal from that channel.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          The output is WebM with Opus encoding. Not MP3. Opus is more efficient at low bitrates and handles mono particularly well. If you need MP3, run the result through another converter.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Practical Applications</h2>
-        <ul className="space-y-3">
-          <li>
-            <strong>Musicians</strong> who have a stereo mix and want to isolate instruments panned 
-            to one side. They extract channels to access specific elements.
-          </li>
-          <li>
-            <strong>Recording handlers</strong> who have a recording where one channel has noise or 
-            issues. They extract the clean channel for use.
-          </li>
-          <li>
-            <strong>Audio engineers</strong> who analyze channel content to check stereo imaging or 
-            phase relationships.
-          </li>
-          <li>
-            <strong>Remixers</strong> who extract individual channels as starting points for a remix 
-            project.
-          </li>
-          <li>
-            <strong>Surround sound handlers</strong> who have a multi-channel surround file and need 
-            to isolate specific channels for a project.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">What you can actually do with split channels</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          A recording engineer has a stereo drum overhead recording where the hi-hat bleeds more into the left channel. By splitting and inspecting each channel separately in a DAW, they can see the imbalance and decide whether to EQ only the left side or re-record. The split gives them isolated control without affecting the whole mix.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Someone digitizing old vinyl finds a pressing where the surface noise is worse on the right channel (maybe the stylus wore unevenly). They split the stereo rip, clean up the right channel with noise reduction, and recombine. Much better than applying the same noise reduction to both sides and dulling the clean left channel.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          A music student analyzing a recording wants to hear what the guitar is doing in the right channel without the bass and drums from the left bleeding through. Splitting lets them solo that channel and study the performance.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          Someone with a 5.1 surround file needs just the dialog, which usually lives in the center channel. Split, grab center, done. The other five channels get discarded.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
-        <ul className="space-y-3">
-          <li>
-            The output is WebM/Opus format for each channel. If you need MP3 or other formats, 
-            convert after extraction.
-          </li>
-          <li>
-            Standard stereo files have 2 channels (left and right). Multi-channel files (5.1 surround) 
-            have 6 channels.
-          </li>
-          <li>
-            Extracting channels doesn't isolate individual instruments perfectly. Instruments panned 
-            center appear in both left and right channels.
-          </li>
-          <li>
-            The tool processes up to 6 channels. Files with more channels (7.1, Atmos) will only 
-            extract the first 6.
-          </li>
-          <li>
-            Each channel file is mono. For stereo playback, you'd need to merge channels or use a 
-            player that handles mono files.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">Limits and gotchas</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Splitting channels does not isolate instruments. If the guitar is panned center, it's in both left and right channels. If the vocal is slightly right of center, it's in both but louder on the right. Channel splitting gives you spatial separation, not stem separation. Different thing.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          The tool handles up to 6 channels. If you have a 7.1 or Atmos file, channels 7 and beyond get ignored. There's no warning, it just slices what it can reach.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Each output is mono. This trips people up: they split a stereo file, play the left channel, and hear audio from one speaker only. That's correct. Mono means one channel. To hear it on both speakers, you'd merge it to stereo using the mono-to-stereo converter, or just play it in software that routes mono to both outputs (most modern players do this).
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          The tool gives you all channels at once. You can't extract just one. Download the ones you want and ignore the rest.
+        </p>
       </section>
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">FAQ</h2>
-        <dl className="space-y-6">
+        <div className="space-y-6">
           <div>
-            <dt className="font-semibold mb-2">What channels will I get from a stereo file?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Left and right channels as separate mono files. Each contains only what was in that 
-              channel of the original stereo file.
-            </dd>
+            <h3 className="font-semibold mb-2">What will I actually get from a normal stereo file?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Two mono WebM files: one labeled left, one labeled right. If your stereo file has instruments panned center (like most vocals and bass), those will appear in both output files. If something is hard-panned to one side, it appears only in that channel's file.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I extract center or surround from stereo?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              No—stereo files only have left and right channels. Center and surround channels exist 
-              only in multi-channel (5.1, 7.1) files.
-            </dd>
+            <h3 className="font-semibold mb-2">Why WebM and not MP3?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              The tool uses the browser's built-in audio processing, and WebM/Opus is what the MediaRecorder API outputs. Opus handles mono well and the file sizes are small. If MP3 is non-negotiable, split first, then convert.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">What format are the output files?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              WebM/Opus format. For MP3 or other formats, use the audio format converter after 
-              extraction.
-            </dd>
+            <h3 className="font-semibold mb-2">Can I split and then recombine later?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Yes. Split the file, do your edits on individual channels, then use an audio editor (or a merge tool that handles channel mapping) to rebuild the stereo or surround file. Just make sure your editing software preserves the channel assignments.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Will instruments be isolated?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Not perfectly. Instruments panned hard left or right will be isolated. Center-panned 
-              instruments (vocals, bass, kick) appear in both channels.
-            </dd>
+            <h3 className="font-semibold mb-2">What happens with mono source files?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              You get one output. Mono files have one channel, so there's nothing to split. The tool won't create phantom channels.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I extract just one channel?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              The tool extracts all channels. You can download only the ones you need and ignore 
-              the rest.
-            </dd>
+            <h3 className="font-semibold mb-2">Does this work on files from video?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Only if you extract the audio from the video first. The splitter takes audio files, not video containers. Combine this with the audio track extractor if your source is a video.
+            </p>
           </div>
-          <div>
-            <dt className="font-semibold mb-2">How do I use the extracted channels?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Import them into audio editing software, use them for analysis, or process them 
-              individually before recombining.
-            </dd>
-          </div>
-        </dl>
+        </div>
       </section>
     </article>
   );

@@ -10,6 +10,7 @@ import {
   Conversion,
   ALL_FORMATS,
 } from "mediabunny";
+import { ensureMp3EncoderRegistered } from "@/lib/media-bunny-utils/ensureMp3Encoder";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -37,6 +38,7 @@ export default function AudioLoudnessMeter() {
     setIsAnalyzing(true);
 
     try {
+      await ensureMp3EncoderRegistered();
       const input = new Input({
         source: new BlobSource(file),
         formats: ALL_FORMATS,

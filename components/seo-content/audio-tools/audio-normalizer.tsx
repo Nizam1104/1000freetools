@@ -2,7 +2,7 @@ export default function AudioNormalizerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Normalizing Audio to Target Loudness Levels</h2>
+        <h2 className="text-2xl font-semibold mb-4">Normalize audio to a target level</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This audio normalizer analyzes your file's peak amplitude and applies gain to reach a 
@@ -11,43 +11,43 @@ export default function AudioNormalizerSEO() {
           </p>
           <p>
             The tool scans every sample across all channels to find the true peak, then calculates 
-            exactly how much gain is needed to bring that peak to your target. Unlike simple volume 
-            adjustment, normalization is automatic—you don't need to guess how much gain to apply.
+             exactly how much gain is needed to bring that peak to your target. Unlike simple volume 
+            adjustment, normalization is automatic. You don't need to guess how much gain to apply.
           </p>
         </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Actually Uses Normalization</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who uses normalization</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who have episodes recorded at different levels because they 
+            Podcasters who have episodes recorded at different levels because they 
             used different microphones. They normalize everything to -3 dB for consistent playback volume.
           </li>
           <li>
-            <strong>Voice memo recorders</strong> who captured quiet audio and need it louder without 
+            Voice memo recorders who captured quiet audio and need it louder without 
             manually figuring out gain. Normalization finds the right boost automatically.
           </li>
           <li>
-            <strong>Musicians</strong> who have demo recordings with inconsistent levels. They normalize 
+            Musicians who have demo recordings with inconsistent levels. They normalize 
             each track before sending to a mixing engineer.
           </li>
           <li>
-            <strong>Content creators</strong> who compile audio from multiple sources—phone recordings, 
+            Content creators who compile audio from multiple sources, phone recordings, 
             USB mic, Zoom recorder. Normalization brings them all to a common baseline.
           </li>
           <li>
-            <strong>Platform submitters</strong> preparing audio for platforms with specific loudness 
+            Platform submitters preparing audio for platforms with specific loudness 
             requirements. They normalize to the platform's recommended level.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
-            Normalization doesn't change dynamics—it just shifts everything up or down together. 
+            Normalization doesn't change dynamics, it just shifts everything up or down together. 
             Quiet parts stay quiet relative to loud parts.
           </li>
           <li>
@@ -89,9 +89,9 @@ export default function AudioNormalizerSEO() {
           <div>
             <dt className="font-semibold mb-2">Can normalization make quiet recordings louder?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              Yes—if the recording has headroom (peaks well below 0 dB). Normalization can't fix 
+              Yes, if the recording has headroom (peaks well below 0 dB). Normalization can't fix 
               recordings that already clipped during capture.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Does normalization affect quality?</dt>
@@ -103,9 +103,9 @@ export default function AudioNormalizerSEO() {
           <div>
             <dt className="font-semibold mb-2">Will normalization fix inconsistent volume within a file?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—it applies one gain value to the entire file. For internal consistency, you need 
+              No, it applies one gain value to the entire file. For internal consistency, you need 
               compression or automatic gain control.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">What's LUFS and is this the same?</dt>

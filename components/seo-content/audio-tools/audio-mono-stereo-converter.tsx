@@ -1,119 +1,86 @@
 export default function AudioMonoStereoConverterSEO() {
   return (
     <article className="seo-content space-y-8">
+      <h2 className="text-2xl font-semibold mb-4">The mono/stereo thing, explained</h2>
+      <p className="mb-4 text-slate-600 dark:text-slate-400">
+        Mono means one channel. Stereo means two. That's it. Everything else is just what happens when you move between them.
+      </p>
+      <p className="mb-4 text-slate-600 dark:text-slate-400">
+        Converting stereo to mono sums the left and right channels into one. If the left channel has a guitar and the right has a piano, the mono file has both at equal volume. If the left and right are in phase (as they usually are), the sum is clean. If they're out of phase (unlikely with normal recordings, but possible with certain stereo widening effects), you get partial cancellation and the result sounds thin.
+      </p>
+      <p className="mb-4 text-slate-600 dark:text-slate-400">
+        Converting mono to stereo copies the single channel to both left and right. This does not create spatial information. The audio is identical on both sides. It sounds like mono played through two speakers, which is exactly what it is. The benefit is compatibility: some platforms reject true mono files, some players default to one speaker with mono, and some audio systems expect a stereo signal on the input.
+      </p>
+      <p className="text-slate-600 dark:text-slate-400">
+        Output is always MP3. The whole thing processes in your browser.
+      </p>
+
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Converting Audio Between Mono and Stereo</h2>
-        <div className="prose prose-slate dark:prose-invert">
-          <p>
-            This tool converts stereo audio to mono (combining both channels) or mono audio to stereo 
-            (duplicating to both channels). Choose your output format and the conversion happens 
-            automatically using your browser's audio processing.
-          </p>
-          <p>
-            Stereo to mono sums the left and right channels together, useful for compatibility or 
-            file size reduction. Mono to stereo copies the single channel to both left and right, 
-            which doesn't create "true" stereo but ensures compatibility with stereo playback systems.
-          </p>
-        </div>
+        <h2 className="text-2xl font-semibold my-8">Who keeps running into this problem</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Podcasters are the main audience. Most USB podcast mics record in mono. You plug in a Yeti or an ATR2100, record an episode, and the file has one channel. Upload it to a podcast host. Some hosts are fine with mono. Others reject it. Some accept it but the stats page shows mono as an error. Converting to stereo before upload just removes a variable you don't want to think about.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Music producers delivering to a venue PA system sometimes need mono. Many club systems sum to mono internally, but not all. If the venue says "send us a mono file," they mean it. Converting your stereo master to mono and checking for phase issues before you send it avoids the awkward moment where half your mix disappears on their system.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Someone digitizing old mono recordings (cassette tapes, vinyl, reel-to-reel) gets a file that plays from one speaker on most modern setups. Duplicating to stereo fixes that without changing the character of the recording.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          Content creators compiling clips from different sources: some are stereo, some are mono, they're assembling them into a timeline and the editor keeps flagging the mono ones as mismatched. Batch-converting everything to stereo before editing standardizes the project.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Real-World Applications</h2>
-        <ul className="space-y-3">
-          <li>
-            <strong>Podcasters</strong> who recorded with a USB mic that captured mono audio. They 
-            convert to stereo so it plays correctly on platforms expecting stereo files.
-          </li>
-          <li>
-            <strong>Musicians</strong> who have a stereo mix but need a mono version for a specific 
-            venue's PA system. They convert without losing any content.
-          </li>
-          <li>
-            <strong>Vintage recording handlers</strong> who found a mono recording that plays only in 
-            one speaker on modern devices. Converting to stereo duplicates it to both channels.
-          </li>
-          <li>
-            <strong>Content creators</strong> who need to match audio formats for a compilation—some 
-            clips are stereo, some mono. They standardize everything to one format.
-          </li>
-          <li>
-            <strong>Platform uploaders</strong> submitting to platforms that reject mono files. They 
-            convert them to stereo for compatibility.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
-        <ul className="space-y-3">
-          <li>
-            Mono to stereo doesn't create spatial information. It just copies the same signal to both 
-            channels—your mono file won't suddenly sound "wider."
-          </li>
-          <li>
-            Stereo to mono can cause phase cancellation if the original has out-of-phase content. This 
-            is rare in normal recordings but can happen with certain stereo effects.
-          </li>
-          <li>
-            Converting stereo to mono reduces file size slightly (one channel instead of two), but the 
-            MP3 encoding means the difference is marginal.
-          </li>
-          <li>
-            The conversion is permanent. Once stereo becomes mono, you can't recover the original 
-            stereo image.
-          </li>
-          <li>
-            Output is always MP3 format regardless of input format.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">Before you convert, know this</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Stereo to mono is permanent. You can't recover the original stereo image from the mono file. If you think you might need separate channels later, keep the stereo original and only convert a copy.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Mono to stereo doesn't make audio louder, wider, or better. It just copies the signal. If your mono recording sounds quiet or flat, conversion won't fix that. You'd need a compressor or EQ for that.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          The phase cancellation risk with stereo-to-mono is real but overblown online. Unless you applied a stereo widener plugin, used M/S processing aggressively, or the recording has a wiring problem, your stereo files will sum to mono without issues. If you want to check, sum to mono and listen. If something disappears, you have a phase problem.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          This tool handles exactly two channel counts: 1 and 2. If you have a 5.1 surround file, this converter ignores channels 3 through 6. You need a surround downmixer for that.
+        </p>
       </section>
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">FAQ</h2>
-        <dl className="space-y-6">
+        <div className="space-y-6">
           <div>
-            <dt className="font-semibold mb-2">What's the difference between mono and stereo?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Mono uses one audio channel. Stereo uses two (left and right), allowing spatial 
-              positioning of sounds.
-            </dd>
+            <h3 className="font-semibold mb-2">Should my podcast be in mono or stereo?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Mono, technically. Speech doesn't benefit from stereo separation and mono files are smaller. But if your host requires stereo, convert. Nobody will notice the difference on spoken word content. The file just weighs slightly more.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">When should I use mono?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              For voice recordings, phone calls, or any content where spatial information doesn't 
-              matter. Also for compatibility with mono playback systems.
-            </dd>
+            <h3 className="font-semibold mb-2">Why does my converted mono track sound quieter?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              It shouldn't, significantly. The tool maintains levels during conversion. If you hear a real drop, your original stereo file might have extreme panning. Try normalizing the file first, then converting.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">When should I use stereo?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              For music, ambient recordings, or any content where left/right positioning adds value. 
-              Most modern playback expects stereo.
-            </dd>
+            <h3 className="font-semibold mb-2">What's the difference between this and the channel remover?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              The channel remover silences one channel but keeps the stereo structure. This converter either combines both channels into one (stereo to mono) or duplicates one channel to both sides (mono to stereo). Different tools for different needs.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Does mono to stereo make the audio louder?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Not significantly. The conversion maintains appropriate levels. Any perceived loudness 
-              change is minimal.
-            </dd>
+            <h3 className="font-semibold mb-2">Will this fix audio that only plays in one earbud?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              If the source is stereo with audio on only one side, convert to mono. The audio gets summed to both speakers. If the source is already mono and only playing on one side, convert to stereo. The audio gets duplicated to both channels.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I convert multi-channel surround sound?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool handles only mono (1 channel) and stereo (2 channels). For 5.1 or other 
-              surround formats, you need specialized software.
-            </dd>
+            <h3 className="font-semibold mb-2">Can I go back to stereo after converting to mono?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              You can convert the mono file back to stereo, but it'll be mono audio duplicated to both channels, not the original stereo image. The spatial information is gone. Keep the original stereo file if you might need it.
+            </p>
           </div>
-          <div>
-            <dt className="font-semibold mb-2">Will converting stereo to mono lose information?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              If the left and right channels are identical, no. If they're different (true stereo), 
-              you'll lose the spatial separation but keep all audio content.
-            </dd>
-          </div>
-        </dl>
+        </div>
       </section>
     </article>
   );

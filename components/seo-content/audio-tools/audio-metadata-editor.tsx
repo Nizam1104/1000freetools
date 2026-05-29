@@ -2,117 +2,84 @@ export default function AudioMetadataEditorSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Editing Audio Metadata and ID3 Tags</h2>
-        <div className="prose prose-slate dark:prose-invert">
-          <p>
-            This metadata editor lets you view and modify ID3 tags embedded in audio files. Edit 
-            title, artist, album, year, genre, and comment fields. The tool reads existing tags from 
-            your file and lets you update them before downloading.
-          </p>
-          <p>
-            ID3 tags are the standard metadata format for audio files. They travel with the file and 
-            display in media players, helping you organize and identify your audio library.
-          </p>
-        </div>
+        <h2 className="text-2xl font-semibold mb-4">Fixing the "unknown artist" problem</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          You know the situation. You open your music player and half the tracks say "Unknown Artist" or display the filename instead of the song title. The audio is fine. The metadata is missing or wrong. This editor lets you fix that.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Load a file and the tool reads whatever ID3 tags are already there. You can change the title, artist, album, year, genre, and comment fields. Download the file and those tags are now embedded. The audio doesn't get re-encoded beyond what's needed to write the tags into the MP3 container, so the sound quality stays the same.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          The output is MP3 with ID3v2 tags, regardless of the input format. If you load a WAV file, it becomes an MP3 with tags. If you load an MP3 that already has tags, they get overwritten with your new values. The tool doesn't touch embedded album art or extended tags like BPM or composer. Just the core six fields.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Practical Use Cases</h2>
-        <ul className="space-y-3">
-          <li>
-            <strong>Podcasters</strong> who add episode titles, show names, and season information to 
-            their audio files for proper organization.
-          </li>
-          <li>
-            <strong>Music librarians</strong> organizing their collection who fill in missing metadata 
-            for ripped CDs or downloaded files.
-          </li>
-          <li>
-            <strong>Musicians</strong> who add their name, album title, and genre to tracks before 
-            distribution.
-          </li>
-          <li>
-            <strong>Audiobook creators</strong> who add chapter titles, author names, and narration 
-            credits.
-          </li>
-          <li>
-            <strong>Content creators</strong> who add descriptive comments to audio files for team 
-            collaboration.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">What editing metadata actually fixes</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          A podcaster has 40 episode files named "episode-01-final-v2.mp3" and similar. When someone downloads them, that filename shows up in their player. Editing the title tag to "Episode 1: The Origin Story" means listeners see something readable instead of a slug. Same for artist and album fields. Episode-level metadata makes a podcast feed look professional.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Someone digitizing old CDs discovers the rips have garbled or missing metadata because FreeDB didn't recognize the disc. Track 01 by Unknown Artist. They enter the correct artist, album, and year field by field. It's tedious but necessary if you want your library to be searchable later.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          A musician preparing tracks for distribution needs to make sure the artist name, album title, and year are correct before sending files to a label or aggregator. Platforms like Spotify pull this metadata directly from the file on upload. Wrong tags mean wrong credits.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          Someone building a sample library for a project adds descriptive comments to each audio file so collaborators can find specific sounds without opening every file. "Synth pad, D minor, slow attack" in the comment field is searchable in most DAWs and file browsers.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
-        <ul className="space-y-3">
-          <li>
-            The tool reads existing tags automatically when you load a file. You can modify any field 
-            or leave it unchanged.
-          </li>
-          <li>
-            Not all audio formats support the same metadata fields. MP3 uses ID3 tags; other formats 
-            use different metadata systems.
-          </li>
-          <li>
-            The output is MP3 format with ID3v2 tags. If your source is a different format, it gets 
-            converted.
-          </li>
-          <li>
-            Some media players display metadata differently. What shows as "Artist" in one player 
-            might show as "Album Artist" in another.
-          </li>
-          <li>
-            Year should be a 4-digit number (2024, not 24) for best compatibility.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">Things that will trip you up</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Leaving a field blank doesn't always remove the existing tag. If you load a file that has an artist tag and you clear the artist field before downloading, the tag might still be there in the output. The tool writes what you enter. If you enter nothing, the behavior depends on how the encoder handles empty fields. For guaranteed removal, use a dedicated tag stripper.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Different players display metadata differently. What this tool writes as "Artist" might show up as "Album Artist" in iTunes or "Contributing Artist" in VLC. That's a player interpretation issue, not a bug in the tags. The data is there. The label the player puts on it varies.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          The year field expects a 4-digit number. Entering "24" instead of "2024" can cause some players to interpret it as the year 24 AD. Which is technically correct but probably not what you meant.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          If you load a non-MP3 file (FLAC, WAV, OGG), the output is MP3. The original format's metadata scheme (Vorbis comments for OGG, RIFF chunks for WAV) doesn't transfer perfectly to ID3. Some fields might not survive the format conversion.
+        </p>
       </section>
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">FAQ</h2>
-        <dl className="space-y-6">
+        <div className="space-y-6">
           <div>
-            <dt className="font-semibold mb-2">What metadata fields can I edit?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Title, artist, album, year, genre, and comment. These are the standard ID3 tag fields 
-              supported by most players.
-            </dd>
+            <h3 className="font-semibold mb-2">Why did my tags disappear after editing?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              If the source file wasn't MP3, the original metadata format might not map cleanly to ID3. Also, some DRM-protected files strip tags on export. Test with a known clean MP3 to rule out source file issues.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Will this work with non-MP3 files?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              The tool accepts various audio formats but outputs MP3 with ID3 tags. Original format 
-              metadata might not transfer completely.
-            </dd>
+            <h3 className="font-semibold mb-2">Can I add cover art through this tool?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              No. This tool edits text fields only: title, artist, album, year, genre, and comment. For cover art, use the dedicated cover art tool or a full tag editor like Mp3tag.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I add album art?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool handles text metadata only. For cover art, use the dedicated cover art 
-              adder tool.
-            </dd>
+            <h3 className="font-semibold mb-2">Will editing tags change the audio quality?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Not in a way you'd hear. The tags live in a separate section of the file from the audio data. If the source is already MP3, the audio stream stays untouched. If the source is another format, it gets converted to MP3, which does involve encoding.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">What happens if a field is empty?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Empty fields are simply not written. A file with no artist tag just won't display artist 
-              information.
-            </dd>
+            <h3 className="font-semibold mb-2">Why don't my tags show up in Windows File Explorer?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Windows Explorer reads ID3v1 tags more reliably than ID3v2 for some file types. The tool writes ID3v2. Most players read both, but Explorer can be inconsistent. Check in an actual media player before assuming the tags aren't there.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I remove existing metadata?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              You can leave fields blank, but that doesn't necessarily remove existing tags. For 
-              complete metadata removal, use a dedicated tag editor.
-            </dd>
+            <h3 className="font-semibold mb-2">Can I edit tags on multiple files at once?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              No. This is a single-file editor. For batch metadata editing across entire albums or libraries, you need desktop software like Mp3tag, MusicBrainz Picard, or Kid3.
+            </p>
           </div>
-          <div>
-            <dt className="font-semibold mb-2">Is this compatible with all media players?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              ID3v2 tags are widely supported, but some players might not display all fields. Title 
-              and artist are most universally supported.
-            </dd>
-          </div>
-        </dl>
+        </div>
       </section>
     </article>
   );

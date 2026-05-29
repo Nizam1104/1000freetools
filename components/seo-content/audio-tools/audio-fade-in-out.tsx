@@ -2,7 +2,7 @@ export default function AudioFadeInOutSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Adding Fade-In and Fade-Out Effects to Audio</h2>
+        <h2 className="text-2xl font-semibold mb-4">Add fade-in and fade-out to audio</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This tool applies smooth volume fades to the beginning and/or end of your audio files. 
@@ -18,37 +18,37 @@ export default function AudioFadeInOutSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Needs Audio Fades</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who needs audio fades</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who want episodes to start and end smoothly instead of with 
+            Podcasters who want episodes to start and end smoothly instead of with 
             jarring cuts. They apply 2-second fades to every episode.
           </li>
           <li>
-            <strong>Meditation track creators</strong> who need gentle transitions. A 5-second fade-in 
+            Meditation track creators who need gentle transitions. A 5-second fade-in 
             lets listeners settle in; a 10-second fade-out helps them ease out of the session.
           </li>
           <li>
-            <strong>DJs mixing tracks together</strong> use fade-outs to blend songs smoothly. The 
+            DJs mixing tracks together use fade-outs to blend songs smoothly. The 
             outgoing track fades as the incoming one fades in.
           </li>
           <li>
-            <strong>Musicians recording live</strong> who want to eliminate the sound of fingers leaving 
+            Musicians recording live who want to eliminate the sound of fingers leaving 
             strings or breath after the last note. A short fade-out cleans up the ending.
           </li>
           <li>
-            <strong>Ambient audio creators</strong> making background audio for videos need seamless 
+            Ambient audio creators making background audio for videos need seamless 
             loops. Fades prevent audible clicks at loop points.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Maximum fade duration is capped at 10 seconds or half your audio length. You can't fade 
-            an entire 20-second clip—that would leave nothing unfaded.
+             an entire 20-second clip, that would leave nothing unfaded.
           </li>
           <li>
             The fades are linear, not logarithmic. Linear fades sound natural for most purposes, but 
@@ -82,7 +82,7 @@ export default function AudioFadeInOutSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I apply only fade-in or only fade-out?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              Yes—toggle each fade independently. You can enable just fade-in, just fade-out, or both.
+              Yes, toggle each fade independently. You can enable just fade-in, just fade-out, or both.
             </dd>
           </div>
           <div>
@@ -109,9 +109,9 @@ export default function AudioFadeInOutSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I preview the fade before downloading?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this is a process-and-download tool. If you need to audition different fade settings, 
+              No, this is a process-and-download tool. If you need to audition different fade settings, 
               use Audacity or similar software.
-            </dd>
+          </dd>
           </div>
         </dl>
       </section>

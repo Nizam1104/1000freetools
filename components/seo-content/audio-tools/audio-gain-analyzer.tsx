@@ -2,11 +2,11 @@ export default function AudioGainAnalyzerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Analyzing Audio Gain and Dynamic Range</h2>
+        <h2 className="text-2xl font-semibold mb-4">Analyze audio gain and dynamic range</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This gain analyzer measures your audio file's peak level (dB), RMS level (dB), dynamic 
-            range (dB), and average gain. All processing happens in your browser—no upload required.
+            range (dB), and average gain. All processing happens in your browser, no upload required.
           </p>
           <p>
             Peak level shows the loudest instant in your file. RMS (Root Mean Square) indicates 
@@ -17,33 +17,33 @@ export default function AudioGainAnalyzerSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Needs Gain Analysis</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who needs gain analysis</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Musicians</strong> who check if their mix has enough headroom before mastering. 
+            Musicians who check if their mix has enough headroom before mastering. 
             They verify peak levels stay below -6 dB to avoid clipping.
           </li>
           <li>
-            <strong>Recordists</strong> who recorded audio that sounds too quiet or too loud. They 
+            Recordists who recorded audio that sounds too quiet or too loud. They 
             measure to understand the actual levels before adjusting.
           </li>
           <li>
-            <strong>Podcasters</strong> who ensure their episodes have consistent gain across multiple 
+            Podcasters who ensure their episodes have consistent gain across multiple 
             recordings. Analysis reveals which files need adjustment.
           </li>
           <li>
-            <strong>Audio engineers</strong> who diagnose dynamic range issues. Too much range means 
+            Audio engineers who diagnose dynamic range issues. Too much range means 
             quiet parts are inaudible; too little means everything is squashed.
           </li>
           <li>
-            <strong>Broadcast preparers</strong> who check that levels meet industry standards 
+            Broadcast preparers who check that levels meet industry standards 
             (-23 LUFS for some regions, specific peak limits).
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Peak level above 0 dB means clipping (distortion). Professional recordings typically peak 
@@ -87,10 +87,10 @@ export default function AudioGainAnalyzerSEO() {
           <div>
             <dt className="font-semibold mb-2">What does dynamic range tell me?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              High dynamic range (15+ dB) means quiet and loud sections—typical of classical music. 
-              Low range (under 5 dB) means consistent loudness—typical of modern pop or heavily 
+              High dynamic range (15+ dB) means quiet and loud sections, typical of classical music. 
+              Low range (under 5 dB) means consistent loudness, typical of modern pop or heavily 
               compressed audio.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Is higher dynamic range better?</dt>
@@ -102,9 +102,9 @@ export default function AudioGainAnalyzerSEO() {
           <div>
             <dt className="font-semibold mb-2">Can this detect clipping?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              Yes—if peak level is at or above 0 dB, your audio is clipped (distorted). This can't 
+              Yes, if peak level is at or above 0 dB, your audio is clipped (distorted). This can't 
               be fixed, only prevented in future recordings.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">How is this different from loudness measurement?</dt>

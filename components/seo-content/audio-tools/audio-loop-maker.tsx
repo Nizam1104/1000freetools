@@ -2,7 +2,7 @@ export default function AudioLoopMakerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Creating Loopable Audio Files</h2>
+        <h2 className="text-2xl font-semibold mb-4">Create loopable audio files</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This loop maker repeats your audio file a specified number of times, creating a seamless 
@@ -18,33 +18,33 @@ export default function AudioLoopMakerSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Practical Applications</h2>
+        <h2 className="text-2xl font-semibold mb-4">Practical applications</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Musicians</strong> who have a 4-bar drum loop and need a 2-minute practice track. 
+            Musicians who have a 4-bar drum loop and need a 2-minute practice track. 
             They loop it 32 times to create an extended version.
           </li>
           <li>
-            <strong>Ambient creators</strong> looping a 30-second recording multiple times to fill an 
+            Ambient creators looping a 30-second recording multiple times to fill an 
             hour-long space.
           </li>
           <li>
-            <strong>Game developers</strong> who need looping background music for a game level. They 
+            Game developers who need looping background music for a game level. They 
             loop a short composition to the required duration.
           </li>
           <li>
-            <strong>Dancers</strong> who have a short choreography snippet and need it repeated for a 
+            Dancers who have a short choreography snippet and need it repeated for a 
             full routine. They loop the music to match.
           </li>
           <li>
-            <strong>Meditation track creators</strong> looping calming sounds (rain, waves) to create 
+            Meditation track creators looping calming sounds (rain, waves) to create 
             an extended session.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             This tool simply repeats the file—it doesn't crossfade or blend loops. If your audio 
@@ -74,9 +74,9 @@ export default function AudioLoopMakerSEO() {
             <dt className="font-semibold mb-2">How do I make seamless loops?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
               Edit your source audio so the end matches the beginning (same amplitude, similar 
-              waveform). Crossfade the loop point by a few milliseconds. This tool just repeats—loop 
-              preparation is on you.
-            </dd>
+               waveform). Crossfade the loop point by a few milliseconds. This tool just repeats, loop 
+               preparation is on you.
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">What's the maximum number of loops?</dt>
@@ -88,16 +88,16 @@ export default function AudioLoopMakerSEO() {
           <div>
             <dt className="font-semibold mb-2">Does looping affect audio quality?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—each loop is an exact copy. However, output is encoded to MP3, which introduces 
+              No, each loop is an exact copy. However, output is encoded to MP3, which introduces 
               standard compression artifacts.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Can I loop only part of a file?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this loops the entire file. Trim to your desired loop length first, then loop that 
+              No, this loops the entire file. Trim to your desired loop length first, then loop that 
               selection.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Why not just use a player's loop function?</dt>

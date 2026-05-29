@@ -11,7 +11,7 @@ import {
   ALL_FORMATS,
   canEncodeAudio,
 } from "mediabunny";
-import { registerMp3Encoder } from "@mediabunny/mp3-encoder";
+import { ensureMp3EncoderRegistered } from "@/lib/media-bunny-utils/ensureMp3Encoder";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardAction, CardDescription, CardFooter } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -76,15 +76,15 @@ export default function ExtractAudioFromVideoPage() {
   const [outputUrl, setOutputUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // Register MP3 encoder if not natively supported
+  // Ensure MP3 encoder is available when needed
   useEffect(() => {
     const initMp3Encoder = async () => {
-      if (!(await canEncodeAudio("mp3"))) {
-        registerMp3Encoder();
+      if (audioFormat === "mp3" && !(await canEncodeAudio("mp3"))) {
+        await ensureMp3EncoderRegistered();
       }
     };
     initMp3Encoder();
-  }, []);
+  }, [audioFormat]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -115,6 +115,7 @@ export default function ExtractAudioFromVideoPage() {
 
       let outputFormat;
       if (audioFormat === "mp3") {
+        await ensureMp3EncoderRegistered();
         outputFormat = new Mp3OutputFormat();
       } else if (audioFormat === "wav") {
         const { WavOutputFormat } = await import("mediabunny");

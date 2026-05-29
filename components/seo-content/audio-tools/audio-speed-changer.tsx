@@ -2,7 +2,7 @@ export default function AudioSpeedChangerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Changing Audio Playback Speed Without Losing Quality</h2>
+        <h2 className="text-2xl font-semibold mb-4">Change audio playback speed</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This speed changer adjusts audio playback rate from 0.25x (quarter speed) to 4x (quadruple speed). 
@@ -17,37 +17,37 @@ export default function AudioSpeedChangerSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Uses This</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who uses this</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Language learners</strong> slowing down fast speech to catch pronunciation details. 
+            Language learners slowing down fast speech to catch pronunciation details. 
             They play a French dialogue at 0.75x to hear liaison and elision clearly.
           </li>
           <li>
-            <strong>Musicians learning solos by ear</strong>. They slow a guitar riff to 0.5x without 
+            Musicians learning solos by ear. They slow a guitar riff to 0.5x without 
             changing pitch, then gradually increase speed as they master it.
           </li>
           <li>
-            <strong>Podcast consumers</strong> catching up on backlogs. Playing at 1.5x or 2x saves time 
+            Podcast consumers catching up on backlogs. Playing at 1.5x or 2x saves time 
             while keeping voices natural.
           </li>
           <li>
-            <strong>Producers</strong> creating time-stretched samples for tracks. They slow a vocal 
+            Producers creating time-stretched samples for tracks. They slow a vocal 
             chop to 0.5x without pitch correction for that deep, warped effect.
           </li>
           <li>
-            <strong>Students</strong> reviewing lecture recordings. Speeding up to 1.25x gets through 
+            Students reviewing lecture recordings. Speeding up to 1.25x gets through 
             material faster; slowing to 0.75x helps with dense technical content.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Pitch preservation works well for moderate changes (0.75x to 1.5x). Extreme values introduce 
-            artifacts—warbly tones at slow speeds, metallic sounds at high speeds.
+            artifacts such as warbly tones at slow speeds and metallic sounds at high speeds.
           </li>
           <li>
             The output duration changes proportionally. A 10-minute file at 2x becomes 5 minutes. At 0.5x, 
@@ -88,9 +88,9 @@ export default function AudioSpeedChangerSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I slow down audio without changing pitch?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              Yes—enable the "Preserve Pitch" toggle. The algorithm maintains the original key while 
+              Yes, enable the "Preserve Pitch" toggle. The algorithm maintains the original key while 
               extending duration.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">What happens if I disable pitch preservation?</dt>
@@ -109,9 +109,9 @@ export default function AudioSpeedChangerSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I adjust speed for only part of the audio?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this applies to the entire file. For sectional speed changes, you'd need a DAW or 
+              No, this applies to the entire file. For sectional speed changes, you'd need a DAW or 
               dedicated audio editor.
-            </dd>
+          </dd>
           </div>
         </dl>
       </section>

@@ -2,7 +2,7 @@ export default function AudioResamplerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Resampling Audio to Different Sample Rates</h2>
+        <h2 className="text-2xl font-semibold mb-4">Resample audio to a different rate</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This audio resampler changes the sample rate of your audio file. Choose from standard 
@@ -18,33 +18,33 @@ export default function AudioResamplerSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Uses Sample Rate Resampling</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who uses sample rate resampling</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Video editors</strong> who recorded at 48 kHz for video but need 44.1 kHz for CD 
+            Video editors who recorded at 48 kHz for video but need 44.1 kHz for CD 
             or music distribution. They resample without changing pitch or duration.
           </li>
           <li>
-            <strong>Developers</strong> who need audio at specific sample rates for a project—game 
+            Developers who need audio at specific sample rates for a project, game 
             audio, phone systems, or embedded devices with fixed requirements.
           </li>
           <li>
-            <strong>Podcasters</strong> who recorded at 44.1 kHz but want smaller files for 
+            Podcasters who recorded at 44.1 kHz but want smaller files for 
             distribution. They resample to 22.05 kHz or 16 kHz, which is fine for speech.
           </li>
           <li>
-            <strong>Legacy audio handlers</strong> who have audio at unusual sample rates that modern 
+            Legacy audio handlers who have audio at unusual sample rates that modern 
             software won't accept. They resample to a standard rate.
           </li>
           <li>
-            <strong>Audio engineers</strong> who match sample rates across multiple files for a 
+            Audio engineers who match sample rates across multiple files for a 
             project that requires consistent rates throughout.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Upsampling doesn't add quality. Converting 44.1 kHz to 192 kHz makes a bigger file but 
@@ -89,7 +89,7 @@ export default function AudioResamplerSEO() {
           <div>
             <dt className="font-semibold mb-2">Does resampling change pitch or duration?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—proper resampling maintains both pitch and duration. Only the sample rate changes.
+              No, proper resampling maintains both pitch and duration. Only the sample rate changes.
             </dd>
           </div>
           <div>
@@ -102,7 +102,7 @@ export default function AudioResamplerSEO() {
           <div>
             <dt className="font-semibold mb-2">Is there quality loss in resampling?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              Some—resampling filters aren't perfect. For critical applications, use professional 
+              Some, resampling filters aren't perfect. For critical applications, use professional 
               audio software with high-quality resamplers.
             </dd>
           </div>

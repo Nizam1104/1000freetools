@@ -2,7 +2,7 @@ export default function AudioSplitterSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Splitting Audio Files into Multiple Segments</h2>
+        <h2 className="text-2xl font-semibold mb-4">Split an audio file into segments</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This audio splitter divides your file into multiple segments. Choose between equal-duration 
@@ -18,36 +18,36 @@ export default function AudioSplitterSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Uses Audio Splitting</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who uses audio splitting</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who have a 2-hour recording but their hosting platform has a 
+            Podcasters who have a 2-hour recording but their hosting platform has a 
             60-minute limit. They split it into three 40-minute episodes.
           </li>
           <li>
-            <strong>Lecture recorders</strong> who want to share long recordings as individual chapters. 
+            Lecture recorders who want to share long recordings as individual chapters. 
             They split into 10-minute segments matching the lecture structure.
           </li>
           <li>
-            <strong>Musicians</strong> who have a live album as one continuous file. They split it 
+            Musicians who have a live album as one continuous file. They split it 
             into individual songs for distribution.
           </li>
           <li>
-            <strong>Language teachers</strong> creating practice content from long dialogues. They 
+            Language teachers creating practice content from long dialogues. They 
             split into manageable practice segments.
           </li>
           <li>
-            <strong>Content creators</strong> who have marathon recording sessions they want to release 
+            Content creators who have marathon recording sessions they want to release 
             as a series. Splitting creates natural episode breaks.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
-            The split points are automatic—based purely on time, not content. You might get cuts in 
+            The split points are automatic, based purely on time, not content. You might get cuts in 
             the middle of words or musical phrases.
           </li>
           <li>
@@ -81,7 +81,7 @@ export default function AudioSplitterSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I choose where to split?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—splits are automatic at regular intervals. For manual split points, use an audio editor.
+              No, splits are automatic at regular intervals. For manual split points, use an audio editor.
             </dd>
           </div>
           <div>
@@ -93,14 +93,14 @@ export default function AudioSplitterSEO() {
           <div>
             <dt className="font-semibold mb-2">Will there be gaps between segments?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              The splits are sample-accurate, but MP3 encoding can introduce tiny gaps. For truly 
-              gapless segments, use lossless formats.
+               The splits are sample-accurate, but MP3 encoding can introduce tiny gaps. For truly 
+               gapless segments, use lossless formats.
             </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Can I split based on silence or content?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool splits at fixed time intervals. For content-aware splitting, use Audacity 
+              No, this tool splits at fixed time intervals. For content-aware splitting, use Audacity 
               or similar software.
             </dd>
           </div>

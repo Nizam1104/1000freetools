@@ -2,114 +2,84 @@ export default function AudioChannelRemoverSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Removing Left or Right Channel from Stereo Audio</h2>
-        <div className="prose prose-slate dark:prose-invert">
-          <p>
-            This channel remover silences either the left or right channel of a stereo audio file 
-            while keeping the other channel intact. The output remains a stereo file—one channel 
-            plays audio, the other is silent.
-          </p>
-          <p>
-            This isn't the same as converting to mono. The audio stays in its original channel, 
-            preserving any stereo effects or positioning in the remaining channel.
-          </p>
-        </div>
+        <h2 className="text-2xl font-semibold mb-4">The problem this solves</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          You have a stereo file. One channel is wrecked. Maybe the left side has a constant buzz from a bad cable during recording. Maybe the right channel picked up someone coughing through the whole interview. Maybe you found a karaoke track where vocals are hard-panned to one side and you want them gone.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          This tool silences whichever channel you tell it to. The file stays stereo. The good side keeps playing. The bad side becomes digital silence. It's not converting to mono, it's not extracting anything. It just mutes one side while leaving the other completely intact.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          I want to be clear about this because people confuse it with other tools: if you want a mono file from one channel, use the channel extractor. If you want both channels combined into one, use the mono converter. This does exactly one thing: silence left, or silence right.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Practical Applications</h2>
-        <ul className="space-y-3">
-          <li>
-            <strong>Damaged recording handlers</strong> who have a stereo recording where one channel 
-            has noise or damage. They silence the bad channel and keep the good one.
-          </li>
-          <li>
-            <strong>Language teachers</strong> who have a stereo file with different languages in each 
-            channel. They remove one channel to isolate the target language.
-          </li>
-          <li>
-            <strong>Karaoke users</strong> who found a track with vocals in one channel and music in 
-            the other. They remove the vocal channel for instrumental playback.
-          </li>
-          <li>
-            <strong>Podcasters</strong> who recorded a two-person interview with each person on a 
-            separate channel. They extract individual channels for separate processing.
-          </li>
-          <li>
-            <strong>Field recordists</strong> who have a stereo field recording but only want the 
-            left-side ambience. They remove the right channel.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">It works. Here's why that matters sometimes.</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          A language teacher hands me a file where the instructor is on the left channel and the student responses are on the right. She wants to isolate the instructor so students can practice without hearing the responses. Mute the right channel. Done.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          A field recordist captured ambient sound with a stereo mic, but only the left side is usable because the right mic was too close to a generator. Silence the right channel. The left side plays clean with zero artifacts from the damaged channel bleeding through.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Someone digitized an old cassette tape where one side of the stereo image degraded faster than the other (it happens to tapes stored unevenly). The right channel is muffled and the left is fine. Kill the right and you still have the recording.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          A podcaster recorded a two-person conversation with each mic going to a separate channel. They want to process each voice independently before mixing. Mute one side, export, mute the other, export. Two clean stems from one file, no extraction needed.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
-        <ul className="space-y-3">
-          <li>
-            The output is still a stereo file. One channel contains audio; the other contains silence. 
-            This isn't mono conversion.
-          </li>
-          <li>
-            If you want the remaining channel in mono (both speakers playing the same thing), use the 
-            mono/stereo converter after removing the channel.
-          </li>
-          <li>
-            This doesn't extract a channel—it silences one. The file structure remains stereo.
-          </li>
-          <li>
-            For true channel extraction (getting the left channel as its own mono file), use the 
-            channel splitter tool instead.
-          </li>
-          <li>
-            Output is MP3 format. If you need lossless output, use audio editing software.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">What it won't do (and when to walk away)</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          It won't make your file smaller. A silent channel still takes up space in the MP3 container. The file size drop is negligible because the encoder spends almost nothing encoding silence, but the channel slot is still there.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          It won't remove vocals from a normal song. Most modern music has vocals centered, meaning they appear equally in both channels. Silencing one channel doesn't touch centered content. If the vocals aren't hard-panned to one side, this tool won't help.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          It won't truly extract a channel as a mono file. The silent channel is still part of the file structure. If you open it in an editor, you'll see waveform on one side and flatline on the other. For a clean single-channel file, use the splitter.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          Output is MP3 regardless of input format. If you feed it FLAC or WAV, you're getting an MP3 back. The audio quality of the remaining channel stays the same, but the container changes.
+        </p>
       </section>
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">FAQ</h2>
-        <dl className="space-y-6">
+        <div className="space-y-6">
           <div>
-            <dt className="font-semibold mb-2">What's the difference between removing a channel and extracting it?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Removing silences one channel but keeps the stereo file structure. Extracting creates a 
-              new mono file from just that channel.
-            </dd>
+            <h3 className="font-semibold mb-2">How is this different from extracting a channel?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Extraction creates a new mono file from one channel. Removal silences one channel but keeps the stereo structure. The output from removal still has two channels; one is just empty. If you need a mono file, use extraction.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">When would I use this instead of converting to mono?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              When you need to preserve the original channel positioning. Converting to mono combines 
-              both channels; this keeps one intact.
-            </dd>
+            <h3 className="font-semibold mb-2">Can I bring the silenced channel back later?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              No. Once you download the file, the silenced channel's audio is gone. If you might need that channel later, keep the original file. This is a destructive edit.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I remove both channels?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              That would give you silence. If you need to mute audio entirely, there are simpler ways.
-            </dd>
+            <h3 className="font-semibold mb-2">What if both channels are good but I only need one?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              This still works, but you might prefer the channel splitter, which gives you a clean mono file you can use anywhere. The remover is for when you specifically need a stereo file with one side muted.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">What happens to the silent channel?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              It's filled with digital silence (zero samples). It still takes up space in the file, 
-              so file size doesn't decrease much.
-            </dd>
+            <h3 className="font-semibold mb-2">Why does the file stay stereo after removing a channel?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Because that's what "removing" means here: the channel is silenced, not deleted. The file structure doesn't change. Only one channel's audio changes. This is by design so the remaining channel's stereo positioning is preserved.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I swap channels instead of removing them?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool only silences channels. For channel swapping, use audio editing software.
-            </dd>
+            <h3 className="font-semibold mb-2">Will this fix a recording where one person is too quiet?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              Not if both people are on the same channel. This tool only works at the channel level. If one person is quiet because they were recorded quietly, you need a compressor or level adjustment, not channel removal.
+            </p>
           </div>
-          <div>
-            <dt className="font-semibold mb-2">Is this useful for removing vocals from songs?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Sometimes. Some karaoke tracks put vocals in one channel, but most modern music has 
-              vocals centered (in both channels), which this can't remove.
-            </dd>
-          </div>
-        </dl>
+        </div>
       </section>
     </article>
   );

@@ -2,12 +2,12 @@ export default function AudioLoudnessMeterSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Measuring Audio Loudness with LUFS and Peak Metrics</h2>
+        <h2 className="text-2xl font-semibold mb-4">Measure audio loudness with LUFS and peak</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This loudness meter analyzes your audio file and reports integrated loudness (LUFS), true 
-            peak (dBTP), loudness range (LU), and RMS level (dB). All processing happens in your 
-            browser—no upload required.
+             peak (dBTP), loudness range (LU), and RMS level (dB). All processing happens in your 
+            browser, no upload required.
           </p>
           <p>
             Integrated loudness measures perceived loudness over the entire file, matching how humans 
@@ -18,33 +18,33 @@ export default function AudioLoudnessMeterSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Needs Loudness Measurement</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who needs loudness measurement</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who want to meet Spotify's -16 LUFS target. They measure their 
+            Podcasters who want to meet Spotify's -16 LUFS target. They measure their 
             episodes and adjust accordingly.
           </li>
           <li>
-            <strong>Musicians mastering tracks</strong> for streaming. They check integrated loudness 
+            Musicians mastering tracks for streaming. They check integrated loudness 
             against platform targets: -14 LUFS for Spotify, -16 for Apple Music.
           </li>
           <li>
-            <strong>Audio submitters</strong> who have audio that sounds quiet compared to other content. 
+            Audio submitters who have audio that sounds quiet compared to other content. 
             They measure to see if it's actually below standard levels.
           </li>
           <li>
-            <strong>Video creators</strong> who need to ensure their videos meet YouTube's loudness 
+            Video creators who need to ensure their videos meet YouTube's loudness 
             requirements. They measure before uploading.
           </li>
           <li>
-            <strong>Audio engineers</strong> diagnosing dynamic range issues. Loudness range tells 
+            Audio engineers diagnosing dynamic range issues. Loudness range tells 
             them if compression is too heavy or too light.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             LUFS (Loudness Units Full Scale) is the modern standard for perceived loudness. It's more 
@@ -90,9 +90,9 @@ export default function AudioLoudnessMeterSEO() {
           <div>
             <dt className="font-semibold mb-2">What does loudness range tell me?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              High LRA (15+ LU) means wide dynamics—quiet quiet parts, loud loud parts. Low LRA (under 
-              5 LU) means heavy compression—everything is similar volume.
-            </dd>
+              High LRA (15+ LU) means wide dynamics, quiet quiet parts and loud loud parts. Low LRA (under 
+              5 LU) means heavy compression, everything is similar volume.
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">What's true peak and why does it matter?</dt>
@@ -104,16 +104,16 @@ export default function AudioLoudnessMeterSEO() {
           <div>
             <dt className="font-semibold mb-2">Is RMS still useful?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              Yes—RMS gives a quick sense of average level. LUFS is more accurate for perceived 
+              Yes, RMS gives a quick sense of average level. LUFS is more accurate for perceived 
               loudness, but RMS is simpler and still relevant.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Can this measure short-term or momentary loudness?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this measures integrated (whole-file) loudness. For momentary or short-term 
+              No, this measures integrated (whole-file) loudness. For momentary or short-term 
               measurements, you need a real-time loudness meter.
-            </dd>
+          </dd>
           </div>
         </dl>
       </section>

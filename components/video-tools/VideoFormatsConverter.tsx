@@ -10,7 +10,7 @@ import {
   VIDEO_FORMATS,
 } from "@/lib/media-bunny-utils/formatConversions";
 
-import { registerMp3Encoder } from "@mediabunny/mp3-encoder";
+import { ensureMp3EncoderRegistered } from "@/lib/media-bunny-utils/ensureMp3Encoder";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -39,8 +39,7 @@ import {
   Film,
 } from "lucide-react";
 
-// Register MP3 encoder once
-registerMp3Encoder();
+// MP3 encoder is loaded on demand in handlers via ensureMp3EncoderRegistered()
 
 export default function VideoFormatsConversion() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -118,6 +117,9 @@ export default function VideoFormatsConversion() {
     setResultUrl(null);
 
     try {
+      if (outputFormat === "mp3") {
+        await ensureMp3EncoderRegistered();
+      }
       const isVideoToAudio =
         VIDEO_FORMATS.includes(inputFormat as any) &&
         AUDIO_FORMATS.includes(outputFormat as any);

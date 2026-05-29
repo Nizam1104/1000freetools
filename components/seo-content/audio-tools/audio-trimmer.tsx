@@ -2,12 +2,12 @@ export default function AudioTrimmerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">How to Trim Audio Files Online</h2>
+        <h2 className="text-2xl font-semibold mb-4">Trim audio files in your browser</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This audio trimmer lets you cut MP3, WAV, and other audio files directly in your browser. 
             You pick a start and end time using the sliders or by entering exact seconds, and the tool 
-            extracts just that portion of your audio. Everything processes locally—your file never leaves your device.
+            extracts just that portion of your audio. Everything processes locally. Your file never leaves your device.
           </p>
           <p>
             The interface shows the total duration upfront, so you know exactly what you're working with. 
@@ -18,33 +18,33 @@ export default function AudioTrimmerSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Actually Needs This</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who actually needs this</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> removing awkward intros and outros before publishing episodes. 
+            Podcasters removing awkward intros and outros before publishing episodes. 
             They need consistent segment lengths without re-recording.
           </li>
           <li>
-            <strong>Ringtone makers</strong> grabbing that 30-second hook from their favorite songs, 
+            Ringtone makers grabbing that 30-second hook from their favorite songs, 
             trimming it cleanly, and dropping it on their phone.
           </li>
           <li>
-            <strong>Teachers</strong> preparing audio clips for language lessons. Instead of sending 
+            Teachers preparing audio clips for language lessons. Instead of sending 
             students a 20-minute recording, you extract just the relevant dialogue sections.
           </li>
           <li>
-            <strong>Musicians</strong> sampling their own recordings. You isolate a specific bar or 
+            Musicians sampling their own recordings. You isolate a specific bar or 
             phrase to use in a different track.
           </li>
           <li>
-            <strong>Content creators</strong> cutting silence or mistakes from voice recordings before 
+            Content creators cutting silence or mistakes from voice recordings before 
             uploading to YouTube or Spotify.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             The tool outputs MP3 format regardless of your input format. That's usually fine, but if 

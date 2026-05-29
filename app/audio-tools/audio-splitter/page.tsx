@@ -20,44 +20,44 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    name: "Video Track Remover",
-    description: "Remove specific tracks from video files. Free online track remover.",
-    href: "/video-tools/video-track-remover",
+    name: "Audio Bitrate Changer",
+    description: "Change audio bitrate to control size vs quality. Free online bitrate changer.",
+    href: "/audio-tools/audio-bitrate-changer",
   },
   {
-    name: "Video Thumbnail Generator",
-    description: "Generate thumbnail images from video frames. Free online thumbnail generator.",
-    href: "/video-tools/video-thumbnail-generator",
+    name: "Audio Channel Remover",
+    description: "Remove left or right audio channel from stereo files. Free online tool.",
+    href: "/audio-tools/audio-channel-remover",
   },
   {
-    name: "Video Speed Changer",
-    description: "Speed up or slow down video files. Free online video speed changer.",
-    href: "/video-tools/video-speed-changer",
+    name: "Audio Channel Splitter",
+    description: "Split stereo audio into separate left/right mono channels. Free online splitter.",
+    href: "/audio-tools/audio-channel-splitter",
   },
   {
-    name: "Video Resolution Analyzer",
-    description: "Check video resolution, dimensions, and aspect ratio. Free online analyzer.",
-    href: "/video-tools/video-resolution-analyzer",
+    name: "Audio Clip Maker",
+    description: "Create short audio clips from longer files. Free online clip maker.",
+    href: "/audio-tools/audio-clip-maker",
   },
   {
-    name: "Video Metadata Remover",
-    description: "Strip metadata from video files to protect privacy. Free online remover.",
-    href: "/video-tools/video-metadata-remover",
+    name: "Audio Compressor",
+    description: "Compress audio to reduce file size. Free online audio compressor.",
+    href: "/audio-tools/audio-compressor",
   },
   {
-    name: "Video Metadata Editor",
-    description: "Edit video metadata including title, author, and tags. Free online editor.",
-    href: "/video-tools/video-metadata-editor",
+    name: "Audio Cover Art Adder",
+    description: "Add album cover art to MP3 and FLAC files. Free online cover art adder.",
+    href: "/audio-tools/audio-cover-art-adder",
   },
   {
-    name: "Video Keyframe Extractor",
-    description: "Extract keyframes from video as images. Free online keyframe extractor.",
-    href: "/video-tools/video-keyframe-extractor",
+    name: "Audio Cover Art Extractor",
+    description: "Extract embedded album artwork from audio files. Free online extractor.",
+    href: "/audio-tools/audio-cover-art-extractor",
   },
   {
-    name: "Video Frame Sequence To Video",
-    description: "Convert PNG/JPG frame sequences into video files. Free online converter.",
-    href: "/video-tools/video-frame-sequence-to-video",
+    name: "Audio Equalizer Basic",
+    description: "Adjust bass, mid, and treble EQ bands on audio files. Free online equalizer.",
+    href: "/audio-tools/audio-equalizer-basic",
   },
 ];
 

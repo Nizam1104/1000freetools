@@ -2,7 +2,7 @@ export default function AudioFrequencyAnalyzerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Analyzing Audio Frequency Spectrum</h2>
+        <h2 className="text-2xl font-semibold mb-4">Analyze the audio frequency spectrum</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This frequency analyzer displays the frequency content of your audio as a spectrum graph. 
@@ -18,33 +18,33 @@ export default function AudioFrequencyAnalyzerSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Practical Applications</h2>
+        <h2 className="text-2xl font-semibold mb-4">Practical applications</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Musicians</strong> who identify problematic frequencies in a mix. They see a spike 
+            Musicians who identify problematic frequencies in a mix. They see a spike 
             at 400 Hz and know to cut that range.
           </li>
           <li>
-            <strong>Audio diagnosticians</strong> spotting excessive low-end rumble or harsh high 
+            Audio diagnosticians spotting excessive low-end rumble or harsh high 
             frequencies.
           </li>
           <li>
-            <strong>Producers</strong> checking if their mix has balanced frequency content across 
+            Producers checking if their mix has balanced frequency content across 
             the spectrum.
           </li>
           <li>
-            <strong>Audio engineers</strong> verifying that a high-pass filter is working by seeing 
+            Audio engineers verifying that a high-pass filter is working by seeing 
             the low frequencies disappear.
           </li>
           <li>
-            <strong>Educators</strong> creating content about audio who use frequency spectrum 
+            Educators creating content about audio who use frequency spectrum 
             visualizations to demonstrate concepts.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             The spectrum shows the entire file averaged together, not a real-time display. You can't 
@@ -95,16 +95,16 @@ export default function AudioFrequencyAnalyzerSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I see how frequencies change over time?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this shows a static spectrum of the entire file. For time-varying spectra 
-              (spectrograms), you need dedicated analysis software.
-            </dd>
+              No, this shows a static spectrum of the entire file. For time-varying spectra 
+               (spectrograms), you need dedicated analysis software.
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Does this show stereo frequency content?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—the analysis is mono (combined channels). Stereo spectrum analysis would need separate 
+              No, the analysis is mono (combined channels). Stereo spectrum analysis would need separate 
               left/right displays.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">What frequencies should I look for?</dt>

@@ -2,7 +2,7 @@ export default function AudioSilenceRemoverSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Removing Silence from Audio Recordings</h2>
+        <h2 className="text-2xl font-semibold mb-4">Remove silence from audio recordings</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This silence remover automatically detects and cuts out quiet sections from your audio. 
@@ -18,33 +18,33 @@ export default function AudioSilenceRemoverSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Needs Silence Removal</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who needs silence removal</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who have recordings with long pauses between sentences. They 
+            Podcasters who have recordings with long pauses between sentences. They 
             remove dead air to create tighter, more engaging episodes.
           </li>
           <li>
-            <strong>Lecture recorders</strong> who captured content with awkward gaps. They trim the 
+            Lecture recorders who captured content with awkward gaps. They trim the 
             silence to reduce total runtime without losing content.
           </li>
           <li>
-            <strong>Voice actors</strong> who need to deliver clean audio files without breathing room 
+            Voice actors who need to deliver clean audio files without breathing room 
             between takes. Silence removal automates the cleanup.
           </li>
           <li>
-            <strong>Audiobook creators</strong> who want consistent pacing. Removing silence between 
+            Audiobook creators who want consistent pacing. Removing silence between 
             paragraphs creates a more professional flow.
           </li>
           <li>
-            <strong>Content creators</strong> who have rambling recordings with lots of pauses. 
+            Content creators who have rambling recordings with lots of pauses. 
             Silence removal tightens up the delivery.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             The threshold determines what counts as silence. -40 dB (default) works for most recordings. 
@@ -55,7 +55,7 @@ export default function AudioSilenceRemoverSEO() {
             too low (0.1s) might create choppy audio.
           </li>
           <li>
-            This isn't smart editing—it removes anything below the threshold, including quiet background 
+            This isn't smart editing. It removes anything below the threshold, including quiet background 
             noise you might want to keep.
           </li>
           <li>
@@ -95,9 +95,9 @@ export default function AudioSilenceRemoverSEO() {
           <div>
             <dt className="font-semibold mb-2">Can this remove "um" and "uh" sounds?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—those are audible. This only removes sections below the threshold. You'd need manual 
+              No, those are audible. This only removes sections below the threshold. You'd need manual 
               editing for filler words.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Does silence removal change the audio quality?</dt>
@@ -109,9 +109,9 @@ export default function AudioSilenceRemoverSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I preview before downloading?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this is a process-and-download tool. For iterative editing with preview, use Audacity 
+              No, this is a process-and-download tool. For iterative editing with preview, use Audacity 
               or similar software.
-            </dd>
+          </dd>
           </div>
         </dl>
       </section>

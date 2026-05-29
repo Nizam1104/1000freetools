@@ -2,7 +2,7 @@ export default function AudioThumbnailGeneratorSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Generating Thumbnail Images for Audio Files</h2>
+        <h2 className="text-2xl font-semibold mb-4">Generate thumbnail images for audio files</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This thumbnail generator creates square preview images for your audio files. Choose a size 
@@ -17,26 +17,26 @@ export default function AudioThumbnailGeneratorSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Uses Audio Thumbnails</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who uses audio thumbnails</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who create preview images for episode files in their media 
+            Podcasters who create preview images for episode files in their media 
             library. The thumbnails make it easy to identify episodes at a glance.
           </li>
           <li>
-            <strong>Audio archivists</strong> building a personal audio archive who want visual 
+            Audio archivists building a personal audio archive who want visual 
             representations for each file in their catalog.
           </li>
           <li>
-            <strong>Developers</strong> who need placeholder images for an audio player interface or 
+            Developers who need placeholder images for an audio player interface or 
             music library app.
           </li>
           <li>
-            <strong>Portfolio creators</strong> who include thumbnails as visual placeholders for 
+            Portfolio creators who include thumbnails as visual placeholders for 
             each piece of audio work.
           </li>
           <li>
-            <strong>Content organizers</strong> who want visual grids of audio files instead of just 
+            Content organizers who want visual grids of audio files instead of just 
             filenames.
           </li>
         </ul>
@@ -46,7 +46,7 @@ export default function AudioThumbnailGeneratorSEO() {
         <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
         <ul className="space-y-3">
           <li>
-            This generates a simple gradient image with text—not actual waveform visualization or 
+            This generates a simple gradient image with text, not actual waveform visualization or 
             album art extraction.
           </li>
           <li>
@@ -58,7 +58,7 @@ export default function AudioThumbnailGeneratorSEO() {
             editing.
           </li>
           <li>
-            The design is fixed—gradient background with centered text. No customization options.
+            The design is fixed, gradient background with centered text. No customization options.
           </li>
           <li>
             This is different from cover art extraction, which pulls embedded images from the audio 
@@ -80,7 +80,7 @@ export default function AudioThumbnailGeneratorSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I customize the design?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—the gradient and text layout are fixed. For custom thumbnails, use image editing 
+              No, the gradient and text layout are fixed. For custom thumbnails, use image editing 
               software.
             </dd>
           </div>
@@ -93,7 +93,7 @@ export default function AudioThumbnailGeneratorSEO() {
           <div>
             <dt className="font-semibold mb-2">Does this extract album art?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this creates a new image. To extract existing album art, use the cover art extractor 
+              No, this creates a new image. To extract existing album art, use the cover art extractor 
               tool.
             </dd>
           </div>
@@ -107,7 +107,7 @@ export default function AudioThumbnailGeneratorSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I batch generate thumbnails?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool processes one file at a time. For batch thumbnail generation, you'd need 
+              No, this tool processes one file at a time. For batch thumbnail generation, you'd need 
               dedicated software.
             </dd>
           </div>

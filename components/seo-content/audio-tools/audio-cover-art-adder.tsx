@@ -2,7 +2,7 @@ export default function AudioCoverArtAdderSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Adding Cover Art to Audio Files</h2>
+        <h2 className="text-2xl font-semibold mb-4">Add cover art to audio files</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This cover art adder embeds album artwork into your audio files. Upload an audio file 
@@ -18,33 +18,33 @@ export default function AudioCoverArtAdderSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Adds Cover Art</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who adds cover art</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who add show artwork to episodes so their logo displays in 
+            Podcasters who add show artwork to episodes so their logo displays in 
             podcast apps and media players.
           </li>
           <li>
-            <strong>Musicians</strong> who embed album artwork in individual tracks before distribution 
+            Musicians who embed album artwork in individual tracks before distribution 
             to streaming platforms.
           </li>
           <li>
-            <strong>Music librarians</strong> creating a personal music library who add custom artwork 
+            Music librarians creating a personal music library who add custom artwork 
             to files that lack it.
           </li>
           <li>
-            <strong>Content creators</strong> who add branding images to audio content for professional 
+            Content creators who add branding images to audio content for professional 
             presentation.
           </li>
           <li>
-            <strong>Compilation creators</strong> who add consistent artwork across all tracks in a 
+            Compilation creators who add consistent artwork across all tracks in a 
             mixtape or compilation.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Image size matters. Most players display artwork at 300-600 pixels. Square images (1:1 
@@ -95,9 +95,9 @@ export default function AudioCoverArtAdderSEO() {
           <div>
             <dt className="font-semibold mb-2">Will the artwork show in Spotify or Apple Music?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—streaming platforms use their own artwork systems. This is for local files and 
+              No, streaming platforms use their own artwork systems. This is for local files and 
               personal libraries.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Can I update existing cover art?</dt>

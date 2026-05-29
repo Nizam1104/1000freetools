@@ -10,6 +10,7 @@ import {
   Conversion,
   ALL_FORMATS,
 } from "mediabunny";
+import { ensureMp3EncoderRegistered } from "@/lib/media-bunny-utils/ensureMp3Encoder";
 import { Button } from "@/components/ui/button";
 import { Input as InputField } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -59,6 +60,7 @@ export default function AudioMerger() {
     setProgress(0);
 
     try {
+      await ensureMp3EncoderRegistered();
       const audioBuffers: AudioBuffer[] = [];
       let sampleRate = 44100;
       let numberOfChannels = 2;

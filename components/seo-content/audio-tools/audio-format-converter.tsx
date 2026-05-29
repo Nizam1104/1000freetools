@@ -2,7 +2,7 @@ export default function AudioFormatConverterSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Converting Audio Files Between Formats</h2>
+        <h2 className="text-2xl font-semibold mb-4">Convert audio files between formats</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This audio format converter changes audio files between MP3, WAV, WebM (Opus), and MP4 
@@ -18,33 +18,33 @@ export default function AudioFormatConverterSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Needs Audio Format Conversion</h2>
+        <h2 className="text-2xl font-semibold mb-4">When to convert formats</h2>
         <ul className="space-y-3">
           <li>
-            <strong>File sharers</strong> who have WAV files from recording sessions but need MP3 
+            File sharers who have WAV files from recording sessions but need MP3 
             for sharing. Conversion reduces file size while maintaining acceptable quality.
           </li>
           <li>
-            <strong>Podcasters</strong> who recorded in MP3 but their editing software works better 
+            Podcasters who recorded in MP3 but their editing software works better 
             with WAV. They convert for editing, then back to MP3 for distribution.
           </li>
           <li>
-            <strong>Web developers</strong> who need WebM/Opus audio for efficient streaming. They 
+            Web developers who need WebM/Opus audio for efficient streaming. They 
             convert from MP3 to reduce bandwidth.
           </li>
           <li>
-            <strong>Apple users</strong> who need AAC files for Apple devices. They convert from MP3 
+            Apple users who need AAC files for Apple devices. They convert from MP3 
             to MP4/AAC format.
           </li>
           <li>
-            <strong>Archivists</strong> who convert everything to WAV for preservation, or to Opus 
+            Archivists who convert everything to WAV for preservation, or to Opus 
             for space-efficient storage.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Converting from lossy to lossy (MP3 to AAC, for example) adds generation loss. Each 
@@ -89,21 +89,21 @@ export default function AudioFormatConverterSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I convert to FLAC or other lossless formats?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool supports MP3, WAV, WebM, and MP4 only. For FLAC or other formats, use 
+              No, this tool supports MP3, WAV, WebM, and MP4 only. For FLAC or other formats, use 
               dedicated conversion software.
             </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Will the file size change?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              Yes—different formats have different compression. WAV files are largest; Opus files 
+              Yes, different formats have different compression. WAV files are largest; Opus files 
               are typically smallest.
             </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Can I batch convert multiple files?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool processes one file at a time. For batch conversion, you'd need desktop 
+              No, this tool processes one file at a time. For batch conversion, you'd need desktop 
               software.
             </dd>
           </div>

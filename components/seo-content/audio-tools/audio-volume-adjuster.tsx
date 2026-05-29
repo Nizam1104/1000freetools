@@ -2,7 +2,7 @@ export default function AudioVolumeAdjusterSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Adjusting Audio Volume in Decibels</h2>
+        <h2 className="text-2xl font-semibold mb-4">Adjust audio volume in decibels</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This volume adjuster changes audio loudness using precise decibel (dB) values. You can 
@@ -18,33 +18,33 @@ export default function AudioVolumeAdjusterSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Real-World Use Cases</h2>
+        <h2 className="text-2xl font-semibold mb-4">Real use cases</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Podcasters</strong> who recorded an episode but spoke too quietly. They boost it 
+            Podcasters who recorded an episode but spoke too quietly. They boost it 
             by +6 dB to match typical podcast loudness without re-recording.
           </li>
           <li>
-            <strong>Video editors</strong> with background music that's drowning out narration. They 
+            Video editors with background music that's drowning out narration. They 
             reduce the music track by -12 dB to create proper balance.
           </li>
           <li>
-            <strong>Musicians</strong> who captured a live performance with inconsistent levels. They 
+            Musicians who captured a live performance with inconsistent levels. They 
             adjust the overall gain before sending it to a mastering engineer.
           </li>
           <li>
-            <strong>Phone recording users</strong> whose audio is barely audible. They apply +15 dB 
+            Phone recording users whose audio is barely audible. They apply +15 dB 
             gain to make speech intelligible.
           </li>
           <li>
-            <strong>Content creators</strong> who need all their audio files at consistent levels 
+            Content creators who need all their audio files at consistent levels 
             for a compilation. They adjust each file to hit the same target volume.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Boosting volume doesn't create headroom that wasn't there. If your original recording 
@@ -89,9 +89,9 @@ export default function AudioVolumeAdjusterSEO() {
           <div>
             <dt className="font-semibold mb-2">Will boosting volume introduce noise?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              It amplifies everything equally—your signal and any background noise. A +15 dB boost 
+              It amplifies everything equally, your signal and any background noise. A +15 dB boost 
               makes hiss and hum 15 dB louder too.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Can I reduce volume to make a file quieter?</dt>

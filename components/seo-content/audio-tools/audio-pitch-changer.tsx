@@ -2,118 +2,84 @@ export default function AudioPitchChangerSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Shifting Audio Pitch by Semitones</h2>
-        <div className="prose prose-slate dark:prose-invert">
-          <p>
-            This pitch changer shifts audio up or down by up to 12 semitones (one octave) in either 
-            direction. Each semitone represents one half-step in Western music—moving from C to C#, for example.
-          </p>
-          <p>
-            The tool works by changing playback speed and then compensating to maintain the original 
-            duration. A +12 shift raises pitch by one octave; -12 lowers it by one octave. Everything 
-            processes in your browser using Web Audio API.
-          </p>
-        </div>
+        <h2 className="text-2xl font-semibold mb-4">Pitch shifting that doesn't change the speed</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Move the slider up or down by semitones. The pitch changes. The duration stays the same. A 3-minute song stays 3 minutes long whether you shift it up an octave or down.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          This is different from simple speed-based pitch shifting, where raising the pitch also makes the audio shorter. The tool uses the browser's Web Audio API to separate pitch from duration. It shifts the frequency content while keeping the timeline intact. The range is ±12 semitones, which is one full octave in either direction.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          A semitone is one half-step in Western music. Moving from C to C# is one semitone. C to D is two. You're transposing the audio by exact musical intervals, not by arbitrary percentages. This matters if you're trying to match keys between tracks.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Practical Applications</h2>
-        <ul className="space-y-3">
-          <li>
-            <strong>Musicians</strong> who need to match a song's key to their vocal range. They shift 
-            a backing track down 3 semitones to hit the notes comfortably.
-          </li>
-          <li>
-            <strong>Remixers</strong> who want to blend two tracks in different keys. They pitch-shift 
-            one to match the other's key for harmonic mixing.
-          </li>
-          <li>
-            <strong>Podcasters</strong> who recorded narration that sounds too low. They raise it by 
-            +2 semitones for a brighter, more energetic tone.
-          </li>
-          <li>
-            <strong>Producers sampling vinyl</strong> who want to match a modern track's tempo and key. 
-            They adjust pitch independently of speed to make elements work together.
-          </li>
-          <li>
-            <strong>Social media creators</strong> using pitch shifts for comedic effect—deep voices, 
-            high voices, character voices.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">What the algorithm does well (and where it falls apart)</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Simple material shifts cleanly. A solo vocal track shifted up 3 semitones sounds like the same person singing higher. A single guitar note shifted down 5 semitones sounds like a lower guitar note. Solo instruments, isolated vocals, and sparse recordings handle ±6 semitones without obvious artifacts.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Dense material falls apart faster. A full mix with drums, bass, vocals, and synths shifted 8 semitones will sound warbly and metallic, especially in the high frequencies. Cymbals get splashy. Vocals get a robotic tremolo. This is a limitation of real-time pitch shifting, not a bug in this specific tool. Professional DAW plugins do the same thing, just with more sophisticated algorithms that run offline.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Extreme shifts (±12 semitones, the max) will produce artifacts on almost anything. At a full octave up, voices sound like chipmunks. At a full octave down, they sound demonic and slow-motion, even though the duration didn't change. Fun for effects, not for transparent key changes.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          For casual use (backing track transposed a few semitones, podcast voice adjusted slightly, a sample pitched to match your project key), the quality is fine. For a final music release, use a DAW with an offline pitch-shifting algorithm like Elastique or Zplane.
+        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
-        <ul className="space-y-3">
-          <li>
-            The pitch shift range is ±12 semitones (one octave). That covers most practical needs, but 
-            extreme key changes beyond an octave aren't supported.
-          </li>
-          <li>
-            Shifting pitch affects timbre, not just fundamental frequency. A +8 shift on a male voice 
-            will sound noticeably different, not just higher.
-          </li>
-          <li>
-            Complex material (full mixes) doesn't pitch-shift as cleanly as simple material (solo vocals, 
-            single instruments). Expect some artifacts with dense audio.
-          </li>
-          <li>
-            The output is MP3 format. If you're doing professional music production, you'll want to use 
-            a DAW with higher-quality pitch algorithms.
-          </li>
-          <li>
-            This isn't auto-tune. It shifts the entire audio uniformly—it won't correct individual notes 
-            or fix off-key singing.
-          </li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">People actually use this for</h2>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Singers who can't hit the original key. The backing track is in E but your range tops out at C#. Shift the track down 3 semitones. Now you can sing it comfortably. This is the most common use case by far.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          DJs and remixers matching keys between tracks. Track A is in D minor, track B is in F minor. Shift track A up 3 semitones. Now they're in the same key and you can blend them harmonically. The Camelot wheel system makes this even faster: if you know the key codes, the semitone shift is the number of steps between them.
+        </p>
+        <p className="mb-4 text-slate-600 dark:text-slate-400">
+          Podcasters adjusting vocal tone. A host's voice sounds too deep or too thin on the recording. A +2 semitone shift brightens it without sounding unnatural. More than 3 semitones on speech starts sounding manipulated, but small adjustments are transparent.
+        </p>
+        <p className="text-slate-600 dark:text-slate-400">
+          Meme and content creators going for effect. The "deep voice" or "high voice" thing. Push it to the extremes, it sounds absurd, that's the point. The artifacty quality at ±12 semitones is a feature here, not a bug.
+        </p>
       </section>
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">FAQ</h2>
-        <dl className="space-y-6">
+        <div className="space-y-6">
           <div>
-            <dt className="font-semibold mb-2">What's a semitone?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              One half-step in Western music. Moving from C to C# is one semitone. Twelve semitones 
-              equal one octave.
-            </dd>
+            <h3 className="font-semibold mb-2">Is this the same as auto-tune?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              No. Auto-tune corrects individual notes within a performance. This shifts the entire recording by a fixed interval. You can't fix one off-key note with this. You'd need Melodyne, Auto-Tune, or similar pitch correction software.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I shift by fractional semitones?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              No—the interface uses whole semitone steps. For cent-level precision (1/100th of a 
-              semitone), you'd need professional pitch-shifting software.
-            </dd>
+            <h3 className="font-semibold mb-2">Why does the shifted audio sound warbly?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              That's the algorithm struggling with complex material at extreme shifts. Try a smaller shift, or use a simpler source. Solo instruments shift cleaner than full mixes. If you need a perfect +12 shift on a complex track, you need offline pitch-shifting software, not a real-time browser tool.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Does pitch shifting change the duration?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              No—the algorithm maintains the original duration while shifting pitch. A 3-minute song 
-              stays 3 minutes regardless of pitch shift.
-            </dd>
+            <h3 className="font-semibold mb-2">Can I shift by less than a semitone?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              No. The slider moves in whole semitones. If you need cent-level precision (1/100th of a semitone) for fine-tuning, you need a DAW or a dedicated pitch plugin.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">What happens at extreme pitch shifts?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              ±12 semitones is the limit. At these extremes, you'll hear artifacts—warbly tones, 
-              metallic sounds, especially on complex material.
-            </dd>
+            <h3 className="font-semibold mb-2">Will pitch shifting affect the tempo?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              No. The tool maintains the original duration. This is called time-domain pitch shifting or phase vocoding. Older pitch shifting (like speeding up a tape) changes both pitch and speed. This tool doesn't do that.
+            </p>
           </div>
           <div>
-            <dt className="font-semibold mb-2">Can I use this to fix out-of-tune vocals?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              Not really. This shifts the entire recording uniformly. For note-by-note pitch correction, 
-              you need auto-tune or Melodyne.
-            </dd>
+            <h3 className="font-semibold mb-2">What output format do I get?</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              MP3. If you need lossless output, use a DAW with a higher-quality pitch algorithm and export to WAV or FLAC. The browser-based tool is for convenience, not archival production.
+            </p>
           </div>
-          <div>
-            <dt className="font-semibold mb-2">Is the quality good enough for music production?</dt>
-            <dd className="text-slate-600 dark:text-slate-400">
-              For demos and sketches, yes. For final releases, a DAW with professional pitch-shifting 
-              plugins will give cleaner results.
-            </dd>
-          </div>
-        </dl>
+        </div>
       </section>
     </article>
   );

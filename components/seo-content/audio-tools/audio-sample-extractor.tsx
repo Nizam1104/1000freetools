@@ -2,7 +2,7 @@ export default function AudioSampleExtractorSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Extracting Individual Sample Values from Audio Files</h2>
+        <h2 className="text-2xl font-semibold mb-4">Extract individual sample values from audio</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This sample extractor lets you read the amplitude value of any individual sample in an 
@@ -10,7 +10,7 @@ export default function AudioSampleExtractorSEO() {
             the exact amplitude value at that point.
           </p>
           <p>
-            Audio is made of samples—individual amplitude measurements taken thousands of times per 
+            Audio is made of samples, individual amplitude measurements taken thousands of times per 
             second. At 44.1 kHz sample rate, there are 44,100 samples per second of audio. This tool 
             lets you inspect them one by one.
           </p>
@@ -18,33 +18,33 @@ export default function AudioSampleExtractorSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Uses Sample Extraction</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who uses sample extraction</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Audio engineers</strong> who diagnose digital glitches by examining specific 
+            Audio engineers who diagnose digital glitches by examining specific 
             sample values around the problem area.
           </li>
           <li>
-            <strong>Students</strong> learning about digital audio who inspect sample values to 
+            Students learning about digital audio who inspect sample values to 
             understand how waveforms are represented numerically.
           </li>
           <li>
-            <strong>Developers</strong> testing audio processing algorithms who verify sample-level 
+            Developers testing audio processing algorithms who verify sample-level 
             accuracy by comparing expected and actual values.
           </li>
           <li>
-            <strong>Audio forensics analysts</strong> who examine sample values for evidence of 
+            Audio forensics analysts who examine sample values for evidence of 
             editing or manipulation.
           </li>
           <li>
-            <strong>Researchers</strong> studying digital audio characteristics who collect sample 
+            Researchers studying digital audio characteristics who collect sample 
             data for analysis.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
             Sample values range from -1.0 to 1.0 (full scale digital audio). Values at the extremes 
@@ -102,9 +102,9 @@ export default function AudioSampleExtractorSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I modify sample values?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool only reads values. For sample-level editing, you need a hex editor or 
+              No, this tool only reads values. For sample-level editing, you need a hex editor or 
               specialized audio software.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">What's the maximum sample position?</dt>

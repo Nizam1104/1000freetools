@@ -2,7 +2,7 @@ export default function AudioCompressorSEO() {
   return (
     <article className="seo-content space-y-8">
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Compressing Audio Files to Reduce Size</h2>
+        <h2 className="text-2xl font-semibold mb-4">Compress audio files to reduce size</h2>
         <div className="prose prose-slate dark:prose-invert">
           <p>
             This audio compressor reduces file size by re-encoding at lower bitrates. Choose from 
@@ -18,36 +18,36 @@ export default function AudioCompressorSEO() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Who Uses Audio Compression</h2>
+        <h2 className="text-2xl font-semibold mb-4">Who uses audio compression</h2>
         <ul className="space-y-3">
           <li>
-            <strong>Email users</strong> who need to send audio files but they're too large. They 
+            Email users who need to send audio files but they're too large. They 
             compress to 64 kbps to fit within attachment limits.
           </li>
           <li>
-            <strong>Podcasters</strong> who have hour-long episodes that are expensive to host. They 
+            Podcasters who have hour-long episodes that are expensive to host. They 
             compress to 96 kbps to reduce bandwidth costs.
           </li>
           <li>
-            <strong>Travelers</strong> who want to fit more music on their phone for a trip. They 
+            Travelers who want to fit more music on their phone for a trip. They 
             compress their library to fit thousands of songs.
           </li>
           <li>
-            <strong>App developers</strong> who need small audio files for a mobile app. They compress 
+            App developers who need small audio files for a mobile app. They compress 
             to 64 kbps to minimize app size.
           </li>
           <li>
-            <strong>Archivists</strong> who want to preserve content while saving space. They compress 
+            Archivists who want to preserve content while saving space. They compress 
             to a reasonable quality level.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4">What to Know Before Using It</h2>
+        <h2 className="text-2xl font-semibold mb-4">What to know before you use it</h2>
         <ul className="space-y-3">
           <li>
-            Compression is lossy—you can't recover the original quality after compressing. Keep your 
+            Compression is lossy, you can't recover the original quality after compressing. Keep your 
             originals if quality matters.
           </li>
           <li>
@@ -96,9 +96,9 @@ export default function AudioCompressorSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I compress to formats other than MP3?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool outputs MP3 only. For Opus, AAC, or other formats, you need different 
+              No, this tool outputs MP3 only. For Opus, AAC, or other formats, you need different 
               software.
-            </dd>
+          </dd>
           </div>
           <div>
             <dt className="font-semibold mb-2">Is there a file size limit?</dt>
@@ -110,9 +110,9 @@ export default function AudioCompressorSEO() {
           <div>
             <dt className="font-semibold mb-2">Can I batch compress multiple files?</dt>
             <dd className="text-slate-600 dark:text-slate-400">
-              No—this tool processes one file at a time. For batch compression, you'd need desktop 
+              No, this tool processes one file at a time. For batch compression, you'd need desktop 
               software.
-            </dd>
+          </dd>
           </div>
         </dl>
       </section>
