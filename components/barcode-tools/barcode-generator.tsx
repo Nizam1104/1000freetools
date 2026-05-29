@@ -63,7 +63,10 @@ export default function BarcodeGenerator() {
         backgroundcolor: "FFFFFF",
         barcolor: "000000",
         textsize: 10,
-        padding: 10
+        paddingbottom: 10,
+        paddingtop: 10,
+        paddingleft: 10,
+        paddingright: 10
       })
 
       const dataUrl = canvas.toDataURL("image/png")

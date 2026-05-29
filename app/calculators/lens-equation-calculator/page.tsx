@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function LensEquationCalculator() {
   const [solveFor, setSolveFor] = useState<"f" | "u" | "v">("f");
@@ -19,7 +20,7 @@ export default function LensEquationCalculator() {
       const u = parseFloat(objectDistance);
       const v = parseFloat(imageDistance);
       if (u !== 0 && v !== 0) {
-        const f = 1 / (1/u + 1/v);
+        const f = 1 / (1 / u + 1 / v);
         const m = -v / u;
         setResults({ value: f, magnification: m, label: "Focal Length" });
       }
@@ -27,7 +28,7 @@ export default function LensEquationCalculator() {
       const f = parseFloat(focalLength);
       const v = parseFloat(imageDistance);
       if (f !== 0 && v !== 0 && v !== f) {
-        const u = 1 / (1/f - 1/v);
+        const u = 1 / (1 / f - 1 / v);
         const m = -v / u;
         setResults({ value: u, magnification: m, label: "Object Distance" });
       }
@@ -35,7 +36,7 @@ export default function LensEquationCalculator() {
       const f = parseFloat(focalLength);
       const u = parseFloat(objectDistance);
       if (f !== 0 && u !== 0 && u !== f) {
-        const v = 1 / (1/f - 1/u);
+        const v = 1 / (1 / f - 1 / u);
         const m = -v / u;
         setResults({ value: v, magnification: m, label: "Image Distance" });
       }

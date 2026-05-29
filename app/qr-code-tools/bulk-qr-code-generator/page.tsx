@@ -69,7 +69,7 @@ export default function BulkQrCodeGeneratorPage() {
   return (
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
-        <h1 className="text-3xl font-bold mb-3">Bulk QR Code Generator</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Bulk QR Generator</h1>
         <p className="text-muted-foreground">Generate thousands of unique QR codes in one go. Upload a spreadsheet with your data. Download all codes as a ZIP file or a multi-page PDF.</p>
       </header>
       {<BulkQrCodeGenerator />}

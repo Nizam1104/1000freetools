@@ -1,0 +1,1 @@
+components/qr-code-tools/qr-code-file-size-optimizer.tsx(89,15): error TS2322: Type 'void' is not assignable to type 'string'.

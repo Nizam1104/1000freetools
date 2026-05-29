@@ -11,26 +11,26 @@ type FaqsProps = {
 };
 
 export default function Faqs({ faqs }: FaqsProps) {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
+  // const faqJsonLd = {
+  //   "@context": "https://schema.org",
+  //   "@type": "FAQPage",
+  //   mainEntity: faqs.map((faq) => ({
+  //     "@type": "Question",
+  //     name: faq.question,
+  //     acceptedAnswer: {
+  //       "@type": "Answer",
+  //       text: faq.answer,
+  //     },
+  //   })),
+  // };
 
   return (
     <>
-      <Script
+      {/* <Script
         id="faq-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      /> */}
       <div className="w-full mx-auto py-6">
         <div className="space-y-3">
           {faqs.map((faq, index) => (
