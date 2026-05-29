@@ -1,210 +1,176 @@
 "use client"
-
-import * as React from "react"
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
+import figlet from "figlet"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Slider } from "@/components/ui/slider"
-import { Copy, Check, Download, Upload } from "lucide-react"
+import { Copy, Check, Download } from "lucide-react"
 
 export default function AsciiArtGenerator() {
-  const [inputText, setInputText] = useState<string>("Hello World")
-  const [asciiOutput, setAsciiOutput] = useState<string>("")
-  const [fontSize, setFontSize] = useState<number>(12)
-  const [characterSet, setCharacterSet] = useState<string>("standard")
-  const [brightness, setBrightness] = useState<number>(50)
-  const [contrast, setContrast] = useState<number>(50)
-  const [copied, setCopied] = useState<boolean>(false)
+  const [inputText, setInputText] = useState("Hello World")
+  const [asciiOutput, setAsciiOutput] = useState("")
+  const [font, setFont] = useState("Standard")
+  const [fontSize, setFontSize] = useState(12)
+  const [copied, setCopied] = useState(false)
+
+  // Configure figlet to load fonts from a CDN and preload the ones we expose.
+  // Without this, figlet tries to fetch from a relative ./fonts path, which 404s in Next.js.
+  useEffect(() => {
+    // Use a reliable CDN path for figlet fonts
+    figlet.defaults({ fontPath: "https://cdn.jsdelivr.net/npm/figlet/fonts" })
+
+    // Preload the fonts we offer in the UI to avoid race conditions and 404 surprises
+    try {
+      figlet.preloadFonts([
+        "Standard",
+        "Big",
+        "Block",
+        "Banner",
+        "Doom",
+        "Slant",
+        "Small",
+      ] as figlet.Fonts[], () => {})
+    } catch (e) {
+      // Swallow errors; fallback will still attempt on-demand fetch
+      console.warn("Figlet font preload failed", e)
+    }
+  }, [])
 
   const generateAsciiArt = useCallback(() => {
-    const fonts: Record<string, string[][]> = {
-      standard: [
-        ["███", "  █", "███", "█  █", "███"],
-        ["█  █", "  █", "█  █", "█  █", "█  █"],
-        ["█  █", "  █", "█  █", "█  █", "█  █"],
-        ["███", "  █", "███", "█  █", "███"],
-        ["█  █", "  █", "█    ", "█  █", "█  █"],
-        ["█  █", "  █", "█    ", "█  █", "█  █"],
-        ["███", "  █", "█    ", " ███", "███"],
-      ],
-      simple: [
-        ["###", "  #", "###", "#  #", "###"],
-        ["#  #", "  #", "#  #", "#  #", "#  #"],
-        ["#  #", "  #", "#  #", "#  #", "#  #"],
-        ["###", "  #", "###", "#  #", "###"],
-        ["#  #", "  #", "#    ", "#  #", "#  #"],
-        ["#  #", "  #", "#    ", "#  #", "#  #"],
-        ["###", "  #", "#    ", " ###", "###"],
-      ],
-      minimal: [
-        ["**", " *", "**", "* *", "**"],
-        ["* *", " *", "* *", "* *", "* *"],
-        ["* *", " *", "* *", "* *", "* *"],
-        ["**", " *", "**", "* *", "**"],
-        ["* *", " *", "*   ", "* *", "* *"],
-        ["* *", " *", "*   ", "* *", "* *"],
-        ["**", " *", "*   ", " **", "**"],
-      ],
-    }
-
-    const chars = fonts[characterSet] || fonts.standard
-    let result = ""
-    
-    for (let line = 0; line < 5; line++) {
-      for (let char of inputText.toUpperCase()) {
-        const charIndex = char.charCodeAt(0) - 32
-        if (charIndex >= 0 && charIndex < chars.length) {
-          result += chars[line][charIndex % 5] + " "
-        } else {
-          result += "     "
+    figlet.text(
+      inputText || " ",
+      { font: font as figlet.Fonts },  // ✅ font now passed
+      (err, result) => {               // ✅ proper callback usage
+        if (err) {
+          console.error(err)
+          return
         }
+        setAsciiOutput(result || "")
       }
-      result += "\n"
-    }
+    )
+  }, [inputText, font])
 
-    setAsciiOutput(result)
-  }, [inputText, characterSet])
-
-  const copyToClipboard = useCallback(async () => {
+  const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(asciiOutput)
       setCopied(true)
       setTimeout(() => setCopied(false), 1500)
     } catch (err) {
-      console.error("Failed to copy:", err)
+      console.error(err)
     }
-  }, [asciiOutput])
+  }
 
-  const downloadAscii = useCallback(() => {
-    const blob = new Blob([asciiOutput], { type: "text/plain" })
+  const downloadAscii = () => {
+    const blob = new Blob([asciiOutput], {
+      type: "text/plain",
+    })
+
     const url = URL.createObjectURL(blob)
+
     const a = document.createElement("a")
     a.href = url
     a.download = "ascii-art.txt"
+
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
+
     URL.revokeObjectURL(url)
-  }, [asciiOutput])
+  }
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-6">
-      {/* Input Section */}
-      <section className="space-y-3">
-        <Label htmlFor="input-text" className="text-base font-medium">
-          Input Text
-        </Label>
+    <div className="max-w-4xl mx-auto space-y-6">
+
+      <div className="space-y-2">
+        <Label>Input Text</Label>
+
         <Textarea
-          id="input-text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          className="font-mono text-sm min-h-[80px]"
-          placeholder="Enter text to convert to ASCII art..."
-          maxLength={50}
+          placeholder="Enter text..."
+          maxLength={100}
+          className="font-mono"
         />
-        <p className="text-xs text-muted-foreground">
-          Maximum 50 characters
-        </p>
-      </section>
+      </div>
 
-      {/* Settings Section */}
-      <section className="space-y-4">
-        <h3 className="text-base font-semibold">Settings</h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="character-set">Character Set</Label>
-            <Select value={characterSet} onValueChange={setCharacterSet}>
-              <SelectTrigger id="character-set">
-                <SelectValue placeholder="Select character set" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="standard">Standard (███)</SelectItem>
-                <SelectItem value="simple">Simple (###)</SelectItem>
-                <SelectItem value="minimal">Minimal (**)</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+      <div className="space-y-2">
+        <Label>Font Style</Label>
 
-          <div className="space-y-2">
-            <Label htmlFor="font-size">Font Size: {fontSize}px</Label>
-            <Slider
-              id="font-size"
-              value={[fontSize]}
-              onValueChange={(v) => setFontSize(v[0])}
-              min={8}
-              max={24}
-              step={1}
-            />
-          </div>
+        <Select value={font} onValueChange={setFont}>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
 
-          <div className="space-y-2">
-            <Label htmlFor="brightness">Brightness: {brightness}%</Label>
-            <Slider
-              id="brightness"
-              value={[brightness]}
-              onValueChange={(v) => setBrightness(v[0])}
-              min={0}
-              max={100}
-              step={5}
-            />
-          </div>
+          <SelectContent>
+            <SelectItem value="Standard">Standard</SelectItem>
+            <SelectItem value="Big">Big</SelectItem>
+            <SelectItem value="Block">Block</SelectItem>
+            <SelectItem value="Banner">Banner</SelectItem>
+            <SelectItem value="Doom">Doom</SelectItem>
+            <SelectItem value="Slant">Slant</SelectItem>
+            <SelectItem value="Small">Small</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="contrast">Contrast: {contrast}%</Label>
-            <Slider
-              id="contrast"
-              value={[contrast]}
-              onValueChange={(v) => setContrast(v[0])}
-              min={0}
-              max={100}
-              step={5}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Generate Button */}
-      <Button onClick={generateAsciiArt} className="w-full">
+      <Button
+        className="w-full"
+        onClick={generateAsciiArt}
+      >
         Generate ASCII Art
       </Button>
 
-      {/* Output Section */}
       {asciiOutput && (
-        <section className="space-y-3">
-          <div className="flex items-center justify-between">
-            <Label className="text-base font-medium">ASCII Art Output</Label>
+        <div className="space-y-3">
+
+          <div className="flex justify-between items-center">
+            <Label>ASCII Art Output</Label>
+
             <div className="flex gap-2">
+
               <Button
                 variant="outline"
                 size="sm"
                 onClick={copyToClipboard}
               >
-                {copied ? <Check className="size-4 mr-1" /> : <Copy className="size-4 mr-1" />}
-                {copied ? "Copied" : "Copy"}
+                {copied ? (
+                  <>
+                    <Check className="size-4 mr-2" />
+                    Copied
+                  </>
+                ) : (
+                  <>
+                    <Copy className="size-4 mr-2" />
+                    Copy
+                  </>
+                )}
               </Button>
+
               <Button
                 variant="outline"
                 size="sm"
                 onClick={downloadAscii}
               >
-                <Download className="size-4 mr-1" />
+                <Download className="size-4 mr-2" />
                 Download
               </Button>
+
             </div>
           </div>
 
-          <div className="rounded-lg border bg-muted/30 p-4 overflow-x-auto">
+          <div className="border rounded-lg p-4 overflow-auto bg-muted/30">
             <pre
-              className="font-mono text-sm whitespace-pre"
-              style={{ fontSize: `${fontSize}px` }}
+              className="font-mono whitespace-pre"
+              style={{
+                fontSize: `${fontSize}px`,
+              }}
             >
               {asciiOutput}
             </pre>
           </div>
-        </section>
+
+        </div>
       )}
     </div>
   )

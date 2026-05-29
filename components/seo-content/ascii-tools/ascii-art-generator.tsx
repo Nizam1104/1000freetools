@@ -3,53 +3,51 @@ import React from "react"
 export default function AsciiArtGeneratorSeo() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8">
-      {/* How It Works */}
+      {/* How it works */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">How It Works</h2>
+        <h2 className="text-2xl font-semibold">How it works</h2>
         <div className="space-y-3 text-muted-foreground">
           <p>
-            This tool transforms your input text into ASCII art by mapping each
-            character to a pre-defined block pattern. Each letter becomes a small
-            grid of characters (typically 5-7 lines tall) that when combined form
-            recognizable text art.
+            The generator maps each character in your input to a small block
+            pattern and prints those patterns side by side. The result is a
+            banner made of text characters that is 5 lines tall.
           </p>
 
           <p>
-            The generator uses character sets like block elements (███), hash symbols (###),
-            or asterisks (**) to create the visual patterns. You can adjust the font size
-            for display, brightness and contrast for visual effect, and choose different
-            character styles for various aesthetics.
+            Everything runs in your browser. Nothing is uploaded. You can switch
+            between character sets like Unicode block elements (███), hashes (###),
+            or asterisks (**). The font size control affects on screen preview
+            only. The text you copy or download is plain text.
           </p>
 
           <div className="rounded-lg border bg-muted/30 p-4">
-            <p className="text-sm font-medium mb-2">Character set options:</p>
+            <p className="text-sm font-medium mb-2">Character set options</p>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between items-center p-2 rounded bg-muted">
                 <code className="font-mono bg-background px-2 py-1 rounded">Standard</code>
-                <span>Block characters (███) - bold and clear</span>
+                <span>Block characters (███), bold and clear</span>
               </div>
               <div className="flex justify-between items-center p-2 rounded bg-muted">
                 <code className="font-mono bg-background px-2 py-1 rounded">Simple</code>
-                <span>Hash symbols (###) - classic terminal look</span>
+                <span>Hash symbols (###), classic terminal look</span>
               </div>
               <div className="flex justify-between items-center p-2 rounded bg-muted">
                 <code className="font-mono bg-background px-2 py-1 rounded">Minimal</code>
-                <span>Asterisks (**) - lightweight and clean</span>
+                <span>Asterisks (**), lightweight and clean</span>
               </div>
             </div>
           </div>
 
           <p>
-            After generating your ASCII art, you can copy it to the clipboard for pasting
-            into code comments, README files, or terminal output. The download option
-            saves the art as a plain text file for later use.
+            When you are happy with the preview, copy the banner to your
+            clipboard or download it as a .txt file for later use.
           </p>
         </div>
       </section>
 
-      {/* Specific Use Cases */}
+      {/* Specific use cases */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">When You'd Actually Use This</h2>
+        <h2 className="text-2xl font-semibold">When you'd actually use this</h2>
 
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-lg border bg-muted/30 p-4">
@@ -109,26 +107,24 @@ export default function AsciiArtGeneratorSeo() {
         </div>
       </section>
 
-      {/* What to Know Before Using */}
+      {/* What to know before using it */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">What to Know Before Using</h2>
+        <h2 className="text-2xl font-semibold">What to know before using it</h2>
 
         <div className="space-y-3 text-muted-foreground">
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
-              <strong className="text-foreground">Character limit applies to input text.</strong>
-              The tool limits input to around 50 characters to keep the output
-              manageable. Longer text produces very wide art that may not display
-              correctly in all terminals or text editors.
+              <strong className="text-foreground">Short inputs work best.</strong>
+              The input is limited to 50 characters. Very long banners become
+              wide and hard to read in narrow editors or terminals.
             </p>
           </div>
 
           <div className="rounded-lg border bg-muted/30 p-4">
             <p className="text-sm">
-              <strong className="text-foreground">Only basic characters are supported.</strong>
-              The generator handles uppercase letters A-Z, digits 0-9, and common
-              punctuation. Lowercase letters are converted to uppercase. Special
-              characters and accented letters may not render correctly.
+              <strong className="text-foreground">Stick to simple characters.</strong>
+              Uppercase letters and digits render most reliably. Some symbols or
+              accented characters may appear as spaces in the output.
             </p>
           </div>
 
@@ -152,9 +148,9 @@ export default function AsciiArtGeneratorSeo() {
 
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
             <p className="text-sm text-amber-700 dark:text-amber-300">
-              <strong>Pro tip:</strong> For code comments, use the Simple or Minimal
-              character set. Block characters can cause encoding issues in source
-              files and may not display correctly in all IDEs.
+              <strong>Pro tip:</strong> For code comments, prefer the Simple or Minimal
+              sets. Block elements can trigger encoding issues in some IDEs or when
+              reviewing diffs on the web.
             </p>
           </div>
         </div>
@@ -162,51 +158,49 @@ export default function AsciiArtGeneratorSeo() {
 
       {/* FAQ */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Common Questions</h2>
+        <h2 className="text-2xl font-semibold">Common questions</h2>
 
         <div className="space-y-4">
           <div className="rounded-lg border bg-muted/30 p-4">
-            <h3 className="font-medium mb-2">Can I create multi-line ASCII art?</h3>
+            <h3 className="font-medium mb-2">How tall is the output?</h3>
             <p className="text-sm text-muted-foreground">
-              This tool generates single-line text art. For multi-line designs or
-              complex images, use dedicated ASCII art generators that convert images
-              to text or provide free-form drawing capabilities.
+              Banners are 5 lines tall. The width grows with your input length and
+              the chosen character set.
             </p>
           </div>
 
           <div className="rounded-lg border bg-muted/30 p-4">
-            <h3 className="font-medium mb-2">How do I preserve the art when pasting?</h3>
+            <h3 className="font-medium mb-2">How do I preserve alignment when pasting?</h3>
             <p className="text-sm text-muted-foreground">
               Always paste into a monospace font environment. In code editors, the
-              formatting preserves automatically. In word processors, use "Paste as
-              plain text" and apply a monospace font like Courier New.
+              spacing is preserved automatically. In word processors, use "Paste as
+              plain text" and then apply a monospace font like Courier New.
             </p>
           </div>
 
           <div className="rounded-lg border bg-muted/30 p-4">
-            <h3 className="font-medium mb-2">Why does my art look misaligned?</h3>
+            <h3 className="font-medium mb-2">Why do some characters disappear?</h3>
             <p className="text-sm text-muted-foreground">
-              Misalignment usually means you're viewing the art in a proportional font
-              where characters have different widths. Switch to a monospace font.
-              Also ensure you're not mixing tabs and spaces in the output.
+              Some symbols and accented letters are not represented in the built in
+              patterns and may render as spaces. Use uppercase letters and numbers
+              for best results.
             </p>
           </div>
 
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">Can I customize the font patterns?</h3>
             <p className="text-sm text-muted-foreground">
-              This tool uses predefined character sets. For custom fonts, you'd need
-              to modify the source code or use a more advanced ASCII art tool that
-              supports FIGlet or TOIlet font formats.
+              This tool ships with three predefined sets. For custom fonts, use a
+              FIGlet compatible generator or modify the source code.
             </p>
           </div>
 
           <div className="rounded-lg border bg-muted/30 p-4">
             <h3 className="font-medium mb-2">What's the maximum size I can create?</h3>
             <p className="text-sm text-muted-foreground">
-              The input is limited to about 50 characters. The output height is fixed
-              at 5-7 lines depending on the character set. For larger art, generate
-              multiple sections and combine them manually.
+              Input is capped at 50 characters. Height is fixed at 5 lines. For
+              larger banners, split your text into multiple sections and stack them
+              manually.
             </p>
           </div>
 
@@ -220,11 +214,19 @@ export default function AsciiArtGeneratorSeo() {
           </div>
 
           <div className="rounded-lg border bg-muted/30 p-4">
-            <h3 className="font-medium mb-2">Can I convert images to ASCII art?</h3>
+            <h3 className="font-medium mb-2">Can I convert images to ASCII here?</h3>
             <p className="text-sm text-muted-foreground">
-              This tool only converts text to ASCII art. For image conversion, use
-              dedicated image-to-ASCII tools that analyze pixel brightness and map
-              it to appropriate characters.
+              This page converts text into ASCII banners only. For image to ASCII,
+              use a dedicated image converter that samples pixels and maps
+              brightness to characters.
+            </p>
+          </div>
+
+          <div className="rounded-lg border bg-muted/30 p-4">
+            <h3 className="font-medium mb-2">Does any of my text leave the browser?</h3>
+            <p className="text-sm text-muted-foreground">
+              No. The generator runs entirely client side. Copy and download actions
+              produce plain text on your device.
             </p>
           </div>
         </div>

@@ -4,8 +4,8 @@ import AsciiArtGenerator from "@/components/ascii-tools/ascii-art-generator";
 import AsciiArtGeneratorSeo from "@/components/seo-content/ascii-tools/ascii-art-generator";
 
 export const metadata: Metadata = {
-  title: `ASCII Art Generator: Convert Images to Text Art Online Free`,
-  description: `Create ASCII art from images instantly. Upload JPG/PNG, adjust settings, and generate detailed text-based artwork. Perfect for retro designs, code comments, and social media.`,
+  title: `Text to ASCII Art Generator: Create Banner Text Online`,
+  description: `Turn text into ASCII art banners in your browser. Choose character sets (███, ###, **), set preview size, copy to clipboard, or download as plain text. Great for README headers, CLI banners, and retro-styled notes.`,
   alternates: {
     canonical: `https://1000freetools.com/ascii-tools/ascii-art-generator`,
   },
@@ -49,13 +49,13 @@ export default function AsciiArtGeneratorPage() {
     <div className="flex flex-col gap-y-4">
       <header className="max-w-3xl">
         <h1 className="text-3xl font-bold mb-3">
-          Free ASCII Art Generator - Convert Images to Text Art
+          Free text to ASCII art generator
         </h1>
         <p className="text-muted-foreground">
-          Transform any image into stunning ASCII art instantly. Our free online
-          tool converts photos, logos, and graphics into text-based artwork
-          using customizable character sets. Perfect for forums, README files,
-          retro designs, and creative coding projects.
+          Type a word or short phrase and turn it into multi line ASCII art made
+          from characters. Runs in your browser, no upload. Pick from blocky,
+          hash, or minimal styles, then copy or download the plain text output
+          for README headers, CLI banners, and code comments.
         </p>
       </header>
       <div className="mt-8">
