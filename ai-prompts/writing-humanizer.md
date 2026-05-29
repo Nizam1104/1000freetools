@@ -1,13 +1,14 @@
 ---
 name: humanizer
-version: 2.2.0
+version: 2.3.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
-  text to make it sound more natural and human-written. Based on Wikipedia's
-  comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
-  inflated symbolism, promotional language, superficial -ing analyses, vague
-  attributions, em dash overuse, rule of three, AI vocabulary words, negative
-  parallelisms, and excessive conjunctive phrases.
+  text to make it sound more natural and human-written — especially on-page SEO
+  for tool/product pages. Based on Wikipedia's comprehensive "Signs of AI writing"
+  guide. Detects and fixes patterns including: inflated symbolism, promotional
+  language, superficial -ing analyses, vague attributions, em dash overuse, rule
+  of three, AI vocabulary words, negative parallelisms, interchangeable template
+  sections, and excessive conjunctive phrases.
 allowed-tools:
   - Read
   - Write
@@ -31,6 +32,101 @@ When given text to humanize:
 4. **Maintain voice** - Match the intended tone (formal, casual, technical, etc.)
 5. **Add soul** - Don't just remove bad patterns; inject actual personality
 6. **Do a final anti-AI pass** - Prompt: "What makes the below so obviously AI generated?" Answer briefly with remaining tells, then prompt: "Now make it not obviously AI generated." and revise
+
+### When humanizing on-page SEO (tool pages)
+
+Use this workflow after content is drafted (e.g. from `se-unq.md`):
+
+1. **Preserve facts** — Do not invent specs, limits, or features. Only rephrase; if a claim is vague, tighten using details already in the draft or source code, not imagination.
+2. **Keep HTML structure** — Retain `<h2>`, `<h3>`, `<p>`, lists unless a tag choice is itself an AI tell (e.g. bold-header bullet lists → prose).
+3. **Target interchangeability** — SEO pages get flagged when fifty tools share the same skeleton. Vary section emphasis, paragraph count, FAQ question shapes, and where caveats appear.
+4. **Google-oriented bar** — Helpful, original, people-first copy that demonstrates real understanding of the tool. Avoid mass-produced tone even if keywords remain.
+
+---
+
+## ON-PAGE SEO / TOOL PAGE PATTERNS
+
+These show up constantly in AI-generated product and tool copy. Fix them aggressively.
+
+### 25. Interchangeable "tool page template"
+
+**Problem:** Every page has the same sections in the same order with the same rhythm: intro → how it works (3 steps) → benefits → FAQ (Can I… × 5) → generic conclusion.
+
+**Before:**
+> How it works: Upload your file. Click convert. Download the result. Whether you're a student, professional, or business user, this tool streamlines your workflow.
+
+**After:**
+> Drag a WAV in; you'll get an MP3 back in the browser. Nothing uploads to our servers if you're on the default setting. Batch mode is the awkward part — it only queues five files at a time.
+
+---
+
+### 26. Generic "who it's for" lists
+
+**Problem:** Vague personas ("marketers, developers, students") with no situation.
+
+**Before:**
+> Perfect for content creators, educators, and anyone who needs quick results.
+
+**After:**
+> Useful when you're trimming a lecture recording before posting it to a course site and don't want to open a full DAW.
+
+---
+
+### 27. Feature-bullet voice in prose sections
+
+**Problem:** Marketing bullets pasted as paragraphs with bold labels.
+
+**Before:**
+> **Fast processing:** Get results in seconds. **Privacy-focused:** Files stay on your device. **Easy to use:** No account required.
+
+**After:**
+> Processing happens in the tab, so a 10 MB clip usually finishes in a few seconds on a recent laptop. You don't need an account; the tradeoff is there's no cloud history if you close the page.
+
+---
+
+### 28. SEO FAQ boilerplate
+
+**Problem:** FAQs that could apply to any converter on the internet.
+
+**Before:**
+> **Is this tool free to use?** Yes, our tool is completely free with no hidden fees.
+> **Is my data secure?** We take privacy seriously and do not store your files.
+
+**After:**
+> **Does it work on Safari on iPhone?** Yes, but files over 50 MB can make the tab reload on older phones — that's a browser memory limit, not something we can override server-side.
+
+---
+
+### 29. Keyword-stuffed unnatural phrasing
+
+**Problem:** Forcing exact-match keywords into stiff sentences.
+
+**Before:**
+> Our free online MP3 to WAV converter tool allows you to convert MP3 to WAV online free with high quality.
+
+**After:**
+> You can turn an MP3 into a WAV here if you need an uncompressed file for editing — the output is 44.1 kHz stereo by default.
+
+---
+
+### 30. Symmetrical section lengths
+
+**Problem:** Every `<h2>` section is exactly two paragraphs; every FAQ answer is exactly three sentences — feels generated.
+
+**Fix:** Let important sections run longer; shorten minor ones. One FAQ can be one sentence; another can be five if the question needs it.
+
+---
+
+### SEO humanization checklist (run after patterns 1–30)
+
+- [ ] No paragraph survives the "swap another tool name" test
+- [ ] At least one limitation or gotcha is stated plainly
+- [ ] Headings are sentence case and specific to this tool
+- [ ] No banned AI vocabulary (see pattern 7)
+- [ ] Keywords read naturally when spoken aloud
+- [ ] Rhythm varies; no streak of same-length sentences
+- [ ] No em dashes, curly quotes, emoji headings, or chatbot closers
+- [ ] Final pass: "Would this page feel unique if someone read five similar tools on the same site back-to-back?"
 
 ---
 
@@ -392,15 +488,16 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## Process
 
-1. Read the input text carefully
-2. Identify all instances of the patterns above
+1. Read the input text carefully (and tool source/HTML if provided for SEO work)
+2. Identify all instances of the patterns above (1–30)
 3. Rewrite each problematic section
 4. Ensure the revised text:
    - Sounds natural when read aloud
    - Varies sentence structure naturally
    - Uses specific details over vague claims
-   - Maintains appropriate tone for context
+   - Maintains appropriate tone for context (for tool pages: helpful, direct, slightly opinionated where honest)
    - Uses simple constructions (is/are/has) where appropriate
+   - Keeps SEO keywords only where they fit naturally
 5. Present a draft humanized version
 6. Prompt: "What makes the below so obviously AI generated?"
 7. Answer briefly with the remaining tells (if any)
@@ -409,11 +506,17 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## Output Format
 
+**Default (essays, articles, general copy):**
+
 Provide:
 1. Draft rewrite
 2. "What makes the below so obviously AI generated?" (brief bullets)
 3. Final rewrite
 4. A brief summary of changes made (optional, if helpful)
+
+**On-page SEO / HTML tool content:**
+
+Provide only the final HTML-ready content (after the internal audit steps above). Do not include meta commentary, draft stages, or change summaries in the deliverable — those are for your internal process only unless the user asks for them.
 
 ---
 
